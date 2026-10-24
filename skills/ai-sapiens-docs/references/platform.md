@@ -1,0 +1,11 @@
+# Platform facts and unavailable resources
+
+Read the live linked section before quoting specifications; baseline 2026-10-23 is not an as-built inspection.
+
+[Hardware](https://docs.robotis.com/docs/systems/aisapiens/specifications/hardware/): K1 is listed as 1355 mm, 35 kg, 23 DOF: five per arm, six per leg and one waist yaw. The actuator mix is twelve QC060 and eleven QC080 DYNAMIXEL-Q units. Use the mechanical drawing link on that page for dimensions rather than deriving clearances from a picture. Hardware BoM, STEP, printable covers and tutorials are Coming Soon. A request to explain hardware does not authorize repair, disassembly or downloading unavailable assets.
+
+[Electrical](https://docs.robotis.com/docs/systems/aisapiens/specifications/electrical_system/): onboard compute is Jetson Orin NX 16GB with a 256 GB SSD. The listed battery is 13S2P, nominal 48 V, 10 Ah, 460.8 Wh. HAT integrates power/embedded functions, emergency stop, battery monitoring and the Ethernet-to-RS-485 hub. IMU and HAT have separate roles; do not treat all SBC ports as interchangeable. PCB files, MCU firmware and wiring/pinout documents are Coming Soon. Do not synthesize connector pin assignments from voltage tables. Stop if an electrical question requires an unavailable wiring document; request official revision-specific material instead.
+
+[Software Architecture](https://docs.robotis.com/docs/systems/aisapiens/specifications/software/): Cyclo OS is Yocto-based; robot software runs in the ai_sapiens container with ROS 2 Jazzy and rmw_zenoh_cpp. Policy/mode output feeds the impedance controller through ros2_control and the hardware interface. Feedback returns joint, IMU and RC state. The controller manager is documented at 1 kHz; this is not a measured control rate in this package. External-PC configuration belongs to the communication guide; the robot's onboard compute specification does not establish a training GPU budget.
+
+Answer the specific specification question with its source and revision limits. Route power/RC questions to operation, network topology to connectivity, and controller message semantics to control. The Open Source page lists URDF/MJCF paths; USD is not yet public. The technical story covers both K1 and AI Worker, so distinguish each platform before summarizing its learning pipeline.

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "sdk-typescript",
+    "status": 0
+  },
+  {
+    "name": "upstream-mcp-mocks",
+    "status": 0
+  },
+  {
+    "name": "plugin-stdio",
+    "status": 0
+  },
+  {
+    "name": "python-regressions",
+    "status": 0
+  },
+  {
+    "name": "package-validation",
+    "status": 0
+  }
+]

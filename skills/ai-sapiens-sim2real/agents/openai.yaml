@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Sim2Real"
+  short_description: "Review deployment assets and Sim2Sim checks"
+  default_prompt: "Use $ai-sapiens-sim2real to prepare the documented workflow."

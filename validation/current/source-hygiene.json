@@ -1,0 +1,5 @@
+{
+  "credential_patterns": "no matches",
+  "scan_scope": "publishable source excluding dependencies/generated artifacts",
+  "real_device_operations": "not run"
+}

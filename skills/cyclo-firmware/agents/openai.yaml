@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cyclo-Firmware"
+  short_description: "Plan constrained firmware MCP operations"
+  default_prompt: "Use $cyclo-firmware to prepare the Cyclo workflow without accessing real hardware."

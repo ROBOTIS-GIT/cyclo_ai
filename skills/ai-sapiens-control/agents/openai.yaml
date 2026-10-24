@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Control"
+  short_description: "Guide ROS 2, SDK state reads and impedance"
+  default_prompt: "Use $ai-sapiens-control to answer from the official AI Sapiens manual."

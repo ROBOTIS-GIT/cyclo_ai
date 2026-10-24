@@ -1,0 +1,25 @@
+name: Offline plugin checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  mock-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install validation dependencies
+        run: python -m pip install PyYAML==6.0.3 jsonschema==4.19.2
+      - name: Mock stdio, upstream regressions and package validation
+        run: npm test

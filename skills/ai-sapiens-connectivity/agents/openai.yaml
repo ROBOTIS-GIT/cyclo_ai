@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Connectivity"
+  short_description: "Plan USB, Ethernet, Wi-Fi and SSH access"
+  default_prompt: "Use $ai-sapiens-connectivity to answer from the official AI Sapiens manual."

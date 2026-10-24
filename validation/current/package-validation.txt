@@ -1,0 +1,22 @@
+{
+  "upstream_source_hashes": "passed",
+  "mcp_schema": "passed",
+  "manifest_schema": "passed",
+  "skills": [
+    "ai-sapiens-connectivity",
+    "ai-sapiens-control",
+    "ai-sapiens-diagnostics",
+    "ai-sapiens-docs",
+    "ai-sapiens-motion-sources",
+    "ai-sapiens-operation",
+    "ai-sapiens-sim2real",
+    "ai-sapiens-video-mimic",
+    "ai-sapiens-walking",
+    "cyclo",
+    "cyclo-firmware"
+  ],
+  "local_links_checked": 107,
+  "metadata": "passed",
+  "unexpected_components": "no undeclared hooks or apps",
+  "indexed_manual_pages": 34
+}

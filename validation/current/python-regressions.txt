@@ -1,0 +1,30 @@
+test_cli_missing_asset_fails_closed (test_asset_audit.AuditTests.test_cli_missing_asset_fails_closed) ... ok
+test_empty_config (test_asset_audit.AuditTests.test_empty_config) ... ok
+test_extra_motion_on_velocity_rejected (test_asset_audit.AuditTests.test_extra_motion_on_velocity_rejected) ... ok
+test_mimic_external_motion_supported_but_requires_review (test_asset_audit.AuditTests.test_mimic_external_motion_supported_but_requires_review) ... ok
+test_missing_mimic_motion (test_asset_audit.AuditTests.test_missing_mimic_motion) ... ok
+test_missing_policy (test_asset_audit.AuditTests.test_missing_policy) ... ok
+test_missing_run (test_asset_audit.AuditTests.test_missing_run) ... ok
+test_symlink_directory_rejected (test_asset_audit.AuditTests.test_symlink_directory_rejected) ... ok
+test_symlink_from_other_run_rejected (test_asset_audit.AuditTests.test_symlink_from_other_run_rejected) ... ok
+test_untrusted_path_is_literal (test_asset_audit.AuditTests.test_untrusted_path_is_literal) ... ok
+test_velocity_hash_and_no_write (test_asset_audit.AuditTests.test_velocity_hash_and_no_write) ... ok
+test_wrong_motion_extension (test_asset_audit.AuditTests.test_wrong_motion_extension) ... ok
+test_changed_mimic_motion_rejected (test_provenance.ProvenanceTests.test_changed_mimic_motion_rejected) ... ok
+test_cli_conflict_is_blocked (test_provenance.ProvenanceTests.test_cli_conflict_is_blocked) ... ok
+test_invalid_hash (test_provenance.ProvenanceTests.test_invalid_hash) ... ok
+test_json_list_and_malformed_rejected (test_provenance.ProvenanceTests.test_json_list_and_malformed_rejected) ... ok
+test_manifest_symlink_rejected (test_provenance.ProvenanceTests.test_manifest_symlink_rejected) ... ok
+test_matching_hashes_not_authenticity (test_provenance.ProvenanceTests.test_matching_hashes_not_authenticity) ... ok
+test_metadata_constraints (test_provenance.ProvenanceTests.test_metadata_constraints) ... ok
+test_mimic_manifest_matches (test_provenance.ProvenanceTests.test_mimic_manifest_matches) ... ok
+test_missing_extra_and_invalid_roles (test_provenance.ProvenanceTests.test_missing_extra_and_invalid_roles) ... ok
+test_modified_config_rejected (test_provenance.ProvenanceTests.test_modified_config_rejected) ... ok
+test_modified_policy_rejected (test_provenance.ProvenanceTests.test_modified_policy_rejected) ... ok
+test_new_manifest_cannot_prove_origin (test_provenance.ProvenanceTests.test_new_manifest_cannot_prove_origin) ... ok
+test_wrong_run_and_kind (test_provenance.ProvenanceTests.test_wrong_run_and_kind) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.080s
+
+OK

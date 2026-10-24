@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cyclo"
+  short_description: "Route Cyclo learning and firmware workflows"
+  default_prompt: "Use $cyclo to prepare the Cyclo workflow without accessing real hardware."

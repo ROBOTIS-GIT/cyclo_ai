@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-sapiens-dev",
+  "version": "0.3.0",
+  "description": "Cyclo Plugin: AI Sapiens manual workflows plus a separately gated local Cyclo firmware MCP module.",
+  "keywords": [
+    "robotis",
+    "ai-sapiens",
+    "cyclo",
+    "robotics"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Cyclo Plugin",
+        "shortDescription": "Cyclo development workflows",
+        "longDescription": "Preserves AI Sapiens skills and adds the upstream Cyclo firmware stdio MCP module. Default startup disables hardware, discovery and external processes. Training/deployment remain guided procedures requiring separate real execution.",
+        "capabilities": [],
+        "defaultPrompt": [
+          "AI Sapiens 보행 policy 학습 시켜줘",
+          "이 유튜브 영상으로 AI Sapiens Mimic 학습 준비해줘",
+          "시리얼 번호로 AI Sapiens Sim2Real 배포를 준비해줘"
+        ]
+      }
+    }
+  }
+}

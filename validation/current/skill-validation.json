@@ -1,0 +1,57 @@
+[
+  {
+    "skill": "ai-sapiens-connectivity",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-control",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-diagnostics",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-docs",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-motion-sources",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-operation",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-sim2real",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-video-mimic",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "ai-sapiens-walking",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "cyclo",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  },
+  {
+    "skill": "cyclo-firmware",
+    "exit_code": 0,
+    "result": "Skill is valid!"
+  }
+]
