@@ -1,0 +1,56 @@
+{
+  "reviewedOn": "2026-10-24",
+  "runtimeTested": false,
+  "records": [
+    {
+      "package": "dynamixel_hardware_interface",
+      "revision": "6bb5f93ecad1fe3c231e3ece580344e8f0a6efc3",
+      "documentedRos": [
+        "humble",
+        "jazzy",
+        "rolling"
+      ],
+      "source": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface",
+      "caveat": "Verify distribution branches, package metadata and OS before setup; not plugin runtime certification."
+    },
+    {
+      "package": "DynamixelSDK",
+      "revision": "a8d35d51c87e7d253ece1baa963f498a8d933fa0",
+      "protocols": [
+        1,
+        2
+      ],
+      "source": "https://github.com/ROBOTIS-GIT/DynamixelSDK"
+    },
+    {
+      "package": "zenoh_ros2_sdk",
+      "revision": "be2c4d4595305a9c282fca09820a8b3bfb8076a3",
+      "metadataVersion": "0.1.8",
+      "python": ">=3.9",
+      "dependencyFloor": "eclipse-zenoh>=0.10.0",
+      "source": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
+      "caveat": "Broad metadata floors do not prove all future releases or robot images interoperate."
+    },
+    {
+      "package": "Cyclo Lab main",
+      "isaacSim": "5.1.0",
+      "isaacLab": "2.3.0",
+      "source": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/"
+    },
+    {
+      "package": "Cyclo Lab experimental k1/isaacsim-6-newton",
+      "isaacSim": "6.0.1",
+      "isaacLab": "3.0.0-beta2",
+      "caveat": "Only K1 velocity/mimic documented validated; not default branch.",
+      "source": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/"
+    },
+    {
+      "package": "Cyclo MJLab",
+      "python": "3.11",
+      "mjlab": "1.2.0",
+      "mujoco": "3.5.0",
+      "warp": "1.12.0",
+      "source": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/"
+    }
+  ]
+}

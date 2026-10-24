@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-sapiens-dev",
-  "version": "0.3.0",
-  "description": "Cyclo Plugin: AI Sapiens manual workflows plus a separately gated local Cyclo firmware MCP module.",
+  "version": "0.4.0",
+  "description": "Cyclo Plugin: source-backed ROBOTIS product guidance, retained AI Sapiens workflows and separately gated model-aware DYNAMIXEL configuration.",
   "keywords": [
     "robotis",
     "ai-sapiens",
@@ -13,8 +13,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Cyclo Plugin",
-        "shortDescription": "Cyclo development workflows",
-        "longDescription": "Preserves AI Sapiens skills and adds the upstream Cyclo firmware stdio MCP module. Default startup disables hardware, discovery and external processes. Training/deployment remain guided procedures requiring separate real execution.",
+        "shortDescription": "ROBOTIS product expert",
+        "longDescription": "Official-source product routing across ROBOTIS, focused integration guidance and AI Sapiens workflows. Curated DYNAMIXEL ID, baud, LED and profile transactions use a separate disabled-by-default MCP. All robotics runtime evidence is mock-only.",
         "capabilities": [],
         "defaultPrompt": [
           "AI Sapiens 보행 policy 학습 시켜줘",

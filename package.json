@@ -1,6 +1,6 @@
 {
   "name": "cyclo-plugin-source",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -14,7 +14,9 @@
     "test": "node tests/run.mjs",
     "test:integration": "node --test tests/integration.test.mjs",
     "validate": "python3 validation/validate_package.py",
-    "package": "python3 validation/package_release.py"
+    "package": "python3 validation/package_release.py",
+    "test:products": "node --test tests/dynamixel.test.mjs tests/products-integration.test.mjs",
+    "build:device-runtime": "tsc -p modules/firmware/upstream/tools/cyclo_firmware_sdk/tsconfig.json"
   },
   "devDependencies": {
     "typescript": "5.9.3"

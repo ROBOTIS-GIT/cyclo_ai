@@ -13,6 +13,7 @@ def check(root):
     schema=json.loads((BASE/'evidence/plugin.schema.json').read_text())
     jsonschema.Draft202012Validator(schema).validate(manifest)
     assert re.fullmatch(r'\d+\.\d+\.\d+',manifest['version'])
+    assert json.loads((root/'package.json').read_text())['version']==manifest['version']
     interface=manifest['extensions']['com.openai']['interface']
     assert len(interface['shortDescription'])<=30
     assert isinstance(interface['capabilities'],list)
@@ -22,6 +23,7 @@ def check(root):
     server=mcp['mcpServers']['cyclo-firmware']
     assert server['env']['CYCLO_PLUGIN_ENABLE_HARDWARE']=='0'
     assert (root/'modules/firmware/launch.mjs').is_file()
+    assert mcp['mcpServers']['cyclo-products']['env']['CYCLO_PRODUCTS_ENABLE_HARDWARE']=='0'
     names=[]; links=0
     for skill in sorted((root/'skills').iterdir()):
         entry=skill/'SKILL.md'
@@ -37,8 +39,8 @@ def check(root):
         assert ui['interface']['display_name']
         assert 25<=len(ui['interface']['short_description'])<=64
         assert '$'+skill.name in ui['interface']['default_prompt']
-    expected={'ai-sapiens-docs','ai-sapiens-operation','ai-sapiens-connectivity','ai-sapiens-control','ai-sapiens-motion-sources','ai-sapiens-diagnostics','ai-sapiens-sim2real','ai-sapiens-video-mimic','ai-sapiens-walking','cyclo','cyclo-firmware'}
-    assert set(names)==expected and len(names)==11
+    expected={'ai-sapiens-docs','ai-sapiens-operation','ai-sapiens-connectivity','ai-sapiens-control','ai-sapiens-motion-sources','ai-sapiens-diagnostics','ai-sapiens-sim2real','ai-sapiens-video-mimic','ai-sapiens-walking','cyclo','cyclo-firmware','robotis-expert','robotis-integrate','dynamixel-expert'}
+    assert set(names)==expected and len(names)==14
     index=json.loads((root/'references/manual-index.json').read_text())
     assert len(index['pages'])==34
     assert len({p['id'] for p in index['pages']})==34

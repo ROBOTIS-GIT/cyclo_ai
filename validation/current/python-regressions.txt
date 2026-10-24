@@ -23,8 +23,13 @@ test_modified_config_rejected (test_provenance.ProvenanceTests.test_modified_con
 test_modified_policy_rejected (test_provenance.ProvenanceTests.test_modified_policy_rejected) ... ok
 test_new_manifest_cannot_prove_origin (test_provenance.ProvenanceTests.test_new_manifest_cannot_prove_origin) ... ok
 test_wrong_run_and_kind (test_provenance.ProvenanceTests.test_wrong_run_and_kind) ... ok
+test_compatibility_is_not_runtime_certification (test_robotis_sources.Sources.test_compatibility_is_not_runtime_certification) ... ok
+test_discovery_rejects_untrusted_and_fragment_links (test_robotis_sources.Sources.test_discovery_rejects_untrusted_and_fragment_links) ... ok
+test_inventory_distinguishes_discovery_and_review (test_robotis_sources.Sources.test_inventory_distinguishes_discovery_and_review) ... ok
+test_repositories_are_metadata_only (test_robotis_sources.Sources.test_repositories_are_metadata_only) ... ok
+test_source_hashes_are_only_byte_evidence (test_robotis_sources.Sources.test_source_hashes_are_only_byte_evidence) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 0.080s
+Ran 30 tests in 0.081s
 
 OK

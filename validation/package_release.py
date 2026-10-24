@@ -6,7 +6,7 @@ version=json.loads((ROOT/'plugin.json').read_text())['version']
 out=ROOT/'artifacts'/f'cyclo-plugin-{version}.zip';out.parent.mkdir(exist_ok=True)
 def include(p):
  parts=p.relative_to(ROOT).parts
- return not any(x in {'.git','node_modules','artifacts','__pycache__'} or x.startswith('.mock-tests-') for x in parts) and not (p.suffix=='.pyc') and not (p.name.startswith('.env'))
+ return not any(x in {'.git','node_modules','artifacts','__pycache__','dist'} or x.startswith('.mock-tests-') for x in parts) and not (p.suffix=='.pyc') and not (p.name.startswith('.env'))
 files=[]
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
  for p in sorted(ROOT.rglob('*')):

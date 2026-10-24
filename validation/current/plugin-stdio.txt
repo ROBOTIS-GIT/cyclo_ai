@@ -1,6 +1,6 @@
-✔ packaged launcher legacy: initialize/list/capabilities and no hardware access (140.731979ms)
-✔ packaged launcher auto: initialize/list/capabilities and no hardware access (261.39619ms)
-✔ configured dry-run uses upstream argv without a CLI/OS/device call (128.497623ms)
+✔ packaged launcher legacy: initialize/list/capabilities and no hardware access (148.695302ms)
+✔ packaged launcher auto: initialize/list/capabilities and no hardware access (260.230071ms)
+✔ configured dry-run uses upstream argv without a CLI/OS/device call (132.132126ms)
 ℹ tests 3
 ℹ suites 0
 ℹ pass 3
@@ -8,4 +8,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 623.6042
+ℹ duration_ms 628.102738

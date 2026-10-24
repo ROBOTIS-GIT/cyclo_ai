@@ -4,9 +4,24 @@
     "cyclo-firmware": {
       "type": "stdio",
       "command": "node",
-      "args": ["${PLUGIN_ROOT}/modules/firmware/launch.mjs"],
+      "args": [
+        "${PLUGIN_ROOT}/modules/firmware/launch.mjs"
+      ],
       "cwd": "${PLUGIN_ROOT}",
-      "env": {"CYCLO_PLUGIN_ENABLE_HARDWARE": "0"}
+      "env": {
+        "CYCLO_PLUGIN_ENABLE_HARDWARE": "0"
+      }
+    },
+    "cyclo-products": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/modules/dynamixel/server.mjs"
+      ],
+      "cwd": "${PLUGIN_ROOT}",
+      "env": {
+        "CYCLO_PRODUCTS_ENABLE_HARDWARE": "0"
+      }
     }
   }
 }

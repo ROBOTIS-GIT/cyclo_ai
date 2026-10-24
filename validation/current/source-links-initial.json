@@ -1,0 +1,2856 @@
+{
+  "checkedOn": "2026-10-24",
+  "kind": "public page retrieval; not semantic or runtime verification",
+  "total": 359,
+  "retrieved": 353,
+  "results": [
+    {
+      "url": "https://control.ros.org/jazzy/doc/ros2_control/hardware_interface/doc/hardware_components_userdoc.html",
+      "status": 200,
+      "finalUrl": "https://control.ros.org/jazzy/doc/ros2_control/hardware_interface/doc/hardware_components_userdoc.html",
+      "sampleBytes": 12791,
+      "sampleSha256": "ad7e2d3eb395b2ea4b12d2e62b29fc3f639af1020f553af4be17101df4251885",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/common/contact",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/common/contact/",
+      "sampleBytes": 43365,
+      "sampleSha256": "979c2ed56974095b647d8298ad07f9d2a8c7f843d791395264093b867cf667a0",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/common/ecosystem",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/common/ecosystem/",
+      "sampleBytes": 65613,
+      "sampleSha256": "ed3b88b092570563ff8d3dfae339a6c13ee7c77fc6a4c7d19a1d92a5887a69cc",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/common/opensource",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/common/opensource/",
+      "sampleBytes": 49155,
+      "sampleSha256": "60960c1735c38a7d6741b75efda58e0e36ad2cd2aad8ecb811a73c9a81d07574",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/",
+      "sampleBytes": 315077,
+      "sampleSha256": "461f8588da5aab10fa9fdac7c5cf7629b61e0c4a078ead9f8d22f916f78de215",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/ax_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/ax_series/",
+      "sampleBytes": 75083,
+      "sampleSha256": "d8f8895a4cc43ecca559a488b12d22b1e6ee7167bf68b98ddd5d07af95bd3016",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dx_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/dx_series/",
+      "sampleBytes": 60546,
+      "sampleSha256": "9958da2dbe4591d1e7499744e8f295669f44db086346d2fa979c97cbe596983b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dyd/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/dyd/",
+      "sampleBytes": 133653,
+      "sampleSha256": "b789984dc4c88291a7bfb8f0aee2ac957b0471e775919becc68f22bb126dbd41",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/ex_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/ex_series/",
+      "sampleBytes": 49058,
+      "sampleSha256": "95df43d10854cde0c9ce16dd4ede5a311033efa87302d39f5546aab467fc0628",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/",
+      "sampleBytes": 69189,
+      "sampleSha256": "adb7f7f24007d44553fdb276b8aa75b3eaa7b76d00264cbc0791eeb22e3da0af",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/p_series/",
+      "sampleBytes": 63282,
+      "sampleSha256": "6736a20890e3b5ad438bbb99e480370fc7dfbda9d95b591a2379c8f36bb847f8",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/",
+      "sampleBytes": 74855,
+      "sampleSha256": "662a821ea5290d1e13e2a9286257d9420e42cdf4a0324702aa19ccbe5b6365cd",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/rx_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/rx_series/",
+      "sampleBytes": 70518,
+      "sampleSha256": "e695058a84fbfb0f0a6e6253b04151913c8569cfb6f6b154f857333aa42893ea",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/x_series/",
+      "sampleBytes": 64151,
+      "sampleSha256": "fdfa7b4a209fda04787e00476ae49f53c09398c50d59a13284cb023b581714d8",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/model_reference/y_series/",
+      "sampleBytes": 67612,
+      "sampleSha256": "9c1e59d13ab27c75668d01df86942db6584b44ae9ff1a65b2ffdecea259d331f",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/protocol/crc",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/protocol/crc/",
+      "sampleBytes": 95824,
+      "sampleSha256": "109116bdf1922785cd5a2e4909f6b25957ad57cd5f26f3149ea250e7a7c16639",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/protocol/protocol1",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/protocol/protocol1/",
+      "sampleBytes": 115311,
+      "sampleSha256": "d8c134de8061172f013f0d225efea1efc8388bdc78378885d50c7cbdca6f8667",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/protocol/protocol2",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/dxl/protocol/protocol2/",
+      "sampleBytes": 211018,
+      "sampleSha256": "74ae6e92c8336b09fa1d82c659fb77522cd474a940011768e0f0713073b3eb7c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/edu/bioloid/premium",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/edu/bioloid/premium/",
+      "sampleBytes": 524856,
+      "sampleSha256": "bc8adaebd26ab569ff04ff6e5d5c3dd59deb40801b9c6c60f4d552d096f1fb10",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/edu/engineer/kit1",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/edu/engineer/kit1/",
+      "sampleBytes": 294935,
+      "sampleSha256": "3a550c6cf57c10522ae4da42f09b9bacef0661c35a2edd4880395ba191295024",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/edu/engineer/kit2_introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/edu/engineer/kit2_introduction/",
+      "sampleBytes": 137838,
+      "sampleSha256": "83026210535abf5646f3e64eef4ccb3968748a9f0548920bace8ab95c95c8991",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/cm_510_530_fuse",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/cm_510_530_fuse/",
+      "sampleBytes": 62165,
+      "sampleSha256": "19d4b339400eba4c3261aad9a7fe9e1145f2c07630732a19736426691ae2b4a0",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/download_task_code",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/download_task_code/",
+      "sampleBytes": 43394,
+      "sampleSha256": "039e33d9ea5c52a4652b3e4a6735aa70a5dae644b3ab723eb9b496a155ff223b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/dxl-selection-guide",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/dxl-selection-guide/",
+      "sampleBytes": 115969,
+      "sampleSha256": "9a0e820da0e9a05fa2759bbaa159da435eaca606b1c6cc66766c65a760d6e3c8",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/faq_dynamixel",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/faq_dynamixel/",
+      "sampleBytes": 56332,
+      "sampleSha256": "696bf2392b543c29d1d89b5f38de475c55682ae27f0fbdade6541f73141e14e3",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/faq_general",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/faq_general/",
+      "sampleBytes": 46901,
+      "sampleSha256": "bb2de0ac11616f06f3b9a5329fba46a386f64b319fb739803cb6a4b1568af611",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/faq_parts",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/faq_parts/",
+      "sampleBytes": 43288,
+      "sampleSha256": "78168d7292ab9c6d66d6a2c7222b5602c5f6354c7deeae56fb4f846c1281c53d",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/faq_platform",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/faq_platform/",
+      "sampleBytes": 48771,
+      "sampleSha256": "450516de410857051c9ab4dc01c5224d40a01d36c0a1a3b288d25278b67236fe",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/faq_software",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/faq_software/",
+      "sampleBytes": 44413,
+      "sampleSha256": "bf9bb27cb3033159cbd688cd6851857ebdb37532b621a2bbb7d299494aea18e2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/faq_steam",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/faq_steam/",
+      "sampleBytes": 124280,
+      "sampleSha256": "2d01e15f44a8044933bb51d77df7f6820a098fc597612ea3d4c43c13c2a81575",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/faq/op",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/faq/op/",
+      "sampleBytes": 43808,
+      "sampleSha256": "5a2752ef30a0790c87256340f7fcda734c3c6ac9cba23f0f5cea6665e1392e30",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/controller/cm-530",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/controller/cm-530/",
+      "sampleBytes": 175988,
+      "sampleSha256": "40ec2ee6fc45131b4f61dde787ee27f29d86ad083c1f0da980b10cab8ed3465e",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/controller/cm-550",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/controller/cm-550/",
+      "sampleBytes": 220493,
+      "sampleSha256": "2329d8f0fbee48f516d6432435f54f8077aa5068d11447a3c0c775926fa52058",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/controller/controller_compatibility",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/controller/controller_compatibility/",
+      "sampleBytes": 90277,
+      "sampleSha256": "a34b4add046d06f7f197780eaa0cf6e797c172ab3773225be56b85b51a22ef2f",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/controller/opencr10",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/controller/opencr10/",
+      "sampleBytes": 578588,
+      "sampleSha256": "d012345451ae2a44640d3541894101c845339b6b2d91eff3ac84560ff73e00e6",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/controller/openrb-150",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/controller/openrb-150/",
+      "sampleBytes": 144100,
+      "sampleSha256": "2c5a90cc8075b922dcc4ae34d5c3a37889d44cc1517000afb599625ca80895c2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/interface/dxl_bridge",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/interface/dxl_bridge/",
+      "sampleBytes": 75472,
+      "sampleSha256": "baf0fb1df884cff2ccdf286f6519aa51b1957e13ed0ea9bf2667dda7be2c4871",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/interface/dynamixel_shield",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/interface/dynamixel_shield/",
+      "sampleBytes": 166752,
+      "sampleSha256": "f726f344eb7ff3f2239dbcd566b1dc30a2c5d92347d14438dbb466c18798709a",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/interface/mkr_shield",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/interface/mkr_shield/",
+      "sampleBytes": 91243,
+      "sampleSha256": "ba2a0dc16f99df2ffd01e42b5f27a44a83e9b1998b4863611a2637b50c59ca53",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/interface/u2d2",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/interface/u2d2/",
+      "sampleBytes": 156057,
+      "sampleSha256": "4def8077527f876af149fa81120f38761335a259263c47311ffe9c9ced870f7c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/parts/interface/u2d2_power_hub",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/parts/interface/u2d2_power_hub/",
+      "sampleBytes": 79230,
+      "sampleSha256": "eb4008bbe94f5714932cb40a0b2a7d418d401e533b387e010eab65557c48c49b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/arduino_ide",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/arduino_ide/",
+      "sampleBytes": 105763,
+      "sampleSha256": "9f7d2abd2808a14c35572e20062139d9b813e169dd93b4bbc6d55a6e41a843aa",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/cyclo",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/cyclo/",
+      "sampleBytes": 43225,
+      "sampleSha256": "467a30dde291e93d374dd98efeb0dab7415d9220cf54cae4bd39c0ba2f0648ec",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/dynamixel_easy_sdk",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/dynamixel_easy_sdk/",
+      "sampleBytes": 43396,
+      "sampleSha256": "4ca7517bd9d07f49965b7bb3ecf9348f3eb9d41e2c1ca7cd22849c7ff286f439",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/dynamixel_sdk",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/dynamixel_sdk/",
+      "sampleBytes": 45356,
+      "sampleSha256": "7ced879935b0ba5e7a499283995a11c7d3de8fede882f039d582159a4d5c64cf",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/dynamixel_wizard_2_0/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/dynamixel_wizard_2_0/introduction/",
+      "sampleBytes": 64899,
+      "sampleSha256": "9bd6dd763ab7f3fbad2bf33b67de4c163d9006c81119eebde058b40793061cdc",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/dynamixel_workbench",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/dynamixel_workbench/",
+      "sampleBytes": 362082,
+      "sampleSha256": "4007161bf9d0d45d828212be6cd7f29d1a2421bd52866b1958e406aac2d4912c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/overview",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/overview/",
+      "sampleBytes": 48871,
+      "sampleSha256": "6bb9d0cc4e8e19c2c80b3872be838f85330e6855c31ab65d01e19005b564bb0e",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_manager",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_manager/",
+      "sampleBytes": 273148,
+      "sampleSha256": "0c7994ffa0d50845d2fcd1f9b6dd678d0aae352c933b2fc0599a30abd140f899",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_motion",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_motion/",
+      "sampleBytes": 686287,
+      "sampleSha256": "1ea27918a9acf2f025d1607732489ad408a08be3d73d18e30833172aa9e226bb",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_task/getting_started",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_task/getting_started/",
+      "sampleBytes": 58020,
+      "sampleSha256": "15f18262a5dee7ecd82883b0af1101d682b489df6f8dfa2a64d0a992b8db738f",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_manager_2_0",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_manager_2_0/",
+      "sampleBytes": 67393,
+      "sampleSha256": "0cc0ce68f6641498a5716ddba0122800d1fd39e809f4c9c31b06e05c015268a1",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_task_3_0",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_task_3_0/",
+      "sampleBytes": 46811,
+      "sampleSha256": "95b1fb45eda776081e4a33a0f7f872dd9cb59f2dd66a47b1b0cd1b0bfe34b526",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_task_3_0/motion_programming",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_task_3_0/motion_programming/",
+      "sampleBytes": 64059,
+      "sampleSha256": "016ce98e7abb7b6b2b8c00c86f0f4f9071747040799aa119a89199e442987960",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_task_3_0/python_api",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_task_3_0/python_api/",
+      "sampleBytes": 92808,
+      "sampleSha256": "85151d34a36b62120d425f6ba8cec3a99c3f6b47842446d64f42b7bce240e5b4",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/software/rplus_task_3_0/task_programming",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/software/rplus_task_3_0/task_programming/",
+      "sampleBytes": 50646,
+      "sampleSha256": "791a3cc4d2e864cad52ac2fca495a7476bbcf81e1df98e56be9cfc23e4421a22",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/cycloctl",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/cycloctl/",
+      "sampleBytes": 72648,
+      "sampleSha256": "7822c5152a31f70d3807545216cf7b6ff8fcf297bfabd618330c72a40cb2902b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/cycloctl/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/cycloctl/",
+      "sampleBytes": 72648,
+      "sampleSha256": "7822c5152a31f70d3807545216cf7b6ff8fcf297bfabd618330c72a40cb2902b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/dynamixel_q_impedance_control",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/dynamixel_q_impedance_control/",
+      "sampleBytes": 57524,
+      "sampleSha256": "f7fa829da3970421fb8c2a70e15269b11074cd4cfb582cb1de0ecbdb4b9b95f3",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/dynamixel_q_impedance_control/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/dynamixel_q_impedance_control/",
+      "sampleBytes": 57524,
+      "sampleSha256": "f7fa829da3970421fb8c2a70e15269b11074cd4cfb582cb1de0ecbdb4b9b95f3",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/networking",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/networking/",
+      "sampleBytes": 72529,
+      "sampleSha256": "d0a79a1947dcc1eb73db439c8adb11a18f1764364059094072c94ca276ff896a",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/networking/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/networking/",
+      "sampleBytes": 72529,
+      "sampleSha256": "d0a79a1947dcc1eb73db439c8adb11a18f1764364059094072c94ca276ff896a",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_communication",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_communication/",
+      "sampleBytes": 62952,
+      "sampleSha256": "eff4c7dde08b17e073d82a0e00866068e909b301dd2b90a75a7b4f40fda1cfd6",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_communication/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_communication/",
+      "sampleBytes": 62952,
+      "sampleSha256": "eff4c7dde08b17e073d82a0e00866068e909b301dd2b90a75a7b4f40fda1cfd6",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_package_structure/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_package_structure/",
+      "sampleBytes": 69006,
+      "sampleSha256": "b81196b2f8c1f1f6d3c07fcf32da7411380708d79de59a8e0642a69227a6499f",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/sim2real/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/sim2real/",
+      "sampleBytes": 97794,
+      "sampleSha256": "258a9f771c3479cb54f72751058e6239c7926397cc2131b9450581ceb82e4ce9",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/sim2sim/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/sim2sim/",
+      "sampleBytes": 66828,
+      "sampleSha256": "469be1e2bd45ecfacf15630bdfec450129c61846e17d0492ec7da51e3f53b577",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ssh",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ssh/",
+      "sampleBytes": 53190,
+      "sampleSha256": "ec222fea42d967dd16e19370c5cc3cc567b602f07b532632636fb3885160723e",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ssh/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ssh/",
+      "sampleBytes": 53190,
+      "sampleSha256": "ec222fea42d967dd16e19370c5cc3cc567b602f07b532632636fb3885160723e",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/zenoh_ros2_sdk",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/zenoh_ros2_sdk/",
+      "sampleBytes": 97273,
+      "sampleSha256": "cc6ee3a9df270dd2c5fe910c6f43a961ca1dd79048fb951f70e38de1b42b006b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/zenoh_ros2_sdk/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/zenoh_ros2_sdk/",
+      "sampleBytes": 97273,
+      "sampleSha256": "cc6ee3a9df270dd2c5fe910c6f43a961ca1dd79048fb951f70e38de1b42b006b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/cyclo_intelligence",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/cyclo_intelligence/",
+      "sampleBytes": 51587,
+      "sampleSha256": "d5c80ea7442a7a5e2b1dff085d158370620a75fc78da83de1bf4197dae6c3fe7",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/cyclo_intelligence/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/cyclo_intelligence/",
+      "sampleBytes": 51587,
+      "sampleSha256": "d5c80ea7442a7a5e2b1dff085d158370620a75fc78da83de1bf4197dae6c3fe7",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/lerobot",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/lerobot/",
+      "sampleBytes": 51447,
+      "sampleSha256": "883bde735f0133df818496dac12c32847c4e6a8e233f74a453defbe2644f0d3d",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/lerobot/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/lerobot/",
+      "sampleBytes": 51447,
+      "sampleSha256": "883bde735f0133df818496dac12c32847c4e6a8e233f74a453defbe2644f0d3d",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/overview",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/overview/",
+      "sampleBytes": 52393,
+      "sampleSha256": "42492eb45980333cd0db28be37c4fda9c5bb082baf3d51d1b559c7f89161a1e2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/overview/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/overview/",
+      "sampleBytes": 52393,
+      "sampleSha256": "42492eb45980333cd0db28be37c4fda9c5bb082baf3d51d1b559c7f89161a1e2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/introduction/",
+      "sampleBytes": 59882,
+      "sampleSha256": "2a92b0379359541299784e71354372d80fa2fdb230ebb3a44391deb57ba6c0bc",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/introduction/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/introduction/",
+      "sampleBytes": 59882,
+      "sampleSha256": "2a92b0379359541299784e71354372d80fa2fdb230ebb3a44391deb57ba6c0bc",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x/",
+      "sampleBytes": 82582,
+      "sampleSha256": "5c52665004fb502ad69f1dbda42b25e09261f1b6aed5cee45e7358a2a6bc7ba8",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x/",
+      "sampleBytes": 82582,
+      "sampleSha256": "5c52665004fb502ad69f1dbda42b25e09261f1b6aed5cee45e7358a2a6bc7ba8",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/gmr",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/gmr/",
+      "sampleBytes": 51492,
+      "sampleSha256": "64e289c907c6b34259ec525bd037c850b7b49108b0cd98a3135b1337d3176d0c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/gmr/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/gmr/",
+      "sampleBytes": 51492,
+      "sampleSha256": "64e289c907c6b34259ec525bd037c850b7b49108b0cd98a3135b1337d3176d0c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/kimodo/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/kimodo/",
+      "sampleBytes": 93106,
+      "sampleSha256": "7875a61c83451ca6b6cc8ac94441b9b9b9f912ba0be78119dafbd569387179f1",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_retargeter/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_retargeter/",
+      "sampleBytes": 143119,
+      "sampleSha256": "99f10b67d13cbf98476079344ef771b3e4551f670435f4821d346118416809ef",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_x",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_x/",
+      "sampleBytes": 88981,
+      "sampleSha256": "12889e62a2ea7a558987785e183ecbc290d03cefddbf81f6f60f2567b2555ff3",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_x/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_x/",
+      "sampleBytes": 88981,
+      "sampleSha256": "12889e62a2ea7a558987785e183ecbc290d03cefddbf81f6f60f2567b2555ff3",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/quick_start_guide/operation_guide/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/quick_start_guide/operation_guide/",
+      "sampleBytes": 62177,
+      "sampleSha256": "7439f3aa023fe5001f58dc4363a193f0ba41196e014dcdb28458ca88136f7fb4",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/quick_start_guide/using_remote_controller/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/quick_start_guide/using_remote_controller/",
+      "sampleBytes": 77830,
+      "sampleSha256": "22a90802f719f2ee1447a4b8784ff01e538a983e9cb6006af37e7f75ad57e674",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/",
+      "sampleBytes": 65331,
+      "sampleSha256": "4ee7c24896bf07c824e7596ab2b7d8bd24fa909455768ee6b240bc5d1e83123e",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/locomotion",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/locomotion/",
+      "sampleBytes": 64979,
+      "sampleSha256": "e2021773c40debbf4b02875befa0728cd3d34f9aa2c59e1e8bd29bb2bf432946",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/locomotion/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/locomotion/",
+      "sampleBytes": 64979,
+      "sampleSha256": "e2021773c40debbf4b02875befa0728cd3d34f9aa2c59e1e8bd29bb2bf432946",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic/",
+      "sampleBytes": 74263,
+      "sampleSha256": "53b0e2677a3b6e0cf1cdffb7a8e69c422722066f7ea93b57a44b2792db779ec0",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic/",
+      "sampleBytes": 74263,
+      "sampleSha256": "53b0e2677a3b6e0cf1cdffb7a8e69c422722066f7ea93b57a44b2792db779ec0",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/",
+      "sampleBytes": 63114,
+      "sampleSha256": "dd52254719d736dbb7746b12d8c95a975cd3b1c0927c0eaede0f804fa04c5886",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/locomotion",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/locomotion/",
+      "sampleBytes": 64364,
+      "sampleSha256": "7882a26cc15e26afe1b72c4219314e4b0e3e0f44667df6a8e6ae9804a2720af9",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/locomotion/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/locomotion/",
+      "sampleBytes": 64364,
+      "sampleSha256": "7882a26cc15e26afe1b72c4219314e4b0e3e0f44667df6a8e6ae9804a2720af9",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic/",
+      "sampleBytes": 77012,
+      "sampleSha256": "40191fc05e4f1083f87ff54a29c76d870cb0228f6e1e046b80126a683a3aa4c9",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic/",
+      "sampleBytes": 77012,
+      "sampleSha256": "40191fc05e4f1083f87ff54a29c76d870cb0228f6e1e046b80126a683a3aa4c9",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/open_source",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/open_source/",
+      "sampleBytes": 72944,
+      "sampleSha256": "b892e0fd6950ea17941bd74c3689f715b981c5f131bc311b7e3dd678d8d0d445",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/open_source/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/open_source/",
+      "sampleBytes": 72944,
+      "sampleSha256": "b892e0fd6950ea17941bd74c3689f715b981c5f131bc311b7e3dd678d8d0d445",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/release_notes",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/release_notes/",
+      "sampleBytes": 51871,
+      "sampleSha256": "7edd6ba8374b30bc01e4212a9ec1628c71d7472fbca4f588a6f98104c0f8f30b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/release_notes/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/release_notes/",
+      "sampleBytes": 51871,
+      "sampleSha256": "7edd6ba8374b30bc01e4212a9ec1628c71d7472fbca4f588a6f98104c0f8f30b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/support",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/support/",
+      "sampleBytes": 51723,
+      "sampleSha256": "df3bac0795dbd0a3faacee9ff13c50de2c049130738e44213b54439a0b3fb359",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/support/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/support/",
+      "sampleBytes": 51723,
+      "sampleSha256": "df3bac0795dbd0a3faacee9ff13c50de2c049130738e44213b54439a0b3fb359",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/",
+      "sampleBytes": 52184,
+      "sampleSha256": "883666e2a72141a55298ab46a1a5971cdfd35e51a7ddd0e6dc24eaae94369c3c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/building_humanoid_skills",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/building_humanoid_skills/",
+      "sampleBytes": 109035,
+      "sampleSha256": "0008c9487328b52d28219f6a4fe88afe7035512bb66379da439cabdc6f6035f2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/building_humanoid_skills/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/building_humanoid_skills/",
+      "sampleBytes": 109035,
+      "sampleSha256": "0008c9487328b52d28219f6a4fe88afe7035512bb66379da439cabdc6f6035f2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/electrical_system",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/specifications/electrical_system/",
+      "sampleBytes": 59189,
+      "sampleSha256": "6ef980410554d205872ed14d3075c594c1f00b3090bcca82f6ccea808524726a",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/electrical_system/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/specifications/electrical_system/",
+      "sampleBytes": 59189,
+      "sampleSha256": "6ef980410554d205872ed14d3075c594c1f00b3090bcca82f6ccea808524726a",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/hardware",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/specifications/hardware/",
+      "sampleBytes": 63278,
+      "sampleSha256": "762cc1a7a1a9ab5ff052317d6c8f69fd81a233c5942962e1b6eef3d4714f46d7",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/hardware/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/specifications/hardware/",
+      "sampleBytes": 63278,
+      "sampleSha256": "762cc1a7a1a9ab5ff052317d6c8f69fd81a233c5942962e1b6eef3d4714f46d7",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/software",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/specifications/software/",
+      "sampleBytes": 61810,
+      "sampleSha256": "33cacdc995f0296b44f0bc395bcd410ccb12d3510af74397839e395b24a67ebf",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/software/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/specifications/software/",
+      "sampleBytes": 61810,
+      "sampleSha256": "33cacdc995f0296b44f0bc395bcd410ccb12d3510af74397839e395b24a67ebf",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/video_gallery",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/video_gallery/",
+      "sampleBytes": 57956,
+      "sampleSha256": "7d49a5313c8375f8913d51de005f5404a3125d31ab93d71fea6503f1e1869372",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/video_gallery/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aisapiens/video_gallery/",
+      "sampleBytes": 57956,
+      "sampleSha256": "7d49a5313c8375f8913d51de005f5404a3125d31ab93d71fea6503f1e1869372",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/aiworker/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/aiworker/introduction/",
+      "sampleBytes": 61737,
+      "sampleSha256": "6869e32835a39d9bb117106cec419935ba47f4472e40caebf94bfdd86e03465b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/hx5_d20/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/hx5_d20/introduction/",
+      "sampleBytes": 48684,
+      "sampleSha256": "08ebc8135d437f83c661f93f242567d5273f5f31baac47e244f1974c76f9c0e5",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/hx_friends/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/hx_friends/",
+      "sampleBytes": 56976,
+      "sampleSha256": "247d367a3ab92b59118f5d7ad4401c72ba7ee271ba9e20b0bf0cd042218ef971",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/omx/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/omx/introduction/",
+      "sampleBytes": 58073,
+      "sampleSha256": "72e2d0bce4f8aeba0337ededc15e8f66f04830ac48af14bb1d3dbc848113b93c",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/omy/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/omy/introduction/",
+      "sampleBytes": 57373,
+      "sampleSha256": "70f357b3d6c861d49542a709d693e9728491d1dcbee1a7f9bd4c0ba10a353c26",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/op3/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/op3/introduction/",
+      "sampleBytes": 71123,
+      "sampleSha256": "55237ef7a4fe9ddbf011803a0e2e8e5a5572a25c5f7c73b20ce16042bbb7f098",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/openmanipulator_p/overview",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/openmanipulator_p/overview/",
+      "sampleBytes": 47428,
+      "sampleSha256": "87ffde643a206b1596881338bd29a7060d1be3d2582efac7eaa23cb204e96ad3",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/openmanipulator_x/overview",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/openmanipulator_x/overview/",
+      "sampleBytes": 52972,
+      "sampleSha256": "3d467674a74d4022c231954ae09a9ff68cf63868af7c91d0fea1a1039569051f",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/rh_p12_rn/",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/rh_p12_rn/",
+      "sampleBytes": 230071,
+      "sampleSha256": "d70e04d8b871df186ab1e54bed8eadbce39842197a08b62c6bb611351f850d8b",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/rh_p12_rn/rh_p12_rn_ur",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/rh_p12_rn/rh_p12_rn_ur/",
+      "sampleBytes": 40317,
+      "sampleSha256": "d777fd0822d1d934fac8cd669a26bf0d463bc152c40d2847f2e937d59e6bcf98",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/thormang3/introduction",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/thormang3/introduction/",
+      "sampleBytes": 57599,
+      "sampleSha256": "d5c29e1f480d57a66597f2ad932d8d92f954cd1436aee3713665b26af4a72ac2",
+      "truncated": false
+    },
+    {
+      "url": "https://docs.robotis.com/docs/systems/turtlebot3/overview",
+      "status": 200,
+      "finalUrl": "https://docs.robotis.com/docs/systems/turtlebot3/overview/",
+      "sampleBytes": 84053,
+      "sampleSha256": "0b208fe361b65b743c4ecea24c66637acadf850167d3530a96d7191f45cb53e3",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/all-dyd/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/all-dyd/",
+      "sampleBytes": 232020,
+      "sampleSha256": "f6da86e6345c13e9ce673ac56bb55abded1e1ba72c90d42620d424dcdd8282ad",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/all-dyd/dyd-11/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/all-dyd/dyd-11/",
+      "sampleBytes": 202668,
+      "sampleSha256": "83bcd210821bc1e2271e99a93d7e20466f763936f9ecf45133604546289de0a7",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/all-dyd/dyd-14/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/all-dyd/dyd-14/",
+      "sampleBytes": 202939,
+      "sampleSha256": "8db3a93f5cc31ecd15419eddf23eb3b5a0fbdb55b2322ad12e08ec70271e9e3a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/all-dyd/dyd-17/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/all-dyd/dyd-17/",
+      "sampleBytes": 202864,
+      "sampleSha256": "df42817c144f957fe8a58ad1c53bc74e9e004df319ff4a977816f7fbb4d6d0cf",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/",
+      "sampleBytes": 264635,
+      "sampleSha256": "b1314eb58659d1f0a179dcfe23eefb9af429521a947401cb601da091388c2520",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/ax/ax-12w/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/ax/ax-12w/",
+      "sampleBytes": 262205,
+      "sampleSha256": "29a94fba7424891e337cedd6e39550ebc39180d7078d890619495c69e4398cd5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/ax/ax-18a/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/ax/ax-18a/",
+      "sampleBytes": 263852,
+      "sampleSha256": "2e0be2232ba02e93c3dc65320deb9c8a5e74f3cb4b99e2a510269b92bc88841c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/dx/dx-113/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/dx/dx-113/",
+      "sampleBytes": 260834,
+      "sampleSha256": "5334cba712e6ca30df7c93d2ddb70fc07cefc2c9a8407bd399348d5b54e3edd5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/dx/dx-116/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/dx/dx-116/",
+      "sampleBytes": 260722,
+      "sampleSha256": "cc3767b77f3d660f833807d57fc0a3ed426c7f30f0695b9ba5c45fb8942f8854",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/dx/dx-117/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/dx/dx-117/",
+      "sampleBytes": 260846,
+      "sampleSha256": "8c71775a4023ae377070bb3ac49c189c94bfd4876abe8e3cf7d132ec661af55a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/dxl-quick-start-guide/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/dxl-quick-start-guide/",
+      "sampleBytes": 227324,
+      "sampleSha256": "71646a2954697801f214df996de64ccfba65d22c2a26bf67559f95cb6ae4b1a7",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/ex/ex-106+/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/ex/ex-106+/",
+      "sampleBytes": 269182,
+      "sampleSha256": "19ac5d0ed39a3665f13a57d66f5b7c9cc2b8a19c07af079e0d1d281f49d6d36e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/",
+      "sampleBytes": 196874,
+      "sampleSha256": "ebff7b72d27a97ba7f82cb1fcb9e23eadc1f84c53dae97aaa99d657857936a75",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-106-2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-106-2/",
+      "sampleBytes": 356510,
+      "sampleSha256": "169ae42043a12093878d9c12800070949b1cd144d3688f90433221a947eff3c5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-106/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-106/",
+      "sampleBytes": 292381,
+      "sampleSha256": "b3168e5a7603b024031c02c03f78d475a6705c0f9c81490398cca472f312a63e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-12w/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-12w/",
+      "sampleBytes": 268240,
+      "sampleSha256": "4c2f2355f804ca876672e2bab574b6ac9df1c70d7c1a86396557175b58ba1ce5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-28-2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-28-2/",
+      "sampleBytes": 346501,
+      "sampleSha256": "bdd18eca3dc96dff3b36c61585dc2303c546353c4a28cef84a466f95370d1bf2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-28/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-28/",
+      "sampleBytes": 280596,
+      "sampleSha256": "5b8ef86170dd4ba06bdafd48ecb7449a3278715f26ea6b215a7abf7cd3527aa4",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-64-2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-64-2/",
+      "sampleBytes": 354233,
+      "sampleSha256": "6f33efc9f3030527d67f0062ec9c442c2dd2291c5de771a44101351765bd9441",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/mx/mx-64/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/mx/mx-64/",
+      "sampleBytes": 284986,
+      "sampleSha256": "819452bf2777d9c332c5e48f50da10d721d4c966df96507ee198cd678e3276e6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/",
+      "sampleBytes": 202336,
+      "sampleSha256": "18510640695fb3723dc873309abb1706a6a000b3044638b506706c53d19618f2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/ph42-020-s300-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/ph42-020-s300-r/",
+      "sampleBytes": 354077,
+      "sampleSha256": "98ac02dd13a46a232901fcadcf35cbfa465bad8d7e97f9902fe398918a013e51",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/ph54-100-s500-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/ph54-100-s500-r/",
+      "sampleBytes": 354229,
+      "sampleSha256": "42c3e00fe57a0d9651e3894500dd5cf324d25d0629593333c88c1e304d79177e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/ph54-200-s500-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/ph54-200-s500-r/",
+      "sampleBytes": 354378,
+      "sampleSha256": "c306ebe9795bd5a96bd5529748409b0e7cceec4269993e063bbe92736995e4fa",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/pm42-010-s260-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/pm42-010-s260-r/",
+      "sampleBytes": 353987,
+      "sampleSha256": "9753a86bce23dbec18a8c4f72036e2a023818540547fb9a0c793fd5af657f237",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/pm54-040-s250-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/pm54-040-s250-r/",
+      "sampleBytes": 354170,
+      "sampleSha256": "b4494dd2bc567ac26046cb2d0489bc3a198b0366717af21c3ba5ef862abdb901",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/p/pm54-060-s250-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/p/pm54-060-s250-r/",
+      "sampleBytes": 354165,
+      "sampleSha256": "8df3516ee2cf3a24639ca5262f104c6b546ae13cf4d33115c015163ebc21462e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/",
+      "sampleBytes": 202704,
+      "sampleSha256": "3baf4ace5da2b2785c97c3db693c371bb6a968290da3729fa7ede32c9e0a0213",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/h42-20-s300-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/h42-20-s300-r/",
+      "sampleBytes": 299966,
+      "sampleSha256": "d11dfa04dd71eaf3817d58004deb13db25bb3ce17ee67abf94284bab8ee05f41",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/h42-20-s300-ra/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/h42-20-s300-ra/",
+      "sampleBytes": 335581,
+      "sampleSha256": "6146e307aa72100def0545eec5bfa427bfc44546ded94c55aa1b6feeaa8a9135",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/h54-100-s500-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/h54-100-s500-r/",
+      "sampleBytes": 300385,
+      "sampleSha256": "734370dfa5cebd13226c1aa1614658c5dcc37fa528c0d9aa8bbdd897fe58544d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/h54-100-s500-ra/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/h54-100-s500-ra/",
+      "sampleBytes": 336008,
+      "sampleSha256": "687212d9aa3c2cf2bc726fd2a011b446135e620d3eb92f3fcbe1cc7e07d7e938",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/h54-200-s500-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/h54-200-s500-r/",
+      "sampleBytes": 300386,
+      "sampleSha256": "4569e25af25fbe98e9a257e5e492716d529d36007ecd9fadc591794fd0d97c61",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/h54-200-s500-ra/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/h54-200-s500-ra/",
+      "sampleBytes": 335968,
+      "sampleSha256": "d0e9d8d856b896df7072abb85f745367e300a14e9cac2eebad6a035953e03d45",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/l42-10-s300-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/l42-10-s300-r/",
+      "sampleBytes": 292123,
+      "sampleSha256": "368e3553b6d33c89955c9123f43da810c7142b8234e0668dda6fdebd9e6fe477",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/l54-30-s400-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/l54-30-s400-r/",
+      "sampleBytes": 299628,
+      "sampleSha256": "baedf8db8bd7e144bc172bda9b43c4b7485f9017ec614b04d10ddf597ffd78c0",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/l54-30-s500-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/l54-30-s500-r/",
+      "sampleBytes": 299628,
+      "sampleSha256": "0474ddb6a0b42cfa6c1ea4cf336ac34944886e8ddcefb1a49f430fcec6cfd5f9",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/l54-50-s290-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/l54-50-s290-r/",
+      "sampleBytes": 299622,
+      "sampleSha256": "ba7dd762d770f58f5ebdbd1feb2d969f2ef0d917b14ed3f26dedf306b85e06a5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/l54-50-s500-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/l54-50-s500-r/",
+      "sampleBytes": 299631,
+      "sampleSha256": "717281963514d522147197d0c5be7b181cafdcf12212bdec9615dccf6600a360",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/m42-10-s260-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/m42-10-s260-r/",
+      "sampleBytes": 299496,
+      "sampleSha256": "5540782b2f60ca43b071572c54d3f3bb067e0032ba7fe2dc442af9b16d06dba0",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/m42-10-s260-ra/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/m42-10-s260-ra/",
+      "sampleBytes": 334701,
+      "sampleSha256": "6ec0f5016ba02198c774d162b694d9b3a959b6ca829c731d93c6d285f8d92086",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/m54-40-s250-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/m54-40-s250-r/",
+      "sampleBytes": 299781,
+      "sampleSha256": "ed83653c390338b689eac979e2a6bf8c1831d3d4ed64d57f529df71115baf674",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/m54-40-s250-ra/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/m54-40-s250-ra/",
+      "sampleBytes": 334854,
+      "sampleSha256": "29387cf0d5be6ec2aa716d2f24bbfd460d4e3f05e0f4c6712aac7004a7cc059a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/m54-60-s250-r/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/m54-60-s250-r/",
+      "sampleBytes": 299785,
+      "sampleSha256": "33a94bb245fb36675d100ef1404f78e6f3fcc6ff978a50373fc581a8fcd27dd8",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/pro/m54-60-s250-ra/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/pro/m54-60-s250-ra/",
+      "sampleBytes": 334855,
+      "sampleSha256": "a3c510ecab4c5aa1feec9210ff0de32cf30ca7754681e505c5489a659daf5505",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/protocol1/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/protocol1/",
+      "sampleBytes": 245922,
+      "sampleSha256": "8d65b87322f05e57feac86cfd824c507b99078003d15f5c332c25d6e27b6baeb",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/protocol2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/protocol2/",
+      "sampleBytes": 330264,
+      "sampleSha256": "e0b32dde396a855b001bf3ff265410a0d5e40b7c8c16679834f80f0686d3ca4a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/rx/rx-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/rx/rx-10/",
+      "sampleBytes": 262184,
+      "sampleSha256": "4a2fae04fcf80a3864556401cc1fa8aa333372a642584069e624f50d1775f138",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/rx/rx-24f/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/rx/rx-24f/",
+      "sampleBytes": 263035,
+      "sampleSha256": "ba47d616846ab811d539b5b94cc1e2456f80e6db8d54491e3f5e313fca4dcc9e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/rx/rx-28/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/rx/rx-28/",
+      "sampleBytes": 263000,
+      "sampleSha256": "22cd1a716f1fd1da35c41acde886f0b4d1a27a4b476fca04364d8fcf302a1ee9",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/rx/rx-64/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/rx/rx-64/",
+      "sampleBytes": 263128,
+      "sampleSha256": "e1523ef17da3cbbfa9b73cdea81ddc5cd63c5280ff8cb5b426f37fe5e31c4130",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/",
+      "sampleBytes": 211682,
+      "sampleSha256": "781d32c12362dfd942b3a4baa7afe0644dcd4c0d70bc0658d8ef42ae82ee8ab8",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/2xc430-w250/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/2xc430-w250/",
+      "sampleBytes": 360265,
+      "sampleSha256": "f7c2bbf2e75d301bfe98e8ee43c8a49a41f80a87348d8eb473c9b00b3eea31e1",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/2xl430-w250/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/2xl430-w250/",
+      "sampleBytes": 361096,
+      "sampleSha256": "b0726acf35e2b6b5e6ef462e14959d961556292bdbd59b3226c111faaf0dcf28",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc330-m181/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc330-m181/",
+      "sampleBytes": 360790,
+      "sampleSha256": "d748b2b1f4676f0ad40e8f5695fe833fce988f022d4e6b2f42c7c227f0e9aa60",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc330-m288/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc330-m288/",
+      "sampleBytes": 360784,
+      "sampleSha256": "c70b353ef9ee9091b290b14c307210dad3075e281818975e999278e145fc644d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc330-t181/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc330-t181/",
+      "sampleBytes": 360195,
+      "sampleSha256": "0100e3f15fa77d6da372c481fb8eb6fbd3afeb681274d936c33a5ec6c9511b33",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc330-t288/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc330-t288/",
+      "sampleBytes": 360193,
+      "sampleSha256": "188ca69b42c357a7b353e485b1e6a097dfff745a901ae06f01981a9b11318f39",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc430-t150bb/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc430-t150bb/",
+      "sampleBytes": 376554,
+      "sampleSha256": "9e865531de2bce4a76b07413dba3047440f1af01f740d7b4f9f8f555b60ca2cc",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc430-t240bb/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc430-t240bb/",
+      "sampleBytes": 376082,
+      "sampleSha256": "17a3cf6d1c1d12a03c5f66166eba348cfdc37abadb03d5d2e3b1e8d92549919c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc430-w150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc430-w150/",
+      "sampleBytes": 375336,
+      "sampleSha256": "c7173a09b5d4abdad6c18b0be02d422d7af9f9cc7687a5cd6fa63e09220fc868",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xc430-w240/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xc430-w240/",
+      "sampleBytes": 374864,
+      "sampleSha256": "4e5a8f616bac3e847d0950a503c1fa27fe435779768e4663185a0cc871ce42f4",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xd430-t210/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xd430-t210/",
+      "sampleBytes": 387248,
+      "sampleSha256": "33e0c26931a046e4a6bfeba609481e037fd475f95e83de06b69c9ec7210207a2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xd430-t350/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xd430-t350/",
+      "sampleBytes": 387256,
+      "sampleSha256": "9e7155876cd104da3d2ffce9e7e57a7b08b8f02308bb2be1a9760b595f872a2d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xd540-t150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xd540-t150/",
+      "sampleBytes": 392334,
+      "sampleSha256": "0d1c6b1082f06c35dccb301fe945a9d7bebc90477927afcdc572efbb9df14824",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xd540-t270/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xd540-t270/",
+      "sampleBytes": 392402,
+      "sampleSha256": "13180c1505fba1fb5a0e2cb76dd261c67df1a6632fbc50c9ace049b955a08a58",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh430-v210/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh430-v210/",
+      "sampleBytes": 386181,
+      "sampleSha256": "905281588bee9edcdc2fed850e9614202a3ee6d5c8bb1db34d2ce53aa8072851",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh430-v350/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh430-v350/",
+      "sampleBytes": 387249,
+      "sampleSha256": "fe75465959bdbf50be8d5e7d36651dddb9fc9d0dbb817dc6a5a2859454699e56",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh430-w210/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh430-w210/",
+      "sampleBytes": 388659,
+      "sampleSha256": "5f34d07d2ab002c7bea69753970fa6b476bc5aef756908ed30f7125765536931",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh430-w350/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh430-w350/",
+      "sampleBytes": 388671,
+      "sampleSha256": "99af748e4f4bcf45bdf2ea6fc98ebfb2738f0f794de85416189af02b89e360fc",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh540-v150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh540-v150/",
+      "sampleBytes": 390106,
+      "sampleSha256": "885a1748680f3d51f3c77a14764f7bcfddec880d8f7a42527860f050ea57b426",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/",
+      "sampleBytes": 390106,
+      "sampleSha256": "191901a534461f8d1b59cf94c0c6f93d73fc61935cd5d80b627a4449b6cfd4b7",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh540-w150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh540-w150/",
+      "sampleBytes": 393831,
+      "sampleSha256": "e97f0800cf72330f7c8776d0700cba7e5d64a50b4b434f02c1a2f757ce955e88",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xh540-w270/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xh540-w270/",
+      "sampleBytes": 393901,
+      "sampleSha256": "4685c1f16cfdb7623a9bec767b93a2fa4bccc265e1107633b3dcb867c518f92a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xl320/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xl320/",
+      "sampleBytes": 248448,
+      "sampleSha256": "40b018bb1610de0ec1939e51c5011623f9de57adf771eb0be013e2af20dec622",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m077/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m077/",
+      "sampleBytes": 359078,
+      "sampleSha256": "967898feb737c6cce1009f492f427fafe81ce9cffbdc8fa7187e45e152237392",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/",
+      "sampleBytes": 359049,
+      "sampleSha256": "a336b9e3333295355870c48ccd99736596d175e61cf9b52f5b4602b0f67806b7",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xl430-w250/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xl430-w250/",
+      "sampleBytes": 373711,
+      "sampleSha256": "49fed82a3b39539c8c65ee8be23013f06541a209adbeda28612cf269a6d4d52a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm335-t323/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xm335-t323/",
+      "sampleBytes": 359032,
+      "sampleSha256": "47cdfda12bf149171e62bb4336bae4bef7ba8a73f2daf15ed0e28edae20a0bb3",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm430-w210/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xm430-w210/",
+      "sampleBytes": 388676,
+      "sampleSha256": "78adf2f040510eff30cd898bc3bb45b7d0b92e1d41e4365c8b702f0ede496f89",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/",
+      "sampleBytes": 388676,
+      "sampleSha256": "38038f5b32cbbb7e3c26570658855986be33589b06eb6d15e6259db338caafd3",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w150/",
+      "sampleBytes": 393724,
+      "sampleSha256": "8cc6aa7179fed1264a07783ffc5322b77f29cd17118192c6e5d2d3f5c43c2a93",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xm540-w270/",
+      "sampleBytes": 393765,
+      "sampleSha256": "175d7cf17e96735ee95fecf9833ec141a73fab74fe448d3fdc2739feacb512e2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xw430-t200/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xw430-t200/",
+      "sampleBytes": 368082,
+      "sampleSha256": "36a381b593386463369b5cc9dbcd8796456d62f51add5f485536908d859cd9d0",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xw430-t333/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xw430-t333/",
+      "sampleBytes": 368077,
+      "sampleSha256": "583ca66e855be7449330edb28f9017f67e9b79d4e6ebb16f2d1abaee49b3fa26",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xw540-t140/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xw540-t140/",
+      "sampleBytes": 364562,
+      "sampleSha256": "730f1521f5194058e0858e647108870078551549aec59aaf9f9370d770c3363c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/x/xw540-t260/",
+      "sampleBytes": 365050,
+      "sampleSha256": "da4167f96e15f2203ee90fdf143bbc1be14c6518a1583f96ac0797965a825e8b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/",
+      "sampleBytes": 204410,
+      "sampleSha256": "81bb6150d443213193002bccf96ab4825165dcf5654583e0b350b0a8fd40b4c7",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-a051-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-a051-rh/",
+      "sampleBytes": 406029,
+      "sampleSha256": "305eb46b8d77aff1c88f55a531065b30ec2a4108663ad136d5d027280678efdd",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-a099-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-a099-rh/",
+      "sampleBytes": 406025,
+      "sampleSha256": "2069404c8ef9c71d31b34415122ce92ac2f151dbf32722e6a59283c96ab96eb1",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-b001-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-b001-rh/",
+      "sampleBytes": 404703,
+      "sampleSha256": "247466567e26d5c3da14842ebb660f03becfe057eb344d941bc1720e2f63217b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-m001-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-m001-rh/",
+      "sampleBytes": 406021,
+      "sampleSha256": "d724bbb21bdec3e7ae2bb352b8414f7a9f1b9fca944dc37d7a0f3073a7ffc71f",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r051-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r051-rh/",
+      "sampleBytes": 406295,
+      "sampleSha256": "d486c1f7b4a6525fdaa20ed18f3f551cda72bc2fd44ad84425ebd3d288ccb105",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r099-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r099-rh/",
+      "sampleBytes": 406291,
+      "sampleSha256": "97fb5dce35253f97bd4d982ff752c159603b94980f8b68176095414fc0189c61",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-a051-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-a051-rh/",
+      "sampleBytes": 406028,
+      "sampleSha256": "92db33f7ccc2dd7f4de21b5d7b8bc5bd838b97c2a5c5b0cb7ad59046a1b30535",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-a099-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-a099-rh/",
+      "sampleBytes": 406030,
+      "sampleSha256": "9c19b201948c3c87fbc8236544c0745d8cd8726e864aebbe007686f102f79435",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-b001-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-b001-rh/",
+      "sampleBytes": 404716,
+      "sampleSha256": "1f3f1a9e6dda294856af4ce9a29ce46c991170bfefe6f2e6a5787909073e39eb",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-m001-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-m001-rh/",
+      "sampleBytes": 406034,
+      "sampleSha256": "39c02d15ce5474d1b828c023d59080451f4d50feaeb9cddead6bdc505e7be37e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r051-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r051-rh/",
+      "sampleBytes": 406293,
+      "sampleSha256": "fcad47b2c332261d9c328f4aaa54e7bf095c3d03a54555c1f609df2070ee7ad0",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r099-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r099-rh/",
+      "sampleBytes": 406295,
+      "sampleSha256": "cec9e868e05f0c9dc54137285b141021f9148921b437e03ae58cfe8b41e92b25",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/bioloid/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/bioloid/",
+      "sampleBytes": 194640,
+      "sampleSha256": "37ae45f1f2d6ffd5333384445c3957ec53b6609513fd0c3a67c7e397fcb8eeed",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/bioloid/beginner/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/bioloid/beginner/",
+      "sampleBytes": 279848,
+      "sampleSha256": "5166b7a3b81dd8ad48b188d953f19b039584ef189154f25b20c4b9eb961f86af",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/bioloid/comprehensive/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/bioloid/comprehensive/",
+      "sampleBytes": 295419,
+      "sampleSha256": "2f98040ba51cbbec5d08be5ad1d84d9a8389beda91a2a67893d2aef348e3c647",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/bioloid/gp/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/bioloid/gp/",
+      "sampleBytes": 240188,
+      "sampleSha256": "205bf41933f5c6c5f7ebdcf34e7f46e542dd3affc9dde7f5979578c0aa68d40b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/bioloid/premium/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/bioloid/premium/",
+      "sampleBytes": 330027,
+      "sampleSha256": "5aa89c7dc2d8e4a7ad3b140f7de063ac29abbf92d396221336e2abb3df650e8c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/bioloid/stem/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/bioloid/stem/",
+      "sampleBytes": 232275,
+      "sampleSha256": "0b20469ad20b4c8ce497cfcaba33aceaed2e9c8aef1910984c40ff3d8782d296",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream-a/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream-a/",
+      "sampleBytes": 199856,
+      "sampleSha256": "fc74c64885139f672d5e39dc5317d244843aadc9113e0fe1aee9ece1810cdcd1",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream-b/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream-b/",
+      "sampleBytes": 196272,
+      "sampleSha256": "d558bedb60b93c6f20f0c104dc76d3ede8e4f30ed18030daa2efc5865af0cd88",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream1-2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream1-2/",
+      "sampleBytes": 204605,
+      "sampleSha256": "ce7ba3163136e32100ba0ee9a88f2592eb15335a46cb378eec7e54a7fdcce40f",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream1-3/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream1-3/",
+      "sampleBytes": 198881,
+      "sampleSha256": "ed2356c0acd536d5d6aa19afd075f9f53e515b4bff3fb5c9586c0f7951fa7643",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream1-4/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream1-4/",
+      "sampleBytes": 198609,
+      "sampleSha256": "f979eb04ddc62958e046a94f1ade34f24a9e9deefb222cf1d5746cecdb49a859",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream2-1/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream2-1/",
+      "sampleBytes": 194145,
+      "sampleSha256": "6eaeb5ed8e69100fe2570ae8fcfa2ccbf964321f23801f71a53a8346bb70c32d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream2-2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream2-2/",
+      "sampleBytes": 205406,
+      "sampleSha256": "f461991a746482a91520d47f70cb4099ae201c0ace807ea7da4c5c93fca84115",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream2-3/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream2-3/",
+      "sampleBytes": 199207,
+      "sampleSha256": "619e2d4d76943d50f944b4fae3eab5327a5498c306fb4bf8644701b66f747d33",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream2-4/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream2-4/",
+      "sampleBytes": 199212,
+      "sampleSha256": "42dcfb7b5cd2243207abab9b85387313d39e4a15fdafa8f710975a99f9cb2cc5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream2-5/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream2-5/",
+      "sampleBytes": 198302,
+      "sampleSha256": "cc588febdca645717d1637a7cfd83ff479d81c55b931d5f4e9d888f09efbca33",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/dream/dream2-schoolset/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/dream/dream2-schoolset/",
+      "sampleBytes": 210075,
+      "sampleSha256": "06d371f954de02486bb9bebdf886965da58a1c26ab775472444ef3be13f8515b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/engineer/kit1/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/engineer/kit1/",
+      "sampleBytes": 266577,
+      "sampleSha256": "f13cdb1cdabc66d14d31dd2e2892303a49a4a0ca36b182aff7e1f2dd99aaca16",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/engineer/kit2_introduction/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/engineer/kit2_introduction/",
+      "sampleBytes": 228778,
+      "sampleSha256": "37fe08112e8867d5ba543b0845072cff74c66c6e18961ef6119466fc53da3dbb",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/mini/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/mini/",
+      "sampleBytes": 251554,
+      "sampleSha256": "eba4b58192098617f98aa05b7bb5708d149efed93e3417a7e8403d6743cab99b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/ollo/bugkit/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/ollo/bugkit/",
+      "sampleBytes": 233625,
+      "sampleSha256": "fb42ae60156d76b2e2c78bc7d035993708c828541ae78b054c43552035e72ae7",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/ollo/explorer/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/ollo/explorer/",
+      "sampleBytes": 204283,
+      "sampleSha256": "9bff544971ef9fc2653898c289114dc305710435ae1f29993a8d677a69b06ca6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/ollo/inventor/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/ollo/inventor/",
+      "sampleBytes": 205291,
+      "sampleSha256": "47635bb1ec2902ad348f139a32ea606b9c4aac1f5cc782673c5e798da279c7c1",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/ollo/ollo-4/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/play/play-300/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/play/play-300/",
+      "sampleBytes": 198049,
+      "sampleSha256": "f5fde5ed43bb6c2b1d294679b7746c3f33141114266923812f7221a274d82fa6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/play/play-600/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/play/play-600/",
+      "sampleBytes": 197806,
+      "sampleSha256": "482837e4ee503d750d75af02402a69e1e36c98007d6c3b48ce676dcb80483fab",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/edu/play/play-700/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/edu/play/play-700/",
+      "sampleBytes": 208870,
+      "sampleSha256": "a940f038c9350637c8539b9ef055f263174dd07683a66713e7f79340b03b23a3",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/faq/faq_dynamixel/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/faq/faq_dynamixel/",
+      "sampleBytes": 204766,
+      "sampleSha256": "0a195d37285807949843e115c30aa149adf3d465c21250c319073347479852a9",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/faq/faq_parts/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/faq/faq_parts/",
+      "sampleBytes": 195920,
+      "sampleSha256": "c562960fc6de14a7b434af4e8b21df2fdd1957d859dac7f29c78655924ac3a6a",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/faq/faq_platform/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/faq/faq_platform/",
+      "sampleBytes": 196816,
+      "sampleSha256": "422fec93483b842468ca1ac8644ffc2ea2f706f3058d8edf6aa8dc911951210f",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/faq/faq_software/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/faq/faq_software/",
+      "sampleBytes": 196533,
+      "sampleSha256": "e9c42e242a7dff0e123a4a9a9d21ebd7758e3c95af36c7bf5687247d9f8b66f4",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/faq/faq_steam/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/faq/faq_steam/",
+      "sampleBytes": 238360,
+      "sampleSha256": "34d3b737418cdd13721cd944af634ed5b7d9000431160f568918a79ddab5dd09",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/faq/general/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/faq/general/",
+      "sampleBytes": 200489,
+      "sampleSha256": "6765b17820089fb1fd10df4325d2bfa96d7d25f9f4b344ce13674b49a5ba2085",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/bt-110/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/bt-110/",
+      "sampleBytes": 203619,
+      "sampleSha256": "af9ed71b5398f32aac402924c90048af1cc086842773d927ae2b520afb48a6ac",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/bt-210/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/bt-210/",
+      "sampleBytes": 212302,
+      "sampleSha256": "cf408dcdcb1dc1d744bfd79c3c418a0435b225f602cb5deefbad65ce592dc4b6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/bt-410-dongle/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/bt-410-dongle/",
+      "sampleBytes": 214567,
+      "sampleSha256": "26b3628bdb4423a7fbff396a4bcf68230cec05c4557165b1f0c71af804985425",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/bt-410/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/bt-410/",
+      "sampleBytes": 217863,
+      "sampleSha256": "9ce98f16dd3b0805a7d46b9b43e48d94a92dfae0607851c08938f460422fbfec",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/bt-430-dongle/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/bt-430-dongle/",
+      "sampleBytes": 215446,
+      "sampleSha256": "613761722b2ff072321440ccd36079115c1397d7d0ee4b03aa26e0837608334f",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/rc-100/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/rc-100/",
+      "sampleBytes": 209271,
+      "sampleSha256": "92804efadb0f281198c19636749ca126aca6f57c8f9a790a425c34b1a69c7e17",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/rc-200/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/rc-200/",
+      "sampleBytes": 199818,
+      "sampleSha256": "9c44b8743bd9321226876b95a5b69c3bc5deeb1cf7b2c1c55247fb2f9e58ef0b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/rc-300/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/rc-300/",
+      "sampleBytes": 202452,
+      "sampleSha256": "2c130d822161a0582a777176127d1c222634f4b8e3bcf46bc173cf8206b58286",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/zig-110/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/zig-110/",
+      "sampleBytes": 205428,
+      "sampleSha256": "a5ac838262c9b2337b3b355c0d650f75740dd46c56dcc1a1bb4c5a1b465405b6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/communication/zig2serial/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/communication/zig2serial/",
+      "sampleBytes": 202063,
+      "sampleSha256": "5512b301d87e7f85031b38f57bff481b89d3116b8afb1bcb2651e6eb84e39e21",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-100/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-100/",
+      "sampleBytes": 199369,
+      "sampleSha256": "6b3aaff962ffd54a33ba9a0d0788a44ba0575436b9e7dacc24bb11dee2e4f418",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-150/",
+      "sampleBytes": 224871,
+      "sampleSha256": "e8942e4b426a977dcebf5106d5b09d80f6273359e45757381a3c33ed4cd7e673",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-151/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-151/",
+      "sampleBytes": 226657,
+      "sampleSha256": "b33d2672a33f70839dcdcdc835ca998ac91c0f514b9c51b7940a11fd4f933a42",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-200/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-200/",
+      "sampleBytes": 230450,
+      "sampleSha256": "d869f9d0a43d0137227aacada0e5fe1e345459b7f65af5502e71ccde1d39efd6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-5/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-5/",
+      "sampleBytes": 203816,
+      "sampleSha256": "f5ee9d31f685ef2522fd7854aadab1550c0952833a11e5a3398d4a83275238ff",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-50/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-50/",
+      "sampleBytes": 222617,
+      "sampleSha256": "f2b7e2f1a943e60d51aac25f974e9ae38cb4b1fece60fc5f7981d603eb246cc8",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-510/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-510/",
+      "sampleBytes": 208451,
+      "sampleSha256": "032d965749cc45aa9851bd85c8f6283c9e91966442a963c8c5b11ee967e89ba2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-530/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-530/",
+      "sampleBytes": 209970,
+      "sampleSha256": "4b0cf44ddad821ea8039e855b2764d5a49d62d48cefd42d10a4f6d642b4aa8d2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-550/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-550/",
+      "sampleBytes": 299363,
+      "sampleSha256": "0c00174ecb7e6d35ddb1eab87fba0cbb743d5f6d9e40b6580300ecc58084f61e",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-700/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-700/",
+      "sampleBytes": 212751,
+      "sampleSha256": "fd6085a21101c35d784a97da1ee65c788e5f518bbff5c7b53435fb7ea2af220d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/cm-900/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/cm-900/",
+      "sampleBytes": 205340,
+      "sampleSha256": "b93da311c8496cc150967e24747bd4a4156b57e7fdabfdeb9a6f47c9e8f78884",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/controller_compatibility/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/controller_compatibility/",
+      "sampleBytes": 269374,
+      "sampleSha256": "a587f5f21c9c2b366768377aba901efdc82dd8996eba6a66284810390c86eecf",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/opencm485exp/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/opencm485exp/",
+      "sampleBytes": 217342,
+      "sampleSha256": "482e989d7e690624697fb5640d48da72155ef646137723bc93b62f20dedde4ba",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/opencm904/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/opencm904/",
+      "sampleBytes": 459915,
+      "sampleSha256": "9e7fba37fbe161483afb6baebb36787886306570d567562754a8ef4f7fe84f65",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/opencr10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/opencr10/",
+      "sampleBytes": 395556,
+      "sampleSha256": "42f98ab97e0ac93c24dc38a304fc7598f64b5d0b5b9926cc57930ac58b26c9c4",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/openrb-150/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/openrb-150/",
+      "sampleBytes": 231927,
+      "sampleSha256": "3d63ad9b64a92aebf9727d51f0eaac14d2638d6adde2eb264486cd7082c6f2fb",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/rb-86/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/rb-86/",
+      "sampleBytes": 246893,
+      "sampleSha256": "33a5d5d52ddd6db3dab6afb7569240963fa89758fc7dd710f9dc0410b5ca3f4d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/controller/rb-88/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/controller/rb-88/",
+      "sampleBytes": 255699,
+      "sampleSha256": "ac1882e53347e8e6f9326f173c7ca0c2eb34fea5b04ef7e5f367621015797b77",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/display/lm-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/display/lm-10/",
+      "sampleBytes": 195097,
+      "sampleSha256": "3c5fbd6efa3ada75f6f368d1e4e23a18689ed7580177e5932902eb549c704515",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/dxl_bridge/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/dxl_bridge/",
+      "sampleBytes": 204043,
+      "sampleSha256": "63dc2ce9860e8b2df78713ab995562ed79e7e09bfa90ff18941cb86fd7db9010",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/dynamixel_shield/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/dynamixel_shield/",
+      "sampleBytes": 240917,
+      "sampleSha256": "1003a3c6259a2a6c7bb9a69c91d07db2d2bddde92220bb40cdb7011e75b40ba2",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/ln-101/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/ln-101/",
+      "sampleBytes": 200836,
+      "sampleSha256": "00edb70f3d5c81e5e7b82bf4228f7f75682a6d963e7dfbd66b2a68511b918d42",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/mkr_shield/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/mkr_shield/",
+      "sampleBytes": 228437,
+      "sampleSha256": "f7a9f10afd838727277c71b3c5b3965518140aab2fb980e54d2b6dc2274e4745",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/u2d2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/u2d2/",
+      "sampleBytes": 217213,
+      "sampleSha256": "87995f91a20566f04d24b04164679931598b8c96b599bd66005613b08e9daf89",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/u2d2_power_hub/",
+      "sampleBytes": 204241,
+      "sampleSha256": "987ebfb04b216e92324cb1b355c500a9ca2d47e4c96598cd5b2f737b207914ae",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/interface/usb2dynamixel/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/interface/usb2dynamixel/",
+      "sampleBytes": 203486,
+      "sampleSha256": "a6f2e61f83fc7ab086a77840014d0554122ebe5c68b215a496fd921b384c9a4d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/motor/gm-10a/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/motor/gm-10a/",
+      "sampleBytes": 195336,
+      "sampleSha256": "b2c79388274887aa38d1365e73e6835fd2ee63affe17c21bed0f57a9fca8f18d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/motor/h_speed_geared_motor/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/motor/h_speed_geared_motor/",
+      "sampleBytes": 195703,
+      "sampleSha256": "75c03e006a551c3b945a5f54e1cbe6a4bfedb2e2e37cdb15492b8c2d6284f0a8",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/motor/l_speed_geared_motor/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/motor/l_speed_geared_motor/",
+      "sampleBytes": 195501,
+      "sampleSha256": "5e27fb868ef40db5210f51a5f8f854dcb4757a50bebb738fad7844079b1bc2e5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/motor/servo_motor/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/motor/servo_motor/",
+      "sampleBytes": 196578,
+      "sampleSha256": "af3727f57882d038d921b6a93c70161ebceba2809d8661ce8788a5e13a04ce6d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/ax-s1/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/ax-s1/",
+      "sampleBytes": 230092,
+      "sampleSha256": "ef8c2f16d758eaaf6378259a9c36a4f552af8801883c3fd8bbbe1057b9828b11",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/cs-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/cs-10/",
+      "sampleBytes": 196127,
+      "sampleSha256": "781f076e95a07a5a265953caaec746989e0cc663b32ad97650820be1564fae61",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/dms-80/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/dms-80/",
+      "sampleBytes": 195485,
+      "sampleSha256": "7f15565d913739932615eadb876387bf57d4d0b012e9b07d7ddb9958bac0d50d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/gs-12/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/gs-12/",
+      "sampleBytes": 198679,
+      "sampleSha256": "d5052528f17d8013068a907f2eb74f234fcbd55c3234a2fd2f8653be7a307f72",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/ir-array/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/ir-array/",
+      "sampleBytes": 228011,
+      "sampleSha256": "6cc0f05f058978b076bf11119c607b34b3d74bcc56896ebe2f1292c346b8fd91",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/irss-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/irss-10/",
+      "sampleBytes": 196564,
+      "sampleSha256": "8794603bbdfb1a5f8b62cf253d12dc7403aa189fa5d74c3d07974b310b077e7f",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/mgss-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/mgss-10/",
+      "sampleBytes": 196001,
+      "sampleSha256": "ddb4bae9550a97e96faddf4c3bd66b19df21fa51632d4599eab184baa5492a16",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/pir-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/pir-10/",
+      "sampleBytes": 194549,
+      "sampleSha256": "04855d72a739f145f11144b3a98ddb12d0d4899f19bb4d72ddf9fb48281667d4",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/tps-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/tps-10/",
+      "sampleBytes": 194941,
+      "sampleSha256": "f43adacd17261b001032d38fdb581cfd3e6a17b0c792b94bde506d8f363ae594",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/parts/sensor/ts-10/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/parts/sensor/ts-10/",
+      "sampleBytes": 195244,
+      "sampleSha256": "fe12ae804c8ce9e9638654efe57d01daf73edfec0e58a0a0948cd5e8cf0aed54",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/ai_manipulator_main/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/manipulator_h/introduction/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/manipulator_h/introduction/",
+      "sampleBytes": 224111,
+      "sampleSha256": "a0b66c5c7fc73af0d85b6cbcc3e88c40ddf3a6abe5377df49000f75c1eebfc3b",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/op/getting_started/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/op/getting_started/",
+      "sampleBytes": 248713,
+      "sampleSha256": "e622642ae188a6db18a2bf5abfc998d6d9d88177791d24fd6006be0aeb8ab300",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/op2/getting_started/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/op2/getting_started/",
+      "sampleBytes": 255040,
+      "sampleSha256": "32cc8a7471d6ab70a4e2ebeae115244065c0a714a64874530284a140b2c5c2f8",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/op3/introduction/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/op3/introduction/",
+      "sampleBytes": 254925,
+      "sampleSha256": "1d7d2e5104e78255050b55cf2d6ca4f2fd4f077d78fea51cfe65a13fbbc8f56d",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/openmanipulator_p/overview/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/openmanipulator_p/overview/",
+      "sampleBytes": 228956,
+      "sampleSha256": "99dbe228af43b0b4af19aa7b7a1a9a2ccd6ad00cbc01ee912a33fbb0c4f95cd6",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/",
+      "sampleBytes": 227174,
+      "sampleSha256": "e1b2c252f05fb2f47fa1a066f3d7cd69ba0edc108488ef3dd2e8a4ea2f1ff706",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/rh_p12_rn_ur/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/rh_p12_rn_ur/",
+      "sampleBytes": 193484,
+      "sampleSha256": "8f9a057ffb4e42d53fe9087ff53829a1a9496328b589f5e17c50bf432e996f58",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/rh_p12_rna/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/rh_p12_rna/",
+      "sampleBytes": 327909,
+      "sampleSha256": "84c5d2af3f0498c103faa7eb377eb9dfa62de288c683717e62d7fca03045782f",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/thormang3/introduction/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/thormang3/introduction/",
+      "sampleBytes": 240681,
+      "sampleSha256": "3d71a67a673c4d29792fc3d00e923b82466af8dabe9120e303df9f39ce0fbdfe",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/",
+      "sampleBytes": 268386,
+      "sampleSha256": "272d18086e0c3d86cdf06f3c1f12147ecbda6147708200a6b73e822da17f7633",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/reference/dxl-selection-guide/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/reference/dxl-selection-guide/",
+      "sampleBytes": 235857,
+      "sampleSha256": "c5e24f77d69c53ecd02c98b5d1b5191757a166248c07e48ab5acc975e98b9b81",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/arduino_ide/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/arduino_ide/",
+      "sampleBytes": 226619,
+      "sampleSha256": "081c250c5cfd73dd0e143f5fb45487032486f12270f15628b670085565ff4fc5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_easy_sdk/getting_started/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_easy_sdk/getting_started/",
+      "sampleBytes": 211628,
+      "sampleSha256": "4f1dae337b0ce82f971b19ace2b7657f3f1b642a67d8b66671b208acc8e7b5cd",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/",
+      "sampleBytes": 311544,
+      "sampleSha256": "5eb3134225e073c22c0ebaa1e7e06b5d120a2c2197606fc9148595138ebf7312",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/",
+      "sampleBytes": 273891,
+      "sampleSha256": "73a9e3e2409ff87f236499b4bf782c1240617550cde0d660edda433222b85d9c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/",
+      "sampleBytes": 350479,
+      "sampleSha256": "efc553bd7e8420ca988a20e4b03fa975e683d57353bdba338c15748029cbb694",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/embedded_sdk/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/embedded_sdk/",
+      "sampleBytes": 203167,
+      "sampleSha256": "802d80ba6d73f7daf36dec876f0b9fafa42390fe94ef4a8ccd55aca0686a22ca",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/embedded_sdk/embedded_c_cm510/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/embedded_sdk/embedded_c_cm510/",
+      "sampleBytes": 269413,
+      "sampleSha256": "c8c6f917b0d87cfb1c715eec6cd9bf15f11dffa0f905d29510874757f7c09d04",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/embedded_sdk/embedded_c_cm530/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/embedded_sdk/embedded_c_cm530/",
+      "sampleBytes": 302678,
+      "sampleSha256": "c7a6ece5c33faaa75a530f4dde1422cced60d779ab20556774201de7d5458e68",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/embedded_sdk/zigbee_sdk/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/embedded_sdk/zigbee_sdk/",
+      "sampleBytes": 246875,
+      "sampleSha256": "cfc292775aaf85252b7a4b6262bcb24f59fe44766f5591fdb537aace37dc2209",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/mobile_app/mini_app/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/mobile_app/mini_app/",
+      "sampleBytes": 225745,
+      "sampleSha256": "dffebc3d7f2794a3b002624e4fbb91088aa36c138f195971605d1c07a84b8980",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/opencm_ide/getting_started/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/opencm_ide/getting_started/",
+      "sampleBytes": 329476,
+      "sampleSha256": "99e32808519272d6f6681106cecd848fb04acabbca742019d69f17ef5b2254ee",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/robotis_framework_packages/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/robotis_framework_packages/",
+      "sampleBytes": 216605,
+      "sampleSha256": "0a8b208ac55418748141cc9d68b8c08337fe165c45562e5a4166780c65846262",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/robotis_manipulator_libs/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/robotis_manipulator_libs/",
+      "sampleBytes": 409508,
+      "sampleSha256": "495182c1d72aed0fe2262d59205c84f9a1cd56d713e4cf68cc122197863de766",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus1/dynamixel_wizard/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus1/dynamixel_wizard/",
+      "sampleBytes": 205417,
+      "sampleSha256": "732dbf3afc43a5ff580b4dd77daf6ba066a67a128af642f6e3ca4ec697baf308",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus1/manager/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus1/manager/",
+      "sampleBytes": 283745,
+      "sampleSha256": "b3221a1b2be98cb41dee76b627b15d55b52eabd0a694ca11ecf376e073c0d401",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus1/motion/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus1/motion/",
+      "sampleBytes": 280670,
+      "sampleSha256": "1cd9ea319e9e59c1b949c90b7f8b0353ccec31f0459f27114c75362a8cc481b0",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus1/task/getting_started/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus1/task/getting_started/",
+      "sampleBytes": 251349,
+      "sampleSha256": "1b5a77543a0bcb683d7615ab5435fc3777c838ffb25ab2445c72fe9b73503636",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus2/design/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus2/design/",
+      "sampleBytes": 233063,
+      "sampleSha256": "0ce215e941087a285d19f5d04b95ef343c870d3ebe1eab56ed378ad59c844004",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus2/manager/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus2/manager/",
+      "sampleBytes": 218894,
+      "sampleSha256": "83525166976e28f770e5e8c4156af4be63b80c3d3664feccefadfc75fbde9479",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus2/motion/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus2/motion/",
+      "sampleBytes": 238384,
+      "sampleSha256": "e84664ce82d8c7cfba8b6abf2375bd1d902fed0d69819fc6331061cb61f1db5c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus2/rplus2_block/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus2/rplus2_block/",
+      "sampleBytes": 225745,
+      "sampleSha256": "53be8304cf2cb2370a2d354b2f31dba43040eb4dde9acba1ede764f4e4fa9c20",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus2/scratch/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus2/scratch/",
+      "sampleBytes": 204158,
+      "sampleSha256": "7ba6a2979657565f682787ecb2425422d43f2988a04c497be5ff7a1e07c66a5c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus2/task/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus2/task/",
+      "sampleBytes": 289161,
+      "sampleSha256": "52124c4dfbd652d9cf634be33c0ff6166f0850f4d7c369e94ea2b2f1b8056dd5",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus_mobile/mdesign/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus_mobile/mdesign/",
+      "sampleBytes": 193660,
+      "sampleSha256": "235061ca8f8374543453c6931edc7af26ccc33f1538d1640604ad0df5e420c55",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus_mobile/mmotion/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus_mobile/mmotion/",
+      "sampleBytes": 206548,
+      "sampleSha256": "a8db52c8115ba45354fe99ca1a999d6728643598b733c7c30bb1cd43830f7e46",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplus_mobile/mtask20/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplus_mobile/mtask20/",
+      "sampleBytes": 230996,
+      "sampleSha256": "3ac9bd627ca9b24463a3a8286f49083045279ca6b0b4d75cf0ae9df301c2666c",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/en/software/rplustask3/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/en/software/rplustask3/",
+      "sampleBytes": 245563,
+      "sampleSha256": "2dc3323acc653ff4f3312f45f97e0a03ff961195136832ac3d06270d2d051f81",
+      "truncated": false
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/enhttps://ai.robotis.com/ai_worker/introduction_ai_worker.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/enhttps://ai.robotis.com/hands/introduction_hands.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/enhttps://ai.robotis.com/omx/introduction_omx.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/enhttps://ai.robotis.com/omy/introduction_omy.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://emanual.robotis.com/docs/kr/dxl/y/ym070-210-m001-rh/",
+      "status": 200,
+      "finalUrl": "https://emanual.robotis.com/docs/kr/dxl/y/ym070-210-m001-rh/",
+      "sampleBytes": 423208,
+      "sampleSha256": "5263dc2ad243b5c3a1c44793aa1565a1b40c2de6204a3e41985656ccc051c18b",
+      "truncated": false
+    },
+    {
+      "url": "https://github.com/ROBOTIS-GIT/DynamixelSDK",
+      "status": 200,
+      "finalUrl": "https://github.com/ROBOTIS-GIT/DynamixelSDK",
+      "sampleBytes": 284042,
+      "sampleSha256": "9bc5fa09793932cd3384395545184787e1bde8443c54bc4eb67e4d309776b98f",
+      "truncated": false
+    },
+    {
+      "url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface",
+      "status": 200,
+      "finalUrl": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface",
+      "sampleBytes": 368983,
+      "sampleSha256": "e4cbe1ea0bfae5974f46de20d40618d54aa9d1ba1ac93259b6643efe534d60f3",
+      "truncated": false
+    },
+    {
+      "url": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
+      "status": 200,
+      "finalUrl": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
+      "sampleBytes": 380936,
+      "sampleSha256": "5501b330ecb15e99bea50d14e65c182d202ace10e3a7dd36d78cfd068b3e36cd",
+      "truncated": false
+    },
+    {
+      "url": "https://zenoh.io/docs/overview/what-is-zenoh/",
+      "status": 200,
+      "finalUrl": "https://zenoh.io/docs/overview/what-is-zenoh/",
+      "sampleBytes": 36133,
+      "sampleSha256": "94fa5ed5d19b30ddc1ec278b0907f5243c56df1da204717f9998ce3d7fd8fcd8",
+      "truncated": false
+    }
+  ]
+}

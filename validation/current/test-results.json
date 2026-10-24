@@ -8,6 +8,10 @@
     "status": 0
   },
   {
+    "name": "dynamixel-products",
+    "status": 0
+  },
+  {
     "name": "plugin-stdio",
     "status": 0
   },

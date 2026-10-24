@@ -28,6 +28,7 @@ try {
   await writeFile(serialTransport,(await readFile(serialTransport,'utf8'))+'\nNodeSerialTransport.prototype.open = async function(){throw new Error("TEST GUARD: real serial open prohibited");};\nNodeSerialTransport.listPorts = async function(){throw new Error("TEST GUARD: OS port discovery prohibited");};\n');
   const tests=['adapter','bus-lease','local-wire','local','process','recovery','stdio','workflow'].map(name=>join(tools,`cyclo_firmware_mcp/test/${name}.test.mjs`));
   results.push(run('upstream-mcp-mocks',process.execPath,['--test',...tests]));
+  results.push(run('dynamixel-products',process.execPath,['--test','tests/dynamixel.test.mjs','tests/products-integration.test.mjs']));
   results.push(run('plugin-stdio',process.execPath,['--test','tests/integration.test.mjs']));
   results.push(run('python-regressions','python3',['-m','unittest','discover','-s','validation','-p','test_*.py','-v']));
   results.push(run('package-validation','python3',['validation/validate_package.py']));

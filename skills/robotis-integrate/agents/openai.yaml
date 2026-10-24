@@ -1,0 +1,4 @@
+interface:
+  display_name: "ROBOTIS Integration"
+  short_description: "ROS 2, SDK and transport troubleshooting"
+  default_prompt: "Use $robotis-integrate to help with this ROBOTIS task."
