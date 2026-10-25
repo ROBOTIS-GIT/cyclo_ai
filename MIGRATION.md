@@ -19,3 +19,11 @@ Plugin identity and all fourteen Skill names remain. The existing Cyclo Skill is
 Existing operator `targets` remain accepted. New `buses` entries permit bounded discovery from a confirmed port without predeclaring model/firmware/ID. The two new product tools select a completed observation and inspect session state. Configuration continues only after explicit selection/isolation and existing operator grants. Verified ID/baud changes update session handles; failed/uncertain operations block writes. Operator files are never silently changed and session state does not persist across restart. The product registry retains its `targets` name list and adds targetDetails/buses.
 
 Reuse the source/ZIP preparation flow and local dependencies. Validation adds pinned Xacro 2.1.1 in an isolated Python environment; no new robotics runtime is installed or provisioned. Product instruction cleanup does not authorize hardware in any current task.
+
+## 0.6.0 Claude Code adapter
+
+Keep the existing Codex installation flow and root identity. Claude Code reads the added .claude-plugin/plugin.json and shares the actual root skills/ and Node entrypoints. Its MCP entries use CLAUDE_PLUGIN_ROOT; portable Codex entries retain PLUGIN_ROOT. Do not copy Skills into .claude/skills or manually register a second copy of the servers. Use the session-only --plugin-dir flow in references/hosts.md. Source-owner metadata is synchronized to the verified repository/commit author Woojin-Crive; upstream source attribution and notices are unchanged. No global/auth/hardware setup is performed by the adapter.
+
+The 0.6.0 update also replaces the earlier small set of DYNAMIXEL concept examples with a common feature/evidence workflow for the complete pinned model-document set. Two read-only documentation tools join the product server; its hardware configuration permissions are unchanged. Package text and prompts are English, including translated historical response records. No full official document corpus or new license is bundled.
+
+The source repository is now `https://github.com/ROBOTIS-GIT/cyclo_plugin`. Portable plugin identity and Skill names remain unchanged; use the organization repository for future source updates.

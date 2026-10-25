@@ -17,6 +17,6 @@ Turn a video or motion request into a validated motion and a matching Mimic task
 6. Clone the documented Dance1 config in the isolated checkout, point it at the converted NPZ, register a unique task ID (plus Play ID for Cyclo Lab), and verify registration before any training. Follow [backend details](../ai-sapiens-walking/references/training.md) for tracked training and checkpoint evaluation. Use the same motion during training, evaluation and deployment.
 7. Report produced artifacts and unresolved checks. Ask separately before costly training, transfer to a robot, or live execution when not already authorized.
 
-Examples: “이 유튜브 영상으로 Mimic 학습 준비해줘”; “Retarget this SOMA BVH to K1”; “Validate my MJLab motion NPZ before training.”
+Examples: “Prepare Mimic training from this YouTube video”; “Retarget this SOMA BVH to K1”; “Validate my MJLab motion NPZ before training.”
 
 Read [coverage and evidence levels](../../references/coverage.md) when describing support. Recheck the current original source using [retrieval rules](../../references/sources.md); report source failures and never equate a prepared command with execution.

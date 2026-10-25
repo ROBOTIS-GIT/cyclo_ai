@@ -16,8 +16,8 @@ async function client(t,fixture=false,{unknown=false,scenario=''}={}){
 }
 test('default stdio: official routes/registry work; discovery and execution stay blocked',async t=>{
  const c=await client(t);
- const tools=(await c.listTools()).tools.map(t=>t.name).sort();assert.deepEqual(tools,['robotis_sources','dynamixel_registry','dynamixel_ports','dynamixel_scan','dynamixel_configure','dynamixel_select','dynamixel_targets'].sort());
- for(const query of ['전류기반 위치제어','cascade','OMY','TurtleBot3','Zenoh','dynamixel_hardware_interface','DREAM','cyclo_control','physical_ai_tools']){
+ const tools=(await c.listTools()).tools.map(t=>t.name).sort();assert.deepEqual(tools,['robotis_sources','dynamixel_registry','dynamixel_ports','dynamixel_scan','dynamixel_configure','dynamixel_select','dynamixel_targets','dynamixel_models','dynamixel_manual'].sort());
+ for(const query of ['current-based position','cascade','OMY','TurtleBot3','Zenoh','dynamixel_hardware_interface','DREAM','cyclo_control','physical_ai_tools']){
   const r=await c.callTool({name:'robotis_sources',arguments:{query}});assert.ok(r.structuredContent.sources.length>0,query);assert.equal(r.structuredContent.completePortfolio,false);
  }
  const unknown=await c.callTool({name:'robotis_sources',arguments:{query:'nonexistent-product-xyz'}});assert.equal(unknown.structuredContent.sources.length,0);

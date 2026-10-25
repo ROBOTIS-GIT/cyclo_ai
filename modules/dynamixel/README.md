@@ -27,4 +27,6 @@ Request schemas default scan/configure to dry run. They validate a request but c
 
 Uncertain outcomes provide old/new location candidates for a later read-only reconciliation. They do not retry or roll back. Port-open delays are OS-dependent; scan budget is cooperative rather than a hard-kill deadline. No physical serial, installed-host, ROS/Zenoh or motor behavior validation is claimed.
 
-Customer setup and exact selection steps are in [first use](../../references/first-run.md). Seven product tools are exposed; the three original discovery/configuration operations remain hardware-gated. No additional model/firmware profile is approved by 0.5.0.
+Customer setup and exact selection steps are in [first use](../../references/first-run.md). Nine product tools are exposed (including two read-only all-model documentation tools); the three original discovery/configuration operations remain hardware-gated. No additional model/firmware profile is approved by 0.5.0.
+
+All indexed actuator and reducer documents use the same [official evidence pipeline](../../references/dynamixel-evidence.md). The configuration model/firmware matrix is unchanged and does not rank documentation support.

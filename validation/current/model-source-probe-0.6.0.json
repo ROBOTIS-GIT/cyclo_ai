@@ -1,0 +1,18 @@
+{
+  "revision": "c88527af0888baea6f7ef3305bbbbb911b960759",
+  "productDocumentsRead": 92,
+  "uniqueSourcesBlobVerified": 553,
+  "errors": [],
+  "sourcePolicyOmissions": {
+    "docusaurus/docs/dxl/_partials/y/y_y_control_table.mdx": [
+      {
+        "line": 11,
+        "reason": "Official English source contains non-English text; original line withheld, not translated. Resolve the original source before any exact claim involving this line."
+      }
+    ]
+  },
+  "sourceComments": "ordinary developer comments omitted; original source line positions retained; legal notices not rewritten",
+  "conditionRendering": false,
+  "allFeatureClaimsSemanticallyVerified": false,
+  "scope": "Actual pinned English source bytes through bounded reader; not website retrieval, MDX rendering, host invocation or hardware acceptance"
+}

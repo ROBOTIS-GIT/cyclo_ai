@@ -13,4 +13,4 @@ Read [execution boundaries](../../references/execution.md) before commands or ch
 4. Publishing even zero gains changes hardware control. A documentation question does not authorize command publication, gain tuning, service startup or controller/mode changes. For later authorized control, require onsite safeguards and the Sim2Real workflow; never describe arbitrary gains or zero damping as safe.
 5. Return a sourced explanation or scoped setup/code plan, prerequisites, exact checks and execution status. If sources/API help are unavailable, leave the uncertain fields unresolved rather than inventing signatures or topic semantics.
 
-Examples: “kp kd는 뭘 뜻해?”; “ROS 설치 없이 joint_states 읽고 싶어”; “외부 PC에서 Zenoh 연결 준비해줘.”
+Examples: “What do kp and kd mean?”; “I want to read joint_states without installing ROS”; “Prepare an external-PC Zenoh connection.”

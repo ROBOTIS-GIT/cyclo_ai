@@ -18,6 +18,6 @@ Prepare a concrete, reviewable deployment without confusing file installation wi
 7. Before any authorized file transfer, present target, destinations, checksums, backup, compatibility evidence and rollback. Verify transferred bytes and config separately. A successful transfer is only “files staged”.
 8. Live control is a separate authorization gate requiring an onsite operator, physical support/clear zone, RC override/Damping and emergency-stop readiness, current manual startup checklist, feedback/timeout checks and a tested rollback. API authority also needs physical RC toggle and continuous heartbeat. Do not bypass any failsafe or send a launch/mode/velocity command during preparation.
 
-Examples: “시리얼 K1 번호로 배포 준비해줘”; “Stage this walking export locally”; “Test my policy in MuJoCo Sim2Sim.”
+Examples: “Prepare deployment for this K1 serial number”; “Stage this walking export locally”; “Test my policy in MuJoCo Sim2Sim.”
 
 Read [coverage and evidence levels](../../references/coverage.md) when describing support. Recheck the current original source using [retrieval rules](../../references/sources.md); report source failures and never equate a prepared command with execution.

@@ -13,4 +13,4 @@ Read [execution boundaries](../../references/execution.md) before commands or ch
 4. On weak/lost link or missing battery telemetry, stop operation guidance at the documented condition and identify what needs onsite inspection. Use diagnostics for logs after verified authorized access.
 5. Return the relevant steps, normal indications, stopping conditions and what remains unverified. Source pictures/controller display are authoritative if layout differs. LED code meanings and Operation Guide mode switching are not filled in from guesses.
 
-Examples: “SC와 SB 스위치 차이가 뭐야?”; “NO BATT인데 걸어도 돼?”; “배터리와 전원 순서를 설명해줘.”
+Examples: “What is the difference between the SC and SB switches?”; “Can the robot walk while NO BATT is displayed?”; “Explain the battery and power sequence.”

@@ -1,6 +1,6 @@
 ---
 name: robotis-expert
-description: Answer ROBOTIS product, software, compatibility and troubleshooting questions from official sources, including products outside the curated Cyclo and DYNAMIXEL subset.
+description: Answer ROBOTIS product, software, compatibility and troubleshooting questions from official sources, including products outside the existing task-specific Cyclo workflows.
 ---
 
 # ROBOTIS product expert
@@ -19,4 +19,4 @@ Route by task:
 
 Answer in the user's language. Cite exact model/version pages near claims. Separate documented behavior, inferred troubleshooting, mock-tested implementation and physical runtime evidence. No claim of universal product knowledge or compatibility follows from a catalog entry. Preserve the current task's restrictions and authorization. Hardware is disabled by default; explanation and model-selection questions need no device access.
 
-Korean examples: “OMY와 OMX 차이가 뭐야?”, “이 오래된 CM 보드에 어떤 소프트웨어를 써?”, “Cyclo Lab과 MJLab 중 골라줘”, “이 제품도 지원해?”
+Examples: “What is the difference between OMY and OMX?”, “Which software should I use with this older CM controller?”, “Help me choose Cyclo Lab or Cyclo MJLab”, “Can you guide me with this product too?”

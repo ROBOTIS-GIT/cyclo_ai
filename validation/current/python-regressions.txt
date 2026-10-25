@@ -10,6 +10,14 @@ test_symlink_from_other_run_rejected (test_asset_audit.AuditTests.test_symlink_f
 test_untrusted_path_is_literal (test_asset_audit.AuditTests.test_untrusted_path_is_literal) ... ok
 test_velocity_hash_and_no_write (test_asset_audit.AuditTests.test_velocity_hash_and_no_write) ... ok
 test_wrong_motion_extension (test_asset_audit.AuditTests.test_wrong_motion_extension) ... ok
+test_checkout_head_must_match_claimed_revision (test_doc_index.DocIndex.test_checkout_head_must_match_claimed_revision) ... ok
+test_conditional_props_with_greater_than_are_not_truncated (test_doc_index.DocIndex.test_conditional_props_with_greater_than_are_not_truncated) ... ok
+test_tree_from_another_revision_cannot_claim_pinned_links (test_doc_index.DocIndex.test_tree_from_another_revision_cannot_claim_pinned_links) ... ok
+test_all_hangul_blocks_rejected (test_english_only.EnglishOnly.test_all_hangul_blocks_rejected) ... ok
+test_encoded_prose_is_not_a_loophole (test_english_only.EnglishOnly.test_encoded_prose_is_not_a_loophole) ... ok
+test_english_identifiers_and_source_urls_preserved (test_english_only.EnglishOnly.test_english_identifiers_and_source_urls_preserved) ... ok
+test_escaped_yaml_and_script_prose_rejected (test_english_only.EnglishOnly.test_escaped_yaml_and_script_prose_rejected) ... ok
+test_non_utf8_text_does_not_hide_hangul (test_english_only.EnglishOnly.test_non_utf8_text_does_not_hide_hangul) ... ok
 test_changed_mimic_motion_rejected (test_provenance.ProvenanceTests.test_changed_mimic_motion_rejected) ... ok
 test_cli_conflict_is_blocked (test_provenance.ProvenanceTests.test_cli_conflict_is_blocked) ... ok
 test_invalid_hash (test_provenance.ProvenanceTests.test_invalid_hash) ... ok
@@ -33,6 +41,6 @@ test_existing_customer_file_preserved (test_ros2_artifacts.RosArtifacts.test_exi
 test_invalid_spec_never_creates_output (test_ros2_artifacts.RosArtifacts.test_invalid_spec_never_creates_output) ... ok
 
 ----------------------------------------------------------------------
-Ran 33 tests in 0.090s
+Ran 41 tests in 0.080s
 
 OK

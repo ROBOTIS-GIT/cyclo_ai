@@ -1,0 +1,47 @@
+{
+  "revision": "c88527af0888baea6f7ef3305bbbbb911b960759",
+  "inventoryBasis": "Full non-truncated English source tree; includes source-only/orphan product pages. Counts are documents, not every physical variant. Shared MDX is not rendered or blindly concatenated.",
+  "summary": {
+    "modelReferenceDocuments": 103,
+    "indexDocuments": 11,
+    "productDocuments": 92,
+    "actuatorDocuments": 89,
+    "mechanicalReducerDocuments": 3,
+    "sharedPartialDocuments": 463,
+    "actuatorDocumentsByFamily": {
+      "ax_series": 3,
+      "dx_series": 3,
+      "ex_series": 1,
+      "mx_series": 7,
+      "p_series": 6,
+      "pro_series": 17,
+      "rx_series": 4,
+      "x_series": 36,
+      "y_series": 12
+    }
+  },
+  "guidesIndexed": 12,
+  "sourceFilesIndexed": 579,
+  "sourceProbe": {
+    "productDocumentsRead": 92,
+    "uniqueSourcesBlobVerified": 553,
+    "errors": [],
+    "sourcePolicyOmissions": {
+      "docusaurus/docs/dxl/_partials/y/y_y_control_table.mdx": [
+        {
+          "line": 11,
+          "reason": "Official English source contains non-English text; original line withheld, not translated. Resolve the original source before any exact claim involving this line."
+        }
+      ]
+    }
+  },
+  "coverageLevels": {
+    "catalogDiscovery": "all92product documents at this revision, from fulltree and sidebar labels",
+    "sourceGraphIndexing": "source locations/headings/imports/caller props recorded; external dependencies remain explicit",
+    "conditionRendering": "not performed; callers/defaults/branches must be read together",
+    "semanticClaims": "no claim of exhaustive feature semantic verification",
+    "executionPermissions": "unchanged separate hardware allowlist"
+  },
+  "unresolvedImportSpecifiers": [],
+  "license": "No full corpus redistributed; original upstream notices unchanged; source-only metadata and bounded citation-linked retrieval"
+}

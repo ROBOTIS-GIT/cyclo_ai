@@ -4,6 +4,7 @@ import * as z from 'zod/v4';
 import {readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {TargetSession} from './selection.mjs';
+import {listModels,readManual} from './manual.mjs';
 import {MODELS} from './registry.mjs';
 import {configure,scan,scanPlan,validateRequest} from './workflow.mjs';
 import {acquireBusLease} from '../firmware/upstream/tools/cyclo_firmware_mcp/src/bus-lease.mjs';
@@ -24,14 +25,20 @@ export async function createProductsServer(env=process.env,dependencies={}) {
   return provider??=await (await import('./provider.mjs')).sdkProvider();
  };
  const session=new TargetSession(config);
- const server=new McpServer({name:'cyclo-products',version:'0.5.0'});
+ const docs=JSON.parse(await readFile(new URL('../../references/dynamixel-docs.json',import.meta.url),'utf8'));
+ const server=new McpServer({name:'cyclo-products',version:'0.6.0'});
  const wrap=fn=>async(args,ctx)=>{try{const value=await fn(args,ctx);return {content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,...((value.outcome&&value.outcome!=='verified')||value.closureConfirmed===false||value.busReservationReleased===false?{isError:true}:{})};}catch(e){return {isError:true,content:[{type:'text',text:e.message}]};}};
- const add=(name,description,inputSchema,fn,write=false)=>server.registerTool(name,{description,inputSchema,annotations:{readOnlyHint:!write,destructiveHint:write,idempotentHint:!write,openWorldHint:!['robotis_sources','dynamixel_registry','dynamixel_targets'].includes(name)}},wrap(fn));
+ const add=(name,description,inputSchema,fn,write=false)=>server.registerTool(name,{description,inputSchema,annotations:{readOnlyHint:!write,destructiveHint:write,idempotentHint:!write,openWorldHint:!['robotis_sources','dynamixel_registry','dynamixel_targets','dynamixel_models'].includes(name)}},wrap(fn));
+ add('dynamixel_models','Search all indexed official current/legacy DYNAMIXEL product documents equally, including generation distinctions and mechanical DYD classification. Local metadata only; feature applicability requires exact-source evidence.',z.strictObject({query:z.string().max(100).default(''),limit:z.number().int().min(1).max(100).default(30)}),async({query,limit})=>{
+  const matches=listModels(docs,query);return {revision:docs.revision,summary:docs.summary,totalMatched:matches.length,models:matches.slice(0,limit).map(({componentPaths,...m})=>m),guides:docs.guides,warning:'Document counts are not all physical variants or semantically verified feature claims. No privileged documentation model tier; execution matrix is separate.'};
+ });
+ add('dynamixel_manual','Read bounded, blob-verified official English MDX source for any indexed model or guide, retaining caller props and conditional component evidence. Public documentation only; does not render JSX or access hardware.',z.strictObject({model:z.string().max(160).optional(),guide:z.string().max(240).optional(),sourcePath:z.string().max(240).optional(),topic:z.string().max(100).optional(),startLine:z.number().int().min(1).optional(),lineCount:z.number().int().min(1).max(160).default(100)}),async(args,ctx)=>readManual(docs,args,{fetchSource:dependencies.docsFetch??fetch,signal:ctx.mcpReq.signal}));
  add('robotis_sources','Find curated official product/source routes. Local metadata only, not full-text retrieval or proof that every product is reviewed.',z.strictObject({query:z.string().min(1).max(150)}),async({query})=>{
   const index=JSON.parse(await readFile(new URL('../../references/robotis-sources.json',import.meta.url),'utf8'));
   const repos=JSON.parse(await readFile(new URL('../../references/robotis-repositories.json',import.meta.url),'utf8'));
   const known=new Set(index.sources.map(s=>s.url));
-  const sources=[...index.sources,...repos.repositories.filter(r=>!known.has(r.html_url)).map(r=>({id:`repo-${r.name}`,title:r.name,url:r.html_url,family:'software-tooling',tags:[r.name,r.description??''],coverage:'discovered-only',reviewedOn:null,discoveredOn:repos.discoveredOn,execution:'none',repositoryArchived:r.archived,lifecycle:'not inferred from repository status',defaultBranch:r.default_branch}))];
+  const modelSources=docs.models.map(m=>({id:m.id,title:m.title,url:m.sourceUrl,family:m.family,tags:[...m.aliases,...m.sourceTopics.map(h=>h.title)],coverage:'indexed official source; exact conditional evidence required',execution:'separate unchanged hardware allowlist'}));
+  const sources=[...modelSources,...index.sources,...repos.repositories.filter(r=>!known.has(r.html_url)).map(r=>({id:`repo-${r.name}`,title:r.name,url:r.html_url,family:'software-tooling',tags:[r.name,r.description??''],coverage:'discovered-only',reviewedOn:null,discoveredOn:repos.discoveredOn,execution:'none',repositoryArchived:r.archived,lifecycle:'not inferred from repository status',defaultBranch:r.default_branch}))];
   const words=query.toLowerCase().split(/\s+/).filter(Boolean);
   const ranked=sources.map(s=>({s,score:words.reduce((n,w)=>n+(JSON.stringify([s.id,s.title,s.tags,s.family]).toLowerCase().includes(w)?1:0),0)})).filter(x=>x.score).sort((a,b)=>b.score-a.score).slice(0,12).map(x=>x.s);
   return {reviewedOn:index.reviewedOn,sources:ranked,completePortfolio:false,next:ranked.length?'Fetch the exact official page using the host web tool and check product/version before answering.':'Use official ROBOTIS navigation and ROBOTIS-GIT repositories; request exact product/package if ambiguous. No write map is generated from page text.'};
