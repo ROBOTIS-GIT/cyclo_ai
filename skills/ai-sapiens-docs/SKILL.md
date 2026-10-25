@@ -13,4 +13,4 @@ Read [execution boundaries](../../references/execution.md) before commands or ch
 4. Answer with direct official citations and source dates/version limits, then distinguish packaged coverage from execution evidence. Coverage is not an overall support percentage. GMR, K1 LeRobot and Cyclo Intelligence are Coming Soon at the baseline; verify current status before future use. Do not silently substitute AI Worker/OMY procedures for K1.
 5. For source outages provide the dated baseline and exact unresolved question; do not invent a document service or assert current facts. Explain that a later user-approved executor is needed for operations. No default installation, persistent connection or publication is part of a documentation answer.
 
-Examples: “AI Sapiens 매뉴얼에서 전장 사양 찾아줘”; “지금 GMR 학습 가능해?”; “보행과 영상 Mimic 중 어디부터 시작하지?”
+Examples: “Find the AI Sapiens electrical specifications in the manual”; “Is GMR training available now?”; “Should I start with walking or video Mimic?”

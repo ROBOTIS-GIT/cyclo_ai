@@ -20,7 +20,7 @@
     "robotis-expert",
     "robotis-integrate"
   ],
-  "local_links_checked": 149,
+  "local_links_checked": 160,
   "metadata": "passed",
   "unexpected_components": "no undeclared hooks or apps",
   "indexed_manual_pages": 34

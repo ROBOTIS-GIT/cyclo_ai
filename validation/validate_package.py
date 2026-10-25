@@ -5,10 +5,19 @@ import re
 from urllib.parse import urlparse
 import yaml
 import jsonschema
+from english_only import assert_english_text
 
 BASE=Path(__file__).resolve().parents[1]
 ROOT=BASE
 def check(root):
+    # Language applies to every packaged UTF-8 text, including historical
+    # validation reports and untouched upstream notices. Never rewrite a notice.
+    for path in root.rglob('*'):
+        relative=path.relative_to(root)
+        if any(x in relative.parts for x in ['node_modules','.git','artifacts','__pycache__','dist']) or any(x.startswith('.mock-tests-') for x in relative.parts):continue
+        if path.name.startswith('.env'):continue
+        assert not path.is_symlink(),str(path)
+        if path.is_file():assert_english_text(relative,path.read_bytes())
     manifest=json.loads((root/'plugin.json').read_text())
     schema=json.loads((BASE/'evidence/plugin.schema.json').read_text())
     jsonschema.Draft202012Validator(schema).validate(manifest)
@@ -20,6 +29,13 @@ def check(root):
     assert len(interface['shortDescription'])<=30
     assert isinstance(interface['capabilities'],list)
     assert not any((root/p).exists() for p in ['.app.json','hooks','.mcp.json'])
+    claude=json.loads((root/'.claude-plugin/plugin.json').read_text())
+    assert claude['name']==manifest['name'] and claude['version']==manifest['version']
+    assert claude['author']==manifest['author']
+    assert 'skills' not in claude and 'commands' not in claude
+    assert set(claude['mcpServers'])=={'cyclo-firmware','cyclo-products'}
+    assert claude['mcpServers']['cyclo-firmware']['env']['CYCLO_PLUGIN_ENABLE_HARDWARE']=='0'
+    assert claude['mcpServers']['cyclo-products']['env']['CYCLO_PRODUCTS_ENABLE_HARDWARE']=='0'
     mcp=json.loads((root/'mcp.json').read_text())
     jsonschema.Draft202012Validator(json.loads((BASE/'evidence/mcp.schema.json').read_text())).validate(mcp)
     server=mcp['mcpServers']['cyclo-firmware']
@@ -60,7 +76,7 @@ def check(root):
         assert page['manual_status']=='coming-soon' and page['coverage']=='unsupported' 
     for path in root.rglob('*'):
         relative=path.relative_to(root)
-        if any(x in relative.parts for x in ['node_modules','.git','validation','artifacts']) or any(x.startswith('.mock-tests-') for x in relative.parts): continue
+        if any(x in relative.parts for x in ['node_modules','.git','validation','artifacts','__pycache__','dist']) or any(x.startswith('.mock-tests-') for x in relative.parts): continue
         assert not path.is_symlink(),str(path)
         assert path.name not in ['__pycache__','.env','node_modules']
         if path.suffix=='.md' and 'upstream' not in relative.parts:
@@ -74,6 +90,17 @@ def check(root):
     provenance=json.loads((root/'modules/firmware/UPSTREAM.json').read_text())
     for path,digest in provenance['files_sha256'].items():
         assert hashlib.sha256((root/'modules/firmware/upstream'/path).read_bytes()).hexdigest()==digest
+    sdk=json.loads((root/'modules/dynamixel/SDK-UPSTREAM.json').read_text())
+    for path,digest in sdk['files_sha256'].items():
+        assert hashlib.sha256((root/'modules/dynamixel/sdk-upstream'/path).read_bytes()).hexdigest()==digest
+    tables=json.loads((root/'references/control-tables.json').read_text())
+    assert tables['version']==manifest['version']
+    assert tables['summary']=={'actuatorDocuments':89,'mechanicalDocuments':3}
+    assert len(tables['models'])==92
+    for model in tables['models']:
+        if model['kind']!='actuator':continue
+        assert model['protocols'] and all(p in [1,2] for p in model['protocols'])
+        assert model['registers']['Torque Enable']['access']=='RW'
     return {'upstream_source_hashes':'passed','hardware_default':'disabled','first_party_skill_count':len(names),'mcp_schema':'passed','manifest_schema':'passed','skills':names,'local_links_checked':links,'metadata':'passed','unexpected_components':'no undeclared hooks or apps','indexed_manual_pages':len(index['pages'])}
 
 if __name__=='__main__':

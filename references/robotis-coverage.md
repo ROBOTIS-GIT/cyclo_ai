@@ -18,3 +18,12 @@ Inventory date: 2026-10-24. This is a staged expert architecture, not a claim to
 | Newly released or unindexed products | Search/follow official navigation and ROBOTIS-GIT metadata; record actual sources and uncertainty | No automatic executable registry expansion |
 
 Knowledge levels in the JSON source inventory are explicit: `discovered-only`, `reviewed-guidance`, and retained K1 `guidance`/`procedure`/`unsupported`. A hash proves byte identity, a metadata/manifest test proves structure, a model evaluation demonstrates a response in that context, and a mock transaction demonstrates code behavior against the fixture. None proves physical compatibility or successful installed-host invocation.
+
+
+## 0.6.0 DYNAMIXEL documentation update
+
+The current common source pipeline supersedes the earlier focused-exemplar knowledge boundary: all 89 actuator document routes and three mechanical DYD documents in the pinned official English tree are indexed with identical retrieval/evidence rules. Eleven indexes and 463 shared partials are counted separately. Original MX/Protocol-2 firmware and PRO R/R(A) remain distinct. See [model catalog](dynamixel-docs.json) and [evidence rules](dynamixel-evidence.md). Catalog/source indexing is not exhaustive semantic feature verification. Hardware execution scope remains the same two exact firmware profiles; this is not a documentation privilege tier.
+
+## 0.7.0 execution scope
+
+The earlier focused model execution matrix is superseded by `control-tables.json`: all89actuator records use one source-bound Protocol1/2 identity/capability engine. ID/baud rows are resolved for89documents, LED for84, position-profile templates for38. Remaining profiles are absent or conditionally unresolved, including conflicting Y/P descriptions. These are metadata and mock-coverage counts, not physical-device support guarantees. Exact catalog collisions, dual-axis cohorts and provider-specific rates remain explicit gates; DYD has no serial operation.

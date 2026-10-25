@@ -12,6 +12,22 @@
     "status": 0
   },
   {
+    "name": "generic-catalog-execution",
+    "status": 0
+  },
+  {
+    "name": "official-sdk-provider-stdio",
+    "status": 0
+  },
+  {
+    "name": "official-manual-reader",
+    "status": 0
+  },
+  {
+    "name": "dual-host-stdio",
+    "status": 0
+  },
+  {
     "name": "plugin-stdio",
     "status": 0
   },

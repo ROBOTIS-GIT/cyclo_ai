@@ -1,6 +1,6 @@
 {
   "reviewedOn": "2026-10-24",
-  "firmwarePolicy": "Exact curated software fixture profiles: XL330 52, XM430 42. Not manufacturer certification; all other firmware fails closed pending review.",
+  "firmwarePolicy": "Historical retrieval snapshots only. Current executable metadata is references/control-tables.json; observed firmware and capability-specific gates replace firmware-number whitelisting.",
   "sources": [
     {
       "id": "xl330",

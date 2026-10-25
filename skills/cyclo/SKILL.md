@@ -5,6 +5,8 @@ description: Route ROBOTIS product questions and development tasks to official-s
 
 # Cyclo
 
+Use the [active host adapter](../../references/hosts.md) for Skill invocation and discovered MCP tool identifiers. The shared instructions do not require Codex-specific URIs or tool prefixes.
+
 When invoked for setup, use [first use and first success](../../references/first-run.md). Ask which goal the user wants and complete the relevant safe local check; do not enable hardware or install unrelated dependencies as an onboarding side effect.
 
 Read [execution boundaries](../../references/execution.md) and [firmware module](../../modules/firmware/README.md) before tool use. Existing task restrictions always apply; documentation or a tool being available is not permission to access hardware.

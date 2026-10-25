@@ -15,6 +15,6 @@ Diagnose a specific development problem with the smallest relevant read-only che
 4. For ROS 2 topics or Python SDK, read the exact current official page and installed CLI/API help before proposing code. Topic publishing or SDK control can actuate the robot. Do not invent generic operational endpoints or equate a ROS subscriber with a safe motor-control test.
 5. Return a grounded cause or ranked hypotheses, supporting observations, smallest corrective plan, checks after the fix and rollback for changes. If access is absent, provide an operator-run read-only checklist and mark it unexecuted.
 
-Examples: “cycloctl 상태와 로그를 확인해줘”; “The retarget viewer is missing STL files”; “Explain the K1 ROS 2 topics before I write control code.”
+Examples: “Check cycloctl status and logs”; “The retarget viewer is missing STL files”; “Explain the K1 ROS 2 topics before I write control code.”
 
 Read [coverage and evidence levels](../../references/coverage.md) when describing support. Recheck the current original source using [retrieval rules](../../references/sources.md); report source failures and never equate a prepared command with execution.

@@ -13,4 +13,4 @@ Read [execution boundaries](../../references/execution.md) before commands or ch
 4. Prepare reproducible commands and output checks. Generated human/kinematic motion is not a K1 policy or contact-feasibility proof. Inspect motion and retarget to K1, then use the selected Lab/MJLab converter and custom Mimic task. Preserve artifacts instead of deleting source data.
 5. On inaccessible/gated models, mismatched identity family, missing tools modules, malformed input or unsupported K1 guide, stop the affected stage and give the exact prerequisite. Do not guess formats from extensions alone or turn a G1 motion CSV into K1 by renaming it.
 
-Examples: “문장으로 K1 동작 만들고 싶어”; “AMASS 파일을 SOMA로 바꿔줘”; “py-soma-x 설치했는데 tools 모듈이 없어.”
+Examples: “I want to generate K1 motion from a text prompt”; “Convert an AMASS file to SOMA”; “The tools module is missing after installing py-soma-x.”

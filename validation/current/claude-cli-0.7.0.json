@@ -1,0 +1,87 @@
+{
+  "cliVersion": "2.1.310 (Claude Code)",
+  "isolation": "Temporary profile, bare settings, explicit session plugin directory; no installation/auth/credentials change",
+  "validation": {
+    "success": true,
+    "strict": true,
+    "target": "/home/hc/Documents/Codex/2026-10-23/task/proart-ai-sapiens-development/cyclo-plugin/.claude-plugin/plugin.json",
+    "manifest": {
+      "file": "/home/hc/Documents/Codex/2026-10-23/task/proart-ai-sapiens-development/cyclo-plugin/.claude-plugin/plugin.json",
+      "type": "plugin",
+      "errors": [],
+      "warnings": [],
+      "notes": [],
+      "gatingHooks": []
+    },
+    "contents": [],
+    "advice": [
+      {
+        "file": "/home/hc/Documents/Codex/2026-10-23/task/proart-ai-sapiens-development/cyclo-plugin/README.md",
+        "message": "This README has no line that installs \"ai-sapiens-dev\" from a marketplace. Add the install line, which works in one step on Claude Code 2.1.275 or later. Validate the folder that holds its marketplace.json to have <owner>/<repo> filled in, and the name its marketplace lists it under.",
+        "installLine": "/plugin install ai-sapiens-dev --marketplace <owner>/<repo>"
+      }
+    ],
+    "directory": {
+      "profile": null,
+      "findings": [
+        {
+          "code": "LICENSE_MISSING",
+          "title": "License missing",
+          "severity": "error",
+          "blocking": true,
+          "hold": false,
+          "file": "LICENSE",
+          "field": "",
+          "message": "This plugin has no LICENSE file and plugin.json has no `license`. The directory requires one of them.",
+          "fix": "Add a LICENSE file to the plugin folder, or set `license` (an SPDX id) in plugin.json. A LICENSE at the repository root also counts for a plugin in a sub-folder."
+        },
+        {
+          "code": "ICON_MISSING",
+          "title": "No icon",
+          "severity": "warning",
+          "blocking": false,
+          "hold": false,
+          "file": ".claude-plugin/plugin.json",
+          "field": "icon",
+          "message": "No icon found in the plugin. The validator looked for `icon` in plugin.json and for a file at .claude-plugin/icon.png or .svg, assets/icon.png or .svg, or a similar path.",
+          "fix": "Add a square PNG to the plugin folder at .claude-plugin/icon.png, or set `icon` in plugin.json to the path of a square PNG or JPEG in the plugin: 512 to 2048 px on each side, under 2 MB. SVG and WebP are not accepted. That file may become the listing icon only once: the first time the plugin is saved or submitted in the developer portal. Adding or changing it later does not change the icon."
+        }
+      ],
+      "undecided": [],
+      "incomplete": false,
+      "failure": null,
+      "notes": []
+    }
+  },
+  "inventory": [
+    {
+      "id": "ai-sapiens-dev@inline",
+      "version": "0.7.0",
+      "scope": "session",
+      "enabled": true,
+      "installPath": "/home/hc/Documents/Codex/2026-10-23/task/proart-ai-sapiens-development/cyclo-plugin",
+      "mcpServers": {
+        "cyclo-firmware": {
+          "command": "node",
+          "args": [
+            "${CLAUDE_PLUGIN_ROOT}/modules/firmware/launch.mjs"
+          ],
+          "env": {
+            "CYCLO_PLUGIN_ENABLE_HARDWARE": "0"
+          }
+        },
+        "cyclo-products": {
+          "command": "node",
+          "args": [
+            "${CLAUDE_PLUGIN_ROOT}/modules/dynamixel/server.mjs"
+          ],
+          "env": {
+            "CYCLO_PRODUCTS_ENABLE_HARDWARE": "0"
+          }
+        }
+      }
+    }
+  ],
+  "details": "ai-sapiens-dev 0.7.0\n  Description: Cyclo Plugin: official-source ROBOTIS guidance, shared AI Sapiens workflows and disabled-by-default model-aware DYNAMIXEL tooling.\n  Source: ai-sapiens-dev@inline\n\nComponent inventory\n  Skills (14)  ai-sapiens-connectivity, ai-sapiens-control, ai-sapiens-diagnostics, ai-sapiens-docs, ai-sapiens-motion-sources, ai-sapiens-operation, ai-sapiens-sim2real, ai-sapiens-video-mimic, ai-sapiens-walking, cyclo, cyclo-firmware, dynamixel-expert, robotis-expert, robotis-integrate\n  Agents (0)\n  Hooks (0)\n  MCP servers (2)  cyclo-firmware, cyclo-products  (tool schemas resolved at runtime; not counted)\n  LSP servers (0)\n\nProjected token cost\n  Always-on:   ~650 tok   added to every session\n\nPer-component (rounded)\n  component                  always-on  on-invoke\n  ai-sapiens-sim2real              ~40       ~910\n  ai-sapiens-connectivity          ~40       ~510\n  dynamixel-expert                 ~50       ~740\n  ai-sapiens-docs                  ~50       ~490\n  ai-sapiens-diagnostics           ~50       ~640\n  cyclo                            ~50       ~550\n  ai-sapiens-operation             ~40       ~460\n  robotis-integrate                ~60       ~600\n  ai-sapiens-motion-sources        ~50       ~490\n  ai-sapiens-walking               ~40       ~660\n  cyclo-firmware                   ~50       ~450\n  robotis-expert                   ~50       ~550\n  ai-sapiens-control               ~50       ~480\n  ai-sapiens-video-mimic           ~40       ~760\n\n  On-invoke cost is paid each time a skill or agent fires.\n  Token counts are estimates and may differ from actual usage.\n",
+  "authenticatedInvocation": false
+}

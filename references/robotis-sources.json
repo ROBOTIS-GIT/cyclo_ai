@@ -2163,12 +2163,12 @@
       "tags": [
         "Y",
         "cascade",
-        "캐스케이드",
+        "cascade",
         "casc ade"
       ],
-      "coverage": "reviewed-guidance",
+      "coverage": "source-route; use the common exact-model pipeline",
       "reviewedOn": "2026-10-24",
-      "reference": "skills/dynamixel-expert/references/control.md",
+      "reference": "references/dynamixel-evidence.md",
       "lifecycle": "not inferred",
       "execution": "none",
       "lastRetrieval": {
@@ -3025,11 +3025,11 @@
       "tags": [
         "XM430",
         "current-based position",
-        "전류기반 위치제어"
+        "current-based position control"
       ],
-      "coverage": "reviewed-guidance",
+      "coverage": "source-route; use the common exact-model pipeline",
       "reviewedOn": "2026-10-24",
-      "reference": "skills/dynamixel-expert/references/control.md",
+      "reference": "references/dynamixel-evidence.md",
       "lifecycle": "not inferred",
       "execution": "mocks only",
       "lastRetrieval": {
@@ -3318,12 +3318,12 @@
       "family": "actuator",
       "tags": [
         "XL330",
-        "다이나믹셀",
+        "DYNAMIXEL",
         "current profile ID baud LED"
       ],
-      "coverage": "reviewed-guidance",
+      "coverage": "source-route; use the common exact-model pipeline",
       "reviewedOn": "2026-10-24",
-      "reference": "skills/dynamixel-expert/references/configuration.md",
+      "reference": "references/dynamixel-evidence.md",
       "lifecycle": "not inferred",
       "execution": "mocks only",
       "lastRetrieval": {

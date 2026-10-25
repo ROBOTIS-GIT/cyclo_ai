@@ -13,4 +13,4 @@ Read [execution boundaries](../../references/execution.md) before commands or ch
 4. Before any later authorized Wi-Fi mode change, prepare the exact AP/STA choice, impact on current access, saved configuration/rollback and a verified alternate USB/Ethernet recovery path. Avoid printing credentials in chat/logs. Do not create an open AP, firewall rule or persistent global network change as a shortcut.
 5. Report actual observed status only. If no robot/host access exists, provide an operator-run checklist marked unexecuted. Route application-layer ROS 2 setup to [control](../ai-sapiens-control/SKILL.md) and service errors to diagnostics.
 
-Examples: “USB로 처음 연결하려면?”; “AP랑 STA 중 뭘 써?”; “시리얼 호스트가 안 잡혀.”
+Examples: “How do I connect over USB for the first time?”; “Should I use AP or STA mode?”; “The serial-based hostname does not resolve.”

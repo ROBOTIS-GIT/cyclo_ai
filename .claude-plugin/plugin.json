@@ -1,0 +1,29 @@
+{
+  "name": "ai-sapiens-dev",
+  "version": "0.7.0",
+  "description": "Cyclo Plugin: official-source ROBOTIS guidance, shared AI Sapiens workflows and disabled-by-default model-aware DYNAMIXEL tooling.",
+  "author": {
+    "name": "Woojin-Crive"
+  },
+  "repository": "https://github.com/ROBOTIS-GIT/cyclo_plugin",
+  "mcpServers": {
+    "cyclo-firmware": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/modules/firmware/launch.mjs"
+      ],
+      "env": {
+        "CYCLO_PLUGIN_ENABLE_HARDWARE": "0"
+      }
+    },
+    "cyclo-products": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/modules/dynamixel/server.mjs"
+      ],
+      "env": {
+        "CYCLO_PRODUCTS_ENABLE_HARDWARE": "0"
+      }
+    }
+  }
+}

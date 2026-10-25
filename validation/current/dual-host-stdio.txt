@@ -1,0 +1,13 @@
+✔ host manifests share identity, version, author and one registration per server (36.260181ms)
+✔ codex declaration: cyclo-firmware initializes safely from an unrelated cwd (141.326609ms)
+✔ codex declaration: cyclo-products initializes safely from an unrelated cwd (139.757045ms)
+✔ claude declaration: cyclo-firmware initializes safely from an unrelated cwd (116.954601ms)
+✔ claude declaration: cyclo-products initializes safely from an unrelated cwd (138.16558ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 674.262375
