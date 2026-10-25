@@ -3,27 +3,30 @@ import {serveStdio} from '@modelcontextprotocol/server/stdio';
 import * as z from 'zod/v4';
 import {readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
+import {TargetSession} from './selection.mjs';
 import {MODELS} from './registry.mjs';
 import {configure,scan,scanPlan,validateRequest} from './workflow.mjs';
 import {acquireBusLease} from '../firmware/upstream/tools/cyclo_firmware_mcp/src/bus-lease.mjs';
 const targetSchema=z.strictObject({port:z.string().min(1),model:z.number().int(),firmware:z.number().int(),id:z.number().int().min(0).max(252),baud:z.number().int(),isolatedBus:z.boolean(),allowScan:z.boolean().default(false),allowConfigure:z.boolean().default(false)});
-const configSchema=z.strictObject({allowPortDiscovery:z.boolean().default(false),targets:z.record(z.string(),targetSchema)});
+const busSchema=z.strictObject({port:z.string().min(1),allowScan:z.boolean().default(false),allowConfigure:z.boolean().default(false)});
+const configSchema=z.strictObject({allowPortDiscovery:z.boolean().default(false),buses:z.record(z.string(),busSchema).default({}),targets:z.record(z.string(),targetSchema).default({})});
 const profile=z.discriminatedUnion('mode',[
  z.strictObject({mode:z.literal('time'),totalMs:z.number().int(),accelerationMs:z.number().int()}),
  z.strictObject({mode:z.literal('velocity'),rpm:z.number(),accelerationRpm2:z.number(),maxRpm:z.number(),maxAccelerationRpm2:z.number()})
 ]);
 export async function createProductsServer(env=process.env,dependencies={}) {
  const enabled=env.CYCLO_PRODUCTS_ENABLE_HARDWARE==='1';
- const config=env.CYCLO_PRODUCTS_CONFIG?configSchema.parse(JSON.parse(await readFile(env.CYCLO_PRODUCTS_CONFIG,'utf8'))):{allowPortDiscovery:false,targets:{}};
+ const config=env.CYCLO_PRODUCTS_CONFIG?configSchema.parse(JSON.parse(await readFile(env.CYCLO_PRODUCTS_CONFIG,'utf8'))):{allowPortDiscovery:false,buses:{},targets:{}};
  if(enabled&&!env.CYCLO_PRODUCTS_CONFIG)throw Error('Hardware enablement requires explicit operator configuration');
  let provider=dependencies.provider;
  const getProvider=async()=>{
   if(!enabled)throw Error('Hardware and OS serial discovery are disabled. No port or device access occurred.');
   return provider??=await (await import('./provider.mjs')).sdkProvider();
  };
- const server=new McpServer({name:'cyclo-products',version:'0.4.0'});
+ const session=new TargetSession(config);
+ const server=new McpServer({name:'cyclo-products',version:'0.5.0'});
  const wrap=fn=>async(args,ctx)=>{try{const value=await fn(args,ctx);return {content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,...((value.outcome&&value.outcome!=='verified')||value.closureConfirmed===false||value.busReservationReleased===false?{isError:true}:{})};}catch(e){return {isError:true,content:[{type:'text',text:e.message}]};}};
- const add=(name,description,inputSchema,fn,write=false)=>server.registerTool(name,{description,inputSchema,annotations:{readOnlyHint:!write,destructiveHint:write,idempotentHint:!write,openWorldHint:!['robotis_sources','dynamixel_registry'].includes(name)}},wrap(fn));
+ const add=(name,description,inputSchema,fn,write=false)=>server.registerTool(name,{description,inputSchema,annotations:{readOnlyHint:!write,destructiveHint:write,idempotentHint:!write,openWorldHint:!['robotis_sources','dynamixel_registry','dynamixel_targets'].includes(name)}},wrap(fn));
  add('robotis_sources','Find curated official product/source routes. Local metadata only, not full-text retrieval or proof that every product is reviewed.',z.strictObject({query:z.string().min(1).max(150)}),async({query})=>{
   const index=JSON.parse(await readFile(new URL('../../references/robotis-sources.json',import.meta.url),'utf8'));
   const repos=JSON.parse(await readFile(new URL('../../references/robotis-repositories.json',import.meta.url),'utf8'));
@@ -33,32 +36,44 @@ export async function createProductsServer(env=process.env,dependencies={}) {
   const ranked=sources.map(s=>({s,score:words.reduce((n,w)=>n+(JSON.stringify([s.id,s.title,s.tags,s.family]).toLowerCase().includes(w)?1:0),0)})).filter(x=>x.score).sort((a,b)=>b.score-a.score).slice(0,12).map(x=>x.s);
   return {reviewedOn:index.reviewedOn,sources:ranked,completePortfolio:false,next:ranked.length?'Fetch the exact official page using the host web tool and check product/version before answering.':'Use official ROBOTIS navigation and ROBOTIS-GIT repositories; request exact product/package if ambiguous. No write map is generated from page text.'};
  });
- add('dynamixel_registry','Report exact curated configuration matrix and unsupported actions without I/O.',z.strictObject({}),async()=>({models:MODELS,hardwareEnabled:enabled,targets:Object.keys(config.targets),runtimeTested:'mocks only; no installed-host or physical-device verification',unsupported:['arbitrary raw writes','torque changes','motion','reset','reboot','flashing','unlisted model/firmware configuration']}));
+ add('dynamixel_registry','Report exact curated configuration matrix and unsupported actions without I/O.',z.strictObject({}),async()=>({models:MODELS,hardwareEnabled:enabled,targets:session.list().map(t=>t.name),targetDetails:session.list(),buses:Object.keys(config.buses??{}),runtimeTested:'mocks only; no installed-host or physical-device verification',unsupported:['arbitrary raw writes','torque changes','motion','reset','reboot','flashing','unlisted model/firmware configuration']}));
  add('dynamixel_ports','Discover OS serial ports only with operator-enabled discovery; never opens them or selects a target automatically.',z.strictObject({}),async()=>{
   if(!config.allowPortDiscovery)throw Error('Port discovery is not authorized in operator config');
   const p=await getProvider();return {ports:await p.ports(),selectionRequired:true,warning:'Adapter identity is not actuator identity. Choose a port and bounded scan explicitly.'};
  });
- async function onTarget(name,permission,work) {
-  const target=config.targets[name];if(!target||!target[permission])throw Error('Unknown target or operation not authorized in operator config');
+ async function onBus(target,permission,work) {
+  if(!target||!target[permission])throw Error('Unknown target or operation not authorized in operator config');
   const p=await getProvider();
   const lease=await (dependencies.lease??acquireBusLease)({port:target.port,dynamic:true});
   let result,confirmed=false,entered=false;
-  try{await lease.verify();entered=true;result=await work(target,(baud,timeout)=>p.connect(lease.port??target.port,baud,timeout));confirmed=result.closureConfirmed===true;return result;}
-  catch(e){if(entered)throw Error(`${e.message}; bus reservation retained because closure could not be established`);throw e;}
+  try{await lease.verify();if(target.verifyBinding)await target.verifyBinding();entered=true;result=await work(target,(baud,timeout)=>p.connect(lease.port??target.port,baud,timeout),lease.verify);confirmed=result.closureConfirmed===true;return result;}
+  catch(e){if(entered){const error=Error(`${e.message}; bus reservation retained because closure could not be established`);error.requiresReidentification=true;throw error;}e.requiresReidentification=true;throw e;}
   finally{if(confirmed||!entered){const released=await lease.release();if(result)result.busReservationReleased=released;}else if(result)result.busReservationReleased=false;}
  }
- add('dynamixel_scan','Bounded Protocol 2 unicast scan on one configured port. No auto selection; mixed baud results remain explicit.',z.strictObject({target:z.string(),ids:z.array(z.number().int()),bauds:z.array(z.number().int()),timeoutMs:z.number().int().default(30),budgetMs:z.number().int().default(5000),dryRun:z.boolean().default(true)}),async(args,ctx)=>{
-  const plan=scanPlan(args);if(args.dryRun)return {executed:false,plan};
-  return onTarget(args.target,'allowScan',async(t,connect)=>scan(connect,args,{signal:ctx.mcpReq.signal}));
+ add('dynamixel_targets','Inspect session-selected targets and their confirmed/blocked state without device access.',z.strictObject({}),async()=>({targets:session.list(),persistence:'session only; explicit operator config remains unchanged'}));
+ add('dynamixel_select','Select one observed device from a completed bounded scan after explicit user confirmation and physical single-device isolation. No device writes or added operator permissions.',z.strictObject({scanId:z.string(),candidateId:z.string(),name:z.string(),confirmed:z.boolean(),isolatedBus:z.boolean()}),async args=>({target:await session.select(args)}),true);
+ add('dynamixel_scan','Bounded read-only Protocol 2 scan on a configured port-only bus or existing target. Unknown ID/model needs no preconfigured device identity. Always choose one candidate explicitly.',z.strictObject({bus:z.string().optional(),target:z.string().optional(),ids:z.array(z.number().int()),bauds:z.array(z.number().int()),timeoutMs:z.number().int().default(30),budgetMs:z.number().int().default(5000),dryRun:z.boolean().default(true)}),async(args,ctx)=>{
+  const plan=scanPlan(args),bus=session.resolve(args);if(!bus.allowScan)throw Error('Scan is not authorized on this bus');
+  if(args.dryRun)return {executed:false,plan};
+  session.clearObservations(bus.port);
+  let binding;
+  const result=await onBus(bus,'allowScan',async(t,connect,verifyBinding)=>{binding=verifyBinding;return scan(connect,args,{signal:ctx.mcpReq.signal});});
+  const selection=session.recordScan(bus,result,binding);
+  return {...result,selectionRequired:true,...(selection??{}),next:selection?'Ask the user to choose one candidate and confirm an isolated single-device bus; then call dynamixel_select.':'No selectable observation: inspect completeness/errors and do not guess a device.'};
  });
  add('dynamixel_configure','Named model-aware ID OR baud, LED, profile configuration; requires isolated bus and torque already off. Default is planning. Never sends goal or torque commands.',z.strictObject({target:z.string(),changes:z.strictObject({id:z.number().int().optional(),baud:z.number().int().optional(),led:z.number().int().optional(),profile:profile.optional()}),dryRun:z.boolean().default(true)}),async(args,ctx)=>{
-  const t=config.targets[args.target];if(!t)throw Error('Select one configured target with verified model/firmware; do not infer device from port name');
+  const t=session.target(args.target);
   validateRequest({...t,changes:args.changes});
   if(args.dryRun){
    // No fabricated snapshot: mode/limit/torque checks require a real observation.
    return {executed:false,request:{model:t.model,firmware:t.firmware,id:t.id,baud:t.baud,changes:args.changes},pending:['observed identity/protocol','exclusive isolated bus','torque already off','destination ID collision check','observed mode/limits','snapshot and readback'],warning:'This is a request validation, not a device-derived execution plan or compatibility certification'};
   }
-  return onTarget(args.target,'allowConfigure',async(t,connect)=>configure(connect,{...t,changes:args.changes},{signal:ctx.mcpReq.signal}));
+  try{
+   session.clearObservations(t.port);
+   const result=await onBus(t,'allowConfigure',async(t,connect)=>{session.target(args.target);return configure(connect,{...t,changes:args.changes},{signal:ctx.mcpReq.signal});});
+   session.settle(args.target,result);
+   return result;
+  }catch(e){if(e.requiresReidentification)session.retirePort(t.port,'port binding or bus ownership changed; select again');throw e;}
  },true);
  return server;
 }

@@ -2,7 +2,7 @@
 
 This version combines AI Sapiens Skills with a separately gated local firmware MCP. It has no hooks, background scheduler, GPU service, robot registry or credential store. Installation does not provide training or robot-deployment execution access. Never claim an action happened without an observed result.
 
-For development of this package, only local source edits, offline fixtures, package validation and portable artifact upload are authorized. Do not run GPU jobs, install global dependencies, open network access, create credentials, change robots, deploy policies, publish packages or touch the active music-server deployment.
+Hardware and external execution are disabled by default. Product instructions do not authorize device access, GPU jobs, global installations, network exposure, credentials, robot changes, policy deployment or publication. Follow the actual task's authorized scope and preserve unrelated user services and settings.
 
 For later user tasks, preserve the task's existing authorizations and restrictions. Read-only local inspection and reversible work inside the chosen project can proceed when in scope. Separate environment mutation/download/container startup, paid or long GPU execution, robot connection/file transfer, and live actuation. Obtain missing authorization at the concrete step, with the exact target and effect. Do not repeatedly ask for permissions already given.
 
@@ -13,5 +13,3 @@ Before a long job: identify a real terminal/SSH/scheduler executor, available GP
 After failure: preserve logs/checkpoints and partial output, identify the failed stage and known effects, then make a scoped correction. Do not retry a denied operation without materially new relevant evidence. Document backup and rollback before replacing config/assets. Do not remove input data after conversion even if the manual says it may be removed.
 
 A successful simulation or export does not establish hardware safety. For motor operation re-read the live operation, RC and Sim2Real guides for that robot/revision; require an onsite operator and separate authorization. Keep RC priority, feedback readiness, heartbeat timeouts and Damping behavior intact. Do not start robot services merely to diagnose file deployment.
-
-Unified 0.3.0 task boundary: no use of ProArt's connected OpenRB or any real hardware, including OS serial discovery, port opening, reads/scans, writes, flashing or motion. Only injected mock transports and isolated stdio tests are authorized here. Private source publication to the verified Woojin-Crive/cyclo-plugin repository is authorized; marketplace/public publication and global installation remain out of scope.

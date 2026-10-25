@@ -11,3 +11,11 @@ Installation/automatic skill activation in the user's Codex host remains unteste
 ## 0.4.0 ROBOTIS expert expansion
 
 Portable identity `ai-sapiens-dev` and all existing Skill names remain. Three new task Skills and the separate `cyclo-products` stdio MCP are added; the original firmware module and its source hashes are retained. Refresh the local package and prepare local npm dependencies through your host-supported private/local flow. No global config migration, credentials, hardware grant or persistent connection is performed. Both hardware flags default to zero. Exact old/new MCP descriptions identify their different capabilities; do not fall back to legacy tooling to evade a new-model or firmware refusal. The new device module requires its own explicit operator config and separately built pinned SDK runtime for any later authorized live session.
+
+## 0.5.0 customer workflow
+
+Plugin identity and all fourteen Skill names remain. The existing Cyclo Skill is the declared onboarding entrypoint. Starter prompts now cover model selection, first-device setup and robot-arm software preparation; learning Skills remain unchanged.
+
+Existing operator `targets` remain accepted. New `buses` entries permit bounded discovery from a confirmed port without predeclaring model/firmware/ID. The two new product tools select a completed observation and inspect session state. Configuration continues only after explicit selection/isolation and existing operator grants. Verified ID/baud changes update session handles; failed/uncertain operations block writes. Operator files are never silently changed and session state does not persist across restart. The product registry retains its `targets` name list and adds targetDetails/buses.
+
+Reuse the source/ZIP preparation flow and local dependencies. Validation adds pinned Xacro 2.1.1 in an isolated Python environment; no new robotics runtime is installed or provisioned. Product instruction cleanup does not authorize hardware in any current task.

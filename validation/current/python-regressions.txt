@@ -28,8 +28,11 @@ test_discovery_rejects_untrusted_and_fragment_links (test_robotis_sources.Source
 test_inventory_distinguishes_discovery_and_review (test_robotis_sources.Sources.test_inventory_distinguishes_discovery_and_review) ... ok
 test_repositories_are_metadata_only (test_robotis_sources.Sources.test_repositories_are_metadata_only) ... ok
 test_source_hashes_are_only_byte_evidence (test_robotis_sources.Sources.test_source_hashes_are_only_byte_evidence) ... ok
+test_customer_generated_xacro_and_controller_mapping (test_ros2_artifacts.RosArtifacts.test_customer_generated_xacro_and_controller_mapping) ... ok
+test_existing_customer_file_preserved (test_ros2_artifacts.RosArtifacts.test_existing_customer_file_preserved) ... ok
+test_invalid_spec_never_creates_output (test_ros2_artifacts.RosArtifacts.test_invalid_spec_never_creates_output) ... ok
 
 ----------------------------------------------------------------------
-Ran 30 tests in 0.081s
+Ran 33 tests in 0.090s
 
 OK

@@ -1,0 +1,11 @@
+{
+  "reviewedOn": "2026-10-25",
+  "sources": [
+    "https://developers.openai.com/plugins/build/plugins",
+    "https://control.ros.org/jazzy/doc/ros2_control/hardware_interface/doc/mock_components_userdoc.html",
+    "https://control.ros.org/jazzy/doc/ros2_control/controller_manager/doc/userdoc.html",
+    "https://raw.githubusercontent.com/ROBOTIS-GIT/dynamixel_hardware_interface/6bb5f93ecad1fe3c231e3ece580344e8f0a6efc3/dynamixel_hardware_interface_plugin.xml",
+    "https://pypi.org/project/xacro/"
+  ],
+  "limits": "Focused package/onboarding/mock-controller/source checks only; no ROS bringup, DHI runtime, device or training execution."
+}

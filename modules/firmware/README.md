@@ -12,7 +12,7 @@ Default launch is restricted/planning-only, empty targets and hardware disabled.
 
 Hardware is not enabled by package installation. A later task would need separate authorization with the current hardware prohibition removed, trusted configuration in CYCLO_MCP_CONFIG, CYCLO_PLUGIN_ENABLE_HARDWARE=1 and an absolute CYCLO_PLUGIN_CLI_PATH to a real matching upstream tools/cyclo_firmware_cli/dist/cli.js. Use the pinned upstream checkout's reviewed workspace build instructions; CLI build/dependency completeness is not established by this package's mock tests. The launcher then passes fixed upstream-built argv through captureJson; MCP inputs cannot supply a shell, executable or arbitrary argv. This does not modify global settings.
 
-Restricted config and register grants remain upstream semantics. The supplied config.disabled.json contains no devices or ports. Do not copy upstream illustrative device/port examples as discovered identities. The task forbids touching ProArt's OpenRB; no future configuration example here grants an exception.
+Restricted config and register grants remain upstream semantics. The supplied config.disabled.json contains no devices or ports. Do not copy upstream illustrative device/port examples as discovered identities. Configuration examples do not grant device access; preserve the actual task's restrictions.
 
 ## Mock testing
 

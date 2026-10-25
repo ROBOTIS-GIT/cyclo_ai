@@ -14,6 +14,8 @@ def check(root):
     jsonschema.Draft202012Validator(schema).validate(manifest)
     assert re.fullmatch(r'\d+\.\d+\.\d+',manifest['version'])
     assert json.loads((root/'package.json').read_text())['version']==manifest['version']
+    assert manifest['extensions']['com.openai']['onboardingSkill']=='./skills/cyclo/SKILL.md'
+    assert (root/'skills/cyclo/SKILL.md').is_file()
     interface=manifest['extensions']['com.openai']['interface']
     assert len(interface['shortDescription'])<=30
     assert isinstance(interface['capabilities'],list)

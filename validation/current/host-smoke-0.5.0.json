@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25",
+  "binary": "/home/hc/.codex/plugins/.plugin-appserver/codex",
+  "profile": "isolated temporary CODEX_HOME; no existing auth/config copied",
+  "pluginId": "ai-sapiens-dev@cyclo-isolated-test",
+  "candidateVersion": "0.5.0",
+  "marketplaceAdd": "succeeded",
+  "pluginAdd": "succeeded",
+  "pluginList": "installed, enabled, version 0.5.0",
+  "invocation": {
+    "status": "not completed",
+    "target": "OpenAI Responses endpoint for installed $robotis-expert explanation-only prompt",
+    "initialBoundary": "Restricted sandbox prevented sending model request; no model response",
+    "boundedNetworkPermittedAttempt": "401 Unauthorized: missing bearer or basic authentication",
+    "exitCode": 1,
+    "modelResponseReceived": false,
+    "credentialsChanged": false,
+    "retryPolicy": "No further attempts without authorized authentication; no credential copying or login performed"
+  },
+  "evidenceLimit": "Installed-host setup/discovery verified for staged 0.5.0 package; real Skill invocation and UI setup in fresh/existing conversation unverified. Final source bytes are separately tested from extracted ZIP.",
+  "hardwareEnabled": false
+}
