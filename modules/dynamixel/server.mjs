@@ -26,7 +26,7 @@ export async function createProductsServer(env=process.env,dependencies={}) {
  };
  const session=new TargetSession(config);
  const docs=JSON.parse(await readFile(new URL('../../references/dynamixel-docs.json',import.meta.url),'utf8'));
- const server=new McpServer({name:'cyclo-products',version:'0.7.0'});
+ const server=new McpServer({name:'cyclo-products',version:'0.8.0'});
  const wrap=fn=>async(args,ctx)=>{try{const value=await fn(args,ctx);return {content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,...((value.outcome&&value.outcome!=='verified')||value.closureConfirmed===false||value.busReservationReleased===false?{isError:true}:{})};}catch(e){return {isError:true,content:[{type:'text',text:e.message}]};}};
  const add=(name,description,inputSchema,fn,write=false)=>server.registerTool(name,{description,inputSchema,annotations:{readOnlyHint:!write,destructiveHint:write,idempotentHint:!write,openWorldHint:!['robotis_sources','dynamixel_registry','dynamixel_targets','dynamixel_models'].includes(name)}},wrap(fn));
  add('dynamixel_models','Search all indexed official current/legacy DYNAMIXEL product documents equally, including generation distinctions and mechanical DYD classification. Local metadata only; feature applicability requires exact-source evidence.',z.strictObject({query:z.string().max(100).default(''),limit:z.number().int().min(1).max(100).default(30)}),async({query,limit})=>{

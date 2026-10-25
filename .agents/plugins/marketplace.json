@@ -1,0 +1,12 @@
+{
+  "name": "cyclo-local",
+  "interface": {"displayName": "Cyclo Plugin"},
+  "plugins": [
+    {
+      "name": "cyclo-plugin",
+      "source": {"source": "local", "path": "./"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity"
+    }
+  ]
+}

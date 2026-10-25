@@ -1,6 +1,6 @@
-# Cyclo Plugin 0.7.0
+# Cyclo Plugin
 
-A dual-host Codex and Claude Code ROBOTIS product-expert plugin with official-source discovery, focused cross-product integration guidance, retained AI Sapiens workflows and separately gated DYNAMIXEL configuration. The portable identity remains **ai-sapiens-dev** for compatibility. Repository/product name: [Cyclo Plugin](https://github.com/ROBOTIS-GIT/cyclo_plugin). See [migration](MIGRATION.md).
+A dual-host Codex and Claude Code ROBOTIS product-expert plugin with official-source discovery, focused cross-product integration guidance, retained AI Sapiens workflows and separately gated DYNAMIXEL configuration. Repository/product name: [Cyclo Plugin](https://github.com/ROBOTIS-GIT/cyclo_plugin).
 
 ## What actually executes
 
@@ -20,7 +20,7 @@ Default launch disables hardware and OS serial discovery; a blocked catalog call
 
 ## Prepare locally
 
-Requires Node >=22, Python >=3.9 (PyYAML/jsonschema and Xacro for offline package/artifact validation). No global installation or host MCP registration is performed.
+Requires Node >=22, Python >=3.9 (PyYAML/jsonschema and Xacro for offline package/artifact validation). Use the supported local marketplace flow to install in the target Codex profile; dependency preparation alone does not register a host.
 
 ```bash
 npm ci --ignore-scripts --no-audit --no-fund
@@ -31,11 +31,11 @@ npm run package
 
 Inspect the lockfile and scripts first. The npm setup is local and deliberately suppresses lifecycle scripts. Tests compile the retained SDK in a disposable mock workspace; no firmware image build or training occurs. See [firmware setup and boundaries](modules/firmware/README.md).
 
-The ZIP is a source plugin package with one ai-sapiens-dev enclosing directory. It excludes node_modules, test workspaces and unrelated files. Extract and prepare its local npm dependencies before importing through the host's supported local/private plugin flow. The mcp.json declares the retained firmware launcher and new `node ${PLUGIN_ROOT}/modules/dynamixel/server.mjs`, both with hardware disabled. A web import does not deploy a Node process. Installed-host invocation has not been verified here.
+The ZIP is a source plugin package with one cyclo-plugin enclosing directory. It excludes node_modules, test workspaces and unrelated files. Extract and prepare its local npm dependencies before importing through the host's supported local/private plugin flow. The mcp.json declares the retained firmware launcher and new `node ${PLUGIN_ROOT}/modules/dynamixel/server.mjs`, both with hardware disabled. A web import does not deploy a Node process. Verify installed-host discovery and invocation separately from standalone server tests.
 
 ## Claude Code
 
-The same package supports a session-only local Claude Code load. Prepare local Node dependencies, then run `claude --plugin-dir /absolute/path/to/ai-sapiens-dev` and use `/ai-sapiens-dev:cyclo` or `/ai-sapiens-dev:robotis-expert`. See [host-specific setup and evidence](references/hosts.md). No global installation or duplicate MCP registration is needed. Actual CLI 2.1.310 validates and inventories this package; authenticated model execution is not claimed.
+The same package supports a session-only local Claude Code load. Prepare local Node dependencies, then run `claude --plugin-dir /absolute/path/to/cyclo-plugin` and use `/cyclo-plugin:cyclo` or `/cyclo-plugin:robotis-expert`. See [host-specific setup and evidence](references/hosts.md). No global installation or duplicate MCP registration is needed. Actual CLI 2.1.310 validates and inventories this package; authenticated model execution is not claimed.
 
 ## Use in Codex
 
@@ -56,14 +56,16 @@ The [34-page manual coverage matrix](references/coverage.md) distinguishes guida
 
 ## Provenance, tests and publication
 
-Upstream source is pinned in [UPSTREAM.json](modules/firmware/UPSTREAM.json) with SHA-256 for every imported file and [license notices](THIRD_PARTY_NOTICES.md). The original 0.2.0 project remains unchanged outside this new repository. Firmware MCP/SDK files are not modified; integration/test isolation is separate.
+Upstream source is pinned in [UPSTREAM.json](modules/firmware/UPSTREAM.json) with SHA-256 for every imported file and [license notices](THIRD_PARTY_NOTICES.md). Firmware MCP/SDK files are not modified; integration/test isolation is separate.
 
-`validation/current/` records actual results. CI, if enabled in the private repository, runs the same mock-only checks with no serial/network target configuration. No marketplace or public publication is configured. Real host activation, external CLI build completeness and hardware acceptance remain unverified. Any future hardware-enabled session must be separately authorized and must preserve that task's prohibited targets.
+`validation/current/` records actual results. CI, if enabled in the private repository, runs the same mock-only checks with no serial/network target configuration. No marketplace or public publication is configured. Host activation/invocation requires target-profile verification; external CLI build completeness and hardware acceptance remain unverified. Any future hardware-enabled session must be separately authorized and must preserve that task's prohibited targets.
 
-For the expanded device module, read [configuration/runtime boundaries](modules/dynamixel/README.md). New and old hardware enablement flags are independent; neither is enabled in this package. A registry refusal must not be bypassed through legacy tools. See [first-run workflow](references/first-run.md), [changelog](CHANGELOG.md) and [0.5.0 validation evidence](validation/RELEASE-0.5.0.md).
+For the expanded device module, read [configuration/runtime boundaries](modules/dynamixel/README.md). New and old hardware enablement flags are independent; neither is enabled in this package. A registry refusal must not be bypassed through legacy tools. See [first-run workflow](references/first-run.md), [changelog](CHANGELOG.md) and [customer-workflow validation](validation/RELEASE-0.5.0.md).
 
-See [0.6.0 compatibility validation](validation/RELEASE-0.6.0.md). The private package is not prepared for public-directory submission; no license or publication permission is added.
+See [dual-host validation](validation/RELEASE-0.6.0.md). The private package is not prepared for public-directory submission; no license or publication permission is added.
 
 All packaged prose, prompts and examples are English. The assistant can answer in the user's language while preserving exact identifiers and source citations. The [equal per-model evidence workflow](references/dynamixel-evidence.md) and [coverage audit](validation/dynamixel-coverage-audit-0.6.0.json) distinguish source coverage from semantic verification and operation-specific execution conditions. No model receives a privileged documentation tier.
 
-The 0.7.0 product runtime uses pinned official DynamixelSDK Python3.8.4 and optional local pyserial3.5, independently of the retained firmware SDK. See [generic runtime/capability coverage](modules/dynamixel/README.md). No model/firmware-number whitelist remains; unresolved capabilities and unknown identity fail closed. Drive/Operating/Protocol mode changes are outside this release.
+The product runtime uses pinned official DynamixelSDK Python3.8.4 and optional local pyserial3.5, independently of the retained firmware SDK. See [generic runtime/capability coverage](modules/dynamixel/README.md). No model/firmware-number whitelist remains; unresolved capabilities and unknown identity fail closed. Drive/Operating/Protocol mode changes are outside this release.
+
+See [Cyclo identity and normal Codex integration](validation/branding-and-local-integration.md) for configured, discovered and invoked evidence levels and preserved-settings checks.
