@@ -1,4 +1,4 @@
-# Cyclo Plugin 0.4.0
+# Cyclo Plugin 0.5.0
 
 A ROBOTIS product-expert plugin with official-source discovery, focused cross-product integration guidance, retained AI Sapiens workflows and separately gated DYNAMIXEL configuration. The portable identity remains **ai-sapiens-dev** for compatibility. Repository/product name: Cyclo Plugin. See [migration](MIGRATION.md).
 
@@ -15,14 +15,15 @@ A ROBOTIS product-expert plugin with official-source discovery, focused cross-pr
 
 The firmware MCP has no motion, torque control, ID/mode/reset/reboot, arbitrary-register-write or firmware-flashing tools. Its supported XL330-M288-T settings are Return Delay Time, baud and LED only, preserving upstream identity/grant/EEPROM/readback/partial-result checks. Raw reads are not write permissions.
 
-**This task must not use ProArt's connected OpenRB.** Do not enumerate ports, open devices, scan/read/write/flash hardware or move robots. Default launch disables hardware and OS serial discovery; a blocked catalog call is not an empty device inventory. Mock tests do not establish physical acceptance.
+Default launch disables hardware and OS serial discovery; a blocked catalog call is not an empty device inventory. Device access requires task-specific authorization and deliberate operator configuration. Mock tests do not establish physical acceptance. Producer development-session restrictions are separated in [development scope](validation/DEVELOPMENT-SCOPE.md), outside reusable Skill behavior.
 
 ## Prepare locally
 
-Requires Node >=22, Python >=3.9 (PyYAML/jsonschema for package validation). No global installation or host MCP registration is performed.
+Requires Node >=22, Python >=3.9 (PyYAML/jsonschema and Xacro for offline package/artifact validation). No global installation or host MCP registration is performed.
 
 ```bash
 npm ci --ignore-scripts --no-audit --no-fund
+python3 -m pip install -r validation/requirements.txt  # use an isolated Python environment
 npm test
 npm run package
 ```
@@ -37,7 +38,7 @@ The ZIP is a source plugin package with one ai-sapiens-dev enclosing directory. 
 - `$robotis-expert`: find official product knowledge beyond the curated subset; cite exact sources and unknowns.
 - `$dynamixel-expert`: explain current-based position/Y cascade control, or prepare ID/baud/LED/profile settings for the curated models.
 - `$robotis-integrate`: diagnose ROS 2, ros2_control, SDK, hardware-interface and Zenoh integration boundaries.
-- `$cyclo-firmware`: explain supported settings or prepare a synthetic dry-run; current task prohibits real devices.
+- `$cyclo-firmware`: explain supported settings or prepare a synthetic dry-run; live device access requires separate task authorization.
 - `$ai-sapiens-docs`: find and cite the official manual, with freshness/source-outage handling.
 - `$ai-sapiens-walking`: “AI Sapiens 보행 policy 학습 시켜줘” asks Cyclo Lab or Cyclo MJLab when unspecified.
 - `$ai-sapiens-video-mimic`: prepare local video → GEM-X/SOMA → K1 retarget → Mimic.
@@ -52,6 +53,6 @@ The [34-page manual coverage matrix](references/coverage.md) distinguishes guida
 
 Upstream source is pinned in [UPSTREAM.json](modules/firmware/UPSTREAM.json) with SHA-256 for every imported file and [license notices](THIRD_PARTY_NOTICES.md). The original 0.2.0 project remains unchanged outside this new repository. Firmware MCP/SDK files are not modified; integration/test isolation is separate.
 
-`validation/current/` records actual results. CI, if enabled in the private repository, runs the same mock-only checks with no serial/network target configuration. No marketplace or public publication is configured. Real host activation, external CLI build completeness and hardware acceptance remain unverified. Any future hardware-enabled session must be separately authorized and must not inherit the current task's prohibited target.
+`validation/current/` records actual results. CI, if enabled in the private repository, runs the same mock-only checks with no serial/network target configuration. No marketplace or public publication is configured. Real host activation, external CLI build completeness and hardware acceptance remain unverified. Any future hardware-enabled session must be separately authorized and must preserve that task's prohibited targets.
 
-For the expanded device module, read [configuration/runtime boundaries](modules/dynamixel/README.md). New and old hardware enablement flags are independent; neither is enabled in this package. A registry refusal must not be bypassed through legacy tools. See [0.4.0 validation evidence](validation/RELEASE-0.4.0.md).
+For the expanded device module, read [configuration/runtime boundaries](modules/dynamixel/README.md). New and old hardware enablement flags are independent; neither is enabled in this package. A registry refusal must not be bypassed through legacy tools. See [first-run workflow](references/first-run.md), [changelog](CHANGELOG.md) and [0.5.0 validation evidence](validation/RELEASE-0.5.0.md).

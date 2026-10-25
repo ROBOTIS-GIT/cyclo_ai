@@ -88,6 +88,15 @@ export async function configure(connect,request,{signal}={}) {
       const actual=decode(await connection.read(result.location.id,op.address,op.size));record.actual=actual;
       if(actual!==op.value)throw Error('Readback mismatch; stop without retry or rollback');
       record.verified=true;
+      if(op.name==='id'||op.name==='baud'){
+        // A reply at the destination alone is not continuity evidence. Verify
+        // the full supported snapshot, including unchanged mode/limits/profile.
+        const expected={...s,...Object.fromEntries(result.changes.filter(c=>c.verified).map(c=>[c.name,c.requested]))};
+        for(const [name,[address,size]] of Object.entries(READS)){
+          checkAbort(signal);
+          if(decode(await connection.read(result.location.id,address,size))!==expected[name])throw Error(`Transition continuity mismatch: ${name}; stop without retargeting`);
+        }
+      }
     }
     result.outcome='verified';
   }catch(e){if(e.name==='TransportClosureError')closureUnconfirmed=true;result.error=e.message;result.outcome=attempted?'uncertain':'not_written';}

@@ -6,7 +6,7 @@ For selection, ask the required payload/DOF/reach or actuator torque-speed-volta
 
 For platform setup, identify robot revision, controller, onboard OS, ROS distribution and documented release. Follow that platform's quickstart and dependencies in a separate workspace. OMY/OMX, OpenMANIPULATOR-X/P, AI Worker, HX5-D20, TurtleBot3, OP3 and THORMANG3 have distinct mechanical and software assumptions. A K1 training or deployment command is not a generic platform command. Preserve a user's established workspace and service setup.
 
-For controllers/accessories (OpenRB, OpenCR, CM boards, U2D2, bridges, shields), retrieve power, pinout, electrical interface and firmware/application compatibility before advising wiring. Do not enumerate the host merely to answer a board question. Firmware flashing is outside the packaged MCP. Current task prohibits touching ProArt OpenRB entirely.
+For controllers/accessories (OpenRB, OpenCR, CM boards, U2D2, bridges, shields), retrieve power, pinout, electrical interface and firmware/application compatibility before advising wiring. Do not enumerate the host merely to answer a board question. Firmware flashing is outside the packaged MCP.
 
 For education and older generations (R+, PLAY, DREAM, BIOLOID, OLLO, ENGINEER, legacy OP and MX/AX/RX/DX/EX pages), distinguish the named generation and software/OS requirements. A navigation category or `archived` repository does not prove the product is discontinued. Mark lifecycle unknown unless the current official product notice explicitly establishes it; verify current availability from the official catalog/support when asked.
 

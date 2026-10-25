@@ -1,0 +1,8 @@
+{
+  "rosDistro": "jazzy",
+  "purpose": "Synthetic offline fixture; dimensions and limits are not product calibration",
+  "joints": [
+    {"name":"shoulder_joint","id":1,"model":"XM430-W350-T","lower":-1.0,"upper":1.0,"effort":0.5,"velocity":0.25,"lengthM":0.1},
+    {"name":"elbow_joint","id":2,"model":"XM430-W350-T","lower":-0.8,"upper":0.8,"effort":0.3,"velocity":0.2,"lengthM":0.08}
+  ]
+}
