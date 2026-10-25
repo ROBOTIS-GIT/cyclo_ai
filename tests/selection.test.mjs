@@ -12,3 +12,23 @@ test('selection expires, cross-session tokens and changed binding fail closed',a
 test('new observation or operation context invalidates stale selection',async()=>{const s=new TargetSession({});const first=s.recordScan(bus,complete,async()=>{});s.recordScan(bus,complete,async()=>{});await assert.rejects(s.select(choice(first)));let release;const ticket=s.recordScan(bus,complete,()=>new Promise(r=>release=r));const selecting=s.select(choice(ticket));s.clearObservations(bus.port);release();await assert.rejects(selecting,/changed during selection/);});
 test('verified location advances only after closure and reservation release',async()=>{const s=new TargetSession({});const ticket=s.recordScan(bus,complete,async()=>{});await s.select(choice(ticket));s.settle('motor',{outcome:'verified',closureConfirmed:true,busReservationReleased:true,location:{id:7,baud:1000000}});assert.equal(s.target('motor').id,7);assert.equal(s.target('motor').baud,1000000);s.settle('motor',{outcome:'verified',closureConfirmed:true,busReservationReleased:false,location:{id:8,baud:1000000}});assert.throws(()=>s.target('motor'),/reconciliation/);assert.equal(s.list()[0].id,7);});
 test('failed and uncertain operations retire other handles on the bus',async()=>{const s=new TargetSession({targets:{a:{...bus,id:1},b:{...bus,id:2}}});s.settle('a',{outcome:'not_written',closureConfirmed:true,busReservationReleased:true,location:{id:1,baud:57600}});assert.throws(()=>s.target('a'));assert.throws(()=>s.target('b'));});
+
+test('target-specific grants cannot change protocol, canonical catalog or axis cohort',async()=>{
+ const {TargetSession}=await import('../modules/dynamixel/selection.mjs');
+ const original={port:'/MOCK',model:30,firmware:52,id:1,baud:57600,protocol:1,catalogId:'mx_series/mx-28-2',peerIds:[],allowConfigure:true,allowScan:true};
+ for(const change of [{protocol:2},{catalogId:'mx_series/mx-64-2'},{peerIds:[2]}]){
+  const s=new TargetSession({targets:{original}}),bus=s.resolve({target:'original'});
+  const record=s.recordScan(bus,{complete:true,closureConfirmed:true,busReservationReleased:true,devices:[{id:1,modelNumber:30,firmwareVersion:52,baud:57600,protocol:change.protocol??1,identityComplete:true}]},async()=>{});
+  await assert.rejects(s.select({scanId:record.scanId,candidateId:record.candidates[0].candidateId,name:'new',confirmed:true,isolatedBus:true,catalogId:change.catalogId??original.catalogId,peerIds:change.peerIds??[] }));
+ }
+});
+test('dual-axis selection requires both actually observed endpoints',async()=>{
+ const {TargetSession}=await import('../modules/dynamixel/selection.mjs');
+ const candidate=id=>({id,modelNumber:1090,firmwareVersion:52,baud:57600,protocol:2,identityComplete:true});
+ for(const ids of [[1],[1,2]]){
+  const s=new TargetSession({buses:{mock:{port:'/MOCK',allowScan:true,allowConfigure:true}}}),bus=s.resolve({bus:'mock'});
+  const record=s.recordScan(bus,{complete:true,closureConfirmed:true,busReservationReleased:true,devices:ids.map(candidate)},async()=>{});
+  const select=()=>s.select({scanId:record.scanId,candidateId:record.candidates[0].candidateId,name:'dual',confirmed:true,isolatedBus:true,peerIds:[2]});
+  if(ids.length===1)await assert.rejects(select(),/Multiple responders|peer endpoint/);else assert.deepEqual((await select()).peerIds,[2]);
+ }
+});

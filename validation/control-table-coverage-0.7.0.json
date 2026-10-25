@@ -1,0 +1,39 @@
+{
+  "version": "0.7.0",
+  "revision": "c88527af0888baea6f7ef3305bbbbb911b960759",
+  "catalog": {
+    "actuatorDocuments": 89,
+    "mechanicalDocuments": 3
+  },
+  "families": {
+    "ax_series": 3,
+    "dx_series": 3,
+    "ex_series": 1,
+    "mx_series": 7,
+    "p_series": 6,
+    "pro_series": 17,
+    "rx_series": 4,
+    "x_series": 36,
+    "y_series": 12
+  },
+  "capabilities": {
+    "id": {
+      "resolved": 89
+    },
+    "baud": {
+      "resolved": 89
+    },
+    "led": {
+      "resolved": 84,
+      "unsupported": 5
+    },
+    "profile": {
+      "unsupported": 27,
+      "resolved": 38,
+      "unresolved": 24
+    }
+  },
+  "executionEvidence": "mock-only; no hardware",
+  "sourceEvidence": "Pinned factual tables + exact shared-component templates; unresolved conditions block operations",
+  "physicalVariants": "Counts are documents, not every SKU"
+}

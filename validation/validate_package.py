@@ -90,6 +90,17 @@ def check(root):
     provenance=json.loads((root/'modules/firmware/UPSTREAM.json').read_text())
     for path,digest in provenance['files_sha256'].items():
         assert hashlib.sha256((root/'modules/firmware/upstream'/path).read_bytes()).hexdigest()==digest
+    sdk=json.loads((root/'modules/dynamixel/SDK-UPSTREAM.json').read_text())
+    for path,digest in sdk['files_sha256'].items():
+        assert hashlib.sha256((root/'modules/dynamixel/sdk-upstream'/path).read_bytes()).hexdigest()==digest
+    tables=json.loads((root/'references/control-tables.json').read_text())
+    assert tables['version']==manifest['version']
+    assert tables['summary']=={'actuatorDocuments':89,'mechanicalDocuments':3}
+    assert len(tables['models'])==92
+    for model in tables['models']:
+        if model['kind']!='actuator':continue
+        assert model['protocols'] and all(p in [1,2] for p in model['protocols'])
+        assert model['registers']['Torque Enable']['access']=='RW'
     return {'upstream_source_hashes':'passed','hardware_default':'disabled','first_party_skill_count':len(names),'mcp_schema':'passed','manifest_schema':'passed','skills':names,'local_links_checked':links,'metadata':'passed','unexpected_components':'no undeclared hooks or apps','indexed_manual_pages':len(index['pages'])}
 
 if __name__=='__main__':

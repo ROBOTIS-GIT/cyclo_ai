@@ -300,7 +300,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -558,7 +558,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -829,7 +829,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -1075,7 +1075,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -1321,7 +1321,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -1567,7 +1567,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -1639,7 +1639,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -1711,7 +1711,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -1783,7 +1783,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -2055,7 +2055,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -2464,7 +2464,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -2796,7 +2796,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -3070,7 +3070,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -3469,7 +3469,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -3783,7 +3783,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -4196,7 +4196,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -4525,7 +4525,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -4939,7 +4939,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -5353,7 +5353,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -5767,7 +5767,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -6181,7 +6181,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -6595,7 +6595,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -7009,7 +7009,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -7316,7 +7316,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -7699,7 +7699,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -8006,7 +8006,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -8389,7 +8389,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -8696,7 +8696,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -9079,7 +9079,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -9372,7 +9372,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -9679,7 +9679,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -9986,7 +9986,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -10293,7 +10293,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -10600,7 +10600,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -10907,7 +10907,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -11290,7 +11290,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -11597,7 +11597,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -11980,7 +11980,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -12287,7 +12287,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -12670,7 +12670,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -12918,7 +12918,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -13166,7 +13166,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -13414,7 +13414,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -13662,7 +13662,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -14053,7 +14053,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -14455,7 +14455,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -14857,7 +14857,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -15259,7 +15259,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -15661,7 +15661,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -16050,7 +16050,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -16439,7 +16439,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -16828,7 +16828,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -17217,7 +17217,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -17627,7 +17627,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -18037,7 +18037,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -18458,7 +18458,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -18879,7 +18879,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -19289,7 +19289,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -19709,7 +19709,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -20121,7 +20121,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -20533,7 +20533,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -20943,7 +20943,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -21353,7 +21353,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -21776,7 +21776,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -22199,7 +22199,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -22588,7 +22588,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -22830,7 +22830,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -23226,7 +23226,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -23627,7 +23627,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -24024,7 +24024,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -24425,7 +24425,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -24837,7 +24837,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -25249,7 +25249,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -25672,7 +25672,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -26095,7 +26095,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -26502,7 +26502,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -26909,7 +26909,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -27302,7 +27302,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -27709,7 +27709,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -28117,7 +28117,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -28640,7 +28640,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -29163,7 +29163,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -29686,7 +29686,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -30209,7 +30209,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -30732,7 +30732,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -31255,7 +31255,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -31778,7 +31778,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -32301,7 +32301,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -32824,7 +32824,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -33347,7 +33347,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -33870,7 +33870,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     },
     {
@@ -34393,7 +34393,7 @@
         "sourceGraphIndexed": true,
         "conditionsRendered": false,
         "allFeatureClaimsSemanticallyVerified": false,
-        "hardwareExecution": "unchanged separate allowlist"
+        "hardwareExecution": "separate source-bound named-capability conditions"
       }
     }
   ],

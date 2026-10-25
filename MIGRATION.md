@@ -27,3 +27,7 @@ Keep the existing Codex installation flow and root identity. Claude Code reads t
 The 0.6.0 update also replaces the earlier small set of DYNAMIXEL concept examples with a common feature/evidence workflow for the complete pinned model-document set. Two read-only documentation tools join the product server; its hardware configuration permissions are unchanged. Package text and prompts are English, including translated historical response records. No full official document corpus or new license is bundled.
 
 The source repository is now `https://github.com/ROBOTIS-GIT/cyclo_plugin`. Portable plugin identity and Skill names remain unchanged; use the organization repository for future source updates.
+
+## 0.7.0 generic configuration
+
+Product hardware runtime now uses the pinned official Python SDK with optional local pyserial, not the firmware TypeScript runtime. Existing named targets remain compatible where identity is unambiguous; specify protocol explicitly, exact catalog identity for numeric collisions and observed peerIds for dual-axis units. Both axes must be observed and verified. Scan defaults include Protocol1/2 and budget three identity packets. No hidden Drive Mode profile switch remains: use the already selected profile type. RGB/mask LED color must be explicit. Firmware/CLI consumers are unchanged.

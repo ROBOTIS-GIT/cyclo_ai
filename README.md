@@ -1,4 +1,4 @@
-# Cyclo Plugin 0.6.0
+# Cyclo Plugin 0.7.0
 
 A dual-host Codex and Claude Code ROBOTIS product-expert plugin with official-source discovery, focused cross-product integration guidance, retained AI Sapiens workflows and separately gated DYNAMIXEL configuration. The portable identity remains **ai-sapiens-dev** for compatibility. Repository/product name: [Cyclo Plugin](https://github.com/ROBOTIS-GIT/cyclo_plugin). See [migration](MIGRATION.md).
 
@@ -8,7 +8,7 @@ A dual-host Codex and Claude Code ROBOTIS product-expert plugin with official-so
 |---|---|---|
 | ROBOTIS expert Skills | Official source inventory, product/model/version routing, ROS 2/SDK/Zenoh troubleshooting | Focused source review; broader navigation links remain discovered-only |
 | DYNAMIXEL documentation MCP | Equal per-model official-source routing for 89 actuator documents and 3 mechanical DYD documents, with conditional MDX evidence | Full-tree/source graph audit, blob checks and public HTTPS retrieval; no exhaustive semantic-support guarantee |
-| DYNAMIXEL product MCP | Curated XL330-M288 firmware52 and XM430-W350 firmware42 ID, baud, LED and profile transactions | Mock-only workflow and stdio tests; no physical-device validation |
+| DYNAMIXEL product MCP | Generic identity-driven Protocol1/2 engine, source-bound ID/baud/LED/profile capabilities across the catalog | Mock-only workflow and stdio tests; no physical-device validation |
 | Retained AI Sapiens Skills | Official manual retrieval, preparation, backend choice, documented commands and checks | Prior independent response evaluations; 25 offline asset-helper tests retained; no training/robot runtime |
 | Offline asset audit | Layout/hash inventory and optional supplied-record consistency | Synthetic fixtures; not ONNX semantics, authentic provenance or safety certification |
 | Firmware MCP | The pinned upstream 10-tool stdio contract; planning/capabilities by default | Isolated mock packet/workflow and modern/legacy stdio tests |
@@ -41,7 +41,7 @@ The same package supports a session-only local Claude Code load. Prepare local N
 
 - `$cyclo`: route ROBOTIS product, integration, learning and configuration requests.
 - `$robotis-expert`: find official product knowledge beyond the curated subset; cite exact sources and unknowns.
-- `$dynamixel-expert`: explain current-based position/Y cascade control, or prepare ID/baud/LED/profile settings for the curated models.
+- `$dynamixel-expert`: explain current-based position/Y cascade control, or prepare model-specific ID/baud/LED/profile settings with explicit capability checks.
 - `$robotis-integrate`: diagnose ROS 2, ros2_control, SDK, hardware-interface and Zenoh integration boundaries.
 - `$cyclo-firmware`: explain supported settings or prepare a synthetic dry-run; live device access requires separate task authorization.
 - `$ai-sapiens-docs`: find and cite the official manual, with freshness/source-outage handling.
@@ -64,4 +64,6 @@ For the expanded device module, read [configuration/runtime boundaries](modules/
 
 See [0.6.0 compatibility validation](validation/RELEASE-0.6.0.md). The private package is not prepared for public-directory submission; no license or publication permission is added.
 
-All packaged prose, prompts and examples are English. The assistant can answer in the user's language while preserving exact identifiers and source citations. The [equal per-model evidence workflow](references/dynamixel-evidence.md) and [coverage audit](validation/dynamixel-coverage-audit-0.6.0.json) distinguish source coverage from semantic verification and the separate execution allowlist. No model receives a privileged documentation tier.
+All packaged prose, prompts and examples are English. The assistant can answer in the user's language while preserving exact identifiers and source citations. The [equal per-model evidence workflow](references/dynamixel-evidence.md) and [coverage audit](validation/dynamixel-coverage-audit-0.6.0.json) distinguish source coverage from semantic verification and operation-specific execution conditions. No model receives a privileged documentation tier.
+
+The 0.7.0 product runtime uses pinned official DynamixelSDK Python3.8.4 and optional local pyserial3.5, independently of the retained firmware SDK. See [generic runtime/capability coverage](modules/dynamixel/README.md). No model/firmware-number whitelist remains; unresolved capabilities and unknown identity fail closed. Drive/Operating/Protocol mode changes are outside this release.

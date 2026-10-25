@@ -18,7 +18,7 @@ Use the same [exact-model evidence workflow](../../../references/dynamixel-evide
 | Y industrial communication | Exact Protocol Type and bus definitions, available versus future/TBD support, model/revision notes | Do not promise Modbus merely because a value/table heading exists; resolve the actual published status |
 | DYD reducers | Gear ratio, rated/peak torque, lubrication, mechanical integration | These three documents describe reducers, not serial actuators; they have no DYNAMIXEL register workflow |
 
-For concise explanations, explain the concept and name the exact model used as an example only after reading its evidence. For comparisons, retrieve both models through the same pipeline; preserve firmware generation and physical variants. Do not rank a model as better documented because it belongs to the executable allowlist.
+For concise explanations, explain the concept and name the exact model used as an example only after reading its evidence. For comparisons, retrieve both models through the same pipeline; preserve firmware generation and physical variants. No model receives a privileged documentation tier; executable conditions are per capability.
 
 For register-specific answers retain address, width, access, memory, raw range, signed representation, units/scale, mode/firmware conditions, torque prerequisites, reset effects, persistence and source locations when material. Unknown fields stay unknown. If a conditional component or contradiction is unresolved, give a bounded conceptual explanation and identify the missing evidence rather than issuing exact values or unsupported guarantees.
 

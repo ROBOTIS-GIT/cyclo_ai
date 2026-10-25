@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-sapiens-dev",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Cyclo Plugin: source-backed ROBOTIS product guidance, retained AI Sapiens workflows and separately gated model-aware DYNAMIXEL configuration.",
   "keywords": [
     "robotis",
@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "Cyclo Plugin",
         "shortDescription": "ROBOTIS product expert",
-        "longDescription": "Official-source product routing across ROBOTIS, focused integration guidance and AI Sapiens workflows. Curated DYNAMIXEL ID, baud, LED and profile transactions use a separate disabled-by-default MCP. All robotics runtime evidence is mock-only.",
+        "longDescription": "Official-source product routing across ROBOTIS, focused integration guidance and AI Sapiens workflows. Source-bound model-specific DYNAMIXEL ID, baud, LED and profile transactions use a separate disabled-by-default MCP. All robotics runtime evidence is mock-only.",
         "capabilities": [],
         "defaultPrompt": [
           "Help me select a DYNAMIXEL using the official manuals",

@@ -10,6 +10,9 @@ test_symlink_from_other_run_rejected (test_asset_audit.AuditTests.test_symlink_f
 test_untrusted_path_is_literal (test_asset_audit.AuditTests.test_untrusted_path_is_literal) ... ok
 test_velocity_hash_and_no_write (test_asset_audit.AuditTests.test_velocity_hash_and_no_write) ... ok
 test_wrong_motion_extension (test_asset_audit.AuditTests.test_wrong_motion_extension) ... ok
+test_all_models_match_independent_row_witnesses (test_control_tables.ControlTables.test_all_models_match_independent_row_witnesses) ... ok
+test_header_variants_and_malformed_rows_fail_closed (test_control_tables.ControlTables.test_header_variants_and_malformed_rows_fail_closed) ... ok
+test_source_bindings_and_upstream_sdk_immutability (test_control_tables.ControlTables.test_source_bindings_and_upstream_sdk_immutability) ... ok
 test_checkout_head_must_match_claimed_revision (test_doc_index.DocIndex.test_checkout_head_must_match_claimed_revision) ... ok
 test_conditional_props_with_greater_than_are_not_truncated (test_doc_index.DocIndex.test_conditional_props_with_greater_than_are_not_truncated) ... ok
 test_tree_from_another_revision_cannot_claim_pinned_links (test_doc_index.DocIndex.test_tree_from_another_revision_cannot_claim_pinned_links) ... ok
@@ -39,8 +42,14 @@ test_source_hashes_are_only_byte_evidence (test_robotis_sources.Sources.test_sou
 test_customer_generated_xacro_and_controller_mapping (test_ros2_artifacts.RosArtifacts.test_customer_generated_xacro_and_controller_mapping) ... ok
 test_existing_customer_file_preserved (test_ros2_artifacts.RosArtifacts.test_existing_customer_file_preserved) ... ok
 test_invalid_spec_never_creates_output (test_ros2_artifacts.RosArtifacts.test_invalid_spec_never_creates_output) ... ok
+test_bad_checksum_crc_and_error_status_are_not_absence (test_sdk_packets.Packets.test_bad_checksum_crc_and_error_status_are_not_absence) ... ok
+test_both_protocols_read_write_endian_packets_without_serial (test_sdk_packets.Packets.test_both_protocols_read_write_endian_packets_without_serial) ... ok
+test_bridge_named_write_requires_bound_metadata_and_rejects_motion (test_sdk_packets.Packets.test_bridge_named_write_requires_bound_metadata_and_rejects_motion) ... ok
+test_protocol1_ping_is_presence_only_and_no_hidden_model_read (test_sdk_packets.Packets.test_protocol1_ping_is_presence_only_and_no_hidden_model_read) ... ok
+test_protocol2_ping_retains_payload_firmware_and_model (test_sdk_packets.Packets.test_protocol2_ping_retains_payload_firmware_and_model) ... ok
+test_unknown_protocol_broadcast_and_backend_rate_bounds (test_sdk_packets.Packets.test_unknown_protocol_broadcast_and_backend_rate_bounds) ... ok
 
 ----------------------------------------------------------------------
-Ran 41 tests in 0.105s
+Ran 50 tests in 0.181s
 
 OK

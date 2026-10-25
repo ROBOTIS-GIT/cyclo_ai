@@ -34,7 +34,7 @@ for(const host of ['codex','claude'])for(const name of Object.keys(portable))tes
  // Both the plugin root and unrelated cwd contain spaces. No shell is involved.
  const config=host==='codex'?portable[name]:claude.mcpServers[name];
  const args=config.args.map(a=>a.replaceAll(host==='codex'?'${PLUGIN_ROOT}':'${CLAUDE_PLUGIN_ROOT}',pluginRoot));
- const c=new Client({name:'dual-host-offline-check',version:'0.6.0'});
+ const c=new Client({name:'dual-host-offline-check',version:'0.7.0'});
  const transport=new StdioClientTransport({command:process.execPath,args,cwd,env:config.env,stderr:'pipe'});
  let stderr='';transport.stderr.on('data',b=>stderr+=b);
  try{

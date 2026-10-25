@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0
+
+- Replace two-model execution profiles with one typed, source-bound identity/capability engine for the complete actuator catalog.
+- Add bounded Protocol1/2 discovery with presence/identity distinction and model-specific firmware reads using the pinned official SDK.
+- Validate per-model ID/baud/LED/profile semantics, transport baud availability, exact-generation identity and observed dual-axis cohorts.
+- Preserve dry runs, explicit selection, scope binding, continuity, uncertain-state locks and disabled hardware defaults. No mode, torque, goal, reset or firmware writes.
+- Add all-catalog fixtures, independent metadata witnesses, packet checksum/CRC/status tests and reviewed failure cases.
+
 ## 0.6.0
 
 - Route every indexed DYNAMIXEL model through the same official source pipeline: 89 actuator documents, three mechanical reducer documents, generation-aware aliases and conditional MDX evidence. Add bounded read-only source retrieval without changing executable hardware permissions.

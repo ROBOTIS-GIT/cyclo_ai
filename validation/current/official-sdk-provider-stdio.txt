@@ -1,0 +1,12 @@
+✔ official provider stays disabled without explicit runtime flag (0.62035ms)
+✔ Node provider -> Python stdio -> official SDK Protocol 1 over fake bytes (77.006236ms)
+✔ Node provider -> Python stdio -> official SDK Protocol 2 over fake bytes (71.600672ms)
+✔ failed close reaps only the owned bridge and still reports closure uncertainty (23.14824ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 230.363123

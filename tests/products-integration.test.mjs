@@ -23,13 +23,13 @@ test('default stdio: official routes/registry work; discovery and execution stay
  const unknown=await c.callTool({name:'robotis_sources',arguments:{query:'nonexistent-product-xyz'}});assert.equal(unknown.structuredContent.sources.length,0);
  const registry=await c.callTool({name:'dynamixel_registry',arguments:{}});assert.equal(registry.structuredContent.hardwareEnabled,false);
  const plan=await c.callTool({name:'dynamixel_configure',arguments:{target:'synthetic',changes:{id:7}}});assert.equal(plan.structuredContent.executed,false);assert.ok(plan.structuredContent.pending.includes('destination ID collision check'));
- for(const [name,args] of [['dynamixel_ports',{}],['dynamixel_scan',{target:'synthetic',ids:[1],bauds:[57600],dryRun:false}],['dynamixel_configure',{target:'synthetic',changes:{led:1},dryRun:false}]]){const r=await c.callTool({name,arguments:args});assert.equal(r.isError,true);assert.match(r.content[0].text,/disabled/);}
+ for(const [name,args] of [['dynamixel_ports',{}],['dynamixel_scan',{target:'synthetic',ids:[1],protocols:[2],bauds:[57600],dryRun:false}],['dynamixel_configure',{target:'synthetic',changes:{led:1},dryRun:false}]]){const r=await c.callTool({name,arguments:args});assert.equal(r.isError,true);assert.match(r.content[0].text,/disabled/);}
  const raw=await c.callTool({name:'dynamixel_configure',arguments:{target:'synthetic',changes:{address:64,value:1}}});assert.equal(raw.isError,true);
 });
 test('injected mock stdio: bounded scan, LED and new-ID readback',async t=>{
  const c=await client(t,true);
  const ports=await c.callTool({name:'dynamixel_ports',arguments:{}});assert.equal(ports.structuredContent.ports[0].path,'/MOCK-ONLY');
- const scan=await c.callTool({name:'dynamixel_scan',arguments:{target:'synthetic',ids:[1,2],bauds:[57600,1000000],dryRun:false}});assert.equal(scan.structuredContent.devices.length,1);assert.equal(scan.structuredContent.complete,true);
+ const scan=await c.callTool({name:'dynamixel_scan',arguments:{target:'synthetic',ids:[1,2],protocols:[2],bauds:[57600,1000000],dryRun:false}});assert.equal(scan.structuredContent.devices.length,1);assert.equal(scan.structuredContent.complete,true);
  const led=await c.callTool({name:'dynamixel_configure',arguments:{target:'synthetic',changes:{led:1},dryRun:false}});assert.equal(led.structuredContent.outcome,'verified');assert.equal(led.structuredContent.busReservationReleased,true);
  const id=await c.callTool({name:'dynamixel_configure',arguments:{target:'synthetic',changes:{id:7},dryRun:false}});assert.equal(id.structuredContent.outcome,'verified');assert.equal(id.structuredContent.location.id,7);
  const next=await c.callTool({name:'dynamixel_configure',arguments:{target:'synthetic',changes:{led:0},dryRun:false}});assert.equal(next.structuredContent.outcome,'verified');assert.equal(next.structuredContent.location.id,7);
@@ -37,9 +37,9 @@ test('injected mock stdio: bounded scan, LED and new-ID readback',async t=>{
 test('novice stdio: unknown identity -> bounded scan -> confirmed selection -> ID/baud changes -> reuse',async t=>{
  const c=await client(t,true,{unknown:true});
  const call=(name,args)=>c.callTool({name,arguments:args});
- const plan=await call('dynamixel_scan',{bus:'bench',ids:[1,2],bauds:[57600]});assert.equal(plan.structuredContent.executed,false);
+ const plan=await call('dynamixel_scan',{bus:'bench',ids:[1,2],protocols:[2],bauds:[57600]});assert.equal(plan.structuredContent.executed,false);
  assert.deepEqual((await call('dynamixel_targets',{})).structuredContent.targets,[]);
- const result=await call('dynamixel_scan',{bus:'bench',ids:[1,2],bauds:[57600],dryRun:false});
+ const result=await call('dynamixel_scan',{bus:'bench',ids:[1,2],protocols:[2],bauds:[57600],dryRun:false});
  const {scanId,candidates}=result.structuredContent;assert.equal(candidates.length,1);
  const choice={scanId,candidateId:candidates[0].candidateId,name:'motor',confirmed:true,isolatedBus:true};
  const missing=await call('dynamixel_select',{...choice,confirmed:false});assert.equal(missing.isError,true);
@@ -48,11 +48,11 @@ test('novice stdio: unknown identity -> bounded scan -> confirmed selection -> I
  assert.equal((await call('dynamixel_targets',{})).structuredContent.targets[0].id,1,'dry run must not move target');
  const changed=await call('dynamixel_configure',{target:'motor',changes:{id:7},dryRun:false});assert.equal(changed.structuredContent.sessionTarget.id,7);
  const baud=await call('dynamixel_configure',{target:'motor',changes:{baud:1000000},dryRun:false});assert.equal(baud.structuredContent.sessionTarget.baud,1000000);
- const led=await call('dynamixel_configure',{target:'motor',changes:{led:1},dryRun:false});assert.equal(led.structuredContent.outcome,'verified');assert.deepEqual(led.structuredContent.location,{id:7,baud:1000000});
+ const led=await call('dynamixel_configure',{target:'motor',changes:{led:1},dryRun:false});assert.equal(led.structuredContent.outcome,'verified');assert.deepEqual(led.structuredContent.location,{id:7,baud:1000000,protocol:2});
  assert.equal((await call('dynamixel_select',choice)).isError,true,'old observation cannot be reused');
 });
 for(const scenario of ['none','multiple','unsupported'])test(`novice ${scenario} discovery never silently configures`,async t=>{
- const c=await client(t,true,{unknown:true,scenario});const r=await c.callTool({name:'dynamixel_scan',arguments:{bus:'bench',ids:[1,2],bauds:[57600],dryRun:false}});
+ const c=await client(t,true,{unknown:true,scenario});const r=await c.callTool({name:'dynamixel_scan',arguments:{bus:'bench',ids:[1,2],protocols:[2],bauds:[57600],dryRun:false}});
  const {scanId,candidates}=r.structuredContent;
  assert.equal(candidates.length,scenario==='none'?0:scenario==='multiple'?2:1);
  const selected=await c.callTool({name:'dynamixel_select',arguments:{scanId,candidateId:candidates[0]?.candidateId??'absent',name:'motor',confirmed:true,isolatedBus:true}});assert.equal(selected.isError,true);

@@ -1,0 +1,2 @@
+# Install only into an operator-selected isolated Python environment.
+pyserial==3.5
