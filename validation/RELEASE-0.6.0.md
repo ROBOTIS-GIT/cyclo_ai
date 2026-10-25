@@ -36,3 +36,5 @@ Final offline suite: 169 tests (71 pinned firmware mocks, 42 configuration/selec
 ## Repository destination
 
 The authorized source repository is https://github.com/ROBOTIS-GIT/cyclo_plugin (verified private, initially empty). Existing project history is retained. The former personal remote is no longer a publishing destination. This changes source hosting only; no public release, license grant, global host installation or device authorization follows.
+
+The organization repository initially created no push/PR Actions run despite an active enabled workflow. A manual `workflow_dispatch` entry uses the same read-only offline job to make exact-ref CI verification available; no workflow permissions or branch rules are expanded. Organization main requires two approving reviews and signed commits, which remain release gates.

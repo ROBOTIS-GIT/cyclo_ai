@@ -41,6 +41,6 @@ test_existing_customer_file_preserved (test_ros2_artifacts.RosArtifacts.test_exi
 test_invalid_spec_never_creates_output (test_ros2_artifacts.RosArtifacts.test_invalid_spec_never_creates_output) ... ok
 
 ----------------------------------------------------------------------
-Ran 41 tests in 0.080s
+Ran 41 tests in 0.105s
 
 OK
