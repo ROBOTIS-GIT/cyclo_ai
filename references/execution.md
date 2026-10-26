@@ -2,7 +2,7 @@
 
 This version combines AI Sapiens Skills with a separately gated local firmware MCP. It has no hooks, background scheduler, GPU service, robot registry or credential store. Installation does not provide training or robot-deployment execution access. Never claim an action happened without an observed result.
 
-Hardware and external execution are disabled by default. Product instructions do not authorize device access, GPU jobs, global installations, network exposure, credentials, robot changes, policy deployment or publication. Follow the actual task's authorized scope and preserve unrelated user services and settings.
+Hardware tools are available by default, but never run automatically. External jobs still require a real authorized executor. Set `CYCLO_OFFLINE=1` for device-free planning; legacy module enable flags set to `0` also disable that module. Product instructions do not authorize device access, GPU jobs, global installations, network exposure, credentials, robot changes, policy deployment or publication. Follow the actual task's authorized scope and preserve unrelated user services and settings.
 
 For later user tasks, preserve the task's existing authorizations and restrictions. Read-only local inspection and reversible work inside the chosen project can proceed when in scope. Separate environment mutation/download/container startup, paid or long GPU execution, robot connection/file transfer, and live actuation. Obtain missing authorization at the concrete step, with the exact target and effect. Do not repeatedly ask for permissions already given.
 

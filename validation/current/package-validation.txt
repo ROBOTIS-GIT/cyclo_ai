@@ -1,6 +1,6 @@
 {
   "upstream_source_hashes": "passed",
-  "hardware_default": "disabled",
+  "hardware_default": "available; no startup I/O; explicit confirmation; CYCLO_OFFLINE=1 opt-out",
   "first_party_skill_count": 14,
   "mcp_schema": "passed",
   "manifest_schema": "passed",
@@ -20,7 +20,7 @@
     "robotis-expert",
     "robotis-integrate"
   ],
-  "local_links_checked": 160,
+  "local_links_checked": 165,
   "metadata": "passed",
   "unexpected_components": "no undeclared hooks or apps",
   "indexed_manual_pages": 34

@@ -26,7 +26,7 @@ class FakePort:
     def getBytesAvailable(self):return len(self.buffer)
     def readPort(self,length):out=self.buffer[:length];del self.buffer[:length];return out
     def writePort(self,packet):
-        self.sent.append(list(packet));wire=1 if packet[2]!=253 else 2;self.protocol=wire
+        self.sent.append(list(packet));wire=2 if packet[2:4]==[253,0]else 1;self.protocol=wire
         device_id=packet[2 if wire==1 else 4];instruction=packet[4 if wire==1 else 7]
         params=packet[5:-1] if wire==1 else packet[8:-2];data=[]
         if instruction==1 and wire==2:data=[self.model&255,self.model>>8,self.firmware]

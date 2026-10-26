@@ -5,7 +5,7 @@ export function catalogDevice(m,{firmware=52,protocol=m.protocols.includes(2)?2:
  if(!rates.has(baud))baud=[...rates][0];
  for(const endpoint of [id,...peerIds]){
   const regs=new Map(Object.values(m.registers).map(r=>[r.address,0]));
-  for(const[name,value]of Object.entries({'Model Number':m.modelNumbers[0],'Firmware Version':firmware,'ID':endpoint,'Baud Rate':m.bauds[String(baud)],'Torque Enable':endpoint===id?0:peerTorque,'Operating Mode':3,'Drive Mode':drive,'Protocol Type':protocol,'Secondary(Shadow) ID':255,'Velocity Limit':10000,'Acceleration Limit':10000,'Lock':0}))if(m.registers[name])regs.set(m.registers[name].address,value);
+  for(const[name,value]of Object.entries({'Model Number':m.modelNumbers[0],'Firmware Version':firmware,'ID':endpoint,'Baud Rate':m.bauds[String(baud)],'Torque Enable':endpoint===id?0:peerTorque,'Status Return Level':2,'Operating Mode':3,'Drive Mode':drive,'Protocol Type':protocol,'Secondary(Shadow) ID':255,'Velocity Limit':10000,'Acceleration Limit':10000,'Lock':0}))if(m.registers[name])regs.set(m.registers[name].address,value);
   endpoints.set(endpoint,regs);
  }
  let currentBaud=baud,writeCount=0;

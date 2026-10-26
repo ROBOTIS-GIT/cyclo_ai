@@ -41,12 +41,17 @@ for(const host of ['codex','claude'])for(const name of Object.keys(portable))tes
   await c.connect(transport);const tools=(await c.listTools()).tools;
   assert.equal(new Set(tools.map(t=>t.name)).size,tools.length);
   if(name==='cyclo-products'){
-   assert.equal(tools.length,9);const registry=await c.callTool({name:'dynamixel_registry',arguments:{}});assert.equal(registry.structuredContent.hardwareEnabled,false);
+   assert.equal(tools.length,12);const registry=await c.callTool({name:'dynamixel_registry',arguments:{}});assert.equal(registry.structuredContent.hardwareEnabled,true);
    const source=await c.callTool({name:'robotis_sources',arguments:{query:'XM430'}});assert.ok(source.structuredContent.sources.length);
   }else{
-   assert.equal(tools.length,10);const caps=await c.callTool({name:'cyclo_capabilities',arguments:{}});assert.equal(caps.structuredContent.mode,'planning-only');
+   assert.equal(tools.length,10);const caps=await c.callTool({name:'cyclo_capabilities',arguments:{}});assert.equal(caps.structuredContent.mode,'read-enabled');
    assert.equal((await c.callTool({name:'cyclo_serial_ports',arguments:{}})).isError,true);
   }
   assert.equal(stderr,'');
  }finally{await c.close();}
+});
+
+test('both host descriptions advertise actual default availability and offline opt-out',async()=>{
+ const codex=JSON.parse(await readFile(new URL('../plugin.json',import.meta.url),'utf8')),claude=JSON.parse(await readFile(new URL('../.claude-plugin/plugin.json',import.meta.url),'utf8'));
+ for(const text of [codex.extensions['com.openai'].interface.longDescription,claude.description]){assert.match(text,/available by default/);assert.match(text,/CYCLO_OFFLINE=1/);assert.match(text,/mock-only/);assert.doesNotMatch(text,/disabled-by-default/);}
 });

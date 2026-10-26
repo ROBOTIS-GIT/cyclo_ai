@@ -7,8 +7,8 @@ import {fileURLToPath} from 'node:url';
 import {sdkProvider} from '../modules/dynamixel/provider.mjs';
 import {configure} from '../modules/dynamixel/workflow.mjs';
 const root=fileURLToPath(new URL('..',import.meta.url));
-test('official provider stays disabled without explicit runtime flag',async()=>{
- await assert.rejects(sdkProvider({}),/disabled/);
+test('official provider supports explicit offline opt-out',async()=>{
+ await assert.rejects(sdkProvider({CYCLO_OFFLINE:'1'}),/disabled/);
 });
 for(const protocol of [1,2])test(`Node provider -> Python stdio -> official SDK Protocol ${protocol} over fake bytes`,async()=>{
  const dir=await mkdtemp(join(tmpdir(),'cyclo SDK mock with spaces ')),python=join(dir,'mock-python');

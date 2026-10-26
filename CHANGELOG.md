@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0
+
+- Make hardware tools available without global opt-in; retain explicit offline opt-out, dry-run defaults and per-call confirmation.
+- Support selected targets on multi-device buses with addressing checks and destination-baud collision preflight.
+- Add generic table inventory/read/write tools with shared source-bound JS/Python rules for 19,055 writable contracts across the actuator catalog; retain two explicit original-MX Current(68) manufacturer gaps.
+- Resolve firmware/mode bounds, legacy encodings, indirect aliases, reply-policy/protocol transitions and conditional external ports. Preserve no-startup-I/O, no implicit actuation/recovery and verified canonical-bus listener checks.
+
 ## 0.8.0
 
 - Use cyclo-plugin as the sole portable and Claude identity, archive root and invocation prefix.

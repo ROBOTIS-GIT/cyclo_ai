@@ -1,7 +1,7 @@
 {
   "name": "cyclo-plugin",
-  "version": "0.8.0",
-  "description": "Cyclo Plugin: official-source ROBOTIS guidance, shared AI Sapiens workflows and disabled-by-default model-aware DYNAMIXEL tooling.",
+  "version": "0.9.0",
+  "description": "Cyclo Plugin: official-source ROBOTIS guidance, shared AI Sapiens workflows and model-aware DYNAMIXEL Control Table tools available by default without startup I/O; CYCLO_OFFLINE=1 disables hardware access. Runtime evidence is mock-only.",
   "author": {
     "name": "Woojin-Crive"
   },
@@ -12,18 +12,14 @@
       "args": [
         "${CLAUDE_PLUGIN_ROOT}/modules/firmware/launch.mjs"
       ],
-      "env": {
-        "CYCLO_PLUGIN_ENABLE_HARDWARE": "0"
-      }
+      "env": {}
     },
     "cyclo-products": {
       "command": "node",
       "args": [
         "${CLAUDE_PLUGIN_ROOT}/modules/dynamixel/server.mjs"
       ],
-      "env": {
-        "CYCLO_PRODUCTS_ENABLE_HARDWARE": "0"
-      }
+      "env": {}
     }
   }
 }

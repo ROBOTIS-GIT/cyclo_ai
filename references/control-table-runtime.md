@@ -1,0 +1,33 @@
+# Control Table runtime
+
+The product MCP exposes a generic, model-specific interface alongside compatible named ID/baud/LED/profile workflows:
+
+- `dynamixel_table({catalogId, query, offset, limit})` lists retained source rows, address/width/access, enums, raw units, encoding, conditions, provenance and write resolution. It performs no device I/O.
+- `dynamixel_read_items({target, items, dryRun, confirmed})` reads 1..16 exact item names or `Name@address` keys within 1024 bytes. Unknown signed/unit semantics return bytes and an explicitly unsigned raw number, never a guessed physical interpretation.
+- `dynamixel_write_item({target, item, value, dryRun, confirmed})` writes one source-resolved item in raw integer units. It does not accept arbitrary addresses or executable metadata from a prompt/page. `dryRun` defaults true. An explicit customer command supplies `confirmed:true` once; do not repeatedly ask for already-granted authorization.
+
+Both JavaScript and the private official-SDK bridge load `references/control-items.json`. The bridge independently enforces the selected primary endpoint, exact item address/width, enum/range, identity/protocol/firmware and applicable mode, torque, limit and controller-state conditions. Peer IDs are precondition cohorts, not extra write targets. EEPROM writes can require torque already off; a goal RAM write does not universally require torque off. A Torque Enable item write can explicitly enable or disable torque. Operating Mode changes can reset gains/profile/goal data and change position representation; returned warnings and available after-state are part of the result. No other item is automatically written to satisfy a precondition.
+
+ID and baud items use the existing verified transition engine, including destination probes, readback, snapshot continuity, connection closure and session-handle advancement. A baud change preflights the same endpoint IDs at the destination rate. Lost acknowledgement, mismatched readback, changed identity or uncertain closure stops writes and requires reconciliation. It never triggers an automatic retry, torque change, recovery, reset, flash or rollback.
+
+## Current evidence and gaps
+
+The pinned inventory covers 89 actuator documents and 5,901 source table rows. Expanding documented indirect-slot sequences produces 20,433 effective items: 19,055 resolved writable contracts, two unresolved manufacturer write contracts, and 1,376 read-only items. Every effective item is exercised by raw-read mocks; every resolved write contract is exercised with a representative valid raw value. These per-document counts are not unique functions, all physical variants, exhaustive semantic verification or hardware certification.
+
+The two exceptions are Current(68) on original MX-64 and MX-106. Official tables label them RW but do not establish write encoding/range/conditions. The official Arduino SDK maps GET_CURRENT to Current(68) and SET_CURRENT to Goal Torque(71); that read range is not a write specification. The plugin does not silently redirect writes or borrow MX(2.0) semantics. See `control-source-supplements.json` and the Current68 investigation report.
+
+Canonical contracts include numeric/dynamic bounds, enums, firmware bit gates, signed and legacy direction-bit encodings, lock/torque prerequisites, external-port output conditions, watchdog error states and complete indirect mappings. Raw storage can be valid in an inactive operating mode; physical-unit conversion and resulting motion are separate questions. Conflicting official ranges use explicitly recorded common documented bounds rather than guessed extensions. Full-table raw operations and the conservative named profile helper have separate contracts.
+
+Protocol, ID and baud changes require destination checks and verified continuation. Status Return Level1 uses Tx-only followed by READ verification; level0 reports transmitted-unverifiable without a fabricated readback or automatic restore. Protocol2 Ping payload can establish identity when READ replies are disabled, but live prerequisites still require actual evidence. Protocol1 Ping alone cannot establish model/firmware. Hybrid Save distinguishes completed and accepted-pending states. Known session secondary listeners block one-target RAM writes while leaving separately valid reads and EEPROM operations available.
+
+`compile_control_items.py` retains duplicate names and non-scalar/unknown-width rows rather than silently discarding them. Exact keys distinguish addresses; ambiguous names require clarification. The current official rows happen to use scalar widths 1/2/4; parser tests cover an 8-byte row without claiming real-device support. Raw legacy direction-bit values are not mislabeled as two's-complement. No physical device, serial discovery, motion, firmware operation or authenticated host invocation of these changed defaults was tested in this task.
+
+## Multi-device buses and runtime defaults
+
+Hardware tools are available without global enable flags. Startup, tool listing and documentation access do not start a serial executor. `CYCLO_OFFLINE=1` blocks both modules' hardware paths, including OS catalogs and dynamic binding resolution. Legacy enable flags set to `0` still disable their respective module.
+
+With no operator policy file, an explicitly confirmed `dynamixel_ports` can list adapters, and a bounded `dynamixel_scan({port:..., ids:..., bauds:..., protocols:...})` can inspect the selected port. No target is chosen automatically. Use the returned observation to select an exact endpoint and attest verified addressing; unrelated motors need not be disconnected. Configuring `CYCLO_PRODUCTS_CONFIG` is optional for persistent/restrictive policy. If present, use its named bus/target and preserve its restrictions; a dynamic alias cannot bypass it.
+
+A bounded scan cannot prove there are no duplicate physical IDs or hidden secondary listeners, nor inspect unscanned rates/protocols. Verify addressing and resolve collisions before writes. The cooperative lease protects against other participating processes, not all unrelated bus software. Dual-axis EEPROM checks require the distinct observed peer cohort and both applicable torque states, not exactly two total motors. Vendor recovery/calibration requirements for a single isolated device remain specific to those documented workflows.
+
+The product runtime still needs the official local SDK dependency. The retained firmware module needs an operator-provided matching built CLI path. Missing runtime dependencies fail on actual use with an actionable error; no global installation, OS permission change or credential setup is performed automatically.

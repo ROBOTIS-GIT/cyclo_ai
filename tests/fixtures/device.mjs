@@ -1,7 +1,7 @@
 import {encode} from '../../modules/dynamixel/registry.mjs';
 export function fixture(options={}){
  const state={id:1,baud:57600,model:1200,firmware:52,torque:0,protocol:2,secondaryId:255,drive:0,operatingMode:3,velocityLimit:445,...options.state};
- const calls=[],registers=new Map([[0,state.model],[6,state.firmware],[7,state.id],[8,1],[10,state.drive],[11,state.operatingMode],[12,state.secondaryId],[13,state.protocol],[44,state.velocityLimit],[64,state.torque],[65,0],[108,0],[112,0]]);
+ const calls=[],registers=new Map([[0,state.model],[6,state.firmware],[7,state.id],[8,1],[10,state.drive],[11,state.operatingMode],[12,state.secondaryId],[13,state.protocol],[44,state.velocityLimit],[64,state.torque],[65,0],[68,2],[108,0],[112,0]]);
  let written=0,closed=false;
  const connect=async (baud,timeout,protocol=2)=>{
   calls.push(['connect',baud]);if(options.openFailure)throw Error('port unavailable');closed=false;

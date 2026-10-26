@@ -8,9 +8,7 @@
         "${PLUGIN_ROOT}/modules/firmware/launch.mjs"
       ],
       "cwd": "${PLUGIN_ROOT}",
-      "env": {
-        "CYCLO_PLUGIN_ENABLE_HARDWARE": "0"
-      }
+      "env": {}
     },
     "cyclo-products": {
       "type": "stdio",
@@ -19,9 +17,7 @@
         "${PLUGIN_ROOT}/modules/dynamixel/server.mjs"
       ],
       "cwd": "${PLUGIN_ROOT}",
-      "env": {
-        "CYCLO_PRODUCTS_ENABLE_HARDWARE": "0"
-      }
+      "env": {}
     }
   }
 }

@@ -1,6 +1,6 @@
 import {candidatesFor,decode} from './registry.mjs';
 // Presence and identity are separate. A failed identity READ never erases a Ping.
-export async function identify(connection,id,protocol,{probe=false}={}){
+export async function identify(connection,id,protocol,{probe=false,allowPingOnly=false}={}){
  const ping=await connection[probe?'probe':'ping'](id);if(!ping)return null;
  const result={...ping,id,protocol,present:true,identityComplete:false};
  try{
@@ -16,5 +16,11 @@ export async function identify(connection,id,protocol,{probe=false}={}){
   if(result.firmwareVersion>255)throw Error('Unknown firmware byte');
   if(ping.firmwareVersion!==undefined&&ping.firmwareVersion!==result.firmwareVersion)throw Error('Ping and control-table firmware mismatch');
   result.identityComplete=true;return result;
- }catch(e){return {...result,identityError:e.message};}
+ }catch(e){
+  if(allowPingOnly&&protocol===2&&e.kind==='no-response'&&Number.isInteger(ping.modelNumber)&&Number.isInteger(ping.firmwareVersion)&&ping.firmwareVersion>=0&&ping.firmwareVersion<=255&&result.catalogCandidates?.length){
+   return {...result,firmwareVersion:ping.firmwareVersion,identityComplete:true,identityProof:'Protocol2 Ping model/firmware payload',readbackUnavailable:true,identityReadError:e.message};
+  }
+  return {...result,identityError:e.message};
+ }
+
 }
