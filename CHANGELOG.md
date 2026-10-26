@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0
+
+- Use cyclo-plugin as the sole portable and Claude identity, archive root and invocation prefix.
+- Remove obsolete identity compatibility/migration promises while preserving all fourteen task Skills and robotics capabilities.
+- Keep README presentation free of release labels; retain semantic metadata and pinned dependency versions.
+- Add explicit identity/archive guards and documented supported local Codex integration.
+
 ## 0.7.0
 
 - Replace two-model execution profiles with one typed, source-bound identity/capability engine for the complete actuator catalog.

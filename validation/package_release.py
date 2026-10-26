@@ -12,11 +12,11 @@ with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
  for p in sorted(ROOT.rglob('*')):
   if p.is_file() and include(p):
    assert not p.is_symlink(),str(p)
-   z.write(p,Path('ai-sapiens-dev')/p.relative_to(ROOT));files.append(p.relative_to(ROOT))
+   z.write(p,Path('cyclo-plugin')/p.relative_to(ROOT));files.append(p.relative_to(ROOT))
 with zipfile.ZipFile(out) as z:
  assert z.testzip() is None
  with tempfile.TemporaryDirectory(prefix='cyclo-release-check-') as tmp:
-  z.extractall(tmp);extracted=Path(tmp)/'ai-sapiens-dev';check(extracted)
+  z.extractall(tmp);extracted=Path(tmp)/'cyclo-plugin';check(extracted)
   for p in files:assert (ROOT/p).read_bytes()==(extracted/p).read_bytes()
 result={'artifact':out.name,'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'files':len(files),'zip_crc':'passed','extracted_schema_reference_and_source_hash_checks':'passed','byte_comparison':'passed'}
 (ROOT/'artifacts/package-result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

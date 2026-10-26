@@ -10,6 +10,11 @@ test_symlink_from_other_run_rejected (test_asset_audit.AuditTests.test_symlink_f
 test_untrusted_path_is_literal (test_asset_audit.AuditTests.test_untrusted_path_is_literal) ... ok
 test_velocity_hash_and_no_write (test_asset_audit.AuditTests.test_velocity_hash_and_no_write) ... ok
 test_wrong_motion_extension (test_asset_audit.AuditTests.test_wrong_motion_extension) ... ok
+test_archive_root_is_explicit_product_identity (test_branding.Branding.test_archive_root_is_explicit_product_identity) ... ok
+test_no_active_legacy_identity (test_branding.Branding.test_no_active_legacy_identity) ... ok
+test_one_current_identity (test_branding.Branding.test_one_current_identity) ... ok
+test_readme_presentation_has_no_release_labels (test_branding.Branding.test_readme_presentation_has_no_release_labels) ... ok
+test_real_ai_sapiens_tasks_are_preserved (test_branding.Branding.test_real_ai_sapiens_tasks_are_preserved) ... ok
 test_all_models_match_independent_row_witnesses (test_control_tables.ControlTables.test_all_models_match_independent_row_witnesses) ... ok
 test_header_variants_and_malformed_rows_fail_closed (test_control_tables.ControlTables.test_header_variants_and_malformed_rows_fail_closed) ... ok
 test_source_bindings_and_upstream_sdk_immutability (test_control_tables.ControlTables.test_source_bindings_and_upstream_sdk_immutability) ... ok
@@ -50,6 +55,6 @@ test_protocol2_ping_retains_payload_firmware_and_model (test_sdk_packets.Packets
 test_unknown_protocol_broadcast_and_backend_rate_bounds (test_sdk_packets.Packets.test_unknown_protocol_broadcast_and_backend_rate_bounds) ... ok
 
 ----------------------------------------------------------------------
-Ran 50 tests in 0.181s
+Ran 55 tests in 0.211s
 
 OK
