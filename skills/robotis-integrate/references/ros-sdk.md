@@ -1,10 +1,10 @@
 # ROS 2, SDK and hardware-interface integration
 
-The [DYNAMIXEL SDK overview](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/) covers packet communication for Protocol 1 and 2. Protocol support in that SDK is broader than the Cyclo Plugin's curated Protocol 2 configuration engine. Neither packet support nor a model filename alone establishes safe writes, units or torque semantics for a model/firmware.
+The [DYNAMIXEL SDK overview](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/) covers packet communication for Protocol 1 and 2. The SDK and Cyclo Plugin use separate source-bound transport and item contracts; neither establishes DHI's actual runtime behavior. Neither packet support nor a model filename alone establishes safe writes, units or torque semantics for a model/firmware.
 
 The [ROBOTIS hardware-interface README](https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface) describes a ros2_control plugin and names Humble, Jazzy and Rolling. It instructs cloning distribution-matched branches of `DynamixelSDK`, `dynamixel_hardware_interface` and `dynamixel_interfaces`. Check each branch actually exists before proposing that setup. These are upstream documented support claims, not runtimes tested by this plugin.
 
-For a clean user-approved workspace (instructions only here):
+For a clean user-approved workspace (instructions only here), first verify the branch exists for all dependencies. If it does not (for example Rolling in the indexed DHI branch inventory), resolve an explicitly compatible revision instead of running this template unchanged:
 
 ```sh
 cd "$WORKSPACE/src"

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.0
+
+- Add pinned DHI, message/SDK and product-source retrieval with exact blob verification and version boundaries.
+- Add offline ros2_control artifact inspection, product/configuration maps and TableSync source tracing.
+- Expand the existing integration Skill with source-level reasoning; preserve hardware defaults and all existing execution contracts. No ROS bringup or hardware certification is implied.
+
 ## 0.9.0
 
 - Make hardware tools available without global opt-in; retain explicit offline opt-out, dry-run defaults and per-call confirmation.

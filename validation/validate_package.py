@@ -103,6 +103,21 @@ def check(root):
                 assert dest.exists(),f'{path}: {target}'
                 links+=1
     import hashlib
+    source_index=json.loads((root/'references/dhi-sources.json').read_text())
+    assert source_index['schemaVersion']==1
+    for package in source_index['packages'].values():
+        assert package['repository'].startswith(('ROBOTIS-GIT/','ros-controls/'))
+        for profile in package['profiles'].values():
+            assert re.fullmatch('[a-f0-9]{40}',profile['revision']) and profile['runtimeTested'] is False
+            for path,meta in profile['files'].items():
+                assert not path.startswith('/') and '..' not in path.split('/')
+                assert re.fullmatch('[a-f0-9]{40}',meta['blobSha']) and meta['bytes']>=0
+                assert all(1<=r['line']<=meta['lineCount'] for r in meta['references'])
+    products=json.loads((root/'references/dhi-products.json').read_text())
+    for product in products['products']:
+        profile=source_index['packages'][product['package']]['profiles'][product['profile']]
+        assert profile['revision']==product['revision'] and product['dhiDeclaredIn']
+        assert all(a['path'] in profile['files'] and a['conditionsEvaluated'] is False for a in product['artifacts'])
     provenance=json.loads((root/'modules/firmware/UPSTREAM.json').read_text())
     for path,digest in provenance['files_sha256'].items():
         assert hashlib.sha256((root/'modules/firmware/upstream'/path).read_bytes()).hexdigest()==digest

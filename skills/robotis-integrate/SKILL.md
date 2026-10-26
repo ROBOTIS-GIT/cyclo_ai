@@ -1,11 +1,13 @@
 ---
 name: robotis-integrate
-description: Guide ROBOTIS software integration and installation troubleshooting across ROS 2, ros2_control, DYNAMIXEL SDK and hardware interface, Zenoh and Cyclo simulation stacks with explicit version boundaries.
+description: Trace ROBOTIS product configurations and DYNAMIXEL Hardware Interface implementation across ROS 2 lifecycle, controllers, units, bus behavior and TableSync, plus SDK, Zenoh and Cyclo integration troubleshooting with exact source/version evidence.
 ---
 
 # ROBOTIS integration
 
 Resolve the layer before giving commands: device/electrical bus → packet SDK → model-aware hardware interface → ros2_control/controller → ROS middleware/transport → application/learning stack. A service or API being present does not authorize calling it.
+
+For DHI implementation or an existing ros2_control configuration, read [source workbench](references/dhi-source-workbench.md). For OpenMANIPULATOR, Hand, AI Sapiens, AI Worker or other consumers, also read [product and TableSync traces](references/dhi-products-tablesync.md). Use discovered `robotis_code` to locate exact source/profile, caller/callee paths and product artifacts; inspect user files locally when supplied. Distinguish static declarations, conditional source behavior and observed runtime state. No source snapshot implies exhaustive knowledge or installed-binary compatibility.
 
 For serial SDK, ROS 2 build, URDF/xacro, controller or hardware-interface questions, read [ROS and SDK workflow](references/ros-sdk.md). For router/discovery/type/transport issues, read [Zenoh workflow](references/zenoh.md). Use [compatibility records](../../references/compatibility.json) as dated evidence, then fetch exact release sources through [retrieval rules](../robotis-expert/references/retrieval.md). Do not mix a package's default branch with another distribution's dependencies.
 

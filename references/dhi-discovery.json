@@ -1,0 +1,58 @@
+{
+  "checkedOn": "2026-10-26",
+  "query": "dynamixel_hardware_interface org:ROBOTIS-GIT filename:package.xml",
+  "visibilityFilter": "Intersected results with official public repository inventory; no private source fetched",
+  "incompleteResults": false,
+  "matchingPublicManifests": [
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator/blob/ee9a720bcc45acda9c0df8fe689b1182844307db/open_manipulator_bringup/package.xml",
+      "path": "open_manipulator_bringup/package.xml",
+      "repo": "ROBOTIS-GIT/open_manipulator"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/ai_worker/blob/53d17f22c919c723b58f84971826145f699077a0/ffw_bringup/package.xml",
+      "path": "ffw_bringup/package.xml",
+      "repo": "ROBOTIS-GIT/ai_worker"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/ai_worker/blob/53d17f22c919c723b58f84971826145f699077a0/ffw_robot_manager/package.xml",
+      "path": "ffw_robot_manager/package.xml",
+      "repo": "ROBOTIS-GIT/ai_worker"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_autorace/blob/255111eb40b5235f5b2ea73891516a8d1b483d29/turtlebot3_autorace_mission/package.xml",
+      "path": "turtlebot3_autorace_mission/package.xml",
+      "repo": "ROBOTIS-GIT/turtlebot3_autorace"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface/blob/6bb5f93ecad1fe3c231e3ece580344e8f0a6efc3/package.xml",
+      "path": "package.xml",
+      "repo": "ROBOTIS-GIT/dynamixel_hardware_interface"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface_demos/blob/adc228ba5bab6c6f03719343fdbebed207fe3c93/dynamixel_hardware_interface_demos/package.xml",
+      "path": "dynamixel_hardware_interface_demos/package.xml",
+      "repo": "ROBOTIS-GIT/dynamixel_hardware_interface_demos"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface_demos/blob/adc228ba5bab6c6f03719343fdbebed207fe3c93/dynamixel_hardware_interface_example/package.xml",
+      "path": "dynamixel_hardware_interface_example/package.xml",
+      "repo": "ROBOTIS-GIT/dynamixel_hardware_interface_demos"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface_demos/blob/adc228ba5bab6c6f03719343fdbebed207fe3c93/dynamixel_hardware_interface_example_1/package.xml",
+      "path": "dynamixel_hardware_interface_example_1/package.xml",
+      "repo": "ROBOTIS-GIT/dynamixel_hardware_interface_demos"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_hand/blob/6f9e22a5fc86fe2f0947a44405e52e776c8c08c8/robotis_hand_bringup/package.xml",
+      "path": "robotis_hand_bringup/package.xml",
+      "repo": "ROBOTIS-GIT/robotis_hand"
+    },
+    {
+      "html_url": "https://github.com/ROBOTIS-GIT/RH-P12-RN-A/blob/10fd7a69604c6f811367963715f5e0fc024fad6d/rh_p12_rn_a_bringup/package.xml",
+      "path": "rh_p12_rn_a_bringup/package.xml",
+      "repo": "ROBOTIS-GIT/RH-P12-RN-A"
+    }
+  ]
+}

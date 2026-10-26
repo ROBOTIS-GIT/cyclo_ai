@@ -1,3 +1,4 @@
+import {codeIndex,readCode} from '../knowledge/source.mjs';
 import {ITEMS,tableFor,itemFor,writeRequest,readItems,writeItem} from './table.mjs';
 import {modelFor} from './registry.mjs';
 import {hardwareEnabled,requireConfirmation} from '../hardware-mode.mjs';
@@ -28,9 +29,15 @@ export async function createProductsServer(env=process.env,dependencies={}) {
  };
  const session=new TargetSession(config,{dynamicPorts:!env.CYCLO_PRODUCTS_CONFIG});
  const docs=JSON.parse(await readFile(new URL('../../references/dynamixel-docs.json',import.meta.url),'utf8'));
- const server=new McpServer({name:'cyclo-products',version:'0.9.0'});
+ const server=new McpServer({name:'cyclo-products',version:'0.10.0'});
  const wrap=fn=>async(args,ctx)=>{try{const value=await fn(args,ctx);return {content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,...((value.outcome&&['failed','uncertain','not_written'].includes(value.outcome))||value.closureConfirmed===false||value.busReservationReleased===false?{isError:true}:{})};}catch(e){return {isError:true,content:[{type:'text',text:e.message}]};}};
  const add=(name,description,inputSchema,fn,write=false)=>server.registerTool(name,{description,inputSchema,annotations:{readOnlyHint:!write,destructiveHint:write,idempotentHint:!write,openWorldHint:!['robotis_sources','dynamixel_registry','dynamixel_targets','dynamixel_models','dynamixel_table'].includes(name)}},wrap(fn));
+ add('robotis_code','Inspect pinned official implementation sources by package and exact profile/revision. Index finds paths/symbols/caller locators; read returns bounded Git-blob-verified source. No device, ROS, local-file or code execution.',z.strictObject({action:z.enum(['index','read']),package:z.string().optional(),profile:z.string().optional(),query:z.string().max(120).optional(),path:z.string().max(300).optional(),offset:z.number().int().min(0).default(0),limit:z.number().int().min(1).max(50).default(20),startLine:z.number().int().min(1).default(1),lineCount:z.number().int().min(1).max(160).default(100)}),async(args,ctx)=>{
+  const index=JSON.parse(await readFile(new URL('../../references/dhi-sources.json',import.meta.url),'utf8'));
+  if(args.action==='index')return codeIndex(index,args);
+  if(!args.package||!args.profile||!args.path)throw Error('Read requires exact package, source profile/revision and indexed path; installed source is not assumed to be main');
+  return readCode(index,args,{fetchSource:dependencies.docsFetch??fetch,signal:ctx.mcpReq.signal});
+ });
  add('dynamixel_models','Search all indexed official current/legacy DYNAMIXEL product documents equally, including generation distinctions and mechanical DYD classification. Local metadata only; feature applicability requires exact-source evidence.',z.strictObject({query:z.string().max(100).default(''),limit:z.number().int().min(1).max(100).default(30)}),async({query,limit})=>{
   const matches=listModels(docs,query);return {revision:docs.revision,summary:docs.summary,totalMatched:matches.length,models:matches.slice(0,limit).map(({componentPaths,...m})=>m),guides:docs.guides,warning:'Document counts are not all physical variants or semantically verified feature claims. No privileged documentation model tier; execution matrix is separate.'};
  });
