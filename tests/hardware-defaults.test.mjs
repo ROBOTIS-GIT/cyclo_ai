@@ -47,7 +47,7 @@ test('multi-device LED only writes selected endpoint, secondary listeners and ba
  const r=await configure(connect,{model:1200,firmware:52,protocol:2,id:2,baud:57600,addressingVerified:true,changes:{led:1}});
  assert.equal(r.outcome,'verified',r.error);assert.equal(a.writes.length,0);assert.equal(b.writes.length,1);
  const occupied=await configure(connect,{model:1200,firmware:52,protocol:2,id:2,baud:57600,addressingVerified:true,changes:{id:1}});assert.equal(occupied.outcome,'not_written');assert.match(occupied.error,/occupied/);
- const secondary=fixture({state:{secondaryId:7}});const blocked=await configure(secondary.connect,{model:1200,firmware:52,id:1,baud:57600,addressingVerified:true,changes:{led:1}});assert.equal(blocked.outcome,'not_written');assert.equal(secondary.writes.length,0);
+ const secondary=fixture({state:{secondaryId:7}});const blocked=await configure(secondary.connect,{model:1200,firmware:52,id:1,baud:57600,addressingVerified:true,changes:{led:1}});assert.equal(blocked.outcome,'verified');assert.equal(secondary.writes.length,1);
  const f=fixture();const mixed=async(baud,...rest)=>{const c=await f.connect(baud,...rest);return baud===1000000?{...c,probe:async id=>({id,present:true})}:c;};
  const collision=await configure(mixed,{model:1200,firmware:52,id:1,baud:57600,addressingVerified:true,changes:{baud:1000000}});assert.equal(collision.outcome,'not_written');assert.match(collision.error,/Destination baud/);assert.equal(f.writes.length,0);
 });
@@ -92,4 +92,18 @@ test('explicit operator policy cannot be bypassed with a dynamic alias port',()=
  const s=new TargetSession({buses:{readonly:{port:'/MOCK-CANONICAL',allowScan:true,allowConfigure:false}}},{dynamicPorts:false});
  for(const port of ['/MOCK-CANONICAL','/MOCK-ALIAS-OF-CANONICAL'])assert.throws(()=>s.resolve({port}),/operator policy/);
  assert.equal(s.resolve({bus:'readonly'}).allowConfigure,false);
+});
+
+test('known secondary listeners block only addressed RAM across earlier and later selections',async()=>{
+ const base={port:'/MOCK',model:1200,firmware:52,id:1,baud:57600,protocol:2};const s=new TargetSession({targets:{a:base,b:{...base,id:7}}});
+ const settle=value=>s.settle('a',{outcome:'verified',closureConfirmed:true,busReservationReleased:true,location:{id:1,baud:57600,protocol:2},effectItem:'Secondary ID',requested:value});
+ settle(7);assert.throws(()=>s.assertWriteAddress(s.target('b'),{ram:true}),/secondary listeners/);s.assertWriteAddress(s.target('b'),{ram:false});s.assertWriteAddress(s.target('a'),{ram:true});
+ s.targets.delete('b');const ticket=s.recordScan({port:'/MOCK',allowConfigure:true},{complete:true,closureConfirmed:true,busReservationReleased:true,devices:[{id:7,modelNumber:1200,firmwareVersion:52,baud:57600,protocol:2,identityComplete:true}]},async()=>{});
+ await s.select({scanId:ticket.scanId,candidateId:ticket.candidates[0].candidateId,name:'later',confirmed:true,addressingVerified:true});assert.throws(()=>s.assertWriteAddress(s.target('later'),{ram:true}),/secondary listeners/);
+ s.assertWriteAddress({...s.target('later'),baud:1000000},{ram:true});s.assertWriteAddress({...s.target('later'),protocol:1},{ram:true});settle(255);s.assertWriteAddress(s.target('later'),{ram:true});
+});
+
+test('known listeners use verified canonical bus binding across port aliases',()=>{
+ const base={port:'/MOCK-A',canonicalPort:'/MOCK-CANONICAL',model:1200,firmware:52,id:1,secondaryId:7,baud:57600,protocol:2};const s=new TargetSession({targets:{a:base,b:{...base,port:'/MOCK-B',id:7,secondaryId:255}}});
+ assert.throws(()=>s.assertWriteAddress(s.target('b'),{ram:true}),/secondary listeners/);s.assertWriteAddress(s.target('b'),{ram:false});
 });

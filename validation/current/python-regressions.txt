@@ -15,6 +15,7 @@ test_no_active_legacy_identity (test_branding.Branding.test_no_active_legacy_ide
 test_one_current_identity (test_branding.Branding.test_one_current_identity) ... ok
 test_readme_presentation_has_no_release_labels (test_branding.Branding.test_readme_presentation_has_no_release_labels) ... ok
 test_real_ai_sapiens_tasks_are_preserved (test_branding.Branding.test_real_ai_sapiens_tasks_are_preserved) ... ok
+test_shared_official_boundary_cases (test_condition_parity.Conditions.test_shared_official_boundary_cases) ... ok
 test_bridge_rejects_self_peer_before_identity_io (test_control_items.Items.test_bridge_rejects_self_peer_before_identity_io) ... ok
 test_bridge_torque_and_mode_conditions_are_item_specific (test_control_items.Items.test_bridge_torque_and_mode_conditions_are_item_specific) ... ok
 test_bridge_uses_canonical_signed_rules_with_torque_on (test_control_items.Items.test_bridge_uses_canonical_signed_rules_with_torque_on) ... ok
@@ -32,6 +33,16 @@ test_encoded_prose_is_not_a_loophole (test_english_only.EnglishOnly.test_encoded
 test_english_identifiers_and_source_urls_preserved (test_english_only.EnglishOnly.test_english_identifiers_and_source_urls_preserved) ... ok
 test_escaped_yaml_and_script_prose_rejected (test_english_only.EnglishOnly.test_escaped_yaml_and_script_prose_rejected) ... ok
 test_non_utf8_text_does_not_hide_hangul (test_english_only.EnglishOnly.test_non_utf8_text_does_not_hide_hangul) ... ok
+test_alias_readonly_and_cycles_never_grant_raw_writes (test_generic_packet_items.GenericPackets.test_alias_readonly_and_cycles_never_grant_raw_writes) ... ok
+test_complete_multibyte_alias_and_binding_continuity (test_generic_packet_items.GenericPackets.test_complete_multibyte_alias_and_binding_continuity) ... ok
+test_conditional_external_port_alias_requires_output_mode (test_generic_packet_items.GenericPackets.test_conditional_external_port_alias_requires_output_mode) ... ok
+test_documented_no_reply_policy_and_protocol2_restore (test_generic_packet_items.GenericPackets.test_documented_no_reply_policy_and_protocol2_restore) ... ok
+test_every_family_uses_real_sdk_packets_and_same_descriptor_engine (test_generic_packet_items.GenericPackets.test_every_family_uses_real_sdk_packets_and_same_descriptor_engine) ... ok
+test_legacy_id253_is_not_confused_with_protocol2_header (test_generic_packet_items.GenericPackets.test_legacy_id253_is_not_confused_with_protocol2_header) ... ok
+test_negative_signed_current_is_encoded_and_bounded (test_generic_packet_items.GenericPackets.test_negative_signed_current_is_encoded_and_bounded) ... ok
+test_only_two_genuine_manufacturer_write_contracts_remain_unknown (test_generic_packet_items.GenericPackets.test_only_two_genuine_manufacturer_write_contracts_remain_unknown) ... ok
+test_protocol2_to_protocol1_keeps_same_model_generation (test_generic_packet_items.GenericPackets.test_protocol2_to_protocol1_keeps_same_model_generation) ... ok
+test_y_sixteen_bit_watchdog_state_is_not_truncated (test_generic_packet_items.GenericPackets.test_y_sixteen_bit_watchdog_state_is_not_truncated) ... ok
 test_changed_mimic_motion_rejected (test_provenance.ProvenanceTests.test_changed_mimic_motion_rejected) ... ok
 test_cli_conflict_is_blocked (test_provenance.ProvenanceTests.test_cli_conflict_is_blocked) ... ok
 test_invalid_hash (test_provenance.ProvenanceTests.test_invalid_hash) ... ok
@@ -61,6 +72,6 @@ test_protocol2_ping_retains_payload_firmware_and_model (test_sdk_packets.Packets
 test_unknown_protocol_broadcast_and_backend_rate_bounds (test_sdk_packets.Packets.test_unknown_protocol_broadcast_and_backend_rate_bounds) ... ok
 
 ----------------------------------------------------------------------
-Ran 61 tests in 0.419s
+Ran 72 tests in 4.302s
 
 OK

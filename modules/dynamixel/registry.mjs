@@ -1,7 +1,11 @@
+import {descriptor} from './item-metadata.mjs';
 // Build-time, source-bound metadata; runtime document text cannot grant writes.
 import {readFileSync} from 'node:fs';
 export const CATALOG=JSON.parse(readFileSync(new URL('../../references/control-tables.json',import.meta.url),'utf8'));
-export const MODELS=Object.freeze(CATALOG.models.filter(m=>m.kind==='actuator'));
+export const MODELS=Object.freeze(CATALOG.models.filter(m=>m.kind==='actuator').map(m=>({...m,capabilities:Object.fromEntries(Object.entries(m.capabilities).map(([op,c])=>{
+ const names=[...(c.register?[c.register]:[]),...(c.channels??[]),...(c.registers??[]).filter(n=>n!=='Drive Mode')];
+ return [op,{...c,...(c.status==='resolved'?{requiresTorqueOff:names.some(n=>descriptor(m.catalogId,n)?.write.requiresTorqueOff===true)}:{})}];
+}))})));
 export const SCAN_BAUDS=[...new Set(MODELS.flatMap(m=>Object.keys(m.bauds).map(Number)))].sort((a,b)=>a-b);
 export function candidatesFor(number,protocol){return MODELS.filter(m=>m.modelNumbers.includes(number)&&(!protocol||m.protocols.includes(protocol)));}
 export function modelFor(number,firmware,catalogId,protocol){
@@ -9,7 +13,7 @@ export function modelFor(number,firmware,catalogId,protocol){
  if(CATALOG.models.some(m=>m.modbusModelNumbers?.includes(number)))throw Error('Modbus firmware identity is outside the DYNAMIXEL packet transport; do not substitute its Protocol 2 identity');
  const candidates=candidatesFor(number,protocol),m=catalogId?candidates.find(m=>m.catalogId===catalogId):candidates.length===1?candidates[0]:null;
  if(!m)throw Error(candidates.length>1?'Ambiguous model number: confirm exact catalog identity; never guess connector or marketed variant':'Unknown identity/protocol or catalog mismatch; documentation lookup remains available');
- return {...m,observedFirmware:firmware,protocol:protocol??(m.protocols.includes(2)?2:1)};
+ return {...m,idMaximum:descriptor(m.catalogId,'ID')?.write.bounds?.[1]??252,observedFirmware:firmware,protocol:protocol??(m.protocols.includes(2)?2:1)};
 }
 export function capability(m,name){const c=m.capabilities[name];if(!c||c.status!=='resolved')throw Error(`Capability ${name} ${c?.status??'unsupported'}: ${c?.reason??'no source-bound metadata'}`);return c;}
 export const registerNames={model:'Model Number',firmware:'Firmware Version',id:'ID',baud:'Baud Rate',drive:'Drive Mode',operatingMode:'Operating Mode',secondaryId:'Secondary(Shadow) ID',protocol:'Protocol Type',velocityLimit:'Velocity Limit',accelerationLimit:'Acceleration Limit',torque:'Torque Enable',led:'LED',profileAcceleration:'Profile Acceleration',profileVelocity:'Profile Velocity',lock:'Lock'};

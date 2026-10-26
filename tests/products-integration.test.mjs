@@ -67,7 +67,7 @@ test('occupied destination is not retargeted',async t=>{
  const c=await client(t,true,{scenario:'occupied'});
  const r=await c.callTool({name:'dynamixel_configure',arguments:{target:'synthetic',changes:{id:7},dryRun:false,confirmed:true}});
  assert.equal(r.structuredContent.outcome,'not_written');assert.equal(r.structuredContent.location.id,1);
- assert.equal(r.structuredContent.sessionTarget.id,1);assert.equal(r.structuredContent.sessionTarget.status,'reconciliation-required');
+ assert.equal(r.structuredContent.sessionTarget.id,1);assert.equal(r.structuredContent.sessionTarget.status,'ready');
 });
 test('generic table stdio: explicit torque item writes use preview/confirmation and registered source metadata',async t=>{
  const c=await client(t,true);const table=await c.callTool({name:'dynamixel_table',arguments:{catalogId:'x_series/xl_series/xl330-m288',query:'Torque Enable'}});assert.equal(table.structuredContent.items[0].write.status,'resolved');

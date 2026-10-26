@@ -1,7 +1,7 @@
-✔ official provider supports explicit offline opt-out (0.627698ms)
-✔ Node provider -> Python stdio -> official SDK Protocol 1 over fake bytes (77.519708ms)
-✔ Node provider -> Python stdio -> official SDK Protocol 2 over fake bytes (61.548361ms)
-✔ failed close reaps only the owned bridge and still reports closure uncertainty (22.077525ms)
+✔ official provider supports explicit offline opt-out (0.660917ms)
+✔ Node provider -> Python stdio -> official SDK Protocol 1 over fake bytes (70.983755ms)
+✔ Node provider -> Python stdio -> official SDK Protocol 2 over fake bytes (65.36268ms)
+✔ failed close reaps only the owned bridge and still reports closure uncertainty (22.990263ms)
 ℹ tests 4
 ℹ suites 0
 ℹ pass 4
@@ -9,4 +9,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 215.276288
+ℹ duration_ms 313.424688

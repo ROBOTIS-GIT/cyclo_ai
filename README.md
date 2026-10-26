@@ -71,4 +71,4 @@ The product runtime uses pinned official DynamixelSDK Python3.8.4 and optional l
 
 See [Cyclo identity and normal Codex integration](validation/branding-and-local-integration.md) for configured, discovered and invoked evidence levels and preserved-settings checks.
 
-Hardware availability does not grant universal write semantics: the full table inventory has 5,901 raw-readable source rows, with 563 resolved writable rows and 3,962 RW/conditional rows still requiring semantic resolution. These are per-document row counts. Goal/torque/mode writes are mock-tested only; changed defaults have not been installed into the live Codex profile.
+The canonical inventory resolves 19,055 writable contracts across 89 actuator documents, including expanded indirect slots. Two source-labelled RW items remain unavailable for semantic writes: Current(68) on original MX-64 and MX-106, whose official documentation does not establish a valid write contract. Counts repeat shared items across documents; they are not hardware certification. Changed defaults and motor-control tools are mock-tested only and have not been installed into the live Codex profile.

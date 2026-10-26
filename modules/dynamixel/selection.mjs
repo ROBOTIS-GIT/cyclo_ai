@@ -64,18 +64,32 @@ export class TargetSession {
     for(const [id,s] of this.scans)if(s.bus.port===port)this.scans.delete(id);
   }
   clearObservations(port){for(const [id,s] of this.scans)if(s.bus.port===port)this.scans.delete(id);}
+  knownSecondaryListeners(target) {
+    const wire=t=>{if(t.protocol!==undefined)return t.protocol;try{return modelFor(t.model,t.firmware,t.catalogId).protocol;}catch{return undefined;}};
+    return [...this.targets].filter(([name,t])=>t!==target&&t.id!==target.id&&(t.canonicalPort??t.port)===(target.canonicalPort??target.port)&&t.baud===target.baud&&wire(t)===wire(target)&&t.secondaryId===target.id&&t.secondaryId<253).map(([name])=>name);
+  }
+  assertWriteAddress(target,{ram=false}={}) {
+    const listeners=this.knownSecondaryListeners(target);
+    if(ram&&listeners.length)throw Error('Known secondary listeners would receive this one-target RAM write: '+listeners.join(', ')+'. Read/EEPROM access is separate; no group write is inferred.');
+  }
   target(name) {
     const t=this.targets.get(name);
     if(!t)throw Error('Select one target from a completed scan or operator config');
+    if(t.status==='read-disabled-by-command')throw Error('The last explicit Status Return Level0 command disabled READ replies. This is a device observability constraint, not a plugin permission; re-identify through a manufacturer-supported method before further writes.');
     if(t.status!=='ready')throw Error('Target requires reconciliation: confirm closure/exclusive bus ownership, then scan and explicitly select again; no blind write retry');
     return t;
   }
   settle(name,result) {
     const t=this.targets.get(name);if(!t)return;
-    if(result.outcome==='verified'&&result.closureConfirmed&&result.busReservationReleased===true){
-      const changed=t.id!==result.location.id||t.baud!==result.location.baud;
+    if(['verified','accepted-pending'].includes(result.outcome)&&result.closureConfirmed&&result.busReservationReleased===true){
+      const changed=t.id!==result.location.id||t.baud!==result.location.baud||result.location.protocol!==undefined&&t.protocol!==result.location.protocol;
       if(changed)this.retirePort(t.port,'communication identity changed; select again',name);
-      t.id=result.location.id;t.baud=result.location.baud;t.revision++;
+      t.id=result.location.id;t.baud=result.location.baud;if(result.location.protocol!==undefined)t.protocol=result.location.protocol;t.revision++;if(result.outcome==='verified'){delete t.observability;delete t.reason;}
+      if(['Secondary ID','Secondary(Shadow) ID'].includes(result.effectItem))t.secondaryId=result.effectiveValue??result.requested;
+    }else if(result.outcome==='not_written'&&result.identityVerifiedBefore&&result.closureConfirmed&&result.busReservationReleased===true){
+      t.lastOutcome='not_written';t.lastReason=result.error;
+    }else if(result.outcome==='transmitted-unverifiable'&&['read-disabled-by-command','read-unavailable'].includes(result.observability)&&result.closureConfirmed&&result.busReservationReleased===true){
+      t.observability=result.observability;t.status=t.protocol===2?'ready':'read-disabled-by-command';t.reason='READ replies unavailable; only independently verifiable documented operations can proceed, with no automatic retry/restore';
     }else if(result.outcome!=='verified'||result.closureConfirmed===false||result.busReservationReleased===false){
       this.retirePort(t.port,'uncertain device or bus state');
     }
@@ -83,7 +97,7 @@ export class TargetSession {
   }
   describe(name) {
     const {verifyBinding,...target}=this.targets.get(name);
-    return {name,...target,persistence:'session only; operator config file is unchanged'};
+    return {name,...target,knownSecondaryListeners:this.knownSecondaryListeners(this.targets.get(name)),persistence:'session only; operator config file is unchanged'};
   }
   list(){return [...this.targets.keys()].map(name=>this.describe(name));}
 }

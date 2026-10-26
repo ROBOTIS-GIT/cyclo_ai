@@ -8,26 +8,26 @@ const target={id:1,baud:57600,model:1020,firmware:42,protocol:2,catalogId:xm.cat
 const motor=(state={})=>{const f=fixture({state:{model:1020,firmware:42,...state}});f.registers.set(38,100);f.registers.set(48,4095);f.registers.set(52,0);return f;};
 test('all actuator families have an inventory, unresolved/duplicate rows are visible',()=>{
  assert.equal(ITEMS.models.length,89);for(const m of MODELS){const items=tableFor(m);assert.ok(items.length,m.catalogId);for(const i of items){assert.ok(i.source.blobSha);if(i.access==='R')assert.equal(i.write.status,'read-only');if(i.write.status==='resolved')assert.ok(i.write.sources.length);}}
- assert.equal(ITEMS.summary.tableRows,5901);assert.ok(ITEMS.summary.unresolvedWritableRows>0);assert.ok(ITEMS.models.flatMap(m=>m.items).some(i=>i.access==='R/RW'&&i.write.status==='unresolved'));
+ assert.equal(ITEMS.summary.sourceTableRows,5901);assert.ok(ITEMS.summary.unresolvedWritableRows>0);assert.ok(ITEMS.models.flatMap(m=>m.items).some(i=>i.access==='R/RW'&&i.write.requiresItems));
 });
 test('Operating Mode enum is discrete; read-only/unknown/unresolved items cannot write',()=>{
  const mode=itemFor(xm,'Operating Mode');assert.throws(()=>writeRequest(xm,mode,2),/enum/);assert.throws(()=>writeRequest(xm,itemFor(xm,'Model Number'),1020),/read-only/);assert.throws(()=>itemFor(xm,'address:64'),/Unknown/);
- const unresolved=tableFor(xm).find(i=>i.access==='RW'&&i.write.status==='unresolved');assert.throws(()=>writeRequest(xm,unresolved,1),/Unresolved/);
+ const legacy=modelFor(310,42,'mx_series/mx-64',1);assert.throws(()=>writeRequest(legacy,itemFor(legacy,'Current'),1),/Unresolved/);
 });
 test('Torque Enable can be explicitly enabled and disabled without a torque-off blanket',async()=>{
  const f=motor();let r=await writeItem(f.connect,target,'Torque Enable',1);assert.equal(r.outcome,'verified',r.error);assert.deepEqual(f.writes,[['write',1,64,1]]);
  r=await writeItem(f.connect,target,'Torque Enable',0);assert.equal(r.outcome,'verified');assert.equal(f.writes.length,2);
 });
-test('signed Goal Current works in current mode with torque on, rejects limits and mode mismatch',async()=>{
+test('signed Goal Current works in current mode with torque on, rejects limits and permits inactive raw storage',async()=>{
  const f=motor({operatingMode:0,torque:1});let r=await writeItem(f.connect,target,'Goal Current',-10);assert.equal(r.outcome,'verified',r.error);assert.equal(r.observed,-10);assert.deepEqual(f.writes,[['write',1,102,65526]]);
  r=await writeItem(f.connect,target,'Goal Current',-101);assert.equal(r.outcome,'not_written');assert.equal(f.writes.length,1);
- const wrong=motor({operatingMode:3});r=await writeItem(wrong.connect,target,'Goal Current',1);assert.equal(r.outcome,'not_written');assert.equal(wrong.writes.length,0);
+ const wrong=motor({operatingMode:3});r=await writeItem(wrong.connect,target,'Goal Current',1);assert.equal(r.outcome,'verified');assert.equal(wrong.writes.length,1);
 });
 test('Goal Velocity and Position use live mode/limit conditions, never change torque or mode',async()=>{
  const velocity=motor({operatingMode:1,torque:1});let r=await writeItem(velocity.connect,target,'Goal Velocity',-40);assert.equal(r.outcome,'verified',r.error);assert.deepEqual(velocity.writes,[['write',1,104,4294967256]]);
  const position=motor({operatingMode:3,torque:1});r=await writeItem(position.connect,target,'Goal Position',1000);assert.equal(r.outcome,'verified',r.error);assert.equal(position.writes[0][2],116);
  r=await writeItem(position.connect,target,'Goal Position',5000);assert.equal(r.outcome,'not_written');assert.equal(position.writes.length,1);
- const drive=motor({operatingMode:3,drive:8});r=await writeItem(drive.connect,target,'Goal Position',100);assert.equal(r.outcome,'not_written');assert.equal(drive.writes.length,0);
+ const drive=motor({operatingMode:3,drive:8});r=await writeItem(drive.connect,target,'Goal Position',100);assert.equal(r.outcome,'verified');assert.equal(drive.writes.length,1);assert.ok(r.warnings.some(w=>w.includes('Drive Mode')));
 });
 test('Operating Mode requires torque off and returns side-effect warnings/snapshot',async()=>{
  const on=motor({torque:1});assert.equal((await writeItem(on.connect,target,'Operating Mode',1)).outcome,'not_written');assert.equal(on.writes.length,0);

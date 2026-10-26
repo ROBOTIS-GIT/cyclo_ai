@@ -23,9 +23,10 @@ class Items(unittest.TestCase):
     def test_bridge_uses_canonical_signed_rules_with_torque_on(self):
         b,p=self.motor();b.command({'op':'bind','catalogId':'x_series/xm_series/xm430-w350','model':1020,'firmware':42,'id':1,'tableItem':'Goal Current@102'})
         b.command({'op':'write','id':1,'address':102,'data':[246,255]});self.assertEqual(p.values[102],[246,255])
-        with self.assertRaisesRegex(ValueError,'limit'):b.command({'op':'write','id':1,'address':102,'data':[155,255]})
+        with self.assertRaisesRegex(ValueError,'bounds|limit'):b.command({'op':'write','id':1,'address':102,'data':[155,255]})
         p.values[11]=[3]
-        with self.assertRaisesRegex(ValueError,'mode'):b.command({'op':'write','id':1,'address':102,'data':[1,0]})
+        b.command({'op':'write','id':1,'address':102,'data':[1,0]})
+        self.assertEqual(p.values[102],[1,0])
         with self.assertRaisesRegex(ValueError,'mismatch'):b.command({'op':'write','id':1,'address':64,'data':[1]})
     def test_bridge_torque_and_mode_conditions_are_item_specific(self):
         b,p=self.motor();b.command({'op':'bind','catalogId':'x_series/xm_series/xm430-w350','model':1020,'firmware':42,'id':1,'tableItem':'Torque Enable@64'});b.command({'op':'write','id':1,'address':64,'data':[0]})

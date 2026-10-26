@@ -48,12 +48,16 @@ def check(root):
     assert items['version']==manifest['version'] and items['revision']==tables['revision']
     indexed=json.loads((root/'references/dynamixel-docs.json').read_text())
     assert len(items['models'])==89
+    supplements=json.loads((root/'references/control-source-supplements.json').read_text())
+    extra={(p['repository'],p['revision'],p['path']):p['blobSha']for p in supplements['sources']}
     for model in items['models']:
         for item in model['items']:
             source=item['source']; assert indexed['files'][source['path']]['blobSha']==source['blobSha']
             if item['write']['status']=='resolved':
-                assert item['access']=='RW' and item['write']['sources']
-                for source in item['write']['sources']:assert indexed['files'][source['path']]['blobSha']==source['blobSha']
+                assert item['access']in ['RW','R/RW'] and item['write']['sources']
+                for source in item['write']['sources']:
+                    if source.get('repository'):assert extra[(source['repository'],source['revision'],source['path'])]==source['blobSha']
+                    else:assert indexed['files'][source['path']]['blobSha']==source['blobSha']
     names=[]; links=0
     for skill in sorted((root/'skills').iterdir()):
         entry=skill/'SKILL.md'

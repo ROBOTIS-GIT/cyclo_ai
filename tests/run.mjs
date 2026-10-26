@@ -29,6 +29,7 @@ try {
   const tests=['adapter','bus-lease','local-wire','local','process','recovery','stdio','workflow'].map(name=>join(tools,`cyclo_firmware_mcp/test/${name}.test.mjs`));
   results.push(run('upstream-mcp-mocks',process.execPath,['--test',...tests]));
   results.push(run('dynamixel-products',process.execPath,['--test','tests/dynamixel.test.mjs','tests/selection.test.mjs','tests/products-integration.test.mjs','tests/hardware-defaults.test.mjs','tests/table-items.test.mjs']));
+  results.push(run('complete-control-table',process.execPath,['--test','tests/conditions.test.mjs','tests/full-table-execution.test.mjs','tests/table-transitions.test.mjs']));
   results.push(run('generic-catalog-execution',process.execPath,['--test','tests/catalog-execution.test.mjs']));
   results.push(run('official-sdk-provider-stdio',process.execPath,['--test','tests/sdk-provider.test.mjs']));
   results.push(run('official-manual-reader',process.execPath,['--test','tests/manual.test.mjs']));

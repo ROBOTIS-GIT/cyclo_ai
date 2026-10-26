@@ -1,10 +1,10 @@
-✔ full-tree inventory includes all families, orphan source and mechanical reducers (5.864689ms)
-✔ aliases preserve document grouping but never merge firmware generations (1.188851ms)
-✔ model call props and conditional components remain separate evidence (0.271094ms)
-✔ bounded reader retains conditional source/defaults and caller props, not rendered claims (10.084858ms)
-✔ wrong blobs, unrelated source paths and unavailable source do not become evidence (0.485784ms)
-✔ developer comments omitted with source line positions; legal notices stay intact (0.213096ms)
-✔ non-English official prose is explicitly withheld, not silently translated into a claim (0.261065ms)
+✔ full-tree inventory includes all families, orphan source and mechanical reducers (5.462247ms)
+✔ aliases preserve document grouping but never merge firmware generations (1.169337ms)
+✔ model call props and conditional components remain separate evidence (0.267881ms)
+✔ bounded reader retains conditional source/defaults and caller props, not rendered claims (9.999314ms)
+✔ wrong blobs, unrelated source paths and unavailable source do not become evidence (0.481701ms)
+✔ developer comments omitted with source line positions; legal notices stay intact (0.207528ms)
+✔ non-English official prose is explicitly withheld, not silently translated into a claim (0.248154ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -12,4 +12,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 70.790432
+ℹ duration_ms 72.779594
