@@ -32,6 +32,7 @@ try {
   results.push(run('complete-control-table',process.execPath,['--test','tests/conditions.test.mjs','tests/full-table-execution.test.mjs','tests/table-transitions.test.mjs']));
   results.push(run('generic-catalog-execution',process.execPath,['--test','tests/catalog-execution.test.mjs']));
   results.push(run('official-sdk-provider-stdio',process.execPath,['--test','tests/sdk-provider.test.mjs']));
+  results.push(run('source-evidence',process.execPath,['--test','tests/source-evidence.test.mjs']));
   results.push(run('official-manual-reader',process.execPath,['--test','tests/manual.test.mjs']));
   results.push(run('dual-host-stdio',process.execPath,['--test','tests/dual-host.test.mjs']));
   results.push(run('plugin-stdio',process.execPath,['--test','tests/integration.test.mjs']));

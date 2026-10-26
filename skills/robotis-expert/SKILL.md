@@ -20,3 +20,5 @@ Route by task:
 Answer in the user's language. Cite exact model/version pages near claims. Separate documented behavior, inferred troubleshooting, mock-tested implementation and physical runtime evidence. No claim of universal product knowledge or compatibility follows from a catalog entry. Preserve the current task's restrictions and authorization. Hardware tools are available by default; explanation and model-selection questions need no device access.
 
 Examples: “What is the difference between OMY and OMX?”, “Which software should I use with this older CM controller?”, “Help me choose Cyclo Lab or Cyclo MJLab”, “Can you guide me with this product too?”
+
+For source-level DHI and product configuration questions, use [ROBOTIS integration](../robotis-integrate/SKILL.md) and its source workbench. Official product routing alone is not evidence of lifecycle, TableSync or controller behavior.

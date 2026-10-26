@@ -11,7 +11,8 @@
         "rolling"
       ],
       "source": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface",
-      "caveat": "Verify distribution branches, package metadata and OS before setup; not plugin runtime certification."
+      "caveat": "Main/Humble/Jazzy are separately pinned. README/CI names Rolling but no rolling branch was observed. Dependency branch declarations are not immutable locks or binary/ABI validation.",
+      "sourceProfiles": "dhi-sources.json"
     },
     {
       "package": "DynamixelSDK",
