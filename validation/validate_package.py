@@ -35,14 +35,25 @@ def check(root):
     assert claude['author']==manifest['author']
     assert 'skills' not in claude and 'commands' not in claude
     assert set(claude['mcpServers'])=={'cyclo-firmware','cyclo-products'}
-    assert claude['mcpServers']['cyclo-firmware']['env']['CYCLO_PLUGIN_ENABLE_HARDWARE']=='0'
-    assert claude['mcpServers']['cyclo-products']['env']['CYCLO_PRODUCTS_ENABLE_HARDWARE']=='0'
+    assert claude['mcpServers']['cyclo-firmware']['env']=={}
+    assert claude['mcpServers']['cyclo-products']['env']=={}
     mcp=json.loads((root/'mcp.json').read_text())
     jsonschema.Draft202012Validator(json.loads((BASE/'evidence/mcp.schema.json').read_text())).validate(mcp)
     server=mcp['mcpServers']['cyclo-firmware']
-    assert server['env']['CYCLO_PLUGIN_ENABLE_HARDWARE']=='0'
+    assert server['env']=={}
     assert (root/'modules/firmware/launch.mjs').is_file()
-    assert mcp['mcpServers']['cyclo-products']['env']['CYCLO_PRODUCTS_ENABLE_HARDWARE']=='0'
+    assert mcp['mcpServers']['cyclo-products']['env']=={}
+    items=json.loads((root/'references/control-items.json').read_text())
+    tables=json.loads((root/'references/control-tables.json').read_text())
+    assert items['version']==manifest['version'] and items['revision']==tables['revision']
+    indexed=json.loads((root/'references/dynamixel-docs.json').read_text())
+    assert len(items['models'])==89
+    for model in items['models']:
+        for item in model['items']:
+            source=item['source']; assert indexed['files'][source['path']]['blobSha']==source['blobSha']
+            if item['write']['status']=='resolved':
+                assert item['access']=='RW' and item['write']['sources']
+                for source in item['write']['sources']:assert indexed['files'][source['path']]['blobSha']==source['blobSha']
     names=[]; links=0
     for skill in sorted((root/'skills').iterdir()):
         entry=skill/'SKILL.md'
@@ -102,7 +113,7 @@ def check(root):
         if model['kind']!='actuator':continue
         assert model['protocols'] and all(p in [1,2] for p in model['protocols'])
         assert model['registers']['Torque Enable']['access']=='RW'
-    return {'upstream_source_hashes':'passed','hardware_default':'disabled','first_party_skill_count':len(names),'mcp_schema':'passed','manifest_schema':'passed','skills':names,'local_links_checked':links,'metadata':'passed','unexpected_components':'no undeclared hooks or apps','indexed_manual_pages':len(index['pages'])}
+    return {'upstream_source_hashes':'passed','hardware_default':'available; no startup I/O; explicit confirmation; CYCLO_OFFLINE=1 opt-out','first_party_skill_count':len(names),'mcp_schema':'passed','manifest_schema':'passed','skills':names,'local_links_checked':links,'metadata':'passed','unexpected_components':'no undeclared hooks or apps','indexed_manual_pages':len(index['pages'])}
 
 if __name__=='__main__':
     print(json.dumps(check(ROOT),indent=2))

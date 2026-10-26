@@ -1,6 +1,6 @@
 """Private stdio adapter to the pinned official SDK. Not a public raw-write CLI.
 
-Only launched behind the product server's explicit hardware configuration.
+Only launched for an explicitly requested product-provider operation.
 No port is enumerated/opened on import. Tests use fake ports and packets only.
 """
 import json,sys
@@ -62,6 +62,7 @@ class Bridge:
             catalog=json.loads((Path(__file__).resolve().parents[2]/'references/control-tables.json').read_text())
             m=next((m for m in catalog['models'] if m['catalogId']==r['catalogId'] and m['kind']=='actuator'),None)
             if not m or self.protocol not in m['protocols'] or r['model'] not in m['modelNumbers']:raise ValueError('Invalid source-bound identity')
+            if m['dualAxis'] and (len(r.get('peerIds',[]))!=1 or r['id'] in r.get('peerIds',[])):raise ValueError('Distinct dual-axis peer cohort is required')
             for device_id in [r['id']]+r.get('peerIds',[]):
                 if not raw_ping(self.handler,self.port,device_id,self.protocol):raise RuntimeError('Identity disappeared before binding')
                 model=int.from_bytes(bytes(self.read(device_id,0,2)),'little');fw=m['registers']['Firmware Version']
@@ -72,9 +73,9 @@ class Bridge:
             self.validate_write(r)
             result,error=self.handler.writeTxRx(self.port,r['id'],r['address'],len(r['data']),r['data'])
             self.check(result,error);return {'acknowledged':True}
-        raise ValueError('Unsupported bridge operation; no reset/torque/motion/flash endpoints')
+        raise ValueError('Unsupported bridge operation; use a source-bound item, not an arbitrary protocol command')
     def read(self,device_id,address,size):
-        if not 0<=device_id<=252 or size not in [1,2,4] or not 0<=address<=65536-size or self.protocol==1 and address+size>256:raise ValueError('Invalid bounded register read')
+        if not 0<=device_id<=252 or not 1<=size<=1024 or not 0<=address<=65536-size or self.protocol==1 and address+size>256:raise ValueError('Invalid bounded register read')
         data,result,error=self.handler.readTxRx(self.port,device_id,address,size);self.check(result,error)
         if len(data)!=size:raise RuntimeError('Unexpected register read width')
         return data
@@ -85,12 +86,15 @@ class Bridge:
         if not self.bound:raise ValueError('No verified source-bound configuration target')
         m,b=self.bound;ids=[b['id']]+b.get('peerIds',[])
         if r['id'] not in ids:raise ValueError('Write target changed without re-identification')
+        if b.get('tableItem'):
+            if r['id']!=b['id']:raise ValueError('Generic item write must address the selected primary target; peer IDs are preconditions only')
+            return self.validate_table_write(r,m,b)
         allowed=set()
         for op,c in m['capabilities'].items():
             if c['status']!='resolved':continue
             allowed.update(c.get('channels',[]));allowed.update(c.get('registers',[]))
             if c.get('register'):allowed.add(c['register'])
-            # Drive/Operating/Protocol mode registers are read-only in this adapter.
+            # Legacy named grants exclude mode fields; generic items use canonical rules above.
         matches=[(name,reg) for name,reg in m['registers'].items() if name in allowed and reg['address']==r['address'] and reg['width']==len(r['data']) and reg['access']=='RW']
         if len(matches)!=1 or any(not isinstance(x,int) or not 0<=x<=255 for x in r['data']):raise ValueError('Write is not a typed named configuration capability')
         name,reg=matches[0];value=int.from_bytes(bytes(r['data']),'little')
@@ -110,6 +114,41 @@ class Bridge:
             shadow=m['registers'].get('Secondary(Shadow) ID')
             if shadow and int.from_bytes(bytes(self.read(device_id,shadow['address'],shadow['width'])),'little')<253:raise ValueError('Active secondary ID on a bound axis')
             if int.from_bytes(bytes(self.read(device_id,torque['address'],torque['width'])),'little')!=0:raise ValueError('Torque must already be off on every bound axis')
+    def validate_table_write(self,r,m,b):
+        inventory=json.loads((Path(__file__).resolve().parents[2]/'references/control-items.json').read_text())
+        entry=next((e for e in inventory['models'] if e['catalogId']==m['catalogId']),None)
+        item=next((i for i in entry['items'] if i['key']==b['tableItem']),None) if entry else None
+        if not item or item['access']!='RW' or item['write']['status']!='resolved' or item['write']['kind']!='direct':raise ValueError('Item semantics are not source-resolved for direct writes')
+        rule=item['write'];data=r['data']
+        if r['address']!=item['address'] or len(data)!=item['width'] or any(type(x)!=int or not 0<=x<=255 for x in data):raise ValueError('Typed item address/width/data mismatch')
+        value=int.from_bytes(bytes(data),'little',signed=rule['encoding']=='twos-complement')
+        if rule.get('values') is not None and value not in rule['values']:raise ValueError('Undocumented item enum/sentinel')
+        if rule.get('bounds') and not rule['bounds'][0]<=value<=rule['bounds'][1]:raise ValueError('Item value outside source bounds')
+        if b['firmware']<rule.get('minimumFirmware',0):raise ValueError('Unsupported item firmware')
+        def read(name,device_id=b['id']):
+            rows=[i for i in entry['items'] if i['name']==name and i['readStatus']=='resolved-raw']
+            if len(rows)!=1:raise ValueError('Precondition item source is ambiguous')
+            row=rows[0];return int.from_bytes(bytes(self.read(device_id,row['address'],row['width'])),'little',signed=row['encoding']=='twos-complement')
+        for name,expected in {'Model Number':b['model'],'Firmware Version':b['firmware'],'ID':b['id'],'Protocol Type':self.protocol,'Baud Rate':m['bauds'].get(str(self.port.baudrate))}.items():
+            if name in m['registers'] and read(name)!=expected:raise ValueError('Bound identity/protocol/rate changed')
+        if rule.get('requiresTorqueOff'):
+            ids=[b['id']]+b.get('peerIds',[])
+            if m['dualAxis'] and len(ids)!=2:raise ValueError('Required dual-axis cohort is missing')
+            for device_id in ids:
+                if read('Torque Enable',device_id)!=0:raise ValueError('EEPROM/item requires torque already off')
+            if 'Lock' in m['registers'] and read('Lock')!=0:raise ValueError('EEPROM lock is active')
+        if rule.get('requiresMode'):
+            mode=read('Operating Mode')
+            if mode not in rule['modes']:raise ValueError('Item not applicable in observed mode')
+            if rule.get('modeBounds'):
+                bounds=rule['modeBounds'][str(mode)];lo=read(bounds['minItem']) if 'minItem' in bounds else bounds['min'];hi=read(bounds['maxItem']) if 'maxItem' in bounds else bounds['max']
+                if not lo<=value<=hi:raise ValueError('Goal outside mode-specific bounds')
+        if rule.get('dynamicLimit') and abs(value)>read(rule['dynamicLimit']):raise ValueError('Goal exceeds observed limit')
+        for name,bits in rule.get('forbiddenBits',{}).items():
+            if read(name)&bits:raise ValueError('Control bits would enable torque implicitly')
+        for name,states in rule.get('forbiddenStates',{}).items():
+            if read(name) in states:raise ValueError('Controller state prevents item write')
+
     def close(self):
         old=self.port;self.port=None;self.bound=None
         if old is not None and old.is_open:old.closePort()

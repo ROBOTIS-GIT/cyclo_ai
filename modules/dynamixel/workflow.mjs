@@ -62,7 +62,7 @@ export function configurationPlan(request,snapshot){validateRequest(request);ret
 const checkAbort=s=>{if(s?.aborted)throw Error('Operation interrupted; no further writes');};
 export async function configure(connect,request,{signal}={}){
  validateRequest(request);const m=resolve(request),reads=readsFor(m),protocol=m.protocol;
- if(request.isolatedBus!==true)throw Error('Confirm a physically isolated single-device bus; scans cannot exclude duplicate IDs or secondary listeners');
+ if(request.isolatedBus!==true&&request.addressingVerified!==true)throw Error('Verify unique bus addressing and absence of secondary listeners for the selected address; scans alone cannot exclude duplicates');
  if(request.peerIds!==undefined&&(!Array.isArray(request.peerIds)||request.peerIds.length>1||request.peerIds.some(id=>!Number.isInteger(id)||id<0||id>252)||!m.dualAxis&&request.peerIds.length))throw Error('Invalid or inapplicable explicit peer endpoint');
  if(m.dualAxis&&(!Array.isArray(request.peerIds)||request.peerIds.length!==1||request.peerIds[0]===request.id))throw Error('Dual-axis unit requires explicit other-axis ID and both torque states; do not guess the factory peer ID');
  const result={outcome:'not_written',snapshot:{},changes:[],location:{id:request.id,baud:request.baud,protocol},catalogId:m.catalogId,recovery:[],warnings:[]};
@@ -85,6 +85,11 @@ export async function configure(connect,request,{signal}={}){
  try{
   checkAbort(signal);connection=await connect(result.location.baud,100,protocol);await pingIdentity();
   if('baud'in request.changes&&(!connection.canBaud||!await connection.canBaud(request.changes.baud)))throw Error('Transport does not support destination baud; no register write occurred');
+  if('baud'in request.changes){
+   await close();connection=await connect(request.changes.baud,100,protocol);
+   for(const id of [request.id,...(request.peerIds??[])])if(await connection.probe(id))throw Error('Destination baud contains an occupied endpoint ID; no writes occurred');
+   await close();connection=await connect(result.location.baud,100,protocol);await pingIdentity();
+  }
   const s=result.snapshot=await snapshot(result.location.id);
   if(s.model!==request.model||s.firmware!==request.firmware||s.id!==request.id||s.protocol!==undefined&&s.protocol!==protocol||s.baud!==m.bauds[String(request.baud)])throw Error('Control-table identity/protocol/baud mismatch');
   if(s.secondaryId!==undefined&&s.secondaryId<253)throw Error('Secondary ID is active; duplicate/group listeners cannot be excluded');

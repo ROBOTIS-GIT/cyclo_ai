@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cyclo-plugin",
-  "version": "0.8.0",
-  "description": "Cyclo Plugin: source-backed ROBOTIS product guidance, retained AI Sapiens workflows and separately gated model-aware DYNAMIXEL configuration.",
+  "version": "0.9.0",
+  "description": "Cyclo Plugin: source-backed ROBOTIS product guidance, retained AI Sapiens workflows and model-aware DYNAMIXEL Control Table operations.",
   "keywords": [
     "robotis",
     "ai-sapiens",

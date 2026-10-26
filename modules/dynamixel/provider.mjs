@@ -1,3 +1,4 @@
+import {hardwareEnabled} from '../hardware-mode.mjs';
 // One pinned official SDK packet implementation; no Cyclo SDK protocol fork.
 import {spawn} from 'node:child_process';
 import {createInterface} from 'node:readline';
@@ -24,7 +25,7 @@ function bridge(python){
  return {call,stop:async()=>{let error;try{await call({op:'close'});}catch(e){error=e;}finally{await teardown();}if(error)throw error;}};
 }
 export async function sdkProvider(env=process.env){
- if(env.CYCLO_PRODUCTS_ENABLE_HARDWARE!=='1')throw Error('Hardware provider is disabled; no process or device access occurred');
+ if(!hardwareEnabled(env,'CYCLO_PRODUCTS_ENABLE_HARDWARE'))throw Error('Hardware provider is disabled; no process or device access occurred');
  const python=env.CYCLO_PRODUCTS_PYTHON??'python3';
  return {
   ports:async()=>{const b=bridge(python);try{return await b.call({op:'ports'});}finally{await b.stop();}},

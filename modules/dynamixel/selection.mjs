@@ -3,13 +3,19 @@ import {modelFor} from './registry.mjs';
 
 /** Session state only. No operator-file writes, hardware calls or new grants. */
 export class TargetSession {
-  constructor(config,{clock=()=>Date.now(),ttlMs=300000}={}) {
-    this.clock=clock;this.ttlMs=ttlMs;
+  constructor(config,{clock=()=>Date.now(),ttlMs=300000,dynamicPorts=true}={}) {
+    this.clock=clock;this.ttlMs=ttlMs;this.dynamicPorts=dynamicPorts;
     this.targets=new Map(Object.entries(config.targets??{}).map(([name,t])=>[name,{...t,status:'ready',revision:0}]));
     this.buses=config.buses??{};this.scans=new Map();
   }
-  resolve({bus,target}) {
-    if(Boolean(bus)===Boolean(target))throw Error('Choose exactly one named bus or target');
+  resolve({bus,target,port}) {
+    if([bus,target,port].filter(Boolean).length!==1)throw Error('Choose exactly one named bus, target or explicitly selected port');
+    if(port){
+      if(!this.dynamicPorts)throw Error('Explicit operator policy is loaded; choose its named bus/target rather than bypassing canonical port restrictions through an alias');
+      const existing=[...Object.values(this.buses),...this.targets.values()].filter(t=>t.port===port);
+      if(existing.some(t=>t.allowScan===false||t.allowConfigure===false))throw Error('Explicit operator policy restricts this port; do not bypass it through dynamic selection');
+      return {port,allowScan:true,allowConfigure:true};
+    }
     const value=bus?this.buses[bus]:this.targets.get(target);
     if(!value)throw Error('Unknown bus/target; configure a port-only bus for discovery');
     return value;
@@ -24,8 +30,8 @@ export class TargetSession {
     while(this.scans.size>32)this.scans.delete(this.scans.keys().next().value);
     return {scanId,candidates,expiresAt:new Date(this.clock()+this.ttlMs).toISOString()};
   }
-  async select({scanId,candidateId,name,confirmed,isolatedBus,catalogId,peerIds=[]}) {
-    if(!confirmed||!isolatedBus)throw Error('Explicit target confirmation and physically isolated single-device bus attestation are required');
+  async select({scanId,candidateId,name,confirmed,isolatedBus=false,addressingVerified=false,catalogId,peerIds=[]}) {
+    if(!confirmed||(!isolatedBus&&!addressingVerified))throw Error('Explicit target confirmation and verified unique addressing are required; a scan alone cannot exclude duplicate IDs or secondary listeners');
     if(!/^[a-zA-Z0-9_-]{1,48}$/.test(name))throw Error('Use a short target name containing letters, digits, underscore or hyphen');
     if(this.targets.has(name))throw Error('Target name already exists; choose a new name instead of silently replacing it');
     const record=this.scans.get(scanId);
@@ -34,9 +40,11 @@ export class TargetSession {
     if(!candidate)throw Error('Candidate is not part of this completed scan');
     if(candidate.identityComplete===false)throw Error('Presence observed but identity is incomplete: resolve identity reads before selection; no Status Return Level writes');
     const model=modelFor(candidate.modelNumber,candidate.firmwareVersion,catalogId,candidate.protocol);
-    if(record.candidates.length!==1||model.dualAxis){
-      const peer=record.candidates.filter(c=>c.candidateId!==candidateId);
-      if(!model.dualAxis||peerIds.length!==1||peer.length!==1||peer[0].id!==peerIds[0]||peer[0].modelNumber!==candidate.modelNumber||peer[0].firmwareVersion!==candidate.firmwareVersion||peer[0].baud!==candidate.baud||peer[0].protocol!==candidate.protocol||peer[0].identityComplete!==true)throw Error('Multiple responders: isolate one physical unit; dual-axis selection requires the explicitly observed peer endpoint');
+    const sameAddress=record.candidates.filter(c=>c.id===candidate.id&&c.baud===candidate.baud&&c.protocol===candidate.protocol);
+    if(sameAddress.length!==1)throw Error('Ambiguous responder address; resolve duplicate IDs before selection');
+    if(model.dualAxis){
+      const peer=record.candidates.filter(c=>peerIds.includes(c.id)&&c.baud===candidate.baud&&c.protocol===candidate.protocol);
+      if(peerIds.length!==1||peerIds[0]===candidate.id||peer.length!==1||peer[0].modelNumber!==candidate.modelNumber||peer[0].firmwareVersion!==candidate.firmwareVersion||peer[0].identityComplete!==true)throw Error('Dual-axis selection requires the explicitly observed peer endpoint');
     }
     if(model.dualAxis&&peerIds.length!==1)throw Error('Dual-axis unit requires explicitly observed other-axis ID');
     if(!model.dualAxis&&peerIds.length)throw Error('Peer endpoints are only applicable to a verified dual-axis unit');
@@ -46,8 +54,8 @@ export class TargetSession {
     // OS binding verification only; device identity is checked again on every operation.
     await record.verifyBinding();
     if(this.scans.get(scanId)!==record||record.expires<=this.clock())throw Error('Observation changed during selection; scan again');
-    this.retirePort(record.bus.port,'superseded by explicit selection');
-    const target={port:record.bus.port,model:candidate.modelNumber,firmware:candidate.firmwareVersion,id:candidate.id,baud:candidate.baud,protocol:candidate.protocol??model.protocol,catalogId:model.catalogId,peerIds,isolatedBus:true,allowScan:record.bus.allowScan,allowConfigure:true,status:'ready',revision:0,verifyBinding:record.verifyBinding};
+    if([...this.targets.values()].some(t=>t.status==='ready'&&t.port===record.bus.port&&t.id===candidate.id&&t.baud===candidate.baud&&(t.protocol??candidate.protocol)===candidate.protocol))throw Error('This address is already selected; reuse its existing target');
+    const target={port:record.bus.port,model:candidate.modelNumber,firmware:candidate.firmwareVersion,id:candidate.id,baud:candidate.baud,protocol:candidate.protocol??model.protocol,catalogId:model.catalogId,peerIds,isolatedBus,addressingVerified:addressingVerified||isolatedBus,allowScan:record.bus.allowScan,allowConfigure:true,status:'ready',revision:0,verifyBinding:record.verifyBinding};
     this.targets.set(name,target);this.scans.delete(scanId);
     return this.describe(name);
   }

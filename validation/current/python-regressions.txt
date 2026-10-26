@@ -15,6 +15,12 @@ test_no_active_legacy_identity (test_branding.Branding.test_no_active_legacy_ide
 test_one_current_identity (test_branding.Branding.test_one_current_identity) ... ok
 test_readme_presentation_has_no_release_labels (test_branding.Branding.test_readme_presentation_has_no_release_labels) ... ok
 test_real_ai_sapiens_tasks_are_preserved (test_branding.Branding.test_real_ai_sapiens_tasks_are_preserved) ... ok
+test_bridge_rejects_self_peer_before_identity_io (test_control_items.Items.test_bridge_rejects_self_peer_before_identity_io) ... ok
+test_bridge_torque_and_mode_conditions_are_item_specific (test_control_items.Items.test_bridge_torque_and_mode_conditions_are_item_specific) ... ok
+test_bridge_uses_canonical_signed_rules_with_torque_on (test_control_items.Items.test_bridge_uses_canonical_signed_rules_with_torque_on) ... ok
+test_every_rule_has_pinned_source_and_discrete_modes (test_control_items.Items.test_every_rule_has_pinned_source_and_discrete_modes) ... ok
+test_generic_bridge_does_not_write_to_peer_using_primary_conditions (test_control_items.Items.test_generic_bridge_does_not_write_to_peer_using_primary_conditions) ... ok
+test_non_scalar_widths_and_duplicate_rows_are_retained (test_control_items.Items.test_non_scalar_widths_and_duplicate_rows_are_retained) ... ok
 test_all_models_match_independent_row_witnesses (test_control_tables.ControlTables.test_all_models_match_independent_row_witnesses) ... ok
 test_header_variants_and_malformed_rows_fail_closed (test_control_tables.ControlTables.test_header_variants_and_malformed_rows_fail_closed) ... ok
 test_source_bindings_and_upstream_sdk_immutability (test_control_tables.ControlTables.test_source_bindings_and_upstream_sdk_immutability) ... ok
@@ -55,6 +61,6 @@ test_protocol2_ping_retains_payload_firmware_and_model (test_sdk_packets.Packets
 test_unknown_protocol_broadcast_and_backend_rate_bounds (test_sdk_packets.Packets.test_unknown_protocol_broadcast_and_backend_rate_bounds) ... ok
 
 ----------------------------------------------------------------------
-Ran 55 tests in 0.211s
+Ran 61 tests in 0.419s
 
 OK

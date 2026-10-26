@@ -17,6 +17,6 @@ Route by task:
 - Training, video and deployment: preserve [walking](../ai-sapiens-walking/SKILL.md), [video/Mimic](../ai-sapiens-video-mimic/SKILL.md), [Sim2Real](../ai-sapiens-sim2real/SKILL.md). Ask Cyclo Lab or Cyclo MJLab when unspecified.
 - Other platforms, hands, controllers, interfaces, education kits and legacy software: [portfolio workflow](references/portfolio.md); fetch their own manual before proposing a procedure.
 
-Answer in the user's language. Cite exact model/version pages near claims. Separate documented behavior, inferred troubleshooting, mock-tested implementation and physical runtime evidence. No claim of universal product knowledge or compatibility follows from a catalog entry. Preserve the current task's restrictions and authorization. Hardware is disabled by default; explanation and model-selection questions need no device access.
+Answer in the user's language. Cite exact model/version pages near claims. Separate documented behavior, inferred troubleshooting, mock-tested implementation and physical runtime evidence. No claim of universal product knowledge or compatibility follows from a catalog entry. Preserve the current task's restrictions and authorization. Hardware tools are available by default; explanation and model-selection questions need no device access.
 
 Examples: “What is the difference between OMY and OMX?”, “Which software should I use with this older CM controller?”, “Help me choose Cyclo Lab or Cyclo MJLab”, “Can you guide me with this product too?”
