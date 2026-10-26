@@ -50,3 +50,8 @@ for(const host of ['codex','claude'])for(const name of Object.keys(portable))tes
   assert.equal(stderr,'');
  }finally{await c.close();}
 });
+
+test('both host descriptions advertise actual default availability and offline opt-out',async()=>{
+ const codex=JSON.parse(await readFile(new URL('../plugin.json',import.meta.url),'utf8')),claude=JSON.parse(await readFile(new URL('../.claude-plugin/plugin.json',import.meta.url),'utf8'));
+ for(const text of [codex.extensions['com.openai'].interface.longDescription,claude.description]){assert.match(text,/available by default/);assert.match(text,/CYCLO_OFFLINE=1/);assert.match(text,/mock-only/);assert.doesNotMatch(text,/disabled-by-default/);}
+});

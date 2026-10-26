@@ -14,7 +14,7 @@
       "interface": {
         "displayName": "Cyclo Plugin",
         "shortDescription": "ROBOTIS product expert",
-        "longDescription": "Official-source product routing across ROBOTIS, focused integration guidance and AI Sapiens workflows. Source-bound model-specific DYNAMIXEL ID, baud, LED and profile transactions use a separate disabled-by-default MCP. All robotics runtime evidence is mock-only.",
+        "longDescription": "Official-source ROBOTIS product guidance and AI Sapiens workflows, with model-aware DYNAMIXEL Control Table discovery, reads and writes. Hardware tools are available by default without startup device I/O; CYCLO_OFFLINE=1 disables hardware access. Source-bound conditions and explicit customer commands remain required. Runtime evidence is mock-only.",
         "capabilities": [],
         "defaultPrompt": [
           "Help me select a DYNAMIXEL using the official manuals",

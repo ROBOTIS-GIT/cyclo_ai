@@ -72,6 +72,6 @@ test_protocol2_ping_retains_payload_firmware_and_model (test_sdk_packets.Packets
 test_unknown_protocol_broadcast_and_backend_rate_bounds (test_sdk_packets.Packets.test_unknown_protocol_broadcast_and_backend_rate_bounds) ... ok
 
 ----------------------------------------------------------------------
-Ran 72 tests in 4.302s
+Ran 72 tests in 4.344s
 
 OK
