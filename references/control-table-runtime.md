@@ -1,5 +1,7 @@
 # Control Table runtime
 
+This page describes the bundled product MCP. The DYNAMIXEL skill also supports custom/unindexed devices using [external Control Tables and an existing compatible executor](custom-control-tables.md). That separate skill workflow does not dynamically import prompt/attachment metadata into the MCP or relax its validation and operator policy.
+
 The product MCP exposes a generic, model-specific interface alongside compatible named ID/baud/LED/profile workflows:
 
 - `dynamixel_table({catalogId, query, offset, limit})` lists retained source rows, address/width/access, enums, raw units, encoding, conditions, provenance and write resolution. It performs no device I/O.

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Support custom/unindexed DYNAMIXEL devices and user-supplied Control Tables in skill guidance, using an existing compatible executor when the bundled MCP lacks the model or transport/rate.
+- Document source provenance, register/firmware validation, K1 routed USB at 6 Mbps, actual Control Table ID swaps, and read-only live position displays. Preserve operator policy denials, prerequisite checks, one-shot writes and uncertain-state reconciliation. No runtime/catalog capability is added.
+
 ## 0.10.0
 
 - Add pinned DHI, message/SDK and product-source retrieval with exact blob verification and version boundaries.

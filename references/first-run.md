@@ -12,6 +12,8 @@ Examples: “Help me select a DYNAMIXEL for my application”, “Explain curren
 
 ## Unknown actuator: discover, choose, configure
 
+For custom models, customer-supplied Control Tables, or a requested transport/rate outside the bundled provider, first use [custom devices and external Control Tables](custom-control-tables.md). The catalog selection steps below apply to the product MCP; do not force a custom device into a different catalog model or require another approval solely because a compatible external executor is needed. Preserve actual operator policy restrictions and source/live prerequisite checks.
+
 Live tools are available, but a concrete bus/operation must be authorized and its runtime configured before use. Use mocks when live access is outside scope. Without an operator file, explicitly confirmed port listing and a bounded scan using `port` can establish an observed target; no global unlock is required. An optional port-only operator config can persist or restrict discovery without knowing model, firmware, current ID or baud:
 
 ```json

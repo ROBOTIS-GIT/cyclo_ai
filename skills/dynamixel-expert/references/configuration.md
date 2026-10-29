@@ -2,6 +2,8 @@
 
 Use the complete [typed catalog](../../../references/control-tables.json), [runtime boundaries](../../../modules/dynamixel/README.md) and [official source procedure](../../../references/dynamixel-evidence.md). Every model uses the same engine; capability evidence and task authorization are separate.
 
+For a custom/unindexed device or external table, use the [custom-table procedure](../../../references/custom-control-tables.md). The numbered catalog/MCP steps below do not require inventing a catalog match or rejecting a source-resolved custom operation.
+
 1. Establish the requested named operation: ID is not baud. Confirm electrical interface/adapter, port, intended target and effect. Documentation-only requests never touch ports. Discovery needs a permitted port-only bus, bounded IDs/rates/protocols and an explicit read-only request. Port identity describes an adapter, not the actuator.
 2. Dry-run `dynamixel_scan` first. Choose Protocol1 and/or2, at most253 distinct IDs0..252, eight documented rates,10–200ms packet timeout and100–15000ms budget. The matrix budgets up to three identity packets per endpoint. The SDK bridge has a separate per-RPC deadline; OS closure uncertainty retains the lease. Zero replies do not prove absence; show completeness/errors and unscanned scope.
 3. Distinguish presence from identity. Protocol1 Ping has no model payload: read model0:2 separately, then use its exact catalog firmware address. Protocol2 Ping includes model/firmware, verified against the model's firmware register. XL-320 uses firmware2 despite Protocol2. MX generation is selected by model number, not protocol. Unknown firmware/identity or a failed READ is unresolved, never a guessed address or a reason to change Status Return Level.
