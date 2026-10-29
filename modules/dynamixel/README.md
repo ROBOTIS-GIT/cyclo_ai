@@ -4,7 +4,7 @@
 
 ## Runtime and configuration
 
-Install Node dependencies from the package lockfile with lifecycle scripts disabled. For device operations, install `requirements.txt` into an operator-selected isolated Python environment and set `CYCLO_PRODUCTS_PYTHON` to its absolute interpreter path. Documentation and default tool listing require neither serial dependencies nor a hardware process. The bridge starts lazily for a concrete live request. `CYCLO_OFFLINE=1` or `CYCLO_PRODUCTS_ENABLE_HARDWARE=0` blocks hardware access.
+Install Node dependencies from the package lockfile with lifecycle scripts disabled. For device operations, use `npm run setup` to prepare the automatically detected local environment, or set `CYCLO_PRODUCTS_PYTHON` to another prepared interpreter. Documentation and default tool listing require neither serial dependencies nor a hardware process. The bridge starts lazily for a concrete live request. `CYCLO_OFFLINE=1` or `CYCLO_PRODUCTS_ENABLE_HARDWARE=0` blocks hardware access.
 
 Optional `CYCLO_PRODUCTS_CONFIG` binds named buses/targets with separate discovery, scan and configuration permissions. Without it, an explicitly selected port can be scanned and the observed endpoint selected. Explicit policies cannot be bypassed with dynamic aliases. Scans, reads and writes require the customer's authorization and `confirmed:true`; previews do no device I/O. Selected handles are session-local and become blocked after uncertain state, binding changes or unconfirmed closure. Operator files are never rewritten.
 
@@ -22,8 +22,10 @@ The bundled catalog retains 89 actuator documents and the item inventory, includ
 
 [Custom Control Tables](../../references/custom-control-tables.md) are native operator-owned profiles loaded at startup through `CYCLO_PRODUCTS_CUSTOM_TABLES`. An offline XML importer generates a reviewable profile; RW attributes alone do not grant writes. Both layers validate source hashes, explicit firmware applicability, non-overlapping register definitions, raw encodings/bounds and declarative live conditions. Namespaced `custom/` identities cannot replace bundled catalog entries. Custom models use the same scan/select/read/write/ID/baud engine and can be selected on multi-device buses without a global catalog edit. The initial custom schema supports single-axis scalar writes; custom protocol changes, indirect aliases and unresolved conditions require additional source-contract support rather than guessed behavior.
 
-`dynamixel_sync_read` uses the official SDK Sync Read instruction for one common resolved item across up to 16 selected Protocol 2 endpoints, with identity checks and per-device error/byte handling. It does not claim physically atomic sampling.
+`dynamixel_sync_read` uses the official SDK Sync Read instruction for one common resolved item across automatically batched selected Protocol 2 endpoints, with identity checks and per-device error/byte handling. It does not claim physically atomic sampling.
 
 Named configuration remains compatible for ID, baud, LED and the bundled resolved profile helpers. Other resolved fields, including Return Delay Time and Homing Offset, use `dynamixel_write_item`. `dynamixel_swap_ids` performs `A -> temporary`, `B -> A`, `temporary -> B` under one bus lease with identity, prerequisites, destination probes, continuity/readback and closure checks at each step. Failures retain the observed partial state for read-only reconciliation and never trigger a blind retry or rollback. Identical model/firmware values are not proof of a unique physical serial identity.
 
 See [item-level conditions and coverage](../../references/control-table-runtime.md). Reset/reboot/flash are not register writes and are not exposed. Tests establish synthetic workflow and packet/stdio behavior; they do not certify physical devices, firmware revisions, motion, timing or an installed host session.
+
+For dependency setup use `npm run setup`; `npm run doctor -- --hardware-deps` performs device-free diagnostics. `.venv` is discovered automatically. See [architecture](../../references/architecture.md) for connection contracts, batching and session behavior.

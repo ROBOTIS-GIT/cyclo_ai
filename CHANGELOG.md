@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Prepare 0.11.0: Apache-2.0 licensing, reproducible manifest-based packaging, local setup/doctor commands, contributor and architecture guides, formatting checks and expanded CI.
+- Preserve scan observations for single/batch selection, support read-only targets and same-name reconciliation, and automatically batch large device reads.
+- Support custom controllers/sensors without actuator-only registers, honor reviewed torque prerequisites, preserve multilingual source text, and normalize Windows COM endpoints.
+- Remove obsolete producer-session/release reports from the active tree; keep current contributor instructions and the unresolved Current(68) investigation.
+- Release bus reservations after pre-I/O failures with confirmed closure and expose structured MCP errors.
+
 - Replace the private device integration with a standalone product MCP using only the pinned public official DynamixelSDK, pyserial, and direct MCP dependencies.
 - Add native source-hashed custom Control Table contracts, an offline XML importer with explicit write review, high-baud serial adapters, explicit TCP/UDP packet bridges, bounded raw/controller inspection, native Sync Read, and a verified ID-swap tool.
 - Remove the retired server, vendored private source, associated skill, npm workspaces/build dependency, and obsolete integration reports. Preserve catalog-wide item rules, documentation/source tools, AI Sapiens workflows, explicit operator policies and uncertain-state handling.

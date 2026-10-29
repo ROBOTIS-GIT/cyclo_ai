@@ -6,21 +6,56 @@ on:
 permissions:
   contents: read
 jobs:
-  mock-only:
-    runs-on: ubuntu-latest
+  offline:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            node: '22'
+            python: '3.9'
+          - os: ubuntu-latest
+            node: '24'
+            python: '3.12'
+          - os: macos-latest
+            node: '24'
+            python: '3.12'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Exercise contributor setup
+        run: npm run setup -- --dev
+      - run: npm run doctor -- --hardware-deps
+      - run: npm run format:check
+      - run: .venv/bin/python -m ruff format --check modules scripts validation
+      - run: npm test
+      - name: Build source archive with a local virtual environment present
+        run: .venv/bin/python validation/package_release.py
+      - name: Test extracted release bytes
+        run: .venv/bin/python validation/verify_archive.py artifacts/cyclo-plugin-0.11.0.zip
+        env:
+          CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
+  windows-setup:
+    runs-on: windows-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: npm
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install local dependencies without lifecycle scripts
-        run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Install validation dependencies
-        run: python -m pip install -r validation/requirements.txt
-      - name: Standalone stdio, packet/contract regressions and package validation
-        run: npm test
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run setup
+      - run: npm run doctor -- --hardware-deps
+      - run: node --test tests/integration.test.mjs

@@ -1,53 +1,56 @@
 # Cyclo Plugin
 
-A Codex and Claude Code plugin for ROBOTIS product guidance, AI Sapiens workflows, and DYNAMIXEL discovery, Control Table reads, and source-resolved writes.
+A Codex and Claude Code plugin for ROBOTIS product guidance and DYNAMIXEL devices. Discover motors, read live control tables, change documented settings, and work with custom actuator, controller and sensor tables. AI Sapiens skills cover documented development and operation workflows.
 
-The package runs one standalone `cyclo-products` MCP server. It depends on the public official DynamixelSDK packet implementation and pyserial, with no private firmware repository, external device CLI, generated TypeScript SDK, or firmware build required.
+The runtime uses the public official DynamixelSDK and pyserial. No private firmware repository or firmware build is needed. First-party source is [Apache-2.0](LICENSE).
 
-## Prepare and run
+## Install
 
-Requires Node >=22 and Python >=3.9. Inspect the dependencies, then install locally:
+Use Node.js >=22 and Python >=3.9. From the plugin source directory:
 
 ```sh
-npm ci --ignore-scripts --no-audit --no-fund
-python3 -m venv .venv
-.venv/bin/python -m pip install -r modules/dynamixel/requirements.txt
+npm ci --ignore-scripts
+npm run setup
+npm run doctor -- --hardware-deps
 ```
 
-Set `CYCLO_PRODUCTS_PYTHON` to the absolute path of that interpreter in the host environment. Configure the plugin using the [host guide](references/hosts.md). Startup, documentation, and tool listing perform no device I/O. `CYCLO_OFFLINE=1` explicitly disables hardware operations. A concrete customer command provides authorization for the selected port/bus and operation; each live MCP call requires `confirmed:true`.
+Setup creates a local Python environment and installs the hardware dependency. Diagnostics check dependencies without enumerating or opening devices. The runtime finds `.venv` automatically; `CYCLO_PRODUCTS_PYTHON` can select another prepared interpreter.
 
-## Device capabilities
+Register the directory using the [Codex or Claude Code host guide](references/hosts.md). If the host copies the plugin into a cache, set its `CYCLO_PRODUCTS_PYTHON` to the absolute interpreter path printed by setup. Start with `$cyclo` in Codex or `/cyclo-plugin:cyclo` in Claude Code.
 
-| Workflow | Interface |
+Try: “Scan the routed port at 6 Mbps and read the homing offset of every motor.” A concrete command supplies authorization for that operation; the skill asks for missing target information rather than repeatedly confirming the same request. Set `CYCLO_OFFLINE=1` for documentation-only use.
+
+## Workflows
+
+| Task | Tools |
 | --- | --- |
-| Official product/model/source evidence | `robotis_sources`, `robotis_code`, `dynamixel_models`, `dynamixel_manual` |
-| Serial adapter inventory | `dynamixel_ports` |
-| Unicast Ping and bounded raw/controller reads, including optional Protocol 2 Sync Read | `dynamixel_ping`, `dynamixel_read` |
-| Bounded Protocol 1/2 discovery | `dynamixel_scan` |
-| Select an observed endpoint and inspect session state | `dynamixel_select`, `dynamixel_targets` |
-| Inspect named items, widths, encodings, units, access and conditions | `dynamixel_table` |
-| Read up to 16 exact items, including arbitrary supported table fields | `dynamixel_read_items` |
-| Read one common item from up to 16 selected Protocol 2 IDs in one Sync Read request | `dynamixel_sync_read` |
-| Write one resolved item, including RDT, offsets, torque, mode and goals | `dynamixel_write_item` |
-| Named ID, baud, LED and profile configuration | `dynamixel_configure` |
-| Swap actual persistent Control Table IDs through a free temporary ID | `dynamixel_swap_ids` |
+| Find models, official manuals and implementation evidence | `dynamixel_models`, `dynamixel_manual`, `robotis_sources`, `robotis_code` |
+| List adapters and scan a selected bus | `dynamixel_ports`, `dynamixel_scan` |
+| Select one or several devices from one scan | `dynamixel_select`, `dynamixel_select_many`, `dynamixel_targets` |
+| Inspect tables and read named fields | `dynamixel_table`, `dynamixel_read_items` |
+| Read a common field across a robot, with automatic batching | `dynamixel_sync_read` |
+| Inspect unknown controllers or raw byte ranges | `dynamixel_ping`, `dynamixel_read` |
+| Write documented settings, goals, modes or torque | `dynamixel_write_item`, `dynamixel_configure` |
+| Swap persistent device IDs with verified intermediate steps | `dynamixel_swap_ids` |
 
-All 89 bundled actuator documents use the existing shared model/item engine. Per-item semantics and firmware conditions determine execution; document counts do not certify every physical variant or feature. Original MX-64/MX-106 Current(68) remains unresolved rather than being redirected to another register. See [item coverage](references/control-table-runtime.md).
+Read-only targets preserve read-only permissions. Scans remain usable for multiple selections until they expire or a bus operation invalidates them. Scan budgets adapt to the requested matrix; an optional explicit budget returns an incomplete result when time runs out. Large Sync Read requests are split into bounded SDK batches; they do not require the user to split a robot into groups of 16.
 
-The plugin-owned port adapter passes supported serial rates, including 4.5, 6 and 10.5 Mbps, to pyserial and retains the unmodified public SDK for packets. Actual OS/adapter support is checked by opening the requested port; a CDC logical baud does not prove a bridge's downstream physical rate. Explicit `tcp://host:port` and `udp://host:port` endpoints support already configured packet bridges. No implicit route/channel/network configuration occurs. Cooperative leases, bounded requests, source/live prerequisites, one-shot writes, actual readback and uncertainty handling apply to every transport.
+The bundled catalog covers 89 actuator documents through a shared contract engine. Firmware, encoding and item-specific conditions determine executable support. Custom tables use an [offline importer and reviewed contracts](references/custom-control-tables.md). Controllers and sensors can omit torque and baud registers; unknown encodings remain available as raw reads. See [item coverage](references/control-table-runtime.md) for remaining gaps, including original MX Current(68).
 
-Custom devices use the native runtime after offline [external Control Table import and review](references/custom-control-tables.md). Unknown encodings remain raw reads; XML `RW` alone never grants writes. `CYCLO_PRODUCTS_CUSTOM_TABLES` names an operator-owned, source-hashed profile loaded by both validation layers. It cannot replace bundled catalog identities. No customer table is published automatically.
+Serial, explicit TCP and UDP bridges are supported. The adapter passes rates including 6 Mbps to the OS; actual adapter/driver support and a bridge's downstream rate must match the connection. Windows COM aliases are normalized; Linux/macOS use canonical character-device identities. CI covers the offline suite on Linux/macOS and dependency setup plus offline MCP startup on Windows. Physical adapter compatibility must be verified separately.
 
-Use `$cyclo` for routing, `$dynamixel-expert` for catalog/custom devices, `$robotis-integrate` for ROS 2/DHI/source integration, and the focused AI Sapiens skills for their documented workflows. See [first connection](references/first-run.md) and [runtime configuration](modules/dynamixel/README.md).
-
-## Verification and release boundary
+## Develop and contribute
 
 ```sh
-python3 -m pip install -r validation/requirements.txt
+npm run setup -- --dev
 npm test
+npm run format:check
+npm run format:python:check
 npm run package
 ```
 
-Tests exercise synthetic devices, in-memory packets, mock stdio and loopback network peers; they do not open attached robot ports. Packaging verifies manifests, skill references and the public SDK's pinned source hashes, then checks the extracted ZIP byte-for-byte. See [third-party notices](THIRD_PARTY_NOTICES.md). No first-party license or public publication permission is granted by a dependency's license.
+Read [CONTRIBUTING](CONTRIBUTING.md), [architecture](references/architecture.md), [catalog development](references/catalog-development.md), and [security reporting](SECURITY.md). Examples and source text can use any language. Tests use injected devices, packet fixtures and loopback sockets.
 
-A passing test suite is not hardware certification. Live motion requires the customer's explicit goal/torque authorization and applicable model/mode/limit conditions. Reset, reboot, flashing, calibration firmware, training and deployment are not generic Control Table writes and are not exposed by this device MCP.
+Release ZIPs use a reviewed file manifest and reproducible timestamps; local environments and customer profiles are excluded. See [release preparation](references/releasing.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Historical private firmware remains in old Git commits and needs a maintainer decision before publishing the full history.
+
+Verified register readback does not establish physical motion completion. Reset/reboot/flashing and unsupported encodings are separate capabilities, not generic register writes. See [runtime configuration](modules/dynamixel/README.md) and [first connection](references/first-run.md).
