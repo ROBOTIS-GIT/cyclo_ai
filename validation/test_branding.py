@@ -26,7 +26,7 @@ class Branding(unittest.TestCase):
   self.assertNotRegex(visible,r'\b0\.[0-9]+\.[0-9]+\b')
  def test_real_ai_sapiens_tasks_are_preserved(self):
   self.assertEqual(len(list((ROOT/'skills').glob('ai-sapiens-*/SKILL.md'))),9)
-  self.assertEqual(len(list((ROOT/'skills').glob('*/SKILL.md'))),14)
+  self.assertEqual(len(list((ROOT/'skills').glob('*/SKILL.md'))),13)
  def test_archive_root_is_explicit_product_identity(self):
   self.assertIn("Path('cyclo-plugin')",(ROOT/'validation/package_release.py').read_text())
   self.assertIn("Path(temp)/'cyclo-plugin'",(ROOT/'validation/verify_archive.py').read_text())

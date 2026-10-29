@@ -7,6 +7,8 @@ import json,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent/'sdk-upstream'))
 sys.path.insert(1,str(Path(__file__).resolve().parent))
+from custom_tables import load_custom
+from transports import port_class
 from table_conditions import scalar as table_scalar,live as table_live
 
 class DeviceStatusError(RuntimeError):pass
@@ -38,7 +40,7 @@ def raw_ping(handler,port,device_id,protocol):
     return out
 
 class Bridge:
-    def __init__(self,api):self.api=api;self.port=None;self.handler=None;self.protocol=None;self.bound=None;self._catalog=None;self._inventory=None;self._last_write_item=None
+    def __init__(self,api):self.api=api;self.port=None;self.handler=None;self.protocol=None;self.bound=None;self._catalog=None;self._inventory=None;self._last_write_item=None;self.custom=load_custom(__import__('os').environ.get('CYCLO_PRODUCTS_CUSTOM_TABLES'))
     def command(self,r):
         op=r['op']
         if op=='ports':
@@ -51,7 +53,7 @@ class Bridge:
             timeout=r.get('timeoutMs',100)
             if not 10<=timeout<=200:raise ValueError('Invalid bounded packet timeout')
             api=self.api
-            class BoundedPort(api.PortHandler):
+            class BoundedPort(port_class(api, r['port'])):
                 def setPacketTimeout(self,packet_length):self.setPacketTimeoutMillis(timeout)
             self.port=BoundedPort(r['port']);self.handler=api.PacketHandler(protocol);self.protocol=protocol
             try:
@@ -64,10 +66,21 @@ class Bridge:
         if op=='canBaud':return self.port.getCFlagBaud(r['baud'])>0
         if op in ['ping','probe']:return raw_ping(self.handler,self.port,r['id'],self.protocol)
         if op=='read':return self.read(r['id'],r['address'],r['size'])
+        if op=='syncRead':
+            ids=r['ids'];address=r['address'];size=r['size']
+            if self.protocol!=2 or not isinstance(ids,list)or not 1<=len(ids)<=16 or len(set(ids))!=len(ids)or any(type(i)is not int or not 0<=i<=252 for i in ids)or type(size)is not int or not 1<=size<=1024 or size*len(ids)>4096 or type(address)is not int or not 0<=address<=65536-size:raise ValueError('Invalid bounded Protocol2 Sync Read')
+            self.check(self.handler.syncReadTx(self.port,address,size,ids,len(ids),False),0)
+            responses=[]
+            for device_id in ids:
+                data,result,error=self.handler.readRx(self.port,device_id,size);self.check(result,error)
+                if len(data)!=size:raise RuntimeError('Sync Read width mismatch')
+                responses.append({'id':device_id,'bytes':data})
+            return responses
         if op=='bind':
             catalog=self.catalog()
             m=next((m for m in catalog['models'] if m['catalogId']==r['catalogId'] and m['kind']=='actuator'),None)
             if not m or self.protocol not in m['protocols'] or r['model'] not in m['modelNumbers']:raise ValueError('Invalid source-bound identity')
+            if m.get('customHash') and (r.get('tableHash')!=m['customHash']or r['firmware']not in m['customFirmwares']):raise ValueError('Custom contract hash/firmware changed')
             if m['dualAxis'] and (len(r.get('peerIds',[]))!=1 or r['id'] in r.get('peerIds',[])):raise ValueError('Distinct dual-axis peer cohort is required')
             for device_id in [r['id']]+r.get('peerIds',[]):
                 proof=raw_ping(self.handler,self.port,device_id,self.protocol)
@@ -109,6 +122,11 @@ class Bridge:
         if b.get('tableItem'):
             if r['id']!=b['id']:raise ValueError('Generic item write must address the selected primary target; peer IDs are preconditions only')
             return self.validate_table_write(r,m,b)
+        if m.get('customHash'):
+            entry=next(e for e in self.inventory()['models']if e['catalogId']==m['catalogId'])
+            matches=[i for i in entry['items']if i['address']==r['address']and i['width']==len(r['data'])]
+            if len(matches)!=1:raise ValueError('Custom write address/width mismatch')
+            return self.validate_table_write(r,m,{**b,'tableItem':matches[0]['key']})
         allowed=set()
         for op,c in m['capabilities'].items():
             if c['status']!='resolved':continue
@@ -139,10 +157,10 @@ class Bridge:
             lock=m['registers'].get('Lock')
             if write_register['memory']=='EEPROM'and lock and int.from_bytes(bytes(self.read(device_id,lock['address'],lock['width'])),'little')!=0:raise ValueError('EEPROM Lock is active')
     def catalog(self):
-        if self._catalog is None:self._catalog=json.loads((Path(__file__).resolve().parents[2]/'references/control-tables.json').read_text())
+        if self._catalog is None:self._catalog=json.loads((Path(__file__).resolve().parents[2]/'references/control-tables.json').read_text());self._catalog['models'].extend(self.custom['models'])
         return self._catalog
     def inventory(self):
-        if self._inventory is None:self._inventory=json.loads((Path(__file__).resolve().parents[2]/'references/control-items.json').read_text())
+        if self._inventory is None:self._inventory=json.loads((Path(__file__).resolve().parents[2]/'references/control-items.json').read_text());self._inventory['models'].extend(self.custom['itemModels'])
         return self._inventory
     def validate_table_write(self,r,m,b):
         entry=next((e for e in self.inventory()['models'] if e['catalogId']==m['catalogId']),None)
@@ -214,7 +232,7 @@ class Bridge:
 
 def main():
     import os
-    if os.environ.get('CYCLO_PRODUCTS_ENABLE_HARDWARE')!='1':raise RuntimeError('Hardware bridge disabled; no serial import, discovery or port access occurred')
+    if os.environ.get('CYCLO_OFFLINE')=='1'or os.environ.get('CYCLO_PRODUCTS_ENABLE_HARDWARE')!='1':raise RuntimeError('Hardware bridge disabled; no serial import, discovery or port access occurred')
     bridge=Bridge(sdk())
     try:
         for line in sys.stdin:

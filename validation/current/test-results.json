@@ -1,42 +1,6 @@
 [
   {
-    "name": "sdk-typescript",
-    "status": 0
-  },
-  {
-    "name": "upstream-mcp-mocks",
-    "status": 0
-  },
-  {
-    "name": "dynamixel-products",
-    "status": 0
-  },
-  {
-    "name": "complete-control-table",
-    "status": 0
-  },
-  {
-    "name": "generic-catalog-execution",
-    "status": 0
-  },
-  {
-    "name": "official-sdk-provider-stdio",
-    "status": 0
-  },
-  {
-    "name": "source-evidence",
-    "status": 0
-  },
-  {
-    "name": "official-manual-reader",
-    "status": 0
-  },
-  {
-    "name": "dual-host-stdio",
-    "status": 0
-  },
-  {
-    "name": "plugin-stdio",
+    "name": "node-regressions",
     "status": 0
   },
   {

@@ -1,3 +1,6 @@
+import {inspectBytes} from './raw-read.mjs';
+import {groupPlan,syncReadItems} from './group.mjs';
+import {swapIds} from './swap.mjs';
 import {codeIndex,readCode} from '../knowledge/source.mjs';
 import {ITEMS,tableFor,itemFor,writeRequest,readItems,writeItem} from './table.mjs';
 import {modelFor} from './registry.mjs';
@@ -11,7 +14,7 @@ import {TargetSession} from './selection.mjs';
 import {listModels,readManual} from './manual.mjs';
 import {MODELS,CATALOG} from './registry.mjs';
 import {configure,scan,scanPlan,validateRequest} from './workflow.mjs';
-import {acquireBusLease} from '../firmware/upstream/tools/cyclo_firmware_mcp/src/bus-lease.mjs';
+import {acquireBusLease} from './bus-lease.mjs';
 const targetSchema=z.strictObject({port:z.string().min(1),model:z.number().int(),firmware:z.number().int(),id:z.number().int().min(0).max(253),baud:z.number().int(),protocol:z.union([z.literal(1),z.literal(2)]).optional(),catalogId:z.string().optional(),peerIds:z.array(z.number().int().min(0).max(253)).max(1).optional(),isolatedBus:z.boolean().default(false),addressingVerified:z.boolean().default(false),allowScan:z.boolean().default(true),allowConfigure:z.boolean().default(true)});
 const busSchema=z.strictObject({port:z.string().min(1),allowScan:z.boolean().default(true),allowConfigure:z.boolean().default(true)});
 const configSchema=z.strictObject({allowPortDiscovery:z.boolean().default(true),buses:z.record(z.string(),busSchema).default({}),targets:z.record(z.string(),targetSchema).default({})});
@@ -52,7 +55,7 @@ export async function createProductsServer(env=process.env,dependencies={}) {
   const ranked=sources.map(s=>({s,score:words.reduce((n,w)=>n+(JSON.stringify([s.id,s.title,s.tags,s.family]).toLowerCase().includes(w)?1:0),0)})).filter(x=>x.score).sort((a,b)=>b.score-a.score).slice(0,12).map(x=>x.s);
   return {reviewedOn:index.reviewedOn,sources:ranked,completePortfolio:false,next:ranked.length?'Fetch the exact official page using the host web tool and check product/version before answering.':'Use official ROBOTIS navigation and ROBOTIS-GIT repositories; request exact product/package if ambiguous. No write map is generated from page text.'};
  });
- add('dynamixel_registry','Report the complete source-bound model/capability catalog and unresolved operations without I/O.',z.strictObject({catalogId:z.string().optional()}),async({catalogId})=>({models:MODELS.filter(m=>!catalogId||m.catalogId===catalogId).map(m=>({catalogId:m.catalogId,name:m.name,modelNumbers:m.modelNumbers,protocols:m.protocols,dualAxis:m.dualAxis,capabilities:catalogId?m.capabilities:Object.fromEntries(Object.entries(m.capabilities).map(([op,c])=>[op,{status:c.status,reason:c.reason}])),...(catalogId?{registers:m.registers,bauds:m.bauds,source:m.source}:{})})),catalogSummary:CATALOG.summary,hardwareEnabled:enabled,targets:session.list().map(t=>t.name),targetDetails:session.list(),buses:Object.keys(config.buses??{}),runtimeTested:'mocks only; no installed-host or physical-device verification',unsupported:['unknown raw addresses','reset','reboot','flashing','unresolved per-item semantics']}));
+ add('dynamixel_registry','Report bundled and reviewed custom model/capability contracts and unresolved operations without device I/O.',z.strictObject({catalogId:z.string().optional()}),async({catalogId})=>({models:MODELS.filter(m=>!catalogId||m.catalogId===catalogId).map(m=>({catalogId:m.catalogId,name:m.name,modelNumbers:m.modelNumbers,protocols:m.protocols,dualAxis:m.dualAxis,capabilities:catalogId?m.capabilities:Object.fromEntries(Object.entries(m.capabilities).map(([op,c])=>[op,{status:c.status,reason:c.reason}])),...(catalogId?{registers:m.registers,bauds:m.bauds,source:m.source}:{})})),catalogSummary:CATALOG.summary,hardwareEnabled:enabled,targets:session.list().map(t=>t.name),targetDetails:session.list(),buses:Object.keys(config.buses??{}),runtimeTested:'mocks only; no installed-host or physical-device verification',unsupported:['unknown raw addresses','reset','reboot','flashing','unresolved per-item semantics']}));
  add('dynamixel_ports','Discover OS serial ports only with operator-enabled discovery; never opens them or selects a target automatically.',z.strictObject({confirmed:z.boolean().default(false)}),async({confirmed})=>{
   requireConfirmation(confirmed);
   if(!config.allowPortDiscovery)throw Error('Port discovery is not authorized in operator config');
@@ -67,9 +70,25 @@ export async function createProductsServer(env=process.env,dependencies={}) {
   catch(e){if(entered){const error=Error(`${e.message}; bus reservation retained because closure could not be established`);error.requiresReidentification=true;throw error;}if(!bound)e.requiresReidentification=true;throw e;}
   finally{if(confirmed||!entered){const released=await lease.release();if(result)result.busReservationReleased=released;}else if(result)result.busReservationReleased=false;}
  }
+ const inspectSchema={bus:z.string().optional(),target:z.string().optional(),port:z.string().min(1).max(512).optional(),baud:z.number().int().optional(),protocol:z.union([z.literal(1),z.literal(2)]).optional(),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)};
+ async function inspect(args,ids,extra,ctx){
+  const t=session.resolve(args);if(!t.allowScan)throw Error('Read inspection is not authorized on this bus');
+  if(args.target)session.target(args.target);
+  const baud=args.baud??t.baud,protocol=args.protocol??t.protocol??(t.model!==undefined?modelFor(t.model,t.firmware,t.catalogId).protocol:undefined);
+  if(!Number.isInteger(baud)||baud<9600||baud>12000000||![1,2].includes(protocol))throw Error('Specify the host baud and packet protocol');
+  ids=ids??(t.id!==undefined?[t.id]:undefined);
+  if(!ids?.length||ids.some(id=>id>(protocol===1?253:252))||new Set(ids).size!==ids.length)throw Error('Choose unique valid unicast IDs');
+  if(args.target&&(ids.length!==1||ids[0]!==t.id||baud!==t.baud||t.protocol!==undefined&&protocol!==t.protocol))throw Error('A target-specific grant cannot inspect another ID, rate or protocol');
+  if(extra.address!==undefined&&(extra.address+extra.length>(protocol===1?256:65536)||extra.length*ids.length>4096||extra.synchronized&&protocol!==2))throw Error('Invalid raw read range/protocol');
+  if(args.dryRun)return {executed:false,request:{port:t.port,ids,baud,protocol,...extra},interpretation:'Raw bytes only; source-resolved named reads remain preferred'};
+  requireConfirmation(args.confirmed);
+  return onBus(t,'allowScan',async(t,connect)=>inspectBytes(connect,{ids,baud,protocol,...extra,...(args.target?{expected:t}:{})},{signal:ctx.mcpReq.signal}));
+ }
+ add('dynamixel_ping','Bounded read-only unicast Ping for an explicitly selected port/bus/target, including unindexed controllers/sensors. Protocol1 proves presence only. Never selects or writes a device.',z.strictObject({...inspectSchema,id:z.number().int().min(0).max(253).optional()}),async(args,ctx)=>inspect(args,args.id===undefined?undefined:[args.id],{},ctx));
+ add('dynamixel_read','Explicit bounded raw bytes from 1..16 IDs on a selected port/bus, or one configured target. Optional native Protocol2 Sync Read. No signed/unit guesses or write permission; prefer source-resolved named reads when available.',z.strictObject({...inspectSchema,ids:z.array(z.number().int().min(0).max(253)).min(1).max(16).optional(),address:z.number().int().min(0).max(65535),length:z.number().int().min(1).max(1024),synchronized:z.boolean().default(false)}),async(args,ctx)=>inspect(args,args.ids,{address:args.address,length:args.length,synchronized:args.synchronized},ctx));
  add('dynamixel_targets','Inspect session-selected targets and their confirmed/blocked state without device access.',z.strictObject({}),async()=>({targets:session.list(),persistence:'session only; explicit operator config remains unchanged'}));
  add('dynamixel_select','Select one observed device from a completed bounded scan after explicit user confirmation and verified unique bus addressing. No device writes or added operator permissions.',z.strictObject({scanId:z.string(),candidateId:z.string(),name:z.string(),confirmed:z.boolean(),isolatedBus:z.boolean().default(false),addressingVerified:z.boolean().default(false),catalogId:z.string().optional(),peerIds:z.array(z.number().int().min(0).max(253)).max(1).default([])}),async args=>({target:await session.select(args)}),true);
- add('dynamixel_scan','Bounded read-only Protocol 1/2 scan on an explicitly selected port, configured bus or existing target. Unknown ID/model needs no preconfigured device identity. Always choose one candidate explicitly.',z.strictObject({bus:z.string().optional(),target:z.string().optional(),port:z.string().min(1).max(512).optional(),ids:z.array(z.number().int()),bauds:z.array(z.number().int()),protocols:z.array(z.union([z.literal(1),z.literal(2)])).default([1,2]),timeoutMs:z.number().int().default(30),budgetMs:z.number().int().default(5000),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
+ add('dynamixel_scan','Bounded read-only Protocol 1/2 scan on an explicitly selected port, configured bus or existing target. Unknown ID/model needs no preconfigured device identity. Always choose one candidate explicitly.',z.strictObject({bus:z.string().optional(),target:z.string().optional(),port:z.string().min(1).max(512).optional(),catalogId:z.string().optional(),ids:z.array(z.number().int()),bauds:z.array(z.number().int()),protocols:z.array(z.union([z.literal(1),z.literal(2)])).default([1,2]),timeoutMs:z.number().int().default(30),budgetMs:z.number().int().default(5000),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
   const plan=scanPlan(args),bus=session.resolve(args);if(!bus.allowScan)throw Error('Scan is not authorized on this bus');
   if(args.dryRun)return {executed:false,plan};
   requireConfirmation(args.confirmed);
@@ -77,7 +96,7 @@ export async function createProductsServer(env=process.env,dependencies={}) {
   let binding;
   const result=await onBus(bus,'allowScan',async(t,connect,verifyBinding)=>{binding=verifyBinding;return scan(connect,args,{signal:ctx.mcpReq.signal});});
   const selection=session.recordScan(bus,result,binding);
-  return {...result,selectionRequired:true,...(selection??{}),next:selection?'Ask the user to choose one candidate and confirm unique addressing on the selected bus; then call dynamixel_select.':'No selectable observation: inspect completeness/errors and do not guess a device.'};
+  return {...result,selectionRequired:true,...(selection??{}),next:selection?'Select the requested observed candidate when the current task already identifies it and verifies addressing; ask only if target/addressing is unresolved.':'No selectable observation: inspect completeness/errors and do not guess a device.'};
  });
  add('dynamixel_configure','Named model-aware ID OR baud, LED, profile configuration; requires verified unique bus addressing and item-specific live prerequisites. Default is preview. Never sends goal or torque commands.',z.strictObject({target:z.string(),changes:z.strictObject({id:z.number().int().optional(),baud:z.number().int().optional(),led:z.union([z.number().int(),z.strictObject({mask:z.number().int()}),z.strictObject({red:z.number().int(),green:z.number().int(),blue:z.number().int()})]).optional(),profile:profile.optional()}),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
   const t=session.target(args.target);
@@ -95,15 +114,49 @@ export async function createProductsServer(env=process.env,dependencies={}) {
    return result;
   }catch(e){if(e.requiresReidentification)session.retirePort(t.port,'port binding or bus ownership changed; select again');throw e;}
  },true);
- add('dynamixel_table','Inspect every retained official Control Table row and its read/write resolution, enums, encoding, source and unresolved conditions. No hardware I/O. Documentation coverage is separate from executable metadata.',z.strictObject({catalogId:z.string(),query:z.string().max(100).default(''),offset:z.number().int().min(0).default(0),limit:z.number().int().min(1).max(100).default(30)}),async({catalogId,query,offset,limit})=>{
+ add('dynamixel_swap_ids','Swap actual persistent IDs of two selected, uniquely addressed devices on one bus. Uses a free temporary ID, verifies every transition, and stops on uncertainty. No torque/mode/baud changes.',z.strictObject({targetA:z.string(),targetB:z.string(),temporaryId:z.number().int().min(0).max(253),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
+  if(args.targetA===args.targetB)throw Error('Select two distinct targets');
+  const a={...session.target(args.targetA)},b={...session.target(args.targetB)};
+  for(const t of[a,b])t.protocol??=modelFor(t.model,t.firmware,t.catalogId).protocol;
+  if(!a.allowConfigure||!b.allowConfigure)throw Error('Both targets require configuration permission');
+  if(a.port!==b.port||a.protocol!==b.protocol||a.baud!==b.baud||a.id===b.id)throw Error('Swap requires distinct IDs on the same selected port/protocol/baud');
+  for(const t of[a,b])if(!t.addressingVerified&&!t.isolatedBus)throw Error('Verified unique addressing required');
+  validateRequest({...a,changes:{id:args.temporaryId}});validateRequest({...b,changes:{id:a.id}});validateRequest({...a,id:args.temporaryId,changes:{id:b.id}});
+  if([a,b].some(t=>modelFor(t.model,t.firmware,t.catalogId,t.protocol).dualAxis))throw Error('Dual-axis ID swaps require a source-specific cohort procedure');
+  const maximum=Math.min(modelFor(a.model,a.firmware,a.catalogId,a.protocol).idMaximum,modelFor(b.model,b.firmware,b.catalogId,b.protocol).idMaximum);
+  if(args.temporaryId>maximum||[a.id,b.id].includes(args.temporaryId))throw Error('Invalid temporary ID');
+  if(args.dryRun)return {executed:false,stages:[[a.id,args.temporaryId],[b.id,a.id],[args.temporaryId,b.id]],pending:['live identity/torque/lock states','free temporary/destination IDs','transition continuity and closure']};
+  requireConfirmation(args.confirmed);session.clearObservations(a.port);
+  try{
+   const result=await onBus(a,'allowConfigure',async(t,connect)=>{await b.verifyBinding?.();session.target(args.targetA);session.target(args.targetB);return swapIds(connect,a,b,args.temporaryId,{signal:ctx.mcpReq.signal});});
+   session.retirePort(a.port,'ID swap changed bus addressing; re-identify affected targets');
+   if(result.outcome==='verified'&&result.closureConfirmed&&result.busReservationReleased===true){
+    for(const[name,original,location]of[[args.targetA,a,result.locations.a],[args.targetB,b,result.locations.b]]){
+     session.targets.set(name,{...original,...location,status:'ready',revision:original.revision+1});
+    }
+    result.targets=[session.describe(args.targetA),session.describe(args.targetB)];
+   }
+   return result;
+  }catch(e){session.retirePort(a.port,'ID swap requires read-only reconciliation');throw e;}
+ },true);
+ add('dynamixel_table','Inspect bundled or reviewed custom Control Table rows and their read/write resolution, enums, encoding, source and unresolved conditions. No hardware I/O. Documentation coverage is separate from executable metadata.',z.strictObject({catalogId:z.string(),query:z.string().max(100).default(''),offset:z.number().int().min(0).default(0),limit:z.number().int().min(1).max(100).default(30)}),async({catalogId,query,offset,limit})=>{
   const entry=ITEMS.models.find(m=>m.catalogId===catalogId);if(!entry)throw Error('Unknown actuator catalog identity');
   const items=entry.items.filter(i=>i.name.toLowerCase().includes(query.toLowerCase()));return {catalogId,summary:ITEMS.summary,totalMatched:items.length,items:items.slice(offset,offset+limit),nextOffset:offset+limit<items.length?offset+limit:null,limits:ITEMS.limits};
  });
- add('dynamixel_read_items','Read exact model-specific named Control Table items after explicit target confirmation. No writes, mode changes or torque commands. Unresolved encodings return raw bytes without guessed units.',z.strictObject({target:z.string(),items:z.array(z.string()).min(1).max(16),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
+ add('dynamixel_read_items','Read exact catalog/custom model-specific named Control Table items after explicit target confirmation. No writes, mode changes or torque commands. Unresolved encodings return raw bytes without guessed units.',z.strictObject({target:z.string(),items:z.array(z.string()).min(1).max(16),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
   const t=session.target(args.target),model=modelFor(t.model,t.firmware,t.catalogId,t.protocol);const items=args.items.map(k=>itemFor(model,k));
   if(args.dryRun)return {executed:false,items:items.map(i=>({item:i.key,address:i.address,width:i.width,readStatus:i.readStatus,source:i.source}))};
   requireConfirmation(args.confirmed);
   return onBus(t,'allowScan',async(t,connect)=>readItems(connect,t,args.items,{signal:ctx.mcpReq.signal}));
+ });
+ add('dynamixel_sync_read','Read one common source-resolved item from 1..16 selected Protocol2 IDs using the SDK Sync Read instruction. Read-only; exact per-device bytes and signed/unit metadata; no physical simultaneity claim.',z.strictObject({targets:z.array(z.string()).min(1).max(16),item:z.string(),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
+  if(new Set(args.targets).size!==args.targets.length)throw Error('Choose unique target names');
+  const targets=args.targets.map(name=>session.target(name));
+  if(targets.some(t=>!t.allowScan))throw Error('Every selected target must permit reads');
+  const entries=groupPlan(targets,args.item);
+  if(args.dryRun)return {executed:false,items:entries.map(({target,item})=>({id:target.id,item:item.key,address:item.address,width:item.width}))};
+  requireConfirmation(args.confirmed);
+  return onBus(targets[0],'allowScan',async(t,connect)=>{for(const target of targets)await target.verifyBinding?.();return syncReadItems(connect,targets,args.item,{signal:ctx.mcpReq.signal});});
  });
  add('dynamixel_write_item','Write one source-resolved Control Table item, including documented motor-control items where semantics are resolved. No arbitrary address input. Explicit customer command supplies confirmed:true once; preview defaults true. Never changes other items implicitly.',z.strictObject({target:z.string(),item:z.string(),value:z.number().int(),dryRun:z.boolean().default(true),confirmed:z.boolean().default(false)}),async(args,ctx)=>{
   const t=session.target(args.target),model=modelFor(t.model,t.firmware,t.catalogId,t.protocol),item=itemFor(model,args.item);writeRequest(model,item,args.value);

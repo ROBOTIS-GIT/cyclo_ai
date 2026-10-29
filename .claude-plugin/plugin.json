@@ -7,13 +7,6 @@
   },
   "repository": "https://github.com/ROBOTIS-GIT/cyclo_plugin",
   "mcpServers": {
-    "cyclo-firmware": {
-      "command": "node",
-      "args": [
-        "${CLAUDE_PLUGIN_ROOT}/modules/firmware/launch.mjs"
-      ],
-      "env": {}
-    },
     "cyclo-products": {
       "command": "node",
       "args": [

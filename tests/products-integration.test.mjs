@@ -16,7 +16,7 @@ async function client(t,fixture=false,{unknown=false,scenario=''}={}){
 }
 test('default stdio: official routes/registry work; discovery and execution stay blocked',async t=>{
  const c=await client(t);
- const tools=(await c.listTools()).tools.map(t=>t.name).sort();assert.deepEqual(tools,['robotis_code','robotis_sources','dynamixel_registry','dynamixel_ports','dynamixel_scan','dynamixel_configure','dynamixel_select','dynamixel_targets','dynamixel_models','dynamixel_manual','dynamixel_table','dynamixel_read_items','dynamixel_write_item'].sort());
+ const tools=(await c.listTools()).tools.map(t=>t.name).sort();assert.deepEqual(tools,['robotis_code','robotis_sources','dynamixel_registry','dynamixel_ping','dynamixel_read','dynamixel_ports','dynamixel_scan','dynamixel_configure','dynamixel_select','dynamixel_swap_ids','dynamixel_targets','dynamixel_models','dynamixel_manual','dynamixel_table','dynamixel_read_items','dynamixel_sync_read','dynamixel_write_item'].sort());
  for(const query of ['current-based position','cascade','OMY','TurtleBot3','Zenoh','dynamixel_hardware_interface','DREAM','cyclo_control','physical_ai_tools']){
   const r=await c.callTool({name:'robotis_sources',arguments:{query}});assert.ok(r.structuredContent.sources.length>0,query);assert.equal(r.structuredContent.completePortfolio,false);
  }

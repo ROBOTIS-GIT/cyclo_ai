@@ -1,4 +1,4 @@
-import {SCAN_BAUDS,modelFor,capability,readsFor,encode,decode} from './registry.mjs';
+import {MODELS,SCAN_BAUDS,modelFor,capability,readsFor,encode,decode} from './registry.mjs';
 import {identify} from './identity.mjs';
 const integer=(v,min,max,label)=>{if(!Number.isInteger(v)||v<min||v>max)throw Error(`Invalid ${label}`);return v;};
 const resolve=r=>modelFor(r.model,r.firmware,r.catalogId,r.protocol);
@@ -69,7 +69,7 @@ export async function configure(connect,request,{signal}={}){
  let connection,attempted=false,closureUnconfirmed=false;
  const close=async()=>{if(connection){const old=connection;connection=undefined;try{await old.close();}catch{closureUnconfirmed=true;throw Error('Transport closure unconfirmed: stop; do not reopen or retry');}}};
  const pingIdentity=async(id=result.location.id)=>{
-  const p=await identify(connection,id,protocol);
+  const p=await identify(connection,id,protocol,{catalogId:m.catalogId});
   if(!p?.identityComplete||p.modelNumber!==request.model||p.firmwareVersion!==request.firmware)throw Error(p?.identityError??'Observed identity differs from selected model/firmware/ID');
  };
  const snapshot=async id=>{const s={};for(const [name,[a,w]]of Object.entries(reads)){checkAbort(signal);s[name]=decode(await connection.read(id,a,w));}
@@ -106,7 +106,7 @@ export async function configure(connect,request,{signal}={}){
    if(ops.some(op=>!op.eeprom)&&peer.secondaryId===request.id)throw Error('Other-axis secondary listener conflicts with the selected primary ID');
    if(ops.some(op=>op.eeprom)&&peer.lock!==undefined&&peer.lock!==0)throw Error('Other-axis EEPROM lock is active');
   }
-  if(connection.bind)await connection.bind({catalogId:m.catalogId,model:request.model,firmware:request.firmware,id:request.id,peerIds:request.peerIds??[],profileMode:request.changes.profile?.mode});
+  if(connection.bind)await connection.bind({catalogId:m.catalogId,...(m.customHash?{tableHash:m.customHash}:{}),model:request.model,firmware:request.firmware,id:request.id,peerIds:request.peerIds??[],profileMode:request.changes.profile?.mode});
   if('id'in request.changes&&await connection.probe(request.changes.id))throw Error('Destination ID is occupied; no writes occurred');
   for(const op of ops){
    checkAbort(signal);if(requireOff&&op.eeprom)await torqueOff();
@@ -133,7 +133,7 @@ export async function configure(connect,request,{signal}={}){
  if(result.outcome==='uncertain')result.recovery.push({action:'read-only reconciliation',candidates:[{id:request.id,baud:request.baud,protocol},{...result.location}],instruction:'Confirm closure and exclusive ownership; inspect both locations once. Never repeat a write after lost acknowledgement.'});
  return result;
 }
-export function scanPlan({ids,bauds,protocols=[1,2],timeoutMs=30,budgetMs=5000}){
+export function scanPlan({ids,bauds,protocols=[1,2],timeoutMs=30,budgetMs=5000,catalogId}){
  if(!Array.isArray(ids)||!ids.length||ids.length>254||new Set(ids).size!==ids.length)throw Error('Provide unique bounded unicast IDs (0..253; ID253 is Protocol1 only)');ids.forEach(id=>integer(id,0,253,'scan ID'));
  if(!Array.isArray(bauds)||!bauds.length||bauds.length>8||new Set(bauds).size!==bauds.length||bauds.some(b=>!SCAN_BAUDS.includes(b)))throw Error('Unsupported or duplicate documented scan baud');
  if(!Array.isArray(protocols)||!protocols.length||protocols.length>2||new Set(protocols).size!==protocols.length||protocols.some(p=>![1,2].includes(p)))throw Error('Choose bounded Protocol 1 and/or 2');
@@ -141,14 +141,15 @@ export function scanPlan({ids,bauds,protocols=[1,2],timeoutMs=30,budgetMs=5000})
  integer(timeoutMs,10,200,'packet timeout');integer(budgetMs,100,15000,'scan budget');
  const probes=ids.length*bauds.length*protocols.length;
  if(probes*timeoutMs*3>budgetMs)throw Error('Probe/identity packet matrix exceeds budget; narrow IDs/rates/protocols explicitly');
- return {ids,bauds,protocols,timeoutMs,budgetMs,probes,maxIdentityPackets:3};
+ if(catalogId!==undefined&&(typeof catalogId!=='string'||!MODELS.some(m=>m.catalogId===catalogId)))throw Error('Unknown exact scan catalog identity');
+ return {ids,bauds,protocols,timeoutMs,budgetMs,probes,maxIdentityPackets:3,...(catalogId?{catalogId}:{})};
 }
 export async function scan(connect,args,{signal,clock=()=>Date.now()}={}){
  const p=scanPlan(args),start=clock(),devices=[],errors=[];let completed=0,closureConfirmed=true;
  outer:for(const baud of p.bauds)for(const protocol of p.protocols){
   if(signal?.aborted||clock()-start>=p.budgetMs)break outer;let c;
   try{c=await connect(baud,p.timeoutMs,protocol);
-   for(const id of p.ids){if(signal?.aborted||clock()-start>=p.budgetMs)break;const info=await identify(c,id,protocol,{probe:true,allowPingOnly:true});completed++;
+   for(const id of p.ids){if(signal?.aborted||clock()-start>=p.budgetMs)break;const info=await identify(c,id,protocol,{probe:true,allowPingOnly:true,catalogId:p.catalogId});completed++;
     if(info)devices.push({...info,baud,configurationSupported:info.identityComplete&&info.catalogCandidates.length===1,capabilityCheckRequired:true});
    }
   }catch(e){if(e.name==='TransportClosureError')closureConfirmed=false;errors.push({baud,protocol,error:e.message});}

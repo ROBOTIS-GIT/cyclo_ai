@@ -22,5 +22,5 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Install validation dependencies
         run: python -m pip install -r validation/requirements.txt
-      - name: Mock stdio, upstream regressions and package validation
+      - name: Standalone stdio, packet/contract regressions and package validation
         run: npm test

@@ -2,8 +2,9 @@
 
 ## Unreleased
 
-- Support custom/unindexed DYNAMIXEL devices and user-supplied Control Tables in skill guidance, using an existing compatible executor when the bundled MCP lacks the model or transport/rate.
-- Document source provenance, register/firmware validation, K1 routed USB at 6 Mbps, actual Control Table ID swaps, and read-only live position displays. Preserve operator policy denials, prerequisite checks, one-shot writes and uncertain-state reconciliation. No runtime/catalog capability is added.
+- Replace the private device integration with a standalone product MCP using only the pinned public official DynamixelSDK, pyserial, and direct MCP dependencies.
+- Add native source-hashed custom Control Table contracts, an offline XML importer with explicit write review, high-baud serial adapters, explicit TCP/UDP packet bridges, bounded raw/controller inspection, native Sync Read, and a verified ID-swap tool.
+- Remove the retired server, vendored private source, associated skill, npm workspaces/build dependency, and obsolete integration reports. Preserve catalog-wide item rules, documentation/source tools, AI Sapiens workflows, explicit operator policies and uncertain-state handling.
 
 ## 0.10.0
 
@@ -52,4 +53,4 @@
 
 ## 0.4.0
 
-Added ROBOTIS portfolio/source routing, focused integration and DYNAMIXEL expert guidance, and the curated mock-tested DYNAMIXEL configuration module. Retained AI Sapiens workflows and the pinned firmware MCP.
+Added ROBOTIS portfolio/source routing, focused integration and DYNAMIXEL expert guidance, and the curated mock-tested DYNAMIXEL configuration module. Retained AI Sapiens workflows and the source-bound device runtime.

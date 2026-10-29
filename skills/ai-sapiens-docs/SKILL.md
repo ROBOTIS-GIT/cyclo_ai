@@ -5,7 +5,7 @@ description: Find and explain the official AI Sapiens K1 manual, hardware and el
 
 # Ai Sapiens Docs
 
-Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the separate firmware MCP cannot execute it.
+Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the device MCP does not execute that workflow.
 
 1. Locate the topic in [coverage](../../references/coverage.md) or [index](../../references/manual-index.json). Use the source-retrieval process; metadata is a routing map, not an automatically refreshed corpus.
 2. For hardware/electrical/software questions read [platform](references/platform.md); do not infer wiring or repair steps from a specification table. For other topics load the owning Skill only when its workflow applies, using the index path.

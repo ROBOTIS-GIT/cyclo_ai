@@ -5,7 +5,7 @@ description: Prepare AI Sapiens K1 USB, Ethernet, Wi-Fi AP/STA and verified SSH 
 
 # Ai Sapiens Connectivity
 
-Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the separate firmware MCP cannot execute it.
+Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the device MCP does not execute that workflow.
 
 1. For actual connection/configuration planning, establish host OS, available physical link and intended topology only when needed for the next decision. For explanation-only or status-method requests, answer directly without collecting unrelated setup details. Read [network](references/network.md) and the current Networking/SSH manuals. Distinguish a plan from authorized connection/configuration.
 2. Prefer the documented USB/Ethernet bootstrap for an unconfigured Wi-Fi robot. Identify the user-facing port from the manual image; never change or disconnect the HAT's internal Ethernet link.

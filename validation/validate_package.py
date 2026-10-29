@@ -34,14 +34,15 @@ def check(root):
     assert claude['name']==manifest['name'] and claude['version']==manifest['version']
     assert claude['author']==manifest['author']
     assert 'skills' not in claude and 'commands' not in claude
-    assert set(claude['mcpServers'])=={'cyclo-firmware','cyclo-products'}
-    assert claude['mcpServers']['cyclo-firmware']['env']=={}
+    assert set(claude['mcpServers'])=={'cyclo-products'}
     assert claude['mcpServers']['cyclo-products']['env']=={}
     mcp=json.loads((root/'mcp.json').read_text())
     jsonschema.Draft202012Validator(json.loads((BASE/'evidence/mcp.schema.json').read_text())).validate(mcp)
-    server=mcp['mcpServers']['cyclo-firmware']
+    server=mcp['mcpServers']['cyclo-products']
     assert server['env']=={}
-    assert (root/'modules/firmware/launch.mjs').is_file()
+    assert (root/'modules/dynamixel/server.mjs').is_file()
+    assert not (root/'modules/firmware').exists()
+    assert 'workspaces' not in json.loads((root/'package.json').read_text())
     assert mcp['mcpServers']['cyclo-products']['env']=={}
     items=json.loads((root/'references/control-items.json').read_text())
     tables=json.loads((root/'references/control-tables.json').read_text())
@@ -73,8 +74,8 @@ def check(root):
         assert ui['interface']['display_name']
         assert 25<=len(ui['interface']['short_description'])<=64
         assert '$'+skill.name in ui['interface']['default_prompt']
-    expected={'ai-sapiens-docs','ai-sapiens-operation','ai-sapiens-connectivity','ai-sapiens-control','ai-sapiens-motion-sources','ai-sapiens-diagnostics','ai-sapiens-sim2real','ai-sapiens-video-mimic','ai-sapiens-walking','cyclo','cyclo-firmware','robotis-expert','robotis-integrate','dynamixel-expert'}
-    assert set(names)==expected and len(names)==14
+    expected={'ai-sapiens-docs','ai-sapiens-operation','ai-sapiens-connectivity','ai-sapiens-control','ai-sapiens-motion-sources','ai-sapiens-diagnostics','ai-sapiens-sim2real','ai-sapiens-video-mimic','ai-sapiens-walking','cyclo','robotis-expert','robotis-integrate','dynamixel-expert'}
+    assert set(names)==expected and len(names)==13
     index=json.loads((root/'references/manual-index.json').read_text())
     assert len(index['pages'])==34
     assert len({p['id'] for p in index['pages']})==34
@@ -118,9 +119,6 @@ def check(root):
         profile=source_index['packages'][product['package']]['profiles'][product['profile']]
         assert profile['revision']==product['revision'] and product['dhiDeclaredIn']
         assert all(a['path'] in profile['files'] and a['conditionsEvaluated'] is False for a in product['artifacts'])
-    provenance=json.loads((root/'modules/firmware/UPSTREAM.json').read_text())
-    for path,digest in provenance['files_sha256'].items():
-        assert hashlib.sha256((root/'modules/firmware/upstream'/path).read_bytes()).hexdigest()==digest
     sdk=json.loads((root/'modules/dynamixel/SDK-UPSTREAM.json').read_text())
     for path,digest in sdk['files_sha256'].items():
         assert hashlib.sha256((root/'modules/dynamixel/sdk-upstream'/path).read_bytes()).hexdigest()==digest

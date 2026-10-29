@@ -2,14 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Client,InMemoryTransport} from '@modelcontextprotocol/client';
 import {createProductsServer} from '../modules/dynamixel/server.mjs';
-import {createPluginServer} from '../modules/firmware/launch.mjs';
 import {hardwareEnabled} from '../modules/hardware-mode.mjs';
 import {TargetSession} from '../modules/dynamixel/selection.mjs';
 import {fixture} from './fixtures/device.mjs';
 import {configure} from '../modules/dynamixel/workflow.mjs';
 async function client(t,server){const [a,b]=InMemoryTransport.createLinkedPair();await server.connect(b);const c=new Client({name:'no-hardware-default-test',version:'0.9.0'});await c.connect(a);t.after(()=>c.close());return c;}
 test('default availability and explicit offline/legacy opt-outs',()=>{
- for(const flag of ['CYCLO_PLUGIN_ENABLE_HARDWARE','CYCLO_PRODUCTS_ENABLE_HARDWARE']){
+ for(const flag of ['CYCLO_PRODUCTS_ENABLE_HARDWARE']){
   assert.equal(hardwareEnabled({},flag),true);assert.equal(hardwareEnabled({CYCLO_OFFLINE:'1',[flag]:'1'},flag),false);assert.equal(hardwareEnabled({[flag]:'0'},flag),false);
  }
 });
@@ -20,15 +19,6 @@ for(const offline of [false,true])test(`products startup/docs/confirmation never
  assert.equal((await c.callTool({name:'dynamixel_ports',arguments:{}})).isError,true);
  assert.equal((await c.callTool({name:'dynamixel_ports',arguments:{confirmed:true}})).isError,true,'offline gate or injected provider guard stops I/O');
  assert.equal(calls,offline?0:1);
-});
-for(const offline of [false,true])test(`firmware no-config startup and dynamic preview do no executor I/O; offline=${offline}`,async t=>{
- const c=await client(t,await createPluginServer(offline?{CYCLO_OFFLINE:'1'}:{}));
- assert.equal((await c.callTool({name:'cyclo_capabilities',arguments:{}})).structuredContent.mode,offline?'planning-only':'read-enabled');
- assert.equal((await c.callTool({name:'cyclo_serial_ports',arguments:{}})).isError,true);
- const r=await c.callTool({name:'cyclo_configure',arguments:{port:'/MOCK-NEVER-OPEN',id:1,changes:{led:1}}});
- if(offline)assert.equal(r.isError,true);else assert.equal(r.structuredContent.executed,false);
- const live=await c.callTool({name:'cyclo_configure',arguments:{port:'/MOCK-NEVER-OPEN',id:1,changes:{led:1},dryRun:false}});assert.equal(live.isError,true);
- if(!offline)assert.match(live.content[0].text,/confirmation/);
 });
 test('multi-device selection picks exact candidate, not first responder, and rejects duplicate address',async()=>{
  const s=new TargetSession({});const bus={port:'/MOCK',allowScan:true,allowConfigure:true};

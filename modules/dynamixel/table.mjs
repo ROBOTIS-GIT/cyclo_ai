@@ -25,7 +25,7 @@ export async function validateConditions(model,item,value,read){
  return {...result.observed,...(result.effects.length?{effectiveModeNotes:result.effects}:{})};
 }
 
-async function identity(connection,target,model,allowPingOnly=false){const found=await identify(connection,target.id,model.protocol,{allowPingOnly});if(!found?.identityComplete||found.modelNumber!==target.model||found.firmwareVersion!==target.firmware)throw Error(found?.identityError??'Selected target identity/protocol/firmware changed');return found;}
+async function identity(connection,target,model,allowPingOnly=false){const found=await identify(connection,target.id,model.protocol,{allowPingOnly,catalogId:model.catalogId});if(!found?.identityComplete||found.modelNumber!==target.model||found.firmwareVersion!==target.firmware)throw Error(found?.identityError??'Selected target identity/protocol/firmware changed');return found;}
 export async function readItems(connect,target,keys,{signal}={}){
  const model=modelFor(target.model,target.firmware,target.catalogId,target.protocol);const items=keys.map(k=>itemFor(model,k));
  for(const item of items)if(model.observedFirmware<(item.minimumFirmware??0)||item.protocols&&!item.protocols.includes(model.protocol))throw Error('Item is unavailable for the observed firmware/protocol');
@@ -56,7 +56,7 @@ export async function writeItem(connect,target,key,value,{signal}={}){
   }
   const item=plan.item,requested=plan.value,read=reader(model,c,target),kind=item.write.kind;
   result.effectItem=item.name;result.warnings=[...new Set([...result.warnings,...(item.write.warnings??[])])];
-  const binding=()=>({catalogId:model.catalogId,model:target.model,firmware:target.firmware,id:target.id,peerIds:target.peerIds??[],tableItem:origin.key,expectedEffectiveItem:item.key,...(pingOnly?{identityMode:'ping-payload'}:{}),...(plan.mappingEvidence?{expectedAliasMappings:plan.mappingEvidence}:{})});
+  const binding=()=>({catalogId:model.catalogId,...(model.customHash?{tableHash:model.customHash}:{}),model:target.model,firmware:target.firmware,id:target.id,peerIds:target.peerIds??[],tableItem:origin.key,expectedEffectiveItem:item.key,...(pingOnly?{identityMode:'ping-payload'}:{}),...(plan.mappingEvidence?{expectedAliasMappings:plan.mappingEvidence}:{})});
   if(kind==='id-transition'&&requested!==target.id||kind==='baud-transition'&&requested!==model.bauds[String(target.baud)]){
    await close();
    const wrapped=async(...args)=>{
