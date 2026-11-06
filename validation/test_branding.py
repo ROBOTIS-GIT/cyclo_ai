@@ -26,7 +26,7 @@ class Branding(unittest.TestCase):
   self.assertNotRegex(visible,r'\b0\.[0-9]+\.[0-9]+\b')
  def test_real_ai_sapiens_tasks_are_preserved(self):
   self.assertEqual(len(list((ROOT/'skills').glob('ai-sapiens-*/SKILL.md'))),9)
-  self.assertEqual(len(list((ROOT/'skills').glob('*/SKILL.md'))),19)
+  self.assertEqual(len(list((ROOT/'skills').glob('*/SKILL.md'))),24)
  def test_ai_worker_tasks_are_discoverable(self):
   import yaml
   expected={'ai-worker','ai-worker-setup','ai-worker-control','ai-worker-teleop','ai-worker-learning'}

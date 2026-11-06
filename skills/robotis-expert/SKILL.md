@@ -15,7 +15,8 @@ Route by task:
 - ROS 2, ros2_control, SDK, Zenoh, installation or integration failures: [integration](../robotis-integrate/SKILL.md).
 - K1 manual, RC, operation, connectivity, impedance: [AI Sapiens docs](../ai-sapiens-docs/SKILL.md) and its task skills.
 - AI Worker/FFW setup, control, teleoperation and demonstration learning: [AI Worker](../ai-worker/SKILL.md) and its focused task skills. Select the product before routing training requests to K1 workflows.
-- Training, video and deployment: preserve [walking](../ai-sapiens-walking/SKILL.md), [video/Mimic](../ai-sapiens-video-mimic/SKILL.md), [Sim2Real](../ai-sapiens-sim2real/SKILL.md). Ask Cyclo Lab or Cyclo MJLab when unspecified.
+- OMY models, setup, control, Leader-Follower teleoperation and demonstration learning: [OMY](../omy/SKILL.md) and its focused task skills. Keep OMY, OMX and other OpenMANIPULATOR configurations distinct.
+- K1 training, video and deployment: preserve [walking](../ai-sapiens-walking/SKILL.md), [video/Mimic](../ai-sapiens-video-mimic/SKILL.md), [Sim2Real](../ai-sapiens-sim2real/SKILL.md). Ask Cyclo Lab or Cyclo MJLab when unspecified.
 - Other platforms, hands, controllers, interfaces, education kits and legacy software: [portfolio workflow](references/portfolio.md); fetch their own manual before proposing a procedure.
 
 Answer in the user's language. Cite exact model/version pages near claims. Separate documented behavior, inferred troubleshooting, mock-tested implementation and physical runtime evidence. No claim of universal product knowledge or compatibility follows from a catalog entry. Preserve the current task's restrictions and authorization. Hardware tools are available by default; explanation and model-selection questions need no device access.

@@ -1,9 +1,11 @@
 ---
 name: cyclo
-description: Route ROBOTIS product questions and development tasks to official-source expertise, integration, AI Worker and AI Sapiens workflows or model-aware DYNAMIXEL Control Table operations.
+description: Route ROBOTIS product questions and development tasks to official-source expertise, integration, OMY, AI Worker and AI Sapiens workflows or model-aware DYNAMIXEL Control Table operations.
 ---
 
 # Cyclo
+
+For OMY requests use [OMY](../omy/SKILL.md): [installation and connections](../omy-setup/SKILL.md), [ROS 2 control](../omy-control/SKILL.md), [Leader-Follower/keyboard teleoperation](../omy-teleop/SKILL.md), or [demonstration learning](../omy-learning/SKILL.md). Select OMY's own model and procedure rather than borrowing another product's commands.
 
 For AI Worker/FFW requests use [AI Worker](../ai-worker/SKILL.md): [installation and connections](../ai-worker-setup/SKILL.md), [ROS 2 control](../ai-worker-control/SKILL.md), [Leader/VR teleoperation](../ai-worker-teleop/SKILL.md), or [demonstration learning](../ai-worker-learning/SKILL.md). Keep these separate from the K1 workflows below.
 

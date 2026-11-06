@@ -8,6 +8,7 @@ A dual-host Codex and Claude Code ROBOTIS product-expert plugin with official-so
 |---|---|---|
 | ROBOTIS expert Skills | Official source inventory, product/model/version routing, ROS 2/SDK/Zenoh troubleshooting | Focused source review; broader navigation links remain discovered-only |
 | AI Worker Skills | Product guidance, installation/connections, ROS 2 control, Leader/VR teleoperation and demonstration learning | Selected official procedures reviewed; offline packaging checks; no robot/training runtime |
+| OMY Skills | Product/model guidance, installation/connections, ROS 2 control, Leader-Follower/keyboard teleoperation and demonstration learning | Selected official procedures reviewed; offline packaging checks; no robot/training runtime |
 | DYNAMIXEL documentation MCP | Equal per-model official-source routing for 89 actuator documents and 3 mechanical DYD documents, with conditional MDX evidence | Full-tree/source graph audit, blob checks and public HTTPS retrieval; no exhaustive semantic-support guarantee |
 | DYNAMIXEL product MCP | Generic identity-driven Protocol1/2 engine, source-bound ID/baud/LED/profile capabilities across the catalog | Mock-only workflow and stdio tests; no physical-device validation |
 | Generic Control Table MCP | Inventory and bounded raw reads across indexed rows; per-item writes where semantics are resolved | Shared JS/Python metadata; mock goal/torque/mode and all-row read tests; unresolved coverage disclosed |
@@ -50,6 +51,11 @@ The same package supports a session-only local Claude Code load. Prepare local N
 - `$ai-worker-control`: inspect ROS 2 controller readiness and prepare model-specific bringup or Cyclo Control.
 - `$ai-worker-teleop`: prepare A1/A2/LG2 Leader or VR teleoperation with separate Follower selection.
 - `$ai-worker-learning`: collect/review/convert demonstrations, prepare external training and matching Cyclo Intelligence inference.
+- `$omy`: find OMY manuals, distinguish models and choose the relevant task workflow.
+- `$omy-setup`: prepare model-specific wiring, robot/user-PC connections, Docker, Cyclo Manager and Zenoh.
+- `$omy-control`: inspect ROS 2 state/controllers and prepare posture-aware bringup, MoveIt or Cyclo Control.
+- `$omy-teleop`: prepare OMY-L100/F3M Leader-Follower or keyboard input and the camera host.
+- `$omy-learning`: collect/review/convert demonstrations, prepare external training and transition from teleoperation to policy inference.
 - `$cyclo-firmware`: explain supported settings or prepare a synthetic dry-run; live device access requires separate task authorization.
 - `$ai-sapiens-docs`: find and cite the official manual, with freshness/source-outage handling.
 - `$ai-sapiens-walking`: “Prepare AI Sapiens walking-policy training” asks Cyclo Lab or Cyclo MJLab when unspecified.
