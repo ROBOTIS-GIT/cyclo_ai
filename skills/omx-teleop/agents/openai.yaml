@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMX Teleoperation"
+  short_description: "Prepare OMX ROS 2 or native LeRobot operator input"
+  default_prompt: "Use $omx-teleop to prepare OMX Leader-Follower or keyboard teleoperation."

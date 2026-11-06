@@ -76,7 +76,8 @@ def check(root):
     expected={'ai-sapiens-docs','ai-sapiens-operation','ai-sapiens-connectivity','ai-sapiens-control','ai-sapiens-motion-sources','ai-sapiens-diagnostics','ai-sapiens-sim2real','ai-sapiens-video-mimic','ai-sapiens-walking','cyclo','cyclo-firmware','robotis-expert','robotis-integrate','dynamixel-expert'}
     expected.update({'ai-worker','ai-worker-setup','ai-worker-control','ai-worker-teleop','ai-worker-learning'})
     expected.update({'omy','omy-setup','omy-control','omy-teleop','omy-learning'})
-    assert set(names)==expected and len(names)==24
+    expected.update({'omx','omx-setup','omx-control','omx-teleop','omx-learning'})
+    assert set(names)==expected and len(names)==29
     index=json.loads((root/'references/manual-index.json').read_text())
     assert len(index['pages'])==34
     assert len({p['id'] for p in index['pages']})==34

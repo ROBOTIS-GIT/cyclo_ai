@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMX"
+  short_description: "Find OMX manuals and select the right workflow"
+  default_prompt: "Use $omx to guide my OMX task with the matching official workflow."

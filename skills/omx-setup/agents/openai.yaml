@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMX Setup"
+  short_description: "Prepare OMX assembly, USB identity and software"
+  default_prompt: "Use $omx-setup to prepare OMX USB connections and my selected software stack."

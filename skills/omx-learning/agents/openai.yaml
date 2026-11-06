@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMX Learning"
+  short_description: "Collect OMX data and prepare policy learning"
+  default_prompt: "Use $omx-learning to prepare OMX demonstrations, policy training or inference."
