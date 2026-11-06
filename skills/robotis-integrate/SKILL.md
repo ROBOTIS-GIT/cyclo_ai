@@ -5,6 +5,8 @@ description: Trace ROBOTIS product configurations and DYNAMIXEL Hardware Interfa
 
 # ROBOTIS integration
 
+For AI Worker installation/connections use [setup](../ai-worker-setup/SKILL.md); product-level controller readiness uses [control](../ai-worker-control/SKILL.md), operator input uses [teleoperation](../ai-worker-teleop/SKILL.md), and data collection/training/inference uses [learning](../ai-worker-learning/SKILL.md). Keep DHI implementation analysis here. Do not route AI Worker demonstration learning to K1 walking backends.
+
 Resolve the layer before giving commands: device/electrical bus → packet SDK → model-aware hardware interface → ros2_control/controller → ROS middleware/transport → application/learning stack. A service or API being present does not authorize calling it.
 
 For DHI implementation or an existing ros2_control configuration, read [source workbench](references/dhi-source-workbench.md). For OpenMANIPULATOR, Hand, AI Sapiens, AI Worker or other consumers, also read [product and TableSync traces](references/dhi-products-tablesync.md). Use discovered `robotis_code` to locate exact source/profile, caller/callee paths and product artifacts; inspect user files locally when supplied. Distinguish static declarations, conditional source behavior and observed runtime state. No source snapshot implies exhaustive knowledge or installed-binary compatibility.

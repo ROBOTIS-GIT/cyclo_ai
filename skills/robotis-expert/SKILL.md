@@ -14,6 +14,7 @@ Route by task:
 - Actuator modes, control tables, IDs, baud, LEDs, profiles: [DYNAMIXEL expert](../dynamixel-expert/SKILL.md).
 - ROS 2, ros2_control, SDK, Zenoh, installation or integration failures: [integration](../robotis-integrate/SKILL.md).
 - K1 manual, RC, operation, connectivity, impedance: [AI Sapiens docs](../ai-sapiens-docs/SKILL.md) and its task skills.
+- AI Worker/FFW setup, control, teleoperation and demonstration learning: [AI Worker](../ai-worker/SKILL.md) and its focused task skills. Select the product before routing training requests to K1 workflows.
 - Training, video and deployment: preserve [walking](../ai-sapiens-walking/SKILL.md), [video/Mimic](../ai-sapiens-video-mimic/SKILL.md), [Sim2Real](../ai-sapiens-sim2real/SKILL.md). Ask Cyclo Lab or Cyclo MJLab when unspecified.
 - Other platforms, hands, controllers, interfaces, education kits and legacy software: [portfolio workflow](references/portfolio.md); fetch their own manual before proposing a procedure.
 

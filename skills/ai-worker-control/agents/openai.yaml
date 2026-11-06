@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Worker Control"
+  short_description: "Inspect ROS 2 control and prepare robot commands"
+  default_prompt: "Use $ai-worker-control to inspect my AI Worker ROS 2 controller readiness."

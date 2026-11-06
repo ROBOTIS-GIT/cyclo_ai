@@ -26,7 +26,16 @@ class Branding(unittest.TestCase):
   self.assertNotRegex(visible,r'\b0\.[0-9]+\.[0-9]+\b')
  def test_real_ai_sapiens_tasks_are_preserved(self):
   self.assertEqual(len(list((ROOT/'skills').glob('ai-sapiens-*/SKILL.md'))),9)
-  self.assertEqual(len(list((ROOT/'skills').glob('*/SKILL.md'))),14)
+  self.assertEqual(len(list((ROOT/'skills').glob('*/SKILL.md'))),19)
+ def test_ai_worker_tasks_are_discoverable(self):
+  import yaml
+  expected={'ai-worker','ai-worker-setup','ai-worker-control','ai-worker-teleop','ai-worker-learning'}
+  self.assertEqual({p.parent.name for p in (ROOT/'skills').glob('ai-worker*/SKILL.md')},expected)
+  for name in expected:
+   entry=ROOT/'skills'/name/'SKILL.md'
+   self.assertEqual(yaml.safe_load(entry.read_text().split('---',2)[1])['name'],name)
+   ui=yaml.safe_load((entry.parent/'agents/openai.yaml').read_text())
+   self.assertIn('$'+name,ui['interface']['default_prompt'])
  def test_archive_root_is_explicit_product_identity(self):
   self.assertIn("Path('cyclo-plugin')",(ROOT/'validation/package_release.py').read_text())
   self.assertIn("Path(temp)/'cyclo-plugin'",(ROOT/'validation/verify_archive.py').read_text())
