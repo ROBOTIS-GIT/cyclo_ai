@@ -1,24 +1,32 @@
 {
   "name": "cyclo-plugin-source",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=22"
   },
-  "workspaces": [
-    "modules/firmware/upstream/tools/cyclo_firmware_mcp",
-    "modules/firmware/upstream/tools/cyclo_firmware_sdk"
-  ],
   "scripts": {
     "test": "node tests/run.mjs",
     "test:integration": "node --test tests/integration.test.mjs",
-    "validate": "python3 validation/validate_package.py",
-    "package": "python3 validation/package_release.py",
+    "validate": "node scripts/python.mjs validation/validate_package.py",
+    "package": "node scripts/python.mjs validation/package_release.py",
     "test:products": "node --test tests/dynamixel.test.mjs tests/selection.test.mjs tests/products-integration.test.mjs",
-    "build:device-runtime": "tsc -p modules/firmware/upstream/tools/cyclo_firmware_sdk/tsconfig.json"
+    "doctor": "node scripts/doctor.mjs",
+    "setup": "node scripts/setup.mjs",
+    "package:manifest": "node scripts/python.mjs validation/package_release.py --refresh-manifest",
+    "format": "prettier --write \"modules/**/*.mjs\" \"scripts/*.mjs\" \"tests/**/*.mjs\"",
+    "format:check": "prettier --check \"modules/**/*.mjs\" \"scripts/*.mjs\" \"tests/**/*.mjs\"",
+    "format:python": "node scripts/python.mjs -m ruff format modules scripts validation",
+    "format:python:check": "node scripts/python.mjs -m ruff format --check modules scripts validation"
   },
   "devDependencies": {
-    "typescript": "5.9.3"
-  }
+    "@modelcontextprotocol/client": "2.3.1",
+    "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "zod": "4.3.6"
+  },
+  "license": "Apache-2.0"
 }

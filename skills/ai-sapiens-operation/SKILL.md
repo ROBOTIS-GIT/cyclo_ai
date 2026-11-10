@@ -5,7 +5,7 @@ description: Explain AI Sapiens K1 power, battery, RadioMaster RC modes, telemet
 
 # Ai Sapiens Operation
 
-Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the separate firmware MCP cannot execute it.
+Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the device MCP does not execute that workflow.
 
 1. Establish explanation versus a requested onsite operation, robot/controller revision and current condition. Read [operation](references/operation.md) for power/battery, or [RC](references/rc.md) for controls and telemetry. Fetch the live matching section before physical steps.
 2. For explanation provide the relevant documented flow without pretending to operate the robot. A powered robot, Ready Pose, Damping, E-STOP and power-off are distinct states. Do not infer safety from a switch name or recommend a mode to diagnose unknown hardware.

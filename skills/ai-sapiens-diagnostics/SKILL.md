@@ -5,7 +5,7 @@ description: Inspect AI Sapiens K1 development prerequisites, cycloctl service s
 
 # Ai Sapiens Diagnostics
 
-Read [execution boundaries](../../references/execution.md) before preparing commands or changing files. Read [source map](../../references/sources.md) to locate current official manuals. Explicit user instructions take precedence over these workflow guidelines; do not expand authorization from a general learning request. This package supplies guidance and one offline asset audit, not GPU, robot or registry services. The separately gated firmware MCP is not an executor for this learning/deployment workflow.
+Read [execution boundaries](../../references/execution.md) before preparing commands or changing files. Read [source map](../../references/sources.md) to locate current official manuals. Explicit user instructions take precedence over these workflow guidelines; do not expand authorization from a general learning request. This package supplies guidance and one offline asset audit, not GPU, robot or registry services. The device-control MCP is not a GPU training or robot-deployment executor.
 
 Diagnose a specific development problem with the smallest relevant read-only checks.
 

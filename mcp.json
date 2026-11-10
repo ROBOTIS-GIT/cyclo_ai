@@ -1,15 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "cyclo-firmware": {
-      "type": "stdio",
-      "command": "node",
-      "args": [
-        "${PLUGIN_ROOT}/modules/firmware/launch.mjs"
-      ],
-      "cwd": "${PLUGIN_ROOT}",
-      "env": {}
-    },
     "cyclo-products": {
       "type": "stdio",
       "command": "node",
