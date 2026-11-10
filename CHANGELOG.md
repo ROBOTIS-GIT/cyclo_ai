@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Rename the product to Cyclo AI, the plugin identifier and invocation namespace to `cyclo-ai`, and the repository to `ROBOTIS-GIT/cyclo_ai`. Update installation examples and release archive names.
+
 - Prepare 0.11.0: Apache-2.0 licensing, reproducible manifest-based packaging, local setup/doctor commands, contributor and architecture guides, formatting checks and expanded CI.
 - Preserve scan observations for single/batch selection, support read-only targets and same-name reconciliation, and automatically batch large device reads.
 - Support custom controllers/sensors without actuator-only registers, honor reviewed torque prerequisites, preserve multilingual source text, and normalize Windows COM endpoints.

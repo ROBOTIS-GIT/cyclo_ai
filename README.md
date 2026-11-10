@@ -1,4 +1,4 @@
-# Cyclo Plugin
+# Cyclo AI
 
 A Codex and Claude Code plugin for ROBOTIS product guidance and DYNAMIXEL devices. Discover motors, read live control tables, change documented settings, and work with custom actuator, controller and sensor tables. AI Worker, OMY, OMX and AI Sapiens skills cover documented development and operation workflows.
 
@@ -16,7 +16,7 @@ npm run doctor -- --hardware-deps
 
 Setup creates a local Python environment and installs the hardware dependency. Diagnostics check dependencies without enumerating or opening devices. The runtime finds `.venv` automatically; `CYCLO_PRODUCTS_PYTHON` can select another prepared interpreter.
 
-Register the directory using the [Codex or Claude Code host guide](references/hosts.md). If the host copies the plugin into a cache, set its `CYCLO_PRODUCTS_PYTHON` to the absolute interpreter path printed by setup. Start with `$cyclo` in Codex or `/cyclo-plugin:cyclo` in Claude Code.
+Register the directory using the [Codex or Claude Code host guide](references/hosts.md). If the host copies the plugin into a cache, set its `CYCLO_PRODUCTS_PYTHON` to the absolute interpreter path printed by setup. Start with `$cyclo` in Codex or `/cyclo-ai:cyclo` in Claude Code.
 
 Try: “Scan the routed port at 6 Mbps and read the homing offset of every motor.” A concrete command supplies authorization for that operation; the skill asks for missing target information rather than repeatedly confirming the same request. Set `CYCLO_OFFLINE=1` for documentation-only use.
 

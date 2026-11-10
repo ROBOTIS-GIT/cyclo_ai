@@ -1,4 +1,4 @@
-# Contributing to Cyclo Plugin
+# Contributing to Cyclo AI
 
 Contributions to documentation, device contracts, transports, tests, and usability are welcome. First-party code is Apache-2.0. Contributions are accepted under the same license. Preserve dependency licenses and source notices. Use the language that best explains your issue; original source text and multilingual examples are welcome.
 
@@ -42,7 +42,7 @@ git add <changed-source-files>
 npm run package:manifest
 # Inspect release-files.json. It must contain only distributable source.
 npm run package
-node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-plugin-0.11.0.zip
+node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-ai-0.11.0.zip
 ```
 
 Generated test output is ignored. Customer profiles, virtual environments, credentials and local source tables do not belong in the release manifest. Do not edit the vendored SDK; update its pinned revision and source hashes as a separate reviewed dependency change.

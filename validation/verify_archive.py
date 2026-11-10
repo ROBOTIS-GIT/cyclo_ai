@@ -13,14 +13,14 @@ def verify(archive):
     archive = Path(archive).resolve()
     with tempfile.TemporaryDirectory(prefix="cyclo-archive-tests-") as temp:
         with zipfile.ZipFile(archive) as z:
-            if {Path(name).parts[0] for name in z.namelist()} != {"cyclo-plugin"}:
-                raise ValueError("Archive must contain only the cyclo-plugin root")
+            if {Path(name).parts[0] for name in z.namelist()} != {"cyclo-ai"}:
+                raise ValueError("Archive must contain only the cyclo-ai root")
             for name in z.namelist():
                 p = Path(name)
                 if p.is_absolute() or ".." in p.parts:
                     raise ValueError("Archive path escapes extraction root")
             z.extractall(temp)
-        source = Path(temp) / "cyclo-plugin"
+        source = Path(temp) / "cyclo-ai"
         # This test-only link is outside the ZIP. Lockfile/dependencies were
         # separately installed locally; no lifecycle/install script is run here.
         (source / "node_modules").symlink_to(ROOT / "node_modules", target_is_directory=True)

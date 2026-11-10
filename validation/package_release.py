@@ -25,11 +25,11 @@ def build(root=ROOT):
     check(root)
     files = package_files(root)
     version = json.loads((root / "plugin.json").read_text())["version"]
-    out = root / "artifacts" / f"cyclo-plugin-{version}.zip"
+    out = root / "artifacts" / f"cyclo-ai-{version}.zip"
     out.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
         for name in files:
-            info = zipfile.ZipInfo("cyclo-plugin/" + name, date_time=(1980, 1, 1, 0, 0, 0))
+            info = zipfile.ZipInfo("cyclo-ai/" + name, date_time=(1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.create_system = 3
             info.external_attr = 0o100644 << 16
@@ -38,7 +38,7 @@ def build(root=ROOT):
         assert archive.testzip() is None
         with tempfile.TemporaryDirectory(prefix="cyclo-release-check-") as temp:
             archive.extractall(temp)
-            extracted = Path(temp) / "cyclo-plugin"
+            extracted = Path(temp) / "cyclo-ai"
             check(extracted)
             for name in files:
                 assert (root / name).read_bytes() == (extracted / name).read_bytes()

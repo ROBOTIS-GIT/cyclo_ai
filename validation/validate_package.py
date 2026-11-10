@@ -21,7 +21,7 @@ def check(root):
     schema = json.loads((BASE / "evidence/plugin.schema.json").read_text())
     jsonschema.Draft202012Validator(schema).validate(manifest)
     assert re.fullmatch(r"\d+\.\d+\.\d+", manifest["version"])
-    assert manifest["name"] == "cyclo-plugin"
+    assert manifest["name"] == "cyclo-ai"
     assert json.loads((root / "package.json").read_text())["version"] == manifest["version"]
     assert manifest["extensions"]["com.openai"]["onboardingSkill"] == "./skills/cyclo/SKILL.md"
     assert (root / "skills/cyclo/SKILL.md").is_file()

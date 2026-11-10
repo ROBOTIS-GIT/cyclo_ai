@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "cyclo-plugin",
+  "name": "cyclo-ai",
   "version": "0.11.0",
-  "description": "Cyclo Plugin: source-backed ROBOTIS product guidance, retained AI Sapiens workflows and model-aware DYNAMIXEL Control Table operations.",
+  "description": "Cyclo AI: source-backed ROBOTIS product guidance, retained AI Sapiens workflows and model-aware DYNAMIXEL Control Table operations.",
   "keywords": [
     "robotis",
     "ai-sapiens",
@@ -12,7 +12,7 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Cyclo Plugin",
+        "displayName": "Cyclo AI",
         "shortDescription": "ROBOTIS product expert",
         "longDescription": "Official-source ROBOTIS product guidance and AI Sapiens workflows, with model-aware DYNAMIXEL Control Table discovery, reads and writes. Hardware tools are available by default without startup device I/O; CYCLO_OFFLINE=1 disables hardware access. Source-bound conditions and explicit customer commands remain required. Runtime evidence is mock-only.",
         "capabilities": [],
@@ -28,5 +28,5 @@
   "author": {
     "name": "Woojin-Crive"
   },
-  "repository": "https://github.com/ROBOTIS-GIT/cyclo_plugin"
+  "repository": "https://github.com/ROBOTIS-GIT/cyclo_ai"
 }

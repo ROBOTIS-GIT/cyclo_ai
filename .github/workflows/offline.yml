@@ -41,7 +41,7 @@ jobs:
       - name: Build source archive with a local virtual environment present
         run: .venv/bin/python validation/package_release.py
       - name: Test extracted release bytes
-        run: .venv/bin/python validation/verify_archive.py artifacts/cyclo-plugin-0.11.0.zip
+        run: .venv/bin/python validation/verify_archive.py artifacts/cyclo-ai-0.11.0.zip
         env:
           CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
   windows-setup:

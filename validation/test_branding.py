@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class Branding(unittest.TestCase):
     def test_one_current_identity(self):
         for path in ["plugin.json", ".claude-plugin/plugin.json"]:
-            self.assertEqual(json.loads((ROOT / path).read_text())["name"], "cyclo-plugin")
+            self.assertEqual(json.loads((ROOT / path).read_text())["name"], "cyclo-ai")
         self.assertFalse((ROOT / "MIGRATION.md").exists())
         for path in [
             "README.md",
@@ -31,12 +31,12 @@ class Branding(unittest.TestCase):
                     continue
                 self.assertNotIn("ai-" + "sapiens-dev", text, str(p))
         catalog = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text())
-        self.assertEqual(catalog["plugins"][0]["name"], "cyclo-plugin")
+        self.assertEqual(catalog["plugins"][0]["name"], "cyclo-ai")
         self.assertEqual(catalog["plugins"][0]["source"]["path"], "./")
 
     def test_readme_presentation_has_no_release_labels(self):
         text = (ROOT / "README.md").read_text()
-        self.assertEqual(text.splitlines()[0], "# Cyclo Plugin")
+        self.assertEqual(text.splitlines()[0], "# Cyclo AI")
         # Historical evidence paths may retain versions; display text must not label releases.
         visible = re.sub(r"\]\([^)]*\)", "]", text)
         self.assertNotRegex(visible, r"\b0\.[0-9]+\.[0-9]+\b")
@@ -87,5 +87,5 @@ class Branding(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(build(root).read_bytes()).hexdigest(), first)
             with zipfile.ZipFile(archive) as z:
                 self.assertEqual(
-                    z.namelist(), ["cyclo-plugin/plugin.json", "cyclo-plugin/release-files.json"]
+                    z.namelist(), ["cyclo-ai/plugin.json", "cyclo-ai/release-files.json"]
                 )
