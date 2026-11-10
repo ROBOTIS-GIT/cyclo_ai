@@ -1,3 +1,4 @@
+import { realpathSync } from 'node:fs';
 import { inspectBytes } from './raw-read.mjs';
 import { groupPlan, syncReadItems } from './group.mjs';
 import { swapIds } from './swap.mjs';
@@ -779,7 +780,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
 
   return server;
 }
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(realpathSync(process.argv[1])).href) {
   try {
     await serveStdio(() => createProductsServer());
   } catch (e) {

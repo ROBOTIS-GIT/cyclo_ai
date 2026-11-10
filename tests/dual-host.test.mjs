@@ -13,9 +13,13 @@ const portable = JSON.parse(
 const claude = JSON.parse(
   await readFile(new URL('../.claude-plugin/plugin.json', import.meta.url), 'utf8'),
 );
-let fixture, pluginRoot, cwd;
+let fixture, fixtureParent, pluginRoot, cwd;
 before(async () => {
-  fixture = await mkdtemp(join(tmpdir(), 'cyclo host path with spaces '));
+  fixtureParent = await mkdtemp(join(tmpdir(), 'cyclo host path with spaces '));
+  const actual = join(fixtureParent, 'actual');
+  await mkdir(actual);
+  fixture = join(fixtureParent, 'alias');
+  await symlink(actual, fixture, 'dir');
   pluginRoot = join(fixture, 'plugin');
   cwd = join(fixture, 'unrelated cwd');
   await mkdir(cwd);
@@ -25,7 +29,7 @@ before(async () => {
   await symlink(join(root, 'node_modules'), join(pluginRoot, 'node_modules'), 'dir');
 });
 after(async () => {
-  if (fixture) await rm(fixture, { recursive: true, force: true });
+  if (fixtureParent) await rm(fixtureParent, { recursive: true, force: true });
 });
 
 test('host manifests share identity, version, author and one registration per server', async () => {

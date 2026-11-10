@@ -17,7 +17,7 @@ spec.loader.exec_module(module)
 class AuditTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
-        self.root = Path(self.tmp.name)
+        self.root = Path(self.tmp.name).resolve()
         self.run = self.root / "run-a"
         (self.run / "exported").mkdir(parents=True)
         (self.run / "params").mkdir()
