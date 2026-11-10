@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             node: '22'
             python: '3.9'
           - os: ubuntu-latest
@@ -44,6 +44,16 @@ jobs:
         run: .venv/bin/python validation/verify_archive.py artifacts/cyclo-ai-0.11.0.zip
         env:
           CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
+      - name: Print failed test details
+        if: failure()
+        run: |
+          for log in validation/current/*.txt artifacts/extracted-test-results.json; do
+            if [ -f "$log" ]; then
+              echo "::group::$log"
+              cat "$log"
+              echo "::endgroup::"
+            fi
+          done
   windows-setup:
     runs-on: windows-latest
     timeout-minutes: 10
