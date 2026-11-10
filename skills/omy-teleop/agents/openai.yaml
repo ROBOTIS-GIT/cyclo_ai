@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMY Teleoperation"
+  short_description: "Prepare OMY Leader-Follower and keyboard input"
+  default_prompt: "Use $omy-teleop to prepare OMY Leader-Follower or keyboard teleoperation."

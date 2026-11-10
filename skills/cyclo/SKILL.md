@@ -1,9 +1,15 @@
 ---
 name: cyclo
-description: Route ROBOTIS product questions and development tasks to official-source expertise, integration, AI Sapiens workflows or catalog/custom DYNAMIXEL Control Table operations.
+description: Route ROBOTIS product questions and development tasks to official-source expertise, integration, OMY, OMX, AI Worker and AI Sapiens workflows or catalog/custom DYNAMIXEL Control Table operations.
 ---
 
 # Cyclo
+
+For OMX requests use [OMX](../omx/SKILL.md): [assembly, USB and software setup](../omx-setup/SKILL.md), [ROS 2 control](../omx-control/SKILL.md), [teleoperation](../omx-teleop/SKILL.md), or [learning](../omx-learning/SKILL.md). Preserve the chosen ROS 2/Cyclo Intelligence or native LeRobot path; native-only work does not require ROS setup.
+
+For OMY requests use [OMY](../omy/SKILL.md): [installation and connections](../omy-setup/SKILL.md), [ROS 2 control](../omy-control/SKILL.md), [Leader-Follower/keyboard teleoperation](../omy-teleop/SKILL.md), or [demonstration learning](../omy-learning/SKILL.md). Select OMY's own model and procedure rather than borrowing another product's commands.
+
+For AI Worker/FFW requests use [AI Worker](../ai-worker/SKILL.md): [installation and connections](../ai-worker-setup/SKILL.md), [ROS 2 control](../ai-worker-control/SKILL.md), [Leader/VR teleoperation](../ai-worker-teleop/SKILL.md), or [demonstration learning](../ai-worker-learning/SKILL.md). Keep these separate from the K1 workflows below.
 
 Use the [active host adapter](../../references/hosts.md) for Skill invocation and discovered MCP tool identifiers. The shared instructions do not require Codex-specific URIs or tool prefixes.
 

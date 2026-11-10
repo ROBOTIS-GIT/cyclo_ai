@@ -100,7 +100,18 @@ def check(root):
         "robotis-integrate",
         "dynamixel-expert",
     }
-    assert set(names) == expected and len(names) == 13
+    expected.update(
+        {
+            "ai-worker-setup",
+            "ai-worker-learning",
+            "ai-worker",
+            "ai-worker-teleop",
+            "ai-worker-control",
+        }
+    )
+    expected.update({"omy-teleop", "omy", "omy-control", "omy-setup", "omy-learning"})
+    expected.update({"omx-setup", "omx-teleop", "omx-control", "omx", "omx-learning"})
+    assert set(names) == expected and len(names) == 28
     index = json.loads((root / "references/manual-index.json").read_text())
     assert len(index["pages"]) == 34
     assert len({p["id"] for p in index["pages"]}) == 34

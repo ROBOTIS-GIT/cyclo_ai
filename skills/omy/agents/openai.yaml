@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMY"
+  short_description: "Find OMY manuals and focused task workflows"
+  default_prompt: "Use $omy to guide my OMY task using official sources."

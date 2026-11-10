@@ -1,6 +1,6 @@
 # Cyclo Plugin
 
-A Codex and Claude Code plugin for ROBOTIS product guidance and DYNAMIXEL devices. Discover motors, read live control tables, change documented settings, and work with custom actuator, controller and sensor tables. AI Sapiens skills cover documented development and operation workflows.
+A Codex and Claude Code plugin for ROBOTIS product guidance and DYNAMIXEL devices. Discover motors, read live control tables, change documented settings, and work with custom actuator, controller and sensor tables. AI Worker, OMY, OMX and AI Sapiens skills cover documented development and operation workflows.
 
 The runtime uses the public official DynamixelSDK and pyserial. No private firmware repository or firmware build is needed. First-party source is [Apache-2.0](LICENSE).
 
@@ -38,6 +38,26 @@ Read-only targets preserve read-only permissions. Scans remain usable for multip
 The bundled catalog covers 89 actuator documents through a shared contract engine. Firmware, encoding and item-specific conditions determine executable support. Custom tables use an [offline importer and reviewed contracts](references/custom-control-tables.md). Controllers and sensors can omit torque and baud registers; unknown encodings remain available as raw reads. See [item coverage](references/control-table-runtime.md) for remaining gaps, including original MX Current(68).
 
 Serial, explicit TCP and UDP bridges are supported. The adapter passes rates including 6 Mbps to the OS; actual adapter/driver support and a bridge's downstream rate must match the connection. Windows COM aliases are normalized; Linux/macOS use canonical character-device identities. CI covers the offline suite on Linux/macOS and dependency setup plus offline MCP startup on Windows. Physical adapter compatibility must be verified separately.
+
+## Product skills
+
+- `$ai-worker`: find AI Worker/FFW manuals and choose the relevant task workflow.
+- `$ai-worker-setup`: prepare installation, SSH/network, Docker, Cyclo Manager and external-PC Zenoh.
+- `$ai-worker-control`: inspect ROS 2 controller readiness and prepare model-specific bringup or Cyclo Control.
+- `$ai-worker-teleop`: prepare A1/A2/LG2 Leader or VR teleoperation with separate Follower selection.
+- `$ai-worker-learning`: collect/review/convert demonstrations, prepare external training and matching Cyclo Intelligence inference.
+- `$omy`: find OMY manuals, distinguish models and choose the relevant task workflow.
+- `$omy-setup`: prepare model-specific wiring, robot/user-PC connections, Docker, Cyclo Manager and Zenoh.
+- `$omy-control`: inspect ROS 2 state/controllers and prepare posture-aware bringup, MoveIt or Cyclo Control.
+- `$omy-teleop`: prepare OMY-L100/F3M Leader-Follower or keyboard input and the camera host.
+- `$omy-learning`: collect/review/convert demonstrations, prepare external training and transition from teleoperation to policy inference.
+- `$omx`: find OMX manuals and preserve ROS 2/Cyclo Intelligence or native LeRobot workflow selection.
+- `$omx-setup`: prepare assembly, verified Leader/Follower USB identities and the chosen software stack.
+- `$omx-control`: inspect ROS 2 state/controllers and prepare standalone MoveIt/GUI or Cyclo Control.
+- `$omx-teleop`: prepare ROS or native LeRobot Leader-Follower input, or ROS keyboard control.
+- `$omx-learning`: collect/review OMX demonstrations and prepare matching training/evaluation/inference.
+
+These skills prepare documented workflows from official sources; robot and training runtime validation remains separate.
 
 ## Develop and contribute
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMY Setup"
+  short_description: "Prepare OMY installation and host connections"
+  default_prompt: "Use $omy-setup to prepare OMY hardware connections, installation and network access."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMX Control"
+  short_description: "Inspect OMX ROS 2 control and prepare movement"
+  default_prompt: "Use $omx-control to inspect OMX controller readiness or prepare a bounded motion."

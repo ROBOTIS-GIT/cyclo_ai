@@ -43,7 +43,26 @@ class Branding(unittest.TestCase):
 
     def test_real_ai_sapiens_tasks_are_preserved(self):
         self.assertEqual(len(list((ROOT / "skills").glob("ai-sapiens-*/SKILL.md"))), 9)
-        self.assertEqual(len(list((ROOT / "skills").glob("*/SKILL.md"))), 13)
+        self.assertEqual(len(list((ROOT / "skills").glob("*/SKILL.md"))), 28)
+
+    def test_ai_worker_tasks_are_discoverable(self):
+        import yaml
+
+        expected = {
+            "ai-worker",
+            "ai-worker-setup",
+            "ai-worker-control",
+            "ai-worker-teleop",
+            "ai-worker-learning",
+        }
+        self.assertEqual(
+            {p.parent.name for p in (ROOT / "skills").glob("ai-worker*/SKILL.md")}, expected
+        )
+        for name in expected:
+            entry = ROOT / "skills" / name / "SKILL.md"
+            self.assertEqual(yaml.safe_load(entry.read_text().split("---", 2)[1])["name"], name)
+            ui = yaml.safe_load((entry.parent / "agents/openai.yaml").read_text())
+            self.assertIn("$" + name, ui["interface"]["default_prompt"])
 
     def test_archive_root_is_explicit_product_identity(self):
         import hashlib
