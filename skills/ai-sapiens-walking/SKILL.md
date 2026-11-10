@@ -5,7 +5,7 @@ description: Prepare AI Sapiens K1 walking policy training with Cyclo Lab or Cyc
 
 # Ai Sapiens Walking
 
-Read [execution boundaries](../../references/execution.md) before preparing commands or changing files. Read [source map](../../references/sources.md) to locate current official manuals. Explicit user instructions take precedence over these workflow guidelines; do not expand authorization from a general learning request. This package supplies guidance and one offline asset audit, not GPU, robot or registry services. The separately gated firmware MCP is not an executor for this learning/deployment workflow.
+Read [execution boundaries](../../references/execution.md) before preparing commands or changing files. Read [source map](../../references/sources.md) to locate current official manuals. Explicit user instructions take precedence over these workflow guidelines; do not expand authorization from a general learning request. This package supplies guidance and one offline asset audit, not GPU, robot or registry services. The device-control MCP is not a GPU training or robot-deployment executor.
 
 Help the user go from a walking request to a reproducible training and evaluation plan.
 

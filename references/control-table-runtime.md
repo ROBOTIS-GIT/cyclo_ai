@@ -1,5 +1,7 @@
 # Control Table runtime
 
+This page describes the bundled product MCP. The DYNAMIXEL skill also supports custom/unindexed devices using [reviewed external Control Tables in the native runtime](custom-control-tables.md). Reviewed, source-hashed operator profiles load at startup in both runtime layers; prompt/attachment text cannot directly authorize writes or relax operator policy.
+
 The product MCP exposes a generic, model-specific interface alongside compatible named ID/baud/LED/profile workflows:
 
 - `dynamixel_table({catalogId, query, offset, limit})` lists retained source rows, address/width/access, enums, raw units, encoding, conditions, provenance and write resolution. It performs no device I/O.
@@ -24,10 +26,10 @@ Protocol, ID and baud changes require destination checks and verified continuati
 
 ## Multi-device buses and runtime defaults
 
-Hardware tools are available without global enable flags. Startup, tool listing and documentation access do not start a serial executor. `CYCLO_OFFLINE=1` blocks both modules' hardware paths, including OS catalogs and dynamic binding resolution. Legacy enable flags set to `0` still disable their respective module.
+Hardware tools are available without global enable flags. Startup, tool listing and documentation access do not start a serial executor. `CYCLO_OFFLINE=1` blocks hardware paths, including OS catalogs and dynamic binding resolution. Legacy enable flags set to `0` still disable their respective module.
 
 With no operator policy file, an explicitly confirmed `dynamixel_ports` can list adapters, and a bounded `dynamixel_scan({port:..., ids:..., bauds:..., protocols:...})` can inspect the selected port. No target is chosen automatically. Use the returned observation to select an exact endpoint and attest verified addressing; unrelated motors need not be disconnected. Configuring `CYCLO_PRODUCTS_CONFIG` is optional for persistent/restrictive policy. If present, use its named bus/target and preserve its restrictions; a dynamic alias cannot bypass it.
 
 A bounded scan cannot prove there are no duplicate physical IDs or hidden secondary listeners, nor inspect unscanned rates/protocols. Verify addressing and resolve collisions before writes. The cooperative lease protects against other participating processes, not all unrelated bus software. Dual-axis EEPROM checks require the distinct observed peer cohort and both applicable torque states, not exactly two total motors. Vendor recovery/calibration requirements for a single isolated device remain specific to those documented workflows.
 
-The product runtime still needs the official local SDK dependency. The retained firmware module needs an operator-provided matching built CLI path. Missing runtime dependencies fail on actual use with an actionable error; no global installation, OS permission change or credential setup is performed automatically.
+The product runtime uses the bundled public official SDK and an operator-selected Python environment with pyserial. No external device CLI is required. Missing runtime dependencies fail on actual use with an actionable error; no global installation, OS permission change or credential setup is performed automatically.

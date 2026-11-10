@@ -5,7 +5,7 @@ description: Explain AI Sapiens K1 impedance and ROS 2 interfaces, prepare exter
 
 # Ai Sapiens Control
 
-Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the separate firmware MCP cannot execute it.
+Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the device MCP does not execute that workflow.
 
 1. Identify the goal: explain impedance/topic schemas, prepare external-PC ROS 2, read state with Python, or request actuation. Identify robot revision, actual endpoint and environment. Read only [impedance](references/impedance.md), [ROS 2](references/ros2.md), or [SDK](references/sdk.md) as needed, then the live official page.
 2. Keep ROS 2 container setup separate from the Python SDK, which can subscribe without installing ROS 2. Inspect installed CLI/package versions before generating version-specific code. Do not persist the example network endpoint or ROS settings globally.

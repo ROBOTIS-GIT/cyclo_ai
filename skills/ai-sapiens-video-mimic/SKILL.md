@@ -5,7 +5,7 @@ description: Prepare AI Sapiens motion imitation from video or SOMA motion using
 
 # Ai Sapiens Video Mimic
 
-Read [execution boundaries](../../references/execution.md) before preparing commands or changing files. Read [source map](../../references/sources.md) to locate current official manuals. Explicit user instructions take precedence over these workflow guidelines; do not expand authorization from a general learning request. This package supplies guidance and one offline asset audit, not GPU, robot or registry services. The separately gated firmware MCP is not an executor for this learning/deployment workflow.
+Read [execution boundaries](../../references/execution.md) before preparing commands or changing files. Read [source map](../../references/sources.md) to locate current official manuals. Explicit user instructions take precedence over these workflow guidelines; do not expand authorization from a general learning request. This package supplies guidance and one offline asset audit, not GPU, robot or registry services. The device-control MCP is not a GPU training or robot-deployment executor.
 
 Turn a video or motion request into a validated motion and a matching Mimic task.
 

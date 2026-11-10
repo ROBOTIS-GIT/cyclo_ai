@@ -6,4 +6,9 @@ __pycache__/
 .env.*
 *.local.json
 artifacts/
-modules/firmware/upstream/tools/*/dist/
+.venv/
+venv/
+validation/current/
+work/
+.DS_Store
+.ruff_cache/

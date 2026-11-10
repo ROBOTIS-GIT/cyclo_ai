@@ -1,6 +1,6 @@
 # Execution contract
 
-This version combines AI Sapiens Skills with a separately gated local firmware MCP. It has no hooks, background scheduler, GPU service, robot registry or credential store. Installation does not provide training or robot-deployment execution access. Never claim an action happened without an observed result.
+This version combines AI Sapiens Skills with the standalone DYNAMIXEL product MCP. It has no hooks, background scheduler, GPU service, robot registry or credential store. Installation does not provide training or robot-deployment execution access. Never claim an action happened without an observed result.
 
 Hardware tools are available by default, but never run automatically. External jobs still require a real authorized executor. Set `CYCLO_OFFLINE=1` for device-free planning; legacy module enable flags set to `0` also disable that module. Product instructions do not authorize device access, GPU jobs, global installations, network exposure, credentials, robot changes, policy deployment or publication. Follow the actual task's authorized scope and preserve unrelated user services and settings.
 

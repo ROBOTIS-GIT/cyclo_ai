@@ -5,7 +5,7 @@ description: Prepare AI Sapiens source motions from Kimodo text generation or SO
 
 # Ai Sapiens Motion Sources
 
-Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the separate firmware MCP cannot execute it.
+Read [execution boundaries](../../references/execution.md) before commands or changes, and [official retrieval](../../references/sources.md) before factual guidance. Fetch only the relevant source and reference; do not load the whole manual. Preserve the user's instructions and authorization. This workflow has no GPU/robot executor or credential store; the device MCP does not execute that workflow.
 
 1. Classify input and purpose: text prompt/constraints, raw SMPL-family or AMASS/MHR motion, existing SOMA BVH/NPZ, or video. Ask only the missing choice. Video and existing SOMA inputs route to [video/Mimic](../ai-sapiens-video-mimic/SKILL.md); they do not automatically require SOMA-X.
 2. For text read [Kimodo](references/kimodo.md); for human-model conversion read [SOMA](references/soma.md). Fetch the matching official section and actual checkout help. Preserve source format, units, frame rate, clip and licensed model identity.
