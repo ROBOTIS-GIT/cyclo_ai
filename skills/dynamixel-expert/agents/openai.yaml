@@ -1,0 +1,4 @@
+interface:
+  display_name: "DYNAMIXEL Expert"
+  short_description: "Model-aware explanations and configuration"
+  default_prompt: "Use $dynamixel-expert to help with this ROBOTIS task."

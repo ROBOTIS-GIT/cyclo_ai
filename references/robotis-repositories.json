@@ -1,0 +1,1255 @@
+{
+  "discoveredOn": "2026-10-24",
+  "owner": "ROBOTIS-GIT",
+  "scope": "Public repository metadata only, no contents imported or validated. archived is not product lifecycle.",
+  "repositories": [
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS Platform Framework",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-Framework",
+      "name": "ROBOTIS-Framework",
+      "pushed_at": "2024-12-24T09:07:36Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the model description and the gazebo setting of THORMANG3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-Common",
+      "name": "ROBOTIS-THORMANG-Common",
+      "pushed_at": "2018-04-01T23:22:56Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the motion of THORMANG3, MPC means Motion PC.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-MPC",
+      "name": "ROBOTIS-THORMANG-MPC",
+      "pushed_at": "2019-08-05T07:23:11Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the perception of THORMANG3, PPC means Perception PC.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-PPC",
+      "name": "ROBOTIS-THORMANG-PPC",
+      "pushed_at": "2019-01-30T08:08:07Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the operating of THORMANG3, OPC means Operating PC.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-OPC",
+      "name": "ROBOTIS-THORMANG-OPC",
+      "pushed_at": "2019-09-06T08:21:23Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the offset of THORMANG3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-Tools",
+      "name": "ROBOTIS-THORMANG-Tools",
+      "pushed_at": "2019-10-04T08:36:00Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROBOTIS Dynamixel SDK (Protocol1.0/2.0)",
+      "html_url": "https://github.com/ROBOTIS-GIT/DynamixelSDK",
+      "name": "DynamixelSDK",
+      "pushed_at": "2026-10-15T22:07:20Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Software for ROS Embedded board (a.k.a. OpenCR). OpenCR means Open-source Control Module for ROS.",
+      "html_url": "https://github.com/ROBOTIS-GIT/OpenCR",
+      "name": "OpenCR",
+      "pushed_at": "2024-05-01T23:26:09Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3",
+      "name": "ROBOTIS-OP3",
+      "pushed_at": "2025-02-26T06:42:35Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS Platform Framework",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-Framework-msgs",
+      "name": "ROBOTIS-Framework-msgs",
+      "pushed_at": "2024-10-23T05:55:37Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS message packages for the THORMANG3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-msgs",
+      "name": "ROBOTIS-THORMANG-msgs",
+      "pushed_at": "2020-03-10T09:31:23Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS packages for Turtlebot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3",
+      "name": "turtlebot3",
+      "pushed_at": "2026-06-15T11:50:39Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/OLLOBOT",
+      "name": "OLLOBOT",
+      "pushed_at": "2017-08-29T05:13:05Z"
+    },
+    {
+      "archived": true,
+      "default_branch": "main",
+      "description": "ROS packages for Dynamixel controllers, msgs, single_manager, toolbox, tutorials",
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel-workbench",
+      "name": "dynamixel-workbench",
+      "pushed_at": "2025-06-20T02:40:33Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS MANIPULATOR-H",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-MANIPULATOR-H",
+      "name": "ROBOTIS-MANIPULATOR-H",
+      "pushed_at": "2020-09-10T02:45:13Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS Utility (meta package)",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-Utility",
+      "name": "ROBOTIS-Utility",
+      "pushed_at": "2024-11-07T00:08:56Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "This package is a set of basic math fuctions for ROBOTIS's robots.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-Math",
+      "name": "ROBOTIS-Math",
+      "pushed_at": "2024-12-11T08:08:11Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS package for HLDS HLS-LFCD LDS driver ",
+      "html_url": "https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver",
+      "name": "hls_lfcd_lds_driver",
+      "pushed_at": "2025-06-20T02:26:34Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "AI Manipulator and Open Manipulator",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator",
+      "name": "open_manipulator",
+      "pushed_at": "2026-10-23T12:45:58Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Software for OpenCM 7.0 / OpenCM means Open-source Control Module.",
+      "html_url": "https://github.com/ROBOTIS-GIT/OpenCM7.0",
+      "name": "OpenCM7.0",
+      "pushed_at": "2018-04-01T23:49:25Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-Optimization",
+      "name": "ROBOTIS-Optimization",
+      "pushed_at": "2018-03-28T14:51:59Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Applications for TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_applications",
+      "name": "turtlebot3_applications",
+      "pushed_at": "2025-06-23T04:00:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "BOM, Circuit and PCB Gerber of OpenCR",
+      "html_url": "https://github.com/ROBOTIS-GIT/OpenCR-Hardware",
+      "name": "OpenCR-Hardware",
+      "pushed_at": "2020-05-20T00:49:27Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS msgs package for TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_msgs",
+      "name": "turtlebot3_msgs",
+      "pushed_at": "2025-06-20T02:41:05Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Simulations for TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_simulations",
+      "name": "turtlebot3_simulations",
+      "pushed_at": "2025-07-14T04:49:34Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Tools for development environments",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_tools",
+      "name": "robotis_tools",
+      "pushed_at": "2021-09-27T04:11:31Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS packages for TurtleBot3 deliver",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_deliver",
+      "name": "turtlebot3_deliver",
+      "pushed_at": "2024-12-04T09:35:42Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS Tutorials for beginner",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros_tutorials",
+      "name": "ros_tutorials",
+      "pushed_at": "2018-02-04T23:41:42Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Common",
+      "name": "ROBOTIS-OP3-Common",
+      "pushed_at": "2025-02-17T03:23:40Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Demo",
+      "name": "ROBOTIS-OP3-Demo",
+      "pushed_at": "2025-06-16T01:53:14Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-msgs",
+      "name": "ROBOTIS-OP3-msgs",
+      "pushed_at": "2025-01-21T01:49:55Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Tools",
+      "name": "ROBOTIS-OP3-Tools",
+      "pushed_at": "2025-03-18T07:04:43Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Message package for dynamixel-workbench",
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs",
+      "name": "dynamixel-workbench-msgs",
+      "pushed_at": "2025-06-20T02:36:02Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the sensors of THORMANG3, MPC means Motion PC.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-MPC-SENSORs",
+      "name": "ROBOTIS-THORMANG-MPC-SENSORs",
+      "pushed_at": "2019-05-24T07:18:13Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Software for OpenCM 9.04 / OpenCM means Open-source Control Module.",
+      "html_url": "https://github.com/ROBOTIS-GIT/OpenCM9.04",
+      "name": "OpenCM9.04",
+      "pushed_at": "2022-01-12T06:09:34Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Welcome to the ROBOTIS e-Manual ! The e-Manual page rendered from this repository is available for everyone. Just simply click the provided link below :) ",
+      "html_url": "https://github.com/ROBOTIS-GIT/emanual",
+      "name": "emanual",
+      "pushed_at": "2026-08-10T07:36:07Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Face Detection and Tracking for ROS",
+      "html_url": "https://github.com/ROBOTIS-GIT/face_detection",
+      "name": "face_detection",
+      "pushed_at": "2025-01-21T00:35:08Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROBOTIS-OP series datas",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP-Series-Data",
+      "name": "ROBOTIS-OP-Series-Data",
+      "pushed_at": "2020-01-02T02:14:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "AutoRace racetrack sources",
+      "html_url": "https://github.com/ROBOTIS-GIT/autorace_track",
+      "name": "autorace_track",
+      "pushed_at": "2020-07-07T00:31:35Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "AutoRace referee sources",
+      "html_url": "https://github.com/ROBOTIS-GIT/autorace_referee",
+      "name": "autorace_referee",
+      "pushed_at": "2020-09-09T00:52:34Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Lecture and Reference Material",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros_seminar",
+      "name": "ros_seminar",
+      "pushed_at": "2018-03-14T00:15:27Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "repository to share book that provide documentation and tutorials for ROS",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros_book",
+      "name": "ros_book",
+      "pushed_at": "2018-05-10T06:53:12Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "DynamixelShield Library for Arduino",
+      "html_url": "https://github.com/ROBOTIS-GIT/DynamixelShield",
+      "name": "DynamixelShield",
+      "pushed_at": "2023-06-13T00:34:00Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "RH-P12-RN Example (Windows, Linux)",
+      "html_url": "https://github.com/ROBOTIS-GIT/RH-P12-RN_Example",
+      "name": "RH-P12-RN_Example",
+      "pushed_at": "2019-10-24T07:47:26Z"
+    },
+    {
+      "archived": true,
+      "default_branch": "master",
+      "description": "ROS packages for RH-P12-RN",
+      "html_url": "https://github.com/ROBOTIS-GIT/RH-P12-RN",
+      "name": "RH-P12-RN",
+      "pushed_at": "2020-02-17T05:02:28Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "bag files for ROBOTIS ROS Packages ",
+      "html_url": "https://github.com/ROBOTIS-GIT/bags",
+      "name": "bags",
+      "pushed_at": "2018-03-11T22:32:40Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Standalone gazebo plugin for TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_gazebo_plugin",
+      "name": "turtlebot3_gazebo_plugin",
+      "pushed_at": "2024-12-04T09:57:12Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "feature-alley-update",
+      "description": "Autonomous Driving with TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_autorace",
+      "name": "turtlebot3_autorace",
+      "pushed_at": "2025-06-30T02:44:51Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS metapackages with footstep planning and localization for humanoid robots",
+      "html_url": "https://github.com/ROBOTIS-GIT/humanoid_navigation",
+      "name": "humanoid_navigation",
+      "pushed_at": "2020-10-23T04:50:36Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Search-Based Planning Library",
+      "html_url": "https://github.com/ROBOTIS-GIT/sbpl",
+      "name": "sbpl",
+      "pushed_at": "2017-08-14T20:46:15Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "gh-pages",
+      "description": "The source for robots.ros.org",
+      "html_url": "https://github.com/ROBOTIS-GIT/robots.ros.org",
+      "name": "robots.ros.org",
+      "pushed_at": "2018-04-12T08:51:22Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS applications msgs package for TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_applications_msgs",
+      "name": "turtlebot3_applications_msgs",
+      "pushed_at": "2025-06-20T02:43:09Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS Simulation for OpenManipulator",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_simulations",
+      "name": "open_manipulator_simulations",
+      "pushed_at": "2024-12-13T05:14:29Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "perceptions for manipulation",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_perceptions",
+      "name": "open_manipulator_perceptions",
+      "pushed_at": "2024-12-13T05:17:23Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "OpenManipulator with TurtleBot3 packages",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_manipulation",
+      "name": "turtlebot3_manipulation",
+      "pushed_at": "2025-06-20T02:42:38Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS Messages for OpenManipulator",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_msgs",
+      "name": "open_manipulator_msgs",
+      "pushed_at": "2024-12-13T04:58:43Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "simulation for OpenManipulator with TurtleBot3",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations",
+      "name": "turtlebot3_manipulation_simulations",
+      "pushed_at": "2024-12-04T09:46:31Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP2 ",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP2-Common",
+      "name": "ROBOTIS-OP2-Common",
+      "pushed_at": "2018-07-19T04:36:32Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_SensorXel",
+      "name": "XelNetwork_SensorXel",
+      "pushed_at": "2018-11-01T10:25:25Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_CommXel",
+      "name": "XelNetwork_CommXel",
+      "pushed_at": "2020-03-08T00:49:29Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_FwSDK",
+      "name": "XelNetwork_FwSDK",
+      "pushed_at": "2018-11-21T00:04:25Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS packages for the ROBOTIS OP2",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP2",
+      "name": "ROBOTIS-OP2",
+      "pushed_at": "2018-07-19T04:35:17Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_machine_learning",
+      "name": "turtlebot3_machine_learning",
+      "pushed_at": "2026-02-18T23:57:45Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Documents for XelNetwork",
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_Documents",
+      "name": "XelNetwork_Documents",
+      "pushed_at": "2020-05-14T05:41:55Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_PowerXel",
+      "name": "XelNetwork_PowerXel",
+      "pushed_at": "2018-11-01T10:25:30Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Collection of binary files for platforms using OpenCR",
+      "html_url": "https://github.com/ROBOTIS-GIT/OpenCR-Binaries",
+      "name": "OpenCR-Binaries",
+      "pushed_at": "2023-01-27T08:38:00Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_Hardware",
+      "name": "XelNetwork_Hardware",
+      "pushed_at": "2020-02-05T02:59:54Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XelNetwork_Manager",
+      "name": "XelNetwork_Manager",
+      "pushed_at": "2019-12-05T08:02:52Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "This library helps the Arduino board communicate with the ROS2 using XRCE-DDS.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros2arduino",
+      "name": "ros2arduino",
+      "pushed_at": "2021-02-02T14:55:27Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "    This package contains the manipulation API and functions for controlling the manipulator.",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_manipulator",
+      "name": "robotis_manipulator",
+      "pushed_at": "2024-12-13T05:35:00Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_processing",
+      "name": "open_manipulator_processing",
+      "pushed_at": "2024-12-13T05:19:03Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "ros2",
+      "description": "Provides ROS integration for Cartographer.",
+      "html_url": "https://github.com/ROBOTIS-GIT/cartographer_ros",
+      "name": "cartographer_ros",
+      "pushed_at": "2019-07-01T04:10:58Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "ros2",
+      "description": "Cartographer is a system that provides real-time simultaneous localization and mapping (SLAM) in 2D and 3D across multiple platforms and sensor configurations.",
+      "html_url": "https://github.com/ROBOTIS-GIT/cartographer",
+      "name": "cartographer",
+      "pushed_at": "2019-08-02T04:27:31Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Launch files to open an Astra device and load all nodelets to convert raw depth/RGB/IR streams to depth images, disparity images, and (registered) point clouds.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros_astra_launch",
+      "name": "ros_astra_launch",
+      "pushed_at": "2019-01-10T07:43:16Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_friends",
+      "name": "open_manipulator_friends",
+      "pushed_at": "2025-02-03T02:08:33Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS2 library using XRCE-DDS.",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros2xrcedds",
+      "name": "ros2xrcedds",
+      "pushed_at": "2019-05-22T02:38:50Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/XELNetwork_Loader",
+      "name": "XELNetwork_Loader",
+      "pushed_at": "2019-02-26T02:54:12Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Arduino core for the ESP32",
+      "html_url": "https://github.com/ROBOTIS-GIT/arduino-esp32",
+      "name": "arduino-esp32",
+      "pushed_at": "2020-01-03T08:48:14Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Application examples of OpenManipulator",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_applications",
+      "name": "open_manipulator_applications",
+      "pushed_at": "2024-12-13T05:21:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROBOTIS Documents (Manuals & Tutorials)",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-Documents",
+      "name": "ROBOTIS-Documents",
+      "pushed_at": "2018-02-28T05:43:54Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "OpenManipulator-P for controlling in Gazebo and Moveit with ROS",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_p",
+      "name": "open_manipulator_p",
+      "pushed_at": "2021-06-30T01:37:38Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "DYNAMIXEL protocol library for Arduino",
+      "html_url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino",
+      "name": "Dynamixel2Arduino",
+      "pushed_at": "2026-09-30T23:17:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_p_simulations",
+      "name": "open_manipulator_p_simulations",
+      "pushed_at": "2022-04-26T04:43:52Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "ROS Packages for ROBOTIS THORMANG3 (DXL PRO+ Ver)'s MPC",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-THORMANG-P-MPC",
+      "name": "ROBOTIS-THORMANG-P-MPC",
+      "pushed_at": "2019-10-04T01:15:21Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "CI integration scripts for ROS2 repositories",
+      "html_url": "https://github.com/ROBOTIS-GIT/ros2ci",
+      "name": "ros2ci",
+      "pushed_at": "2020-12-24T00:53:08Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "A arduino library for communicating with ROS2 with the XELNetwork Slave (SensorXEL, PowerXEL, etc.), using Micro-XRCE-DDS and the master functions of the DYNAMIXEL protocol, such as CommXEL on XELNetwork.",
+      "html_url": "https://github.com/ROBOTIS-GIT/XELNetworkMaster",
+      "name": "XELNetworkMaster",
+      "pushed_at": "2020-05-26T01:48:19Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "A arduino library to communicate with ROS2 with XELNetwork Master(such as CommXEL) using slave functions of the DYNAMIXEL protocol, such as SensorXEL and PowerXEL in XELNetwork.",
+      "html_url": "https://github.com/ROBOTIS-GIT/XELNetworkSlave",
+      "name": "XELNetworkSlave",
+      "pushed_at": "2020-05-20T13:42:08Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "STM32 core support for Arduino",
+      "html_url": "https://github.com/ROBOTIS-GIT/Arduino_Core_STM32",
+      "name": "Arduino_Core_STM32",
+      "pushed_at": "2020-05-29T06:57:16Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS Packages for RH-P12-RN(A)",
+      "html_url": "https://github.com/ROBOTIS-GIT/RH-P12-RN-A",
+      "name": "RH-P12-RN-A",
+      "pushed_at": "2025-07-14T11:11:38Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Storage for Arduino Board Manager JSON and package files etc",
+      "html_url": "https://github.com/ROBOTIS-GIT/BoardManagerFiles",
+      "name": "BoardManagerFiles",
+      "pushed_at": "2020-01-02T02:21:01Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_dependencies",
+      "name": "open_manipulator_dependencies",
+      "pushed_at": "2024-12-13T05:31:19Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_demo",
+      "name": "turtlebot3_demo",
+      "pushed_at": "2024-12-04T09:55:18Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "The build system for Component Oriented Device Abstraction Layer (CODAL) devices.",
+      "html_url": "https://github.com/ROBOTIS-GIT/codal",
+      "name": "codal",
+      "pushed_at": "2020-03-08T23:59:43Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/codal-nrf52",
+      "name": "codal-nrf52",
+      "pushed_at": "2020-05-15T02:54:28Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/codal-cm300",
+      "name": "codal-cm300",
+      "pushed_at": "2020-05-08T05:05:45Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "USB-enabled bootloaders for the nRF52 BLE SoC chips",
+      "html_url": "https://github.com/ROBOTIS-GIT/Adafruit_nRF52_Bootloader",
+      "name": "Adafruit_nRF52_Bootloader",
+      "pushed_at": "2020-03-16T08:05:50Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "TurtleBot3 Autorace 2020 missions",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020",
+      "name": "turtlebot3_autorace_2020",
+      "pushed_at": "2025-02-19T02:06:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "Robotis MakeCode editor",
+      "html_url": "https://github.com/ROBOTIS-GIT/pxt-robotis",
+      "name": "pxt-robotis",
+      "pushed_at": "2020-05-20T06:11:05Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "OpenMANIPULATOR Controls",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_controls",
+      "name": "open_manipulator_controls",
+      "pushed_at": "2024-12-13T05:00:47Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Turtlebot3 Home Service Challenge(with OpenManipulator X)",
+      "html_url": "https://github.com/ROBOTIS-GIT/turtlebot3_home_service_challenge",
+      "name": "turtlebot3_home_service_challenge",
+      "pushed_at": "2025-07-17T03:39:39Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_p_controls",
+      "name": "open_manipulator_p_controls",
+      "pushed_at": "2020-05-11T07:57:33Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_p_perceptions",
+      "name": "open_manipulator_p_perceptions",
+      "pushed_at": "2020-05-08T07:24:18Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_p_applications",
+      "name": "open_manipulator_p_applications",
+      "pushed_at": "2020-05-08T07:27:58Z"
+    },
+    {
+      "archived": true,
+      "default_branch": "master",
+      "description": "TurtleBot3 with OpenMANIPULATOR-X msgs (Deprecated)",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_with_tb3_msgs",
+      "name": "open_manipulator_with_tb3_msgs",
+      "pushed_at": "2020-09-08T05:20:19Z"
+    },
+    {
+      "archived": true,
+      "default_branch": "master",
+      "description": "TurtleBot3 with OpenMANIPULATOR-X (Deprecated)",
+      "html_url": "https://github.com/ROBOTIS-GIT/open_manipulator_with_tb3",
+      "name": "open_manipulator_with_tb3",
+      "pushed_at": "2020-09-08T06:22:44Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "OpenRB-150 controller Arduino board manager",
+      "html_url": "https://github.com/ROBOTIS-GIT/OpenRB-150",
+      "name": "OpenRB-150",
+      "pushed_at": "2026-10-07T01:37:58Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS package for TurtleBot3 LD08 Lidar",
+      "html_url": "https://github.com/ROBOTIS-GIT/ld08_driver",
+      "name": "ld08_driver",
+      "pushed_at": "2025-06-20T02:24:57Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS 2 package providing a hardware interface for controlling Dynamixel motors via the ros2_control framework. This repository includes the dynamixel_hardware_interface plugin for seamless integration with ROS 2. ",
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface",
+      "name": "dynamixel_hardware_interface",
+      "pushed_at": "2026-10-08T11:21:23Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Provides interfaces (msgs) for the dynamixel_hardware_interface.",
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_interfaces",
+      "name": "dynamixel_interfaces",
+      "pushed_at": "2025-06-20T02:37:29Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Simulations for ROBOTIS-OP3",
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Simulations",
+      "name": "ROBOTIS-OP3-Simulations",
+      "pushed_at": "2025-02-13T03:10:54Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-ETC",
+      "name": "ROBOTIS-OP3-ETC",
+      "pushed_at": "2025-02-24T07:58:14Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "A collection of models for the MuJoCo physics engine from ROBOTIS",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie",
+      "name": "robotis_mujoco_menagerie",
+      "pushed_at": "2026-08-21T04:52:38Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "AI Worker: FFW (Freedom From Work)",
+      "html_url": "https://github.com/ROBOTIS-GIT/ai_worker",
+      "name": "ai_worker",
+      "pushed_at": "2026-10-22T23:15:09Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "master",
+      "description": "This repo maintains a lists of repositories for each ROS distribution",
+      "html_url": "https://github.com/ROBOTIS-GIT/rosdistro",
+      "name": "rosdistro",
+      "pushed_at": "2026-04-06T04:01:32Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "feature-omx-devel",
+      "description": "\ud83e\udd17 LeRobot: Making AI for Robotics more accessible with end-to-end learning",
+      "html_url": "https://github.com/ROBOTIS-GIT/lerobot",
+      "name": "lerobot",
+      "pushed_at": "2026-01-22T14:14:53Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROBOTIS Physical AI Tools: Physical AI Development Interface with LeRobot and ROS 2",
+      "html_url": "https://github.com/ROBOTIS-GIT/physical_ai_tools",
+      "name": "physical_ai_tools",
+      "pushed_at": "2026-06-26T08:37:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Website for AI Worker and AI Manipulator",
+      "html_url": "https://github.com/ROBOTIS-GIT/ai_worker_website",
+      "name": "ai_worker_website",
+      "pushed_at": "2026-07-06T09:02:51Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS package for LDS-03 (COIN-D4) Lidar",
+      "html_url": "https://github.com/ROBOTIS-GIT/coin_d4_driver",
+      "name": "coin_d4_driver",
+      "pushed_at": "2025-07-14T06:40:15Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Tutorials",
+      "name": "ROBOTIS-OP3-Tutorials",
+      "pushed_at": "2025-06-20T08:06:12Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "This repository provides tutorials for reinforcement learning and imitation learning using ROBOTIS robots, and supports Sim2Real functionality for deploying the learned policies on real robots.",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo_lab",
+      "name": "cyclo_lab",
+      "pushed_at": "2026-10-12T08:16:27Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "dynamixel_hardware_interface_demos",
+      "html_url": "https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface_demos",
+      "name": "dynamixel_hardware_interface_demos",
+      "pushed_at": "2026-06-08T00:30:54Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS Packages for Robotis Hand",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_hand",
+      "name": "robotis_hand",
+      "pushed_at": "2026-10-16T03:25:34Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Python SDK for DDS-based communication using Cyclone DDS.",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_dds_python",
+      "name": "robotis_dds_python",
+      "pushed_at": "2026-06-02T03:04:58Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "NVIDIA Isaac GR00T N1.5 is the world's first open foundation model for generalized humanoid robot reasoning and skills.",
+      "html_url": "https://github.com/ROBOTIS-GIT/Isaac-GR00T",
+      "name": "Isaac-GR00T",
+      "pushed_at": "2026-01-05T06:50:53Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Lakibeam ROS2 Driver customized for AI Worker",
+      "html_url": "https://github.com/ROBOTIS-GIT/Lakibeam_ROS2_Driver",
+      "name": "Lakibeam_ROS2_Driver",
+      "pushed_at": "2025-12-09T11:37:26Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "jazzy",
+      "description": "Python parser for URDFs",
+      "html_url": "https://github.com/ROBOTIS-GIT/yourdfpy",
+      "name": "yourdfpy",
+      "pushed_at": "2026-01-06T08:29:03Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Vuer is a 3D visualization tool for robotics and VR applications.",
+      "html_url": "https://github.com/ROBOTIS-GIT/vuer",
+      "name": "vuer",
+      "pushed_at": "2026-08-10T05:48:45Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Control packages for the ROBOTIS Physical AI lineup",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo_control",
+      "name": "cyclo_control",
+      "pushed_at": "2026-10-22T05:01:30Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "A Modular Toolkit for Robot Kinematic Optimization",
+      "html_url": "https://github.com/ROBOTIS-GIT/pyroki",
+      "name": "pyroki",
+      "pushed_at": "2026-01-08T21:58:56Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "feature-support-open-manipulator",
+      "description": "Access 135+ robot descriptions from the main Python robotics frameworks",
+      "html_url": "https://github.com/ROBOTIS-GIT/robot_descriptions.py",
+      "name": "robot_descriptions.py",
+      "pushed_at": "2026-01-12T03:06:09Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Python SDK for ROS 2 communication via Zenoh - Use ROS 2 without ROS2 environment",
+      "html_url": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
+      "name": "zenoh_ros2_sdk",
+      "pushed_at": "2026-07-06T01:48:21Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS 2 (using zenoh) robot integration for LeRobot",
+      "html_url": "https://github.com/ROBOTIS-GIT/lerobot_robot_ros2_zenoh",
+      "name": "lerobot_robot_ros2_zenoh",
+      "pushed_at": "2026-09-07T06:02:41Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "A collection of high-quality models for the MuJoCo physics engine, curated by Google DeepMind.",
+      "html_url": "https://github.com/ROBOTIS-GIT/mujoco_menagerie",
+      "name": "mujoco_menagerie",
+      "pushed_at": "2026-09-25T19:21:17Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "rolling",
+      "description": "ros2 package to merge dual laser scans",
+      "html_url": "https://github.com/ROBOTIS-GIT/dual_laser_merger",
+      "name": "dual_laser_merger",
+      "pushed_at": "2025-08-12T19:10:46Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/openpi",
+      "name": "openpi",
+      "pushed_at": "2026-03-03T04:34:20Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "ROS Packages for Robotis Applications",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_applications",
+      "name": "robotis_applications",
+      "pushed_at": "2026-10-22T05:43:10Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Custom interfaces for ROBOTIS Physical AI Lineup",
+      "html_url": "https://github.com/ROBOTIS-GIT/robotis_interfaces",
+      "name": "robotis_interfaces",
+      "pushed_at": "2026-10-07T03:58:47Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "cyclo_manager",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo_manager",
+      "name": "cyclo_manager",
+      "pushed_at": "2026-10-21T02:23:56Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Cyclo is an open, modular framework for building and operating Physical AI systems across AI integration, data workflows, robot control, simulation, and operations on real hardware.",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo",
+      "name": "cyclo",
+      "pushed_at": "2026-08-11T06:03:03Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Robot Controller for various robot models",
+      "html_url": "https://github.com/ROBOTIS-GIT/dyros_robot_controller",
+      "name": "dyros_robot_controller",
+      "pushed_at": "2026-04-21T07:23:57Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "[TPAMI][ECCV2024 Oral] Clearer anytime frame interpolation & Manipulated interpolation of anything",
+      "html_url": "https://github.com/ROBOTIS-GIT/video-frame-interpolation",
+      "name": "video-frame-interpolation",
+      "pushed_at": "2025-08-23T03:46:37Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/.github",
+      "name": ".github",
+      "pushed_at": "2026-08-06T02:51:10Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "cyclo_intelligence",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo_intelligence",
+      "name": "cyclo_intelligence",
+      "pushed_at": "2026-10-23T07:07:47Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "This is the documentation page containing manuals for all products by ROBOTIS.",
+      "html_url": "https://github.com/ROBOTIS-GIT/docs",
+      "name": "docs",
+      "pushed_at": "2026-10-22T08:46:08Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "NVIDIA Isaac GR00T N1.7 -  A Foundation Model for Generalist Robots.",
+      "html_url": "https://github.com/ROBOTIS-GIT/Isaac-GR00T-n1.7",
+      "name": "Isaac-GR00T-n1.7",
+      "pushed_at": "2026-10-21T06:21:44Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/RLDX-1",
+      "name": "RLDX-1",
+      "pushed_at": "2026-07-07T09:26:26Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Green-VLA: Staged Vision-Language-Action Model for Generalist Robots",
+      "html_url": "https://github.com/ROBOTIS-GIT/GreenVLA",
+      "name": "GreenVLA",
+      "pushed_at": "2026-03-05T09:34:19Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "\ud83e\udd17 LeRobot: Making AI for Robotics more accessible with end-to-end learning",
+      "html_url": "https://github.com/ROBOTIS-GIT/lerobot-cyclo",
+      "name": "lerobot-cyclo",
+      "pushed_at": "2026-10-01T02:16:42Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "SOMA BVH to humanoid robot motion retargeting library built with Newton and NVIDIA Warp",
+      "html_url": "https://github.com/ROBOTIS-GIT/soma-retargeter",
+      "name": "soma-retargeter",
+      "pushed_at": "2026-08-28T11:08:41Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "fix/bvh-export-rotation-fidelity",
+      "description": "Official implementation of Kimodo, a kinematic motion diffusion model for high-quality human(oid) motion generation.",
+      "html_url": "https://github.com/ROBOTIS-GIT/kimodo",
+      "name": "kimodo",
+      "pushed_at": "2026-07-01T07:51:45Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Open Humanoid AI Sapiens",
+      "html_url": "https://github.com/ROBOTIS-GIT/ai_sapiens",
+      "name": "ai_sapiens",
+      "pushed_at": "2026-10-15T01:19:07Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "Monocular whole-body 3D human pose estimation using the SOMA body model",
+      "html_url": "https://github.com/ROBOTIS-GIT/GEM-X",
+      "name": "GEM-X",
+      "pushed_at": "2026-07-28T12:56:29Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "A rosbag-compatible MCAP writer for rmw_zenoh",
+      "html_url": "https://github.com/ROBOTIS-GIT/rmw-zenoh-mcap-writer",
+      "name": "rmw-zenoh-mcap-writer",
+      "pushed_at": "2026-08-21T02:11:40Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "A MuJoCo-based MJLab development environment and simulation toolkit for ROBOTIS robots.",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo_mjlab",
+      "name": "cyclo_mjlab",
+      "pushed_at": "2026-10-20T09:51:01Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": "cyclo_solution",
+      "html_url": "https://github.com/ROBOTIS-GIT/cyclo_solution",
+      "name": "cyclo_solution",
+      "pushed_at": "2026-09-22T03:00:24Z"
+    },
+    {
+      "archived": false,
+      "default_branch": "main",
+      "description": null,
+      "html_url": "https://github.com/ROBOTIS-GIT/github-workflows",
+      "name": "github-workflows",
+      "pushed_at": "2026-10-22T23:22:44Z"
+    }
+  ]
+}

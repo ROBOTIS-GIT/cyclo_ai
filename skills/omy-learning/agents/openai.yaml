@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMY Learning"
+  short_description: "Collect OMY data and prepare imitation learning"
+  default_prompt: "Use $omy-learning to prepare OMY demonstration data, policy training or inference."

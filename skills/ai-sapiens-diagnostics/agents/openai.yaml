@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Diagnostics"
+  short_description: "Diagnose environment and robot service issues"
+  default_prompt: "Use $ai-sapiens-diagnostics to prepare the documented workflow."

@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/ROBOTIS-GIT/DynamixelSDK",
+  "tag": "3.8.4",
+  "commit": "0b29760ffa81d813bc749cb611a0019938c1e856",
+  "license": "Apache-2.0",
+  "scope": "Unmodified official Python packet/port handlers and their package dependencies. Customer API remains separately constrained; no SDK action/reset/motion endpoints are exposed.",
+  "files_sha256": {
+    "LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "dynamixel_sdk/group_sync_read.py": "8802b859e2b8fdf1cbc2b157f42234cd616a12c1b763793c3addbd4f6ef9420f",
+    "dynamixel_sdk/group_sync_write.py": "837b1b103bff4822331f771869eef7fdd7a767d5077d5514958dd495a19ffdcd",
+    "dynamixel_sdk/group_bulk_write.py": "723604c0f6bec0052b092541e6e89ce1d8266f5653ae6e48eee890a3c968b6a3",
+    "dynamixel_sdk/robotis_def.py": "8b5b751973ff54ee4c039440bc7501e0ad2ffaf313387d7fad548ced0a24fa1a",
+    "dynamixel_sdk/protocol1_packet_handler.py": "98f98563c4531f791f4e473fe810b28d1def926f58762b308ff623b9dc2061fb",
+    "dynamixel_sdk/protocol2_packet_handler.py": "b67d515ec5c89c73ac9096e463253e1fb4e95f47f7a67bb598c709921ef97f3d",
+    "dynamixel_sdk/port_handler.py": "f665af372827da80317a262a502f3dfc27efbf89968e29e272fdd8d8e216f4ea",
+    "dynamixel_sdk/packet_handler.py": "8ba41cbd2f3c7e701ae86b0b26b7f676fa46e5256bce3944591e6e9e8b65a8e4",
+    "dynamixel_sdk/group_bulk_read.py": "d7e5d176d6ab36023c0c947b599b7e2ffe73f83fd926befb1026ef71984ba5ed",
+    "dynamixel_sdk/__init__.py": "03dfd07d4a094745e2747d733ac1239f3205c8403bcea34ac4560852069be928"
+  }
+}

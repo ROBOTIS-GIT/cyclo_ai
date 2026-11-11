@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Walking"
+  short_description: "Prepare walking training and evaluate exports"
+  default_prompt: "Use $ai-sapiens-walking to prepare the documented workflow."

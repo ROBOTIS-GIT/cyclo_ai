@@ -1,0 +1,7493 @@
+{
+  "revision": "c88527af0888baea6f7ef3305bbbbb911b960759",
+  "provenance": "Independent header-aware reading of operation/identity rows; a structural witness, not exhaustive semantic certification",
+  "models": [
+    {
+      "catalogId": "ax_series/ax-12a",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/ax_series/ax-12a.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 95
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 96
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 97
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 98
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "catalogId": "ax_series/ax-12w",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/ax_series/ax-12w.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 75
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 76
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 77
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 78
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 95
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "catalogId": "ax_series/ax-18a",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/ax_series/ax-18a.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 88
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 89
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 90
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 91
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 108
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "catalogId": "dx_series/dx-113",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/dx_series/dx-113.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 71
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 72
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 73
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 74
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 91
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "catalogId": "dx_series/dx-116",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/dx_series/dx-116.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 70
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 71
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 72
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 73
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 90
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "catalogId": "dx_series/dx-117",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/dx_series/dx-117.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 71
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 72
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 73
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 74
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 91
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "catalogId": "dyd/dyd_11",
+      "kind": "mechanical-reducer",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/dyd/dyd_11.mdx",
+      "rows": []
+    },
+    {
+      "catalogId": "dyd/dyd_14",
+      "kind": "mechanical-reducer",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/dyd/dyd_14.mdx",
+      "rows": []
+    },
+    {
+      "catalogId": "dyd/dyd_17",
+      "kind": "mechanical-reducer",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/dyd/dyd_17.mdx",
+      "rows": []
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 79
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 80
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 81
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 82
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 86
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-106-2",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-106-2.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 107
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 109
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 113
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 114
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 150
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-106",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 107
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 108
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 114
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-12w",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-12w.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 74
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 75
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 76
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 77
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 96
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-28-2",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-28-2.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 103
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 105
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 112
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-28",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-28.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 107
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 108
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-64-2",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-64-2.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 107
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 109
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 113
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 114
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 150
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "catalogId": "mx_series/mx-64",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 107
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 108
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "catalogId": "p_series/ph42-020-s300-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/p_series/ph42-020-s300-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 152
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 170
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "catalogId": "p_series/ph54-100-s500-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/p_series/ph54-100-s500-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 152
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 170
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "catalogId": "p_series/ph54-200-s500-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/p_series/ph54-200-s500-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 152
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 170
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "catalogId": "p_series/pm42-010-s260-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/p_series/pm42-010-s260-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 158
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 173
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "catalogId": "p_series/pm54-040-s250-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/p_series/pm54-040-s250-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 158
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 173
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "catalogId": "p_series/pm54-060-s250-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/p_series/pm54-060-s250-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 158
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 173
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_h_series/h42-20-s300-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_h_series/h42-20-s300-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 99
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_h_series/h42-20-s300-ra",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_h_series/h42-20-s300-ra.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 103
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 105
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 140
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_h_series/h54-100-s500-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_h_series/h54-100-s500-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 99
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_h_series/h54-100-s500-ra",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_h_series/h54-100-s500-ra.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 103
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 105
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 140
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_h_series/h54-200-s500-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_h_series/h54-200-s500-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 99
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_h_series/h54-200-s500-ra",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_h_series/h54-200-s500-ra.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 103
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 105
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 140
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_l_series/l42-10-s300-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_l_series/l42-10-s300-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 86
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 88
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 89
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 90
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 92
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_l_series/l54-30-s400-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_l_series/l54-30-s400-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 95
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 98
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 99
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_l_series/l54-30-s500-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_l_series/l54-30-s500-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 95
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 98
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 99
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_l_series/l54-50-s290-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_l_series/l54-50-s290-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 95
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 98
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 99
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_l_series/l54-50-s500-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_l_series/l54-50-s500-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 95
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 98
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 99
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_m_series/m42-10-s260-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_m_series/m42-10-s260-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 99
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_m_series/m42-10-s260-ra",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_m_series/m42-10-s260-ra.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 101
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 103
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 104
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 105
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 108
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_m_series/m54-40-s250-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_m_series/m54-40-s250-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 99
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_m_series/m54-40-s250-ra",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_m_series/m54-40-s250-ra.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 100
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 102
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 104
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 108
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 152
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_m_series/m54-60-s250-r",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_m_series/m54-60-s250-r.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 97
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 99
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 100
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 101
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Torque Enable",
+          "address": 562,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "LED Red",
+          "address": 563,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED Green",
+          "address": 564,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "LED Blue",
+          "address": 565,
+          "width": 1,
+          "access": "RW",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "catalogId": "pro_series/pro_m_series/m54-60-s250-ra",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/pro_series/pro_m_series/m54-60-s250-ra.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 100
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 102
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 103
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 104
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 107
+        },
+        {
+          "name": "Secondary ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 108
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "LED Red",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "LED Green",
+          "address": 514,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "LED Blue",
+          "address": 515,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 556,
+          "width": 4,
+          "access": "RW",
+          "line": 152
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 560,
+          "width": 4,
+          "access": "RW",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "catalogId": "rx_series/rx-10",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/rx_series/rx-10.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 74
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 75
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 76
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 77
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 94
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "catalogId": "rx_series/rx-24f",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/rx_series/rx-24f.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 74
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 75
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 76
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 77
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 94
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "catalogId": "rx_series/rx-28",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/rx_series/rx-28.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 74
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 75
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 76
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 77
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 94
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "catalogId": "rx_series/rx-64",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/rx_series/rx-64.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 74
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 75
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 76
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 77
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 94
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/2xc430-w250",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/2xc430-w250.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 113
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 115
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc330-m181",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc330-m181.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 114
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc330-m288",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc330-m288.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 114
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc330-t181",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc330-t181.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 114
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc330-t288",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc330-t288.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 114
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc430-t150bb",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc430-t150bb.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 146
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 150
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 151
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 167
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 168
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 182
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc430-t240bb",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc430-t240bb.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 146
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 150
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 151
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 167
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 168
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 182
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc430-w150",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc430-w150.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 109
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 111
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 112
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 113
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xc_series/xc430-w240",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xc_series/xc430-w240.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 109
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 111
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 112
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 113
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xd_series/xd430-t210",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xd_series/xd430-t210.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 130
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 132
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 133
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 172
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xd_series/xd430-t350",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xd_series/xd430-t350.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 130
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 132
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 133
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 134
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 139
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 156
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 172
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xd_series/xd540-t150",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xd_series/xd540-t150.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 134
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 136
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 140
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 143
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 163
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 164
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 179
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xd_series/xd540-t270",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xd_series/xd540-t270.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 134
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 136
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 138
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 140
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 143
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 163
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 164
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 179
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh430-v210",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh430-v210.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 144
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 160
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh430-v350",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh430-v350.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 146
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 162
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh430-w210",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh430-w210.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 144
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 160
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh430-w350",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh430-w350.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 144
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 160
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh540-v150",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh540-v150.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 163
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 164
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh540-v270",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh540-v270.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 163
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 164
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh540-w150",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh540-w150.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 122
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 150
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 165
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 166
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xh_series/xh540-w270",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xh_series/xh540-w270.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 122
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 150
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 165
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 166
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xl_series/2xl430-w250",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xl_series/2xl430-w250.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 115
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 117
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 140
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 141
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 155
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xl_series/xl320",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl320.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 92
+        },
+        {
+          "name": "Firmware Version",
+          "address": 2,
+          "width": 1,
+          "access": "R",
+          "line": 93
+        },
+        {
+          "name": "ID",
+          "address": 3,
+          "width": 1,
+          "access": "RW",
+          "line": 94
+        },
+        {
+          "name": "Baud Rate",
+          "address": 4,
+          "width": 1,
+          "access": "RW",
+          "line": 95
+        },
+        {
+          "name": "Torque Enable",
+          "address": 24,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "LED",
+          "address": 25,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xl_series/xl330-m077",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl330-m077.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 107
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 109
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 113
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 114
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 135
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 151
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 152
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xl_series/xl330-m288",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl330-m288.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 109
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 111
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 112
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 113
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 115
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 116
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 117
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 118
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 136
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 137
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 152
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xl_series/xl430-w250",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl430-w250.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 122
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 146
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 162
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xm_series/xm335-t323",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm335-t323.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 102
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 104
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 105
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 106
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 108
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 109
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 110
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 111
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 129
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 130
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xm_series/xm430-w210",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm430-w210.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 144
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 160
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xm_series/xm430-w350",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm430-w350.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 144
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 160
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xm_series/xm540-w150",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w150.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 119
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 121
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 164
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 165
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xm_series/xm540-w270",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w270.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 119
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 121
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 128
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "LED",
+          "address": 65,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 164
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 165
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xw_series/xw430-t200",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xw_series/xw430-t200.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 117
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 119
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 143
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xw_series/xw430-t333",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xw_series/xw430-t333.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 117
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 119
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 143
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xw_series/xw540-h260",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xw_series/xw540-h260.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 120
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 127
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 144
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 159
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xw_series/xw540-t140",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xw_series/xw540-t140.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 116
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 118
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 119
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 122
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 142
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 157
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "catalogId": "x_series/xw_series/xw540-t260",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/x_series/xw_series/xw540-t260.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 117
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 119
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 120
+        },
+        {
+          "name": "Baud Rate",
+          "address": 8,
+          "width": 1,
+          "access": "RW",
+          "line": 121
+        },
+        {
+          "name": "Drive Mode",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 123
+        },
+        {
+          "name": "Operating Mode",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 124
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 125
+        },
+        {
+          "name": "Protocol Type",
+          "address": 13,
+          "width": 1,
+          "access": "RW",
+          "line": 126
+        },
+        {
+          "name": "Torque Enable",
+          "address": 64,
+          "width": 1,
+          "access": "RW",
+          "line": 143
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 108,
+          "width": 4,
+          "access": "RW",
+          "line": 158
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 112,
+          "width": 4,
+          "access": "RW",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym070-210-a051-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym070-210-a051-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym070-210-a099-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym070-210-a099-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym070-210-b001-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym070-210-b001-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym070-210-m001-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym070-210-m001-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym070-210-r051-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym070-210-r051-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym070-210-r099-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym070-210-r099-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym080-230-a051-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym080-230-a051-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym080-230-a099-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym080-230-a099-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym080-230-b001-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym080-230-b001-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym080-230-m001-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym080-230-m001-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym080-230-r051-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym080-230-r051-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "catalogId": "y_series/ym080-230-r099-rh",
+      "kind": "actuator",
+      "sourcePath": "docusaurus/docs/dxl/model_reference/y_series/ym080-230-r099-rh.mdx",
+      "rows": [
+        {
+          "name": "Model Number",
+          "address": 0,
+          "width": 2,
+          "access": "R",
+          "line": 142
+        },
+        {
+          "name": "Firmware Version",
+          "address": 6,
+          "width": 1,
+          "access": "R",
+          "line": 144
+        },
+        {
+          "name": "ID",
+          "address": 7,
+          "width": 1,
+          "access": "RW",
+          "line": 145
+        },
+        {
+          "name": "Secondary(Shadow) ID",
+          "address": 10,
+          "width": 1,
+          "access": "RW",
+          "line": 147
+        },
+        {
+          "name": "Protocol Type",
+          "address": 11,
+          "width": 1,
+          "access": "RW",
+          "line": 148
+        },
+        {
+          "name": "Baud Rate (Bus)",
+          "address": 12,
+          "width": 1,
+          "access": "RW",
+          "line": 149
+        },
+        {
+          "name": "Drive Mode",
+          "address": 32,
+          "width": 1,
+          "access": "RW",
+          "line": 153
+        },
+        {
+          "name": "Operating Mode",
+          "address": 33,
+          "width": 1,
+          "access": "RW",
+          "line": 154
+        },
+        {
+          "name": "Profile Acceleration",
+          "address": 240,
+          "width": 4,
+          "access": "RW",
+          "line": 198
+        },
+        {
+          "name": "Profile Velocity",
+          "address": 244,
+          "width": 4,
+          "access": "RW",
+          "line": 199
+        },
+        {
+          "name": "Profile Acceleration Time",
+          "address": 248,
+          "width": 4,
+          "access": "RW",
+          "line": 200
+        },
+        {
+          "name": "Profile Time",
+          "address": 252,
+          "width": 4,
+          "access": "RW",
+          "line": 201
+        },
+        {
+          "name": "Torque Enable",
+          "address": 512,
+          "width": 1,
+          "access": "RW",
+          "line": 207
+        },
+        {
+          "name": "LED",
+          "address": 513,
+          "width": 1,
+          "access": "RW",
+          "line": 208
+        }
+      ]
+    }
+  ]
+}

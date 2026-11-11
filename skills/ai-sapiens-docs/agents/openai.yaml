@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Docs"
+  short_description: "Find official manuals and report coverage"
+  default_prompt: "Use $ai-sapiens-docs to answer from the official AI Sapiens manual."

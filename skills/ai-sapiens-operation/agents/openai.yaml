@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Operation"
+  short_description: "Explain RC, telemetry and power procedures"
+  default_prompt: "Use $ai-sapiens-operation to answer from the official AI Sapiens manual."

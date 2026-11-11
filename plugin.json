@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cyclo-ai",
+  "version": "0.2.0",
+  "description": "Software development for DYNAMIXEL actuators and DYNAMIXEL-powered robots, with official-source guidance, model-aware device tools, and robot development workflows.",
+  "keywords": [
+    "dynamixel",
+    "robotis",
+    "robot-software",
+    "ros2",
+    "cyclo",
+    "robotics"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Cyclo AI",
+        "shortDescription": "Build with DYNAMIXEL",
+        "longDescription": "Develop software for DYNAMIXEL actuators and the robots built with them. Compare models using official documentation, inspect and configure supported devices, and prepare ROS 2 integration, teleoperation, and learning workflows. Includes guidance for AI Worker, OMY, OMX, and AI Sapiens. Device access requires a supported local environment; physical robot and training workflows require separate runtime validation.",
+        "capabilities": [],
+        "defaultPrompt": [
+          "Compare DYNAMIXEL actuators for my robot using official specifications",
+          "Help me inspect and configure the DYNAMIXEL actuators connected to my computer",
+          "Help me prepare ROS 2 control, teleoperation, or learning software for my DYNAMIXEL-powered robot"
+        ],
+        "logo": "./assets/CYCLO_Signature_Horiz.svg"
+      },
+      "onboardingSkill": "./skills/cyclo/SKILL.md"
+    }
+  },
+  "author": {
+    "name": "Woojin-Crive, Taehun Lim"
+  },
+  "repository": "https://github.com/ROBOTIS-GIT/cyclo_ai"
+}

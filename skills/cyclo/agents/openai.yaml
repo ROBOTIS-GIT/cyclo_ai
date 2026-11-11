@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cyclo AI"
+  short_description: "Develop software for DYNAMIXEL actuators and robots"
+  default_prompt: "Use $cyclo to help me develop software for DYNAMIXEL actuators and DYNAMIXEL-powered robots using official documentation."

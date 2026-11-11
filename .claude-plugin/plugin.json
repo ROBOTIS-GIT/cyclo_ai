@@ -1,0 +1,18 @@
+{
+  "name": "cyclo-ai",
+  "version": "0.2.0",
+  "description": "Software development for DYNAMIXEL actuators and DYNAMIXEL-powered robots, with official-source guidance, model-aware device tools, and robot development workflows.",
+  "author": {
+    "name": "Woojin-Crive, Taehun Lim"
+  },
+  "repository": "https://github.com/ROBOTIS-GIT/cyclo_ai",
+  "mcpServers": {
+    "cyclo-mcp": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/modules/dynamixel/server.mjs"
+      ],
+      "env": {}
+    }
+  }
+}

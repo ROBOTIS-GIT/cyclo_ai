@@ -1,0 +1,13 @@
+# Portfolio questions beyond the curated subset
+
+The [ROBOTIS Docs navigation](https://docs.robotis.com/docs/systems/aisapiens/introduction/), [software overview](https://docs.robotis.com/docs/software/overview/), [actuator model reference](https://docs.robotis.com/docs/dxl/model_reference/) and [e-Manual](https://emanual.robotis.com/) are discovery roots. Their families include actuators/drives, humanoids, manipulators, hands, mobile robots, controllers/interfaces, education kits and software. The inventory includes navigation from both documentation generations; it is not an exhaustive live sales catalog.
+
+For selection, ask the required payload/DOF/reach or actuator torque-speed-voltage-interface constraints that determine suitability. Retrieve current specifications, power/communication requirements and supported software for the exact variant. Explain which constraints the source establishes and which need application testing. Do not compare stall torque as continuous rated torque or assume TTL and RS-485 variants are interchangeable.
+
+For platform setup, identify robot revision, controller, onboard OS, ROS distribution and documented release. Follow that platform's quickstart and dependencies in a separate workspace. OMY/OMX, OpenMANIPULATOR-X/P, AI Worker, HX5-D20, TurtleBot3, OP3 and THORMANG3 have distinct mechanical and software assumptions. A K1 training or deployment command is not a generic platform command. Preserve a user's established workspace and service setup.
+
+For controllers/accessories (OpenRB, OpenCR, CM boards, U2D2, bridges, shields), retrieve power, pinout, electrical interface and firmware/application compatibility before advising wiring. Do not enumerate the host merely to answer a board question. Firmware flashing is outside the packaged MCP.
+
+For education and older generations (R+, PLAY, DREAM, BIOLOID, OLLO, ENGINEER, legacy OP and MX/AX/RX/DX/EX pages), distinguish the named generation and software/OS requirements. A navigation category or `archived` repository does not prove the product is discontinued. Mark lifecycle unknown unless the current official product notice explicitly establishes it; verify current availability from the official catalog/support when asked.
+
+For unsupported products, return the exact official route, what was actually read, a bounded useful next step and the remaining question. Do not claim execution support because documentation was found. Product-specific procedure expansion needs review and realistic evaluation; executable model expansion additionally needs a curated register map, firmware policy, failure tests and a separately authorized real-device validation.

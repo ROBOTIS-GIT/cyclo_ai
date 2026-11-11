@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Worker"
+  short_description: "Find AI Worker docs and task workflows"
+  default_prompt: "Use $ai-worker to guide my AI Worker task using official sources."
