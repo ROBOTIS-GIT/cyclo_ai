@@ -95,7 +95,7 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run setup -- --dev
       - run: npm run doctor -- --hardware-deps
-      - run: node --test tests/integration.test.mjs
+      - run: node --test tests/integration.test.mjs tests/python-runtime.test.mjs
       - run: npm run package
       - run: npm run package:runtime
       - run: npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip

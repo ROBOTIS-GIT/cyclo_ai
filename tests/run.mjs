@@ -1,5 +1,4 @@
-import { delimiter, dirname, isAbsolute } from 'node:path';
-import { pythonExecutable } from '../modules/dynamixel/python-runtime.mjs';
+import { pythonExecutable, pythonEnvironment } from '../modules/dynamixel/python-runtime.mjs';
 // All device tests use injected providers, fake packet ports or loopback fixtures.
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -9,8 +8,7 @@ const output = new URL('../validation/current/', import.meta.url);
 await mkdir(output, { recursive: true });
 const results = [];
 const python = pythonExecutable();
-const testEnv = { ...process.env, PYTHONDONTWRITEBYTECODE: '1' };
-if (isAbsolute(python)) testEnv.PATH = dirname(python) + delimiter + (testEnv.PATH ?? '');
+const testEnv = pythonEnvironment(python, { ...process.env, PYTHONDONTWRITEBYTECODE: '1' });
 for (const [name, command, args] of [
   [
     'node-regressions',

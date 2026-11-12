@@ -314,6 +314,7 @@
   "tests/manual.test.mjs",
   "tests/products-fixture.mjs",
   "tests/products-integration.test.mjs",
+  "tests/python-runtime.test.mjs",
   "tests/raw-read.test.mjs",
   "tests/read-value.test.mjs",
   "tests/run.mjs",
