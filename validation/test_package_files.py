@@ -59,3 +59,29 @@ class ReleaseFiles(unittest.TestCase):
 
         with patch.object(Path, "read_text", windows_read_text):
             self.assertEqual(check(ROOT)["metadata"], "passed")
+
+    def test_source_archive_is_reproducible_and_excludes_local_environment(self):
+        import hashlib
+        import os
+        import tempfile
+        import zipfile
+        from unittest.mock import patch
+        from package_release import build
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "plugin.json").write_text(json.dumps({"version": "0.0.0"}))
+            (root / "release-files.json").write_text(
+                json.dumps(["plugin.json", "release-files.json"])
+            )
+            (root / ".venv").mkdir()
+            (root / ".venv" / "private.txt").write_text("local-only")
+            with patch("package_release.check"):
+                archive = build(root)
+                first = hashlib.sha256(archive.read_bytes()).hexdigest()
+                os.utime(root / "plugin.json", (1234567890, 1234567890))
+                self.assertEqual(hashlib.sha256(build(root).read_bytes()).hexdigest(), first)
+            with zipfile.ZipFile(archive) as z:
+                self.assertEqual(
+                    z.namelist(), ["cyclo-ai/plugin.json", "cyclo-ai/release-files.json"]
+                )

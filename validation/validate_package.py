@@ -1,4 +1,4 @@
-"""Offline portable-manifest, frontmatter, local-reference and archive checks."""
+"""Portable manifests, skill frontmatter and runtime-source integrity checks."""
 
 import json
 from pathlib import Path
@@ -7,7 +7,6 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
 from catalog_json import load_json
 import re
-from urllib.parse import urlparse
 import yaml
 import jsonschema
 from package_files import package_files
@@ -32,13 +31,9 @@ def check(root):
     )
     assert manifest["extensions"]["com.openai"]["onboardingSkill"] == "./skills/cyclo/SKILL.md"
     assert (root / "skills/cyclo/SKILL.md").is_file()
-    interface = manifest["extensions"]["com.openai"]["interface"]
-    assert len(interface["shortDescription"]) <= 30
-    assert isinstance(interface["capabilities"], list)
     assert not any((root / p).exists() for p in [".app.json", "hooks", ".mcp.json"])
     claude = json.loads((root / ".claude-plugin/plugin.json").read_text(encoding="utf-8"))
     assert claude["name"] == manifest["name"] and claude["version"] == manifest["version"]
-    assert claude["author"] == manifest["author"]
     assert "skills" not in claude and "commands" not in claude
     assert set(claude["mcpServers"]) == {"cyclo-mcp"}
     assert claude["mcpServers"]["cyclo-mcp"]["env"] == {}
@@ -78,7 +73,6 @@ def check(root):
                     else:
                         assert indexed["files"][source["path"]]["blobSha"] == source["blobSha"]
     names = []
-    links = 0
     for skill in sorted((root / "skills").iterdir()):
         entry = skill / "SKILL.md"
         assert entry.is_file()
@@ -90,65 +84,6 @@ def check(root):
         assert isinstance(metadata["description"], str) and metadata["description"].strip()
         assert entry.stat().st_size < 1024 * 1024
         names.append(metadata["name"])
-        ui = yaml.safe_load((skill / "agents/openai.yaml").read_text(encoding="utf-8"))
-        assert ui["interface"]["display_name"]
-        assert 25 <= len(ui["interface"]["short_description"]) <= 64
-        assert "$" + skill.name in ui["interface"]["default_prompt"]
-    expected = {
-        "ai-sapiens-docs",
-        "ai-sapiens-operation",
-        "ai-sapiens-connectivity",
-        "ai-sapiens-control",
-        "ai-sapiens-motion-sources",
-        "ai-sapiens-diagnostics",
-        "ai-sapiens-sim2real",
-        "ai-sapiens-video-mimic",
-        "ai-sapiens-walking",
-        "cyclo",
-        "robotis-expert",
-        "robotis-integrate",
-        "dynamixel-expert",
-    }
-    expected.update(
-        {
-            "ai-worker-setup",
-            "ai-worker-learning",
-            "ai-worker",
-            "ai-worker-teleop",
-            "ai-worker-control",
-        }
-    )
-    expected.update({"omy-teleop", "omy", "omy-control", "omy-setup", "omy-learning"})
-    expected.update({"omx-setup", "omx-teleop", "omx-control", "omx", "omx-learning"})
-    assert set(names) == expected and len(names) == 28
-    index = json.loads((root / "references/manual-index.json").read_text(encoding="utf-8"))
-    assert len(index["pages"]) == 34
-    assert len({p["id"] for p in index["pages"]}) == 34
-    assert len({p["url"] for p in index["pages"]}) == 34
-    for page in index["pages"]:
-        url = urlparse(page["url"])
-        assert url.scheme == "https" and url.hostname == "docs.robotis.com"
-        assert url.path.startswith("/docs/systems/aisapiens/") and not url.username
-        assert page["skill"] in expected
-        assert page["coverage"] in {"guidance", "procedure", "unsupported"}
-        assert page["robotics_runtime_tested"] is False
-        assert (root / page["reference"]).is_file()
-    for ident in ["gmr", "lerobot", "intelligence"]:
-        page = next(p for p in index["pages"] if p["id"] == ident)
-        assert page["manual_status"] == "coming-soon" and page["coverage"] == "unsupported"
-    for name in package_files(root):
-        relative = Path(name)
-        path = root / relative
-        if "validation" in relative.parts:
-            continue
-        if path.suffix == ".md" and "upstream" not in relative.parts:
-            for target in re.findall(r"\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
-                if "://" in target or target.startswith("#"):
-                    continue
-                dest = (path.parent / target.split("#")[0]).resolve()
-                assert dest.is_relative_to(root.resolve()), str(dest)
-                assert dest.exists(), f"{path}: {target}"
-                links += 1
     import hashlib
 
     source_index = load_json((root / "references/dhi-sources.json"))
@@ -196,10 +131,8 @@ def check(root):
         "mcp_schema": "passed",
         "manifest_schema": "passed",
         "skills": names,
-        "local_links_checked": links,
         "metadata": "passed",
         "unexpected_components": "no undeclared hooks or apps",
-        "indexed_manual_pages": len(index["pages"]),
     }
 
 

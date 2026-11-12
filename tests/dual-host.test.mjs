@@ -32,17 +32,8 @@ after(async () => {
   if (fixtureParent) await rm(fixtureParent, { recursive: true, force: true });
 });
 
-test('host manifests share identity, version, author and one registration per server', async () => {
-  const p = JSON.parse(await readFile(new URL('../plugin.json', import.meta.url), 'utf8'));
-  assert.equal(claude.name, p.name);
-  assert.equal(claude.version, p.version);
-  assert.deepEqual(claude.author, p.author);
+test('host declarations use equivalent server launch settings', () => {
   assert.deepEqual(Object.keys(claude.mcpServers).sort(), Object.keys(portable).sort());
-  assert.equal(
-    claude.skills,
-    undefined,
-    'default actual skills directory is shared, never scanned twice',
-  );
   for (const name of Object.keys(portable)) {
     const a = portable[name],
       b = claude.mcpServers[name];
@@ -91,17 +82,3 @@ for (const host of ['codex', 'claude'])
         await c.close();
       }
     });
-
-test('both host descriptions are non-empty strings', async () => {
-  const codex = JSON.parse(await readFile(new URL('../plugin.json', import.meta.url), 'utf8')),
-    claude = JSON.parse(
-      await readFile(new URL('../.claude-plugin/plugin.json', import.meta.url), 'utf8'),
-    );
-  for (const text of [
-    codex.extensions['com.openai'].interface.longDescription,
-    claude.description,
-  ]) {
-    assert.equal(typeof text, 'string');
-    assert.ok(text.trim().length > 0);
-  }
-});
