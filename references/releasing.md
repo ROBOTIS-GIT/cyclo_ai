@@ -10,6 +10,42 @@ From a clean checkout, install dependencies, run the CI commands, review `releas
 
 Bump `plugin.json`, `.claude-plugin/plugin.json`, `package.json`, `package-lock.json`, the MCP server version and generated catalog version fields together. Update the changelog and rerun manifest/version checks. Release publication and shared-history changes are separate maintainer actions from pushing a feature branch.
 
+## GitHub Release from main to release
+
+The Release workflow calls
+`ROBOTIS-GIT/github_workflows/.github/workflows/release.yml@main` for pull requests
+targeting `release`. Same-repository `main` to `release` PRs must be titled exactly
+`Bump X.Y.Z` and have release notes in their description. The version must exceed
+the latest published release and have no existing tag or release. Other branch
+pairs and fork PRs do not publish a release.
+
+Opening or updating the PR validates these requirements. Merging it validates
+again and creates the `X.Y.Z` tag and GitHub Release at the PR's merge commit,
+using the PR description as release notes. Closing an unmerged PR does not
+publish. The shared workflow uses the calling repository's GITHUB_TOKEN and needs
+Contents write permission; no personal token is required. Ensure the shared
+workflow is accessible to this repository and install the caller on the release
+branch before relying on its PR checks. Keep package versions and CHANGELOG.md in
+sync with the PR's version. An existing `0.2.0` tag cannot be published again by
+this workflow.
+
+## Discord release notification
+
+After the shared release job publishes successfully, the `discord-notify` job
+calls `ROBOTIS-GIT/github_workflows/.github/workflows/discord-notify.yml@main`
+with the published version. Configure `DISCORD_WEBHOOK_URL` as a repository
+secret, or an organization secret available to this repository, for the target
+Discord channel. The URL is passed explicitly to the reusable workflow.
+
+The notification includes the release name, notes and GitHub Release link.
+PR validation, unmerged PR closure, skipped releases and failed publication do
+not send a notification. This job is chained through the release workflow's
+outputs because releases created with GITHUB_TOKEN do not trigger a separate
+release-event workflow. An alert failure fails the notification job without
+removing the published release. Re-running a notification can send another
+message, so check the channel before retrying. No live notification is sent
+while editing or validating this caller.
+
 ## GitHub Actions artifacts
 
 Use the Offline plugin checks workflow to produce distribution packages. It runs
