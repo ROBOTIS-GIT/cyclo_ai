@@ -7,6 +7,9 @@ Mechanical limits must be supplied; this is not a product-calibrated robot model
 import argparse, json, math, re
 from pathlib import Path
 from xml.etree import ElementTree as ET
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel/python-vendor"))
 import yaml
 
 DHI_REV = "6bb5f93ecad1fe3c231e3ece580344e8f0a6efc3"
@@ -84,7 +87,9 @@ def generate(spec, out):
             initial=str((j["lower"] + j["upper"]) / 2),
         )
     ET.indent(robot)
-    (out / "mock_arm.urdf.xacro").write_text(ET.tostring(robot, encoding="unicode") + "\n")
+    (out / "mock_arm.urdf.xacro").write_text(
+        ET.tostring(robot, encoding="unicode") + "\n", encoding="utf-8"
+    )
     controllers = {
         "controller_manager": {
             "ros__parameters": {
@@ -99,7 +104,9 @@ def generate(spec, out):
         },
         "forward_position_controller": {"ros__parameters": {"joints": [j["name"] for j in joints]}},
     }
-    (out / "controllers.yaml").write_text(yaml.safe_dump(controllers, sort_keys=False))
+    (out / "controllers.yaml").write_text(
+        yaml.safe_dump(controllers, sort_keys=False), encoding="utf-8"
+    )
     launch = """# Mock-only: no real hardware branch or serial parameter is accepted.
 from pathlib import Path
 import xacro
@@ -116,7 +123,7 @@ def generate_launch_description():
         Node(package="controller_manager", executable="spawner", arguments=["forward_position_controller", "--inactive", "--param-file", str(root / "controllers.yaml"), "--controller-manager", "/controller_manager", "--controller-manager-timeout", "10"]),
     ])
 """
-    (out / "mock_bringup.launch.py").write_text(launch)
+    (out / "mock_bringup.launch.py").write_text(launch, encoding="utf-8")
     plan = {
         "status": "review-required; not executable hardware configuration",
         "rosDistro": "jazzy",
@@ -132,7 +139,7 @@ def generate_launch_description():
         ],
         "runtimeTested": False,
     }
-    (out / "dhi-review.json").write_text(json.dumps(plan, indent=2) + "\n")
+    (out / "dhi-review.json").write_text(json.dumps(plan, indent=2) + "\n", encoding="utf-8")
     return {
         "output": str(out),
         "files": sorted(p.name for p in out.iterdir()),
@@ -147,6 +154,10 @@ if __name__ == "__main__":
     p.add_argument("output")
     a = p.parse_args()
     try:
-        print(json.dumps(generate(json.loads(Path(a.spec).read_text()), a.output), indent=2))
+        print(
+            json.dumps(
+                generate(json.loads(Path(a.spec).read_text(encoding="utf-8")), a.output), indent=2
+            )
+        )
     except (ValueError, KeyError, TypeError) as error:
         p.error(str(error))

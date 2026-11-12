@@ -7,6 +7,10 @@ Writes require source-bound semantic rules. Unsupported rows remain visible.
 
 import argparse, hashlib, json, re
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import write_catalog
 from compile_control_tables import plain, number
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,8 +53,8 @@ def rows(text):
 
 
 def compile_items(cache):
-    idx = json.loads((ROOT / "references/dynamixel-docs.json").read_text())
-    catalog = json.loads((ROOT / "references/control-tables.json").read_text())
+    idx = json.loads((ROOT / "references/dynamixel-docs.json").read_text(encoding="utf-8"))
+    catalog = json.loads((ROOT / "references/control-tables.json").read_text(encoding="utf-8"))
     models = []
 
     def source(path):
@@ -316,7 +320,7 @@ def compile_items(cache):
     entries = [i for m in models for i in m["items"]]
     return {
         "schemaVersion": 1,
-        "version": json.loads((ROOT / "plugin.json").read_text())["version"],
+        "version": json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))["version"],
         "revision": idx["revision"],
         "models": models,
         "summary": {
@@ -348,9 +352,9 @@ if __name__ == "__main__":
 
     result = enrich(
         result,
-        json.loads((ROOT / "references/control-tables.json").read_text()),
-        json.loads((ROOT / "references/dynamixel-docs.json").read_text()),
+        json.loads((ROOT / "references/control-tables.json").read_text(encoding="utf-8")),
+        json.loads((ROOT / "references/dynamixel-docs.json").read_text(encoding="utf-8")),
         args.source_cache,
     )
-    args.output.write_text(json.dumps(result, indent=2) + "\n")
+    write_catalog(args.output, result)
     print(json.dumps(result["summary"]))

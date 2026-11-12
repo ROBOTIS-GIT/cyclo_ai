@@ -18,10 +18,13 @@
     "format": "prettier --write \"modules/**/*.mjs\" \"scripts/*.mjs\" \"tests/**/*.mjs\"",
     "format:check": "prettier --check \"modules/**/*.mjs\" \"scripts/*.mjs\" \"tests/**/*.mjs\"",
     "format:python": "node scripts/python.mjs -m ruff format modules scripts validation",
-    "format:python:check": "node scripts/python.mjs -m ruff format --check modules scripts validation"
+    "format:python:check": "node scripts/python.mjs -m ruff format --check modules scripts validation",
+    "package:runtime": "node scripts/python.mjs validation/package_runtime.py",
+    "verify:runtime": "node scripts/python.mjs validation/verify_runtime.py"
   },
   "devDependencies": {
     "@modelcontextprotocol/client": "2.3.1",
+    "esbuild": "0.28.2",
     "prettier": "3.6.2"
   },
   "dependencies": {

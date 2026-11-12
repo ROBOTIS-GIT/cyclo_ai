@@ -13,7 +13,7 @@ References to a Skill by name or relative file link in shared instructions mean 
 
 ## Local Claude Code session
 
-Prepare local Node dependencies as in [first use](first-run.md). Inspect installed CLI version/help before relying on these documented commands; command availability varies by version:
+Use the install ZIP with bundled libraries, or prepare source dependencies as in [first use](first-run.md). Inspect installed CLI version/help before relying on these documented commands; command availability varies by version:
 
 ```sh
 claude --version
@@ -42,6 +42,15 @@ codex plugin add cyclo-ai@cyclo-local --json
 codex plugin list --marketplace cyclo-local --json
 ```
 
-Prepare the local Node dependencies before installation and verify the installed server runtime resolves them. Back up affected Codex configuration before changing registration; preserve unrelated plugins, MCP servers, skills, authentication and security settings. Do not hand-edit the host cache. Do not delete unrelated settings or stop active sessions. Do not carry forward obsolete package-supplied disable flags when applying the default-enabled release; preserve separately configured operator restrictions and any user-selected offline opt-out.
+Use the install ZIP, or prepare the local Node dependencies before source installation. Verify the installed server runtime resolves its libraries. The install ZIP resolves Python libraries relative to the packaged bridge, so copying it to a host cache does not require an external virtual environment. Back up affected Codex configuration before changing registration; preserve unrelated plugins, MCP servers, skills, authentication and security settings. Do not hand-edit the host cache. Do not delete unrelated settings or stop active sessions. Do not carry forward obsolete package-supplied disable flags when applying the default-enabled release; preserve separately configured operator restrictions and any user-selected offline opt-out.
 
 Restart/reload the host only at a user-safe boundary; a fresh short verification process can read the normal user profile without replacing the active conversation. Report configuration, installed inventory, Skill discovery, MCP readiness and actual documentation-only invocation as separate evidence. An authentication failure is a boundary, not permission to create/copy credentials or change auth. No installation grants physical device access.
+
+## Claude directory distribution
+
+Maintainers publish the runnable package to `claude-dist` using the manual
+Publish Claude distribution workflow. The official directory submission must
+track that branch and the repository root, so repository installs receive the
+bundled libraries. The default `main` checkout is source and still requires the
+source setup steps above. See [release preparation](releasing.md#claude-repository-distribution)
+for signing configuration and publication details.

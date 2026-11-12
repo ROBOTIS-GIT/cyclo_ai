@@ -36,15 +36,17 @@ def verify(archive):
         evidence = {
             "archive": archive.name,
             "sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
-            "version": json.loads((source / "plugin.json").read_text())["version"],
+            "version": json.loads((source / "plugin.json").read_text(encoding="utf-8"))["version"],
             "exitCode": result.returncode,
             "log": result.stdout + result.stderr,
             "scope": "full offline suite from extracted bytes; reused local lockfile-installed Node dependencies; Xacro import path/environment supplied by caller; no installed-host or hardware claim",
-            "suites": json.loads((source / "validation/current/test-results.json").read_text()),
+            "suites": json.loads(
+                (source / "validation/current/test-results.json").read_text(encoding="utf-8")
+            ),
         }
     out = ROOT / "artifacts/extracted-test-results.json"
     out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps(evidence, indent=2) + "\n")
+    out.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: v for k, v in evidence.items() if k not in ["suites", "log"]}, indent=2))
     if result.returncode:
         raise SystemExit(result.returncode)

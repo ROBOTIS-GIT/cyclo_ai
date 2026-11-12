@@ -154,7 +154,7 @@ def main():
         firmwares=a.firmware,
         protocol=a.protocol,
         bauds=json.loads(a.bauds),
-        review=json.loads(a.review.read_text()) if a.review else {},
+        review=json.loads(a.review.read_text(encoding="utf-8")) if a.review else {},
     )
     # Exclusive create: never overwrite an existing customer contract.
     with a.output.open("x") as f:

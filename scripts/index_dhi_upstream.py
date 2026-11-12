@@ -5,6 +5,10 @@ No build or ROS execution. These snapshots do not resolve a user's binary ABI.
 
 import argparse, json
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import load_json, write_catalog
 from index_dhi_sources import git, metadata, ROOT
 
 PINS = {
@@ -70,8 +74,8 @@ if __name__ == "__main__":
     ap.add_argument("--checkout-prefix", required=True)
     a = ap.parse_args()
     p = ROOT / "references/dhi-sources.json"
-    d = build(a.checkout_prefix, json.loads(p.read_text()))
-    p.write_text(json.dumps(d, separators=(",", ":")) + "\n")
+    d = build(a.checkout_prefix, load_json(p))
+    write_catalog(p, d)
     print(
         json.dumps(
             {n: {k: len(v["files"]) for k, v in d["packages"][n]["profiles"].items()} for n in PINS}

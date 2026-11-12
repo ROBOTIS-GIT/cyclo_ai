@@ -94,7 +94,7 @@ def tables(text):
 
 
 def build(checkout):
-    idx = json.loads((ROOT / "references/dynamixel-docs.json").read_text())
+    idx = json.loads((ROOT / "references/dynamixel-docs.json").read_text(encoding="utf-8"))
     files = idx["files"]
     models = []
 
@@ -419,7 +419,7 @@ def build(checkout):
         )
     return {
         "schemaVersion": 1,
-        "version": json.loads((ROOT / "plugin.json").read_text())["version"],
+        "version": json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))["version"],
         "revision": idx["revision"],
         "sourceProvenance": idx["sourceProvenance"],
         "compiler": "scripts/compile_control_tables.py",
@@ -438,5 +438,5 @@ if __name__ == "__main__":
     p.add_argument("--output", type=Path, default=ROOT / "references/control-tables.json")
     a = p.parse_args()
     out = build(a.checkout)
-    a.output.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    a.output.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(out["summary"]))

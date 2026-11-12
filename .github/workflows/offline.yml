@@ -44,6 +44,33 @@ jobs:
         run: .venv/bin/python validation/verify_archive.py artifacts/cyclo-ai-0.2.0.zip
         env:
           CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
+      - name: Build install archive with pinned runtime libraries
+        run: npm run package:runtime
+      - name: Verify install archive without dependency installation
+        run: npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip
+      - name: Record release archive checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          directory = Path('artifacts')
+          archives = sorted(directory.glob('cyclo-ai-*.zip'))
+          assert len(archives) == 2, 'Expected source and install ZIPs'
+          checksums = ''.join(f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}\n' for path in archives)
+          (directory / 'SHA256SUMS').write_bytes(checksums.encode('utf-8'))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cyclo-ai-packages-${{ matrix.os }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            artifacts/cyclo-ai-0.2.0.zip
+            artifacts/cyclo-ai-0.2.0-install.zip
+            artifacts/SHA256SUMS
+            artifacts/package-result.json
+            artifacts/extracted-test-results.json
+            artifacts/runtime-package-result.json
+            artifacts/runtime-test-results.json
       - name: Print failed test details
         if: failure()
         run: |
@@ -66,6 +93,31 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npm run setup
+      - run: npm run setup -- --dev
       - run: npm run doctor -- --hardware-deps
       - run: node --test tests/integration.test.mjs
+      - run: npm run package
+      - run: npm run package:runtime
+      - run: npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip
+      - name: Record release archive checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          directory = Path('artifacts')
+          archives = sorted(directory.glob('cyclo-ai-*.zip'))
+          assert len(archives) == 2, 'Expected source and install ZIPs'
+          checksums = ''.join(f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}\n' for path in archives)
+          (directory / 'SHA256SUMS').write_bytes(checksums.encode('utf-8'))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cyclo-ai-packages-windows
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            artifacts/cyclo-ai-0.2.0.zip
+            artifacts/cyclo-ai-0.2.0-install.zip
+            artifacts/SHA256SUMS
+            artifacts/package-result.json
+            artifacts/runtime-package-result.json
+            artifacts/runtime-test-results.json

@@ -1,3 +1,8 @@
+# Preserve source, shard and vendored SDK hashes across platform checkouts.
+* text=auto eol=lf
+
 references/control-items.json linguist-generated=true
 references/dhi-sources.json linguist-generated=true
 references/dhi-products.json linguist-generated=true
+references/control-items/*.json linguist-generated=true
+references/dhi-sources/*.json linguist-generated=true

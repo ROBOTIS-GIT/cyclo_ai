@@ -1,0 +1,69 @@
+name: Publish Claude distribution
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: claude-dist
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      contents: write
+    env:
+      GNUPGHOME: ${{ runner.temp }}/cyclo-release-gpg
+      RELEASE_GPG_PROGRAM: ${{ runner.temp }}/cyclo-gpg-sign
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Require successful offline checks for this source commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          passed=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/offline.yml/runs?head_sha=$GITHUB_SHA&event=push&status=completed" --jq '.workflow_runs | any(.conclusion == "success")')
+          test "$passed" = true || { echo 'Run Offline plugin checks successfully on this source commit first.'; exit 1; }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run setup -- --dev
+      - run: npm run package:runtime
+      - run: npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip
+      - name: Prepare the repository installation tree
+        run: |
+          node scripts/python.mjs validation/prepare_distribution.py artifacts/cyclo-ai-0.2.0-install.zip "$RUNNER_TEMP/claude-package" --source-commit "$GITHUB_SHA"
+          npm run verify:runtime -- "$RUNNER_TEMP/claude-package/cyclo-ai"
+      - name: Sign and publish the distribution branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_GIT_NAME: ${{ vars.RELEASE_GIT_NAME }}
+          RELEASE_GIT_EMAIL: ${{ vars.RELEASE_GIT_EMAIL }}
+          RELEASE_GITHUB_LOGIN: ${{ vars.RELEASE_GITHUB_LOGIN }}
+          RELEASE_GPG_FINGERPRINT: ${{ vars.RELEASE_GPG_FINGERPRINT }}
+          RELEASE_GPG_PRIVATE_KEY: ${{ secrets.RELEASE_GPG_PRIVATE_KEY }}
+          RELEASE_GPG_PASSPHRASE: ${{ secrets.RELEASE_GPG_PASSPHRASE }}
+        run: |
+          test -n "$RELEASE_GPG_PRIVATE_KEY" || { echo 'Configure the registered release signing key first; no unsigned publishing.'; exit 1; }
+          install -d -m 700 "$GNUPGHOME"
+          printf '%s' "$RELEASE_GPG_PRIVATE_KEY" | gpg --batch --import
+          cat > "$RELEASE_GPG_PROGRAM" <<'SIGNER'
+          #!/usr/bin/env bash
+          exec gpg --batch --pinentry-mode loopback --passphrase-fd 3 "$@" 3<<<"${RELEASE_GPG_PASSPHRASE:-}"
+          SIGNER
+          chmod 700 "$RELEASE_GPG_PROGRAM"
+          gh auth setup-git
+          python scripts/publish-claude.py "$RUNNER_TEMP/claude-package/cyclo-ai"
+      - name: Remove temporary signing material
+        if: always()
+        run: |
+          gpgconf --kill gpg-agent || true
+          rm -rf -- "$GNUPGHOME" "$RELEASE_GPG_PROGRAM"

@@ -24,7 +24,7 @@ def build(root=ROOT):
     root = Path(root).resolve()
     check(root)
     files = package_files(root)
-    version = json.loads((root / "plugin.json").read_text())["version"]
+    version = json.loads((root / "plugin.json").read_text(encoding="utf-8"))["version"]
     out = root / "artifacts" / f"cyclo-ai-{version}.zip"
     out.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -51,7 +51,9 @@ def build(root=ROOT):
         "extracted_schema_reference_and_source_hash_checks": "passed",
         "byte_comparison": "passed",
     }
-    (root / "artifacts/package-result.json").write_text(json.dumps(result, indent=2) + "\n")
+    (root / "artifacts/package-result.json").write_text(
+        json.dumps(result, indent=2) + "\n", encoding="utf-8"
+    )
     print(json.dumps(result, indent=2))
     return out
 

@@ -2,8 +2,107 @@
 
 First-party source is Apache-2.0. Vendored SDK licensing and pinned hashes are recorded in THIRD_PARTY_NOTICES.md. Local customer control tables are excluded from the distribution.
 
-Before publishing this repository's full Git history, resolve the historical private firmware content: earlier commits still contain files removed from the current tree. This refactor does not rewrite shared history. Maintainers must either authorize a coordinated history cleanup or publish an approved clean source repository. The source ZIP contains only the current reviewed release manifest.
+Before changing repository visibility, review the current source and reachable
+history for private content. The install and source ZIPs use the reviewed release
+inventory and exclude customer files, local environments and credentials.
 
 From a clean checkout, install dependencies, run the CI commands, review `release-files.json`, build the ZIP and test its extracted contents. Record the commit, archive SHA256 and validation results. Publish supported OS/runtime versions and the physical hardware combinations actually exercised. A passing packet fixture is not a physical-device test.
 
 Bump `plugin.json`, `.claude-plugin/plugin.json`, `package.json`, `package-lock.json`, the MCP server version and generated catalog version fields together. Update the changelog and rerun manifest/version checks. Release publication and shared-history changes are separate maintainer actions from pushing a feature branch.
+
+## GitHub Actions artifacts
+
+Use the Offline plugin checks workflow to produce distribution packages. It runs
+on pushes, pull requests and manual workflow dispatch. Each successful Linux,
+macOS or Windows job builds the source and install ZIPs, verifies the install
+package, generates SHA256SUMS, and uploads the archives and validation evidence
+as a `cyclo-ai-packages-<runner>` artifact with 30-day retention. Linux and macOS
+also run the full offline suite from the extracted source ZIP.
+
+Download the artifact from the workflow run's Artifacts section. No separate
+server or deployment credentials are needed. Keep local artifacts/ ignored;
+local package commands are for reproducing and debugging CI builds. OpenAI
+submission uses the verified install ZIP downloaded from the successful run.
+Claude repository submission uses the generated distribution branch described below.
+
+## Install ZIP
+
+From a clean checkout, run `npm ci --ignore-scripts` and `npm run setup -- --dev`.
+Run the offline tests, then build and verify the install archive:
+
+```sh
+npm run package:runtime
+npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip
+```
+
+Packaging downloads only the pinned pyserial and PyYAML source archives from
+PyPI, verifies their SHA256 hashes before reading them, and never executes their
+setup scripts. It bundles the production JavaScript dependency facade with the
+lockfile-pinned esbuild. The install ZIP requires Node >=22 and Python >=3.9 but
+needs no npm/pip installation after extraction. No interpreter, virtual environment,
+node_modules, native build executable or development-only library is bundled.
+
+The verifier extracts to a temporary path containing spaces, checks every file
+against runtime-files.json, imports Python libraries and the official SDK with
+site packages disabled, runs dependency diagnostics and exercises both host MCP
+configurations from an unrelated working directory. It does not access devices or
+register a plugin in a user's host. The external test harness needs development
+Node dependencies; the installed server does not.
+
+Publish the ZIP with the SHA256 from artifacts/runtime-package-result.json and
+retain artifacts/runtime-test-results.json as validation evidence. Repeat the
+build with identical inputs to confirm reproducibility. CI runs the same checks
+on Linux, macOS and Windows; only platforms with passing results are validated.
+
+The install ZIP enforces fewer than 513 files, individual files below 5 MiB and
+unpacked bytes below 256 MiB. Several source catalogs and the JavaScript bundle
+exceed Claude's 256 KiB automatic-review threshold and can require reviewer
+inspection; these checks do not establish marketplace approval.
+
+## Catalog storage
+
+control-items.json references one SHA256-verified JSON shard per model;
+dhi-sources.json references one per package. The JavaScript and Python catalog
+loaders reconstruct their logical values. Offline index generators use
+write_catalog to keep that layout. Include each referenced shard in
+release-files.json, and preserve hashes and original source provenance.
+
+## Claude repository distribution
+
+Claude's directory reads the selected GitHub branch, rather than downloading an
+Actions artifact. Submit the generated `claude-dist` branch, not the source-only
+`main` branch: the distribution includes the bundled MCP facade, Python libraries
+and their licenses. In the directory portal use repository
+`ROBOTIS-GIT/cyclo_ai`, branch `claude-dist`, and the repository root as the plugin
+path. The branch also contains `.claude-plugin/marketplace.json` for repository
+marketplace clients. Do not edit that branch by hand.
+
+The manual **Publish Claude distribution** workflow creates or updates this
+branch. Run **Offline plugin checks** successfully on the same `main` commit
+first. The publisher builds the install ZIP and verifies both the ZIP and the
+prepared repository directory without npm/pip installs. It removes CI workflows
+from the generated branch, records the exact source commit in distribution.json,
+and updates the full file-integrity inventory. An existing distribution branch
+must have matching provenance; changed source requires a version bump.
+
+Configure these repository variables using the maintainer's Git identity:
+
+- `RELEASE_GIT_NAME` and `RELEASE_GIT_EMAIL`: the configured commit identity.
+- `RELEASE_GITHUB_LOGIN`: the GitHub account with the registered signing key and
+  verified commit email.
+- `RELEASE_GPG_FINGERPRINT`: the registered key's full fingerprint.
+
+Configure `RELEASE_GPG_PRIVATE_KEY` and, if needed,
+`RELEASE_GPG_PASSPHRASE` as Actions secrets through the repository's authorized
+secret-management process. Local development does not upload or export a key.
+The workflow imports signing material only into its temporary runner GPG home
+and removes it at completion. It cannot publish without a usable registered key.
+
+Publishing uses `git commit -s -S`, validates the DCO trailer and local signature,
+checks the signing key and verified email against the configured GitHub account,
+then performs a normal push to `claude-dist` and checks GitHub's signature status.
+It never force-pushes or modifies `main`. The repository's Actions token needs
+Contents write permission for this manual job, and branch rules must permit the
+signed distribution update. Missing access or signing configuration fails the
+job; there is no unsigned fallback. Creating this workflow does not publish the
+branch or submit the plugin to a directory.

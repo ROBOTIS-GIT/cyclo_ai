@@ -1,0 +1,20 @@
+{
+  "pyserial": {
+    "version": "3.5",
+    "url": "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz",
+    "sha256": "3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb",
+    "license": "BSD-3-Clause",
+    "package": "serial",
+    "archive": "tar.gz",
+    "sourcePrefix": "pyserial-3.5/serial/"
+  },
+  "PyYAML": {
+    "version": "6.0.3",
+    "url": "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz",
+    "sha256": "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f",
+    "license": "MIT",
+    "package": "yaml",
+    "archive": "tar.gz",
+    "sourcePrefix": "pyyaml-6.0.3/lib/yaml/"
+  }
+}

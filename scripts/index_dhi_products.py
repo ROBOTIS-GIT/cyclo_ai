@@ -6,7 +6,13 @@ are discovery evidence, not an evaluated launch or proof of installed versions.
 
 import argparse, ast, json, re
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import load_json, write_catalog
 from xml.etree import ElementTree as ET
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel/python-vendor"))
 import yaml
 from index_dhi_sources import git, metadata, ROOT
 from inspect_ros2_control import controller_blocks
@@ -216,7 +222,9 @@ def build(prefix, index):
             ],
             "candidateStatus": "Not promoted to verified product integration without inspecting exact plugin/config/branch; legacy workbench dependencies do not imply DHI",
             "privateSources": "No private source content accessed; only public-repository matches retained",
-            "manifestSearch": json.loads((ROOT / "references/dhi-discovery.json").read_text()),
+            "manifestSearch": json.loads(
+                (ROOT / "references/dhi-discovery.json").read_text(encoding="utf-8")
+            ),
         },
         "manuals": [
             {
@@ -237,12 +245,12 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--checkout-prefix", required=True)
     a = ap.parse_args()
-    index = json.loads((ROOT / "references/dhi-sources.json").read_text())
+    index = load_json((ROOT / "references/dhi-sources.json"))
     out = build(a.checkout_prefix, index)
-    (ROOT / "references/dhi-sources.json").write_text(
-        json.dumps(index, separators=(",", ":")) + "\n"
+    write_catalog(ROOT / "references/dhi-sources.json", index)
+    (ROOT / "references/dhi-products.json").write_text(
+        json.dumps(out, indent=2) + "\n", encoding="utf-8"
     )
-    (ROOT / "references/dhi-products.json").write_text(json.dumps(out, indent=2) + "\n")
     print(
         json.dumps(
             {

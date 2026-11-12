@@ -125,12 +125,14 @@ def expand_slots(model):
 
 def enrich(inventory, catalog, index, cache):
     src = Sources(cache, index)
-    legacy = json.loads((ROOT / "references/control-item-facts.json").read_text())
+    legacy = json.loads((ROOT / "references/control-item-facts.json").read_text(encoding="utf-8"))
     facts = legacy["shared"]
     inline = legacy["inline"]
     stats = {}
     expanded = 0
-    supplements = json.loads((ROOT / "references/control-source-supplements.json").read_text())
+    supplements = json.loads(
+        (ROOT / "references/control-source-supplements.json").read_text(encoding="utf-8")
+    )
     for proof in supplements["sources"]:
         import hashlib
 

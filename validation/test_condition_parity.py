@@ -2,12 +2,16 @@
 
 import importlib.util, json, sys, unittest
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import load_json
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "modules/dynamixel"))
 from table_conditions import scalar, live
 
-INVENTORY = json.loads((ROOT / "references/control-items.json").read_text())
+INVENTORY = load_json((ROOT / "references/control-items.json"))
 
 
 class Conditions(unittest.TestCase):

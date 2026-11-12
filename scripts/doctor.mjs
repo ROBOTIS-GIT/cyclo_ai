@@ -1,6 +1,6 @@
 // Dependency diagnostics only: never enumerate/open ports or contact a robot.
 import { spawnSync } from 'node:child_process';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 import { pythonExecutable } from '../modules/dynamixel/python-runtime.mjs';
 
 export async function diagnose({ env = process.env, hardwareDeps = false } = {}) {
@@ -11,21 +11,18 @@ export async function diagnose({ env = process.env, hardwareDeps = false } = {})
       detail: process.version,
     },
   ];
-  for (const name of ['@modelcontextprotocol/server', 'zod/v4']) {
-    try {
-      await import(name);
-      checks.push({ name, ok: true });
-    } catch {
-      checks.push({
-        name,
-        ok: false,
-        remedy: 'Run npm ci --ignore-scripts in the plugin directory.',
-      });
-    }
+  try {
+    await import('../modules/dynamixel/runtime-deps.mjs');
+    checks.push({ name: 'MCP runtime libraries', ok: true });
+  } catch {
+    checks.push({
+      name: 'MCP runtime libraries',
+      ok: false,
+      remedy: 'Use the install ZIP, or run npm ci --ignore-scripts in a source checkout.',
+    });
   }
   const python = pythonExecutable(env);
-  const code =
-    'import sys,json,importlib.util; print(json.dumps({"version":list(sys.version_info[:3]),"serial":importlib.util.find_spec("serial") is not None}))';
+  const code = `import sys,json,importlib.util; sys.path.insert(0, ${JSON.stringify(fileURLToPath(new URL('../modules/dynamixel/python-vendor', import.meta.url)))}); print(json.dumps({"version":list(sys.version_info[:3]),"serial":importlib.util.find_spec("serial") is not None,"yaml":importlib.util.find_spec("yaml") is not None}))`;
   const result = spawnSync(python, ['-c', code], { encoding: 'utf8', timeout: 10000 });
   let details;
   try {
@@ -43,7 +40,13 @@ export async function diagnose({ env = process.env, hardwareDeps = false } = {})
     checks.push({
       name: 'pyserial',
       ok: details?.serial === true,
-      remedy: 'Run npm run setup to install hardware dependencies in .venv.',
+      remedy: 'Use the install ZIP, or run npm run setup in a source checkout.',
+    });
+  if (hardwareDeps)
+    checks.push({
+      name: 'PyYAML',
+      ok: details?.yaml === true,
+      remedy: 'Use the install ZIP, or run npm run setup in a source checkout.',
     });
   return {
     ok: checks.every((c) => c.ok),

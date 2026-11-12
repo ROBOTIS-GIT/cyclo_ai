@@ -93,7 +93,7 @@ def metadata(path, text):
 
 def build(checkout, tree):
     checkout = Path(checkout)
-    tree = json.loads(Path(tree).read_text())
+    tree = json.loads(Path(tree).read_text(encoding="utf-8"))
     if tree.get("truncated"):
         raise ValueError("A truncated source tree cannot establish a denominator")
     state = subprocess.run(
@@ -284,5 +284,5 @@ if __name__ == "__main__":
     p.add_argument("output")
     a = p.parse_args()
     data = build(a.checkout, a.tree)
-    Path(a.output).write_text(json.dumps(data, indent=2) + "\n")
+    Path(a.output).write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(data["summary"], indent=2))

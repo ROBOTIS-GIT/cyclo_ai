@@ -4,7 +4,14 @@ Choose the user's goal before setup: official manual/model selection, DYNAMIXEL 
 
 ## Prepare the package
 
-Extract the ZIP, preserving its `cyclo-ai` directory. In that directory use Node >=22 and Python >=3.9. Run `npm ci --ignore-scripts`, `npm run setup`, and `npm run doctor -- --hardware-deps`. Setup creates a local virtual environment without accessing devices. For offline validation use a separate Python environment with `python3 -m pip install -r validation/requirements.txt`, then `npm test`. Do not install globally. Missing tools are prerequisites, not permission to modify system packages.
+Extract the ZIP, preserving its `cyclo-ai` directory. Use Node >=22 and Python >=3.9.
+The `-install.zip` release includes the MCP JavaScript dependencies, pyserial and
+PyYAML: run `node scripts/doctor.mjs --hardware-deps`, then load the directory in
+your host. No npm/pip install or virtual environment is needed. Keep the whole
+extracted directory together when copying it to a host cache. ROS, training and
+simulation dependencies are not included.
+
+For the source ZIP or a Git checkout only: Run `npm ci --ignore-scripts`, `npm run setup`, and `npm run doctor -- --hardware-deps`. Setup creates a local virtual environment without accessing devices. For offline validation use a separate Python environment with `python3 -m pip install -r validation/requirements.txt`, then `npm test`. Do not install globally. Missing tools are prerequisites, not permission to modify system packages.
 
 Use the host's supported private/local plugin flow. The portable root manifest declares one local stdio server, hardware-ready by default, with no startup device I/O. A cloud upload alone does not run Node. After host installation, start a fresh conversation and invoke the Cyclo Skill using the [active host's syntax](hosts.md): `$cyclo` in Codex, `/cyclo-ai:cyclo` in Claude Code, or the host's declared setup entrypoint. Ask a manual question; when product MCP tools are available, `robotis_sources` and `dynamixel_registry` are local, device-free first-success checks. If tools are absent, report that installation/runtime boundary and provide the relevant Skill guidance; do not claim a successful tool call or reinstall repeatedly.
 

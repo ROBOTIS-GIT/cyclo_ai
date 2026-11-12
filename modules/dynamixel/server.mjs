@@ -1,3 +1,4 @@
+import { loadJson } from '../catalog-json.mjs';
 import { realpathSync } from 'node:fs';
 import { inspectBytes } from './raw-read.mjs';
 import { groupPlan, syncReadItems } from './group.mjs';
@@ -6,9 +7,7 @@ import { codeIndex, readCode } from '../knowledge/source.mjs';
 import { ITEMS, tableFor, itemFor, writeRequest, readItems, writeItem } from './table.mjs';
 import { modelFor } from './registry.mjs';
 import { hardwareEnabled, requireConfirmation } from '../hardware-mode.mjs';
-import { McpServer } from '@modelcontextprotocol/server';
-import { serveStdio } from '@modelcontextprotocol/server/stdio';
-import * as z from 'zod/v4';
+import { McpServer, serveStdio, z } from './runtime-deps.mjs';
 import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { TargetSession } from './selection.mjs';
@@ -133,9 +132,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
       lineCount: z.number().int().min(1).max(160).default(100),
     }),
     async (args, ctx) => {
-      const index = JSON.parse(
-        await readFile(new URL('../../references/dhi-sources.json', import.meta.url), 'utf8'),
-      );
+      const index = loadJson(new URL('../../references/dhi-sources.json', import.meta.url));
       if (args.action === 'index') return codeIndex(index, args);
       if (!args.package || !args.profile || !args.path)
         throw Error(

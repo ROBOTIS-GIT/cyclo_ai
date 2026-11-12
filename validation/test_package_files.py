@@ -47,3 +47,15 @@ class ReleaseFiles(unittest.TestCase):
         assert_utf8_text("LICENSE", "Copyright 저작권".encode("utf-8"))
         with self.assertRaises(ValueError):
             assert_utf8_text("README.md", "text".encode("utf-16"))
+
+    def test_package_validation_uses_utf8_under_windows_locale(self):
+        from unittest.mock import patch
+        from validate_package import check, ROOT
+
+        original = Path.read_text
+
+        def windows_read_text(path, encoding=None, errors=None):
+            return original(path, encoding=encoding or "cp1252", errors=errors)
+
+        with patch.object(Path, "read_text", windows_read_text):
+            self.assertEqual(check(ROOT)["metadata"], "passed")

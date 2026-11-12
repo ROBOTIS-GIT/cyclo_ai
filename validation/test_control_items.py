@@ -2,13 +2,17 @@
 
 import importlib.util, json, sys, unittest
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import load_json
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from compile_control_items import rows
 from test_sdk_packets import bridge, api, FakePort
 
-ITEMS = json.loads((ROOT / "references/control-items.json").read_text())
+ITEMS = load_json((ROOT / "references/control-items.json"))
 
 
 class Items(unittest.TestCase):

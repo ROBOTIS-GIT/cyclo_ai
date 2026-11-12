@@ -6,7 +6,13 @@ Static observations and source-tracing obligations are not observed runtime stat
 
 import argparse, hashlib, json, math, re
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import load_json
 from xml.etree import ElementTree as ET
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel/python-vendor"))
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -134,7 +140,7 @@ def inspect(xml_text, controller_text="", *, profile=None, distro=None, index=No
         raise ValueError("Oversized XML or external/entity declarations are not accepted")
     robot = ET.fromstring(xml_text)
     controllers = controller_blocks(controller_text)
-    index = index or json.loads((ROOT / "references/dhi-sources.json").read_text())
+    index = index or load_json((ROOT / "references/dhi-sources.json"))
     source = index["packages"]["dynamixel_hardware_interface"]
     matches = [
         (n, p) for n, p in source["profiles"].items() if n == profile or p["revision"] == profile
@@ -591,8 +597,8 @@ if __name__ == "__main__":
         print(
             json.dumps(
                 inspect(
-                    a.urdf.read_text(),
-                    a.controllers.read_text() if a.controllers else "",
+                    a.urdf.read_text(encoding="utf-8"),
+                    a.controllers.read_text(encoding="utf-8") if a.controllers else "",
                     profile=a.profile,
                     distro=a.ros_distro,
                 ),

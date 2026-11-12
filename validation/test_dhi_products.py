@@ -2,13 +2,17 @@
 
 import unittest, json, sys
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import load_json
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from index_dhi_products import artifacts
 
 ROOT = Path(__file__).resolve().parents[1]
 D = json.loads((ROOT / "references/dhi-products.json").read_text())
-INDEX = json.loads((ROOT / "references/dhi-sources.json").read_text())
+INDEX = load_json((ROOT / "references/dhi-sources.json"))
 
 
 def product(name):

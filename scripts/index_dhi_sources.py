@@ -6,6 +6,10 @@ or proof of dynamic call reachability. Run only on explicitly selected checkouts
 
 import argparse, hashlib, json, re, subprocess
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "modules/dynamixel"))
+from catalog_json import write_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 PINS = {
@@ -169,7 +173,7 @@ if __name__ == "__main__":
     a = ap.parse_args()
     roots = {name: Path(getattr(a, name.lower())) for name in PINS}
     out = build(roots)
-    a.output.write_text(json.dumps(out, separators=(",", ":")) + "\n")
+    write_catalog(a.output, out)
     print(
         json.dumps(
             {

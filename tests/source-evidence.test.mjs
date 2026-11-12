@@ -1,3 +1,4 @@
+import { loadJson } from '../modules/catalog-json.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -5,9 +6,7 @@ import { readFile } from 'node:fs/promises';
 import { codeIndex, readCode, profileFor } from '../modules/knowledge/source.mjs';
 import { createProductsServer } from '../modules/dynamixel/server.mjs';
 import { Client, InMemoryTransport } from '@modelcontextprotocol/client';
-const index = JSON.parse(
-  await readFile(new URL('../references/dhi-sources.json', import.meta.url)),
-);
+const index = loadJson(new URL('../references/dhi-sources.json', import.meta.url));
 const body =
   '// Source fixture: never execute\nvoid Example::configure() {\n  run_untrusted_text();\n}\n';
 const bytes = Buffer.from(body);

@@ -9,6 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "sdk-upstream"))
 sys.path.insert(1, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent / "python-vendor"))
+from catalog_json import load_json
 from custom_tables import load_custom
 from transports import port_class
 from table_conditions import scalar as table_scalar, live as table_live
@@ -31,7 +33,7 @@ def sdk():
         return api
     except ImportError as e:
         raise RuntimeError(
-            "Official SDK runtime requires local pyserial==3.5; use an isolated environment and CYCLO_PRODUCTS_PYTHON. No global installation is performed."
+            "Missing pyserial==3.5. Use the install ZIP with bundled libraries, or run npm run setup in a source checkout. No global installation is performed."
         ) from e
 
 
@@ -376,15 +378,17 @@ class Bridge:
     def catalog(self):
         if self._catalog is None:
             self._catalog = json.loads(
-                (Path(__file__).resolve().parents[2] / "references/control-tables.json").read_text()
+                (Path(__file__).resolve().parents[2] / "references/control-tables.json").read_text(
+                    encoding="utf-8"
+                )
             )
             self._catalog["models"].extend(self.custom["models"])
         return self._catalog
 
     def inventory(self):
         if self._inventory is None:
-            self._inventory = json.loads(
-                (Path(__file__).resolve().parents[2] / "references/control-items.json").read_text()
+            self._inventory = load_json(
+                (Path(__file__).resolve().parents[2] / "references/control-items.json")
             )
             self._inventory["models"].extend(self.custom["itemModels"])
         return self._inventory
