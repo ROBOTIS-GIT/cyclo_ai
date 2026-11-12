@@ -17,6 +17,81 @@ jobs:
       source_branch: main
       target_branch: release
 
+  packages:
+    needs: release
+    if: needs.release.outputs.published == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      RELEASE_VERSION: ${{ needs.release.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Match package version to the published release
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+          version = json.loads(Path('plugin.json').read_text(encoding='utf-8'))['version']
+          if version != os.environ['RELEASE_VERSION']:
+              raise SystemExit(f"Package version {version} does not match release {os.environ['RELEASE_VERSION']}")
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run setup -- --dev
+      - run: npm run doctor -- --hardware-deps
+      - name: Run Windows integration and runtime tests
+        if: runner.os == 'Windows'
+        run: node --test tests/integration.test.mjs tests/python-runtime.test.mjs
+      - name: Build source archive with a local virtual environment present
+        run: npm run package
+      - name: Test extracted release bytes
+        if: runner.os != 'Windows'
+        run: node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-ai-${{ needs.release.outputs.version }}.zip
+        env:
+          CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
+      - name: Build install archive with pinned runtime libraries
+        run: npm run package:runtime
+      - name: Verify install archive without dependency installation
+        run: npm run verify:runtime -- artifacts/cyclo-ai-${{ needs.release.outputs.version }}-install.zip
+      - name: Record package source commit
+        run: git rev-parse HEAD > artifacts/SOURCE_COMMIT
+      - name: Record release archive checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          directory = Path('artifacts')
+          archives = sorted(directory.glob('cyclo-ai-*.zip'))
+          assert len(archives) == 2, 'Expected source and install ZIPs'
+          checksums = ''.join(f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}\n' for path in archives)
+          (directory / 'SHA256SUMS').write_bytes(checksums.encode('utf-8'))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cyclo-ai-packages-${{ needs.release.outputs.version }}-${{ matrix.os }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            artifacts/cyclo-ai-${{ needs.release.outputs.version }}.zip
+            artifacts/cyclo-ai-${{ needs.release.outputs.version }}-install.zip
+            artifacts/SHA256SUMS
+            artifacts/SOURCE_COMMIT
+            artifacts/package-result.json
+            artifacts/extracted-test-results.json
+            artifacts/runtime-package-result.json
+            artifacts/runtime-test-results.json
+
   discord-notify:
     needs: release
     if: needs.release.outputs.published == 'true'
