@@ -10,38 +10,36 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: ubuntu-22.04
-            node: '22'
-            python: '3.9'
-          - os: ubuntu-latest
-            node: '24'
-            python: '3.12'
-          - os: macos-latest
-            node: '24'
-            python: '3.12'
+        os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
+          node-version: '24'
           cache: npm
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: '3.12'
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Exercise contributor setup
         run: npm run setup -- --dev
       - run: npm run doctor -- --hardware-deps
       - run: npm run format:check
-      - run: .venv/bin/python -m ruff format --check modules scripts validation
+        if: runner.os != 'Windows'
+      - run: npm run format:python:check
+        if: runner.os != 'Windows'
       - run: npm test
+        if: runner.os != 'Windows'
+      - name: Run Windows integration and runtime tests
+        if: runner.os == 'Windows'
+        run: node --test tests/integration.test.mjs tests/python-runtime.test.mjs
       - name: Build source archive with a local virtual environment present
-        run: .venv/bin/python validation/package_release.py
+        run: npm run package
       - name: Test extracted release bytes
-        run: .venv/bin/python validation/verify_archive.py artifacts/cyclo-ai-0.2.0.zip
+        if: runner.os != 'Windows'
+        run: node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-ai-0.2.0.zip
         env:
           CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
       - name: Build install archive with pinned runtime libraries
@@ -73,51 +71,15 @@ jobs:
             artifacts/runtime-test-results.json
       - name: Print failed test details
         if: failure()
-        run: |
-          for log in validation/current/*.txt artifacts/extracted-test-results.json; do
-            if [ -f "$log" ]; then
-              echo "::group::$log"
-              cat "$log"
-              echo "::endgroup::"
-            fi
-          done
-  windows-setup:
-    runs-on: windows-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npm run setup -- --dev
-      - run: npm run doctor -- --hardware-deps
-      - run: node --test tests/integration.test.mjs tests/python-runtime.test.mjs
-      - run: npm run package
-      - run: npm run package:runtime
-      - run: npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip
-      - name: Record release archive checksums
         shell: python
         run: |
+          import sys
           from pathlib import Path
-          import hashlib
-          directory = Path('artifacts')
-          archives = sorted(directory.glob('cyclo-ai-*.zip'))
-          assert len(archives) == 2, 'Expected source and install ZIPs'
-          checksums = ''.join(f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}\n' for path in archives)
-          (directory / 'SHA256SUMS').write_bytes(checksums.encode('utf-8'))
-      - uses: actions/upload-artifact@v4
-        with:
-          name: cyclo-ai-packages-windows
-          if-no-files-found: error
-          retention-days: 30
-          path: |
-            artifacts/cyclo-ai-0.2.0.zip
-            artifacts/cyclo-ai-0.2.0-install.zip
-            artifacts/SHA256SUMS
-            artifacts/package-result.json
-            artifacts/runtime-package-result.json
-            artifacts/runtime-test-results.json
+          sys.stdout.reconfigure(encoding='utf-8')
+          logs = list(Path('validation/current').glob('*.txt'))
+          logs += [Path('artifacts/extracted-test-results.json'), Path('artifacts/runtime-test-results.json')]
+          for path in logs:
+              if path.is_file():
+                  print(f'::group::{path}')
+                  print(path.read_text(encoding='utf-8', errors='replace'))
+                  print('::endgroup::')
