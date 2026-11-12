@@ -14,9 +14,6 @@ jobs:
     permissions:
       actions: read
       contents: write
-    env:
-      GNUPGHOME: ${{ runner.temp }}/cyclo-release-gpg
-      RELEASE_GPG_PROGRAM: ${{ runner.temp }}/cyclo-gpg-sign
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,6 +41,8 @@ jobs:
           npm run verify:runtime -- "$RUNNER_TEMP/claude-package/cyclo-ai"
       - name: Sign and publish the distribution branch
         env:
+          GNUPGHOME: ${{ runner.temp }}/cyclo-release-gpg
+          RELEASE_GPG_PROGRAM: ${{ runner.temp }}/cyclo-gpg-sign
           GH_TOKEN: ${{ github.token }}
           RELEASE_GIT_NAME: ${{ vars.RELEASE_GIT_NAME }}
           RELEASE_GIT_EMAIL: ${{ vars.RELEASE_GIT_EMAIL }}
@@ -64,6 +63,9 @@ jobs:
           python scripts/publish-claude.py "$RUNNER_TEMP/claude-package/cyclo-ai"
       - name: Remove temporary signing material
         if: always()
+        env:
+          GNUPGHOME: ${{ runner.temp }}/cyclo-release-gpg
+          RELEASE_GPG_PROGRAM: ${{ runner.temp }}/cyclo-gpg-sign
         run: |
           gpgconf --kill gpg-agent || true
           rm -rf -- "$GNUPGHOME" "$RELEASE_GPG_PROGRAM"
