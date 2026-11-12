@@ -10,16 +10,55 @@ From a clean checkout, install dependencies, run the CI commands, review `releas
 
 Bump `plugin.json`, `.claude-plugin/plugin.json`, `package.json`, `package-lock.json`, the MCP server version and generated catalog version fields together. Update the changelog and rerun manifest/version checks. Release publication and shared-history changes are separate maintainer actions from pushing a feature branch.
 
+## GitHub Release from main to release
+
+The Release workflow calls
+`ROBOTIS-GIT/github_workflows/.github/workflows/release.yml@main` for pull requests
+targeting `release`. Same-repository `main` to `release` PRs must be titled exactly
+`Bump X.Y.Z` and have release notes in their description. The version must exceed
+the latest published release and have no existing tag or release. Other branch
+pairs and fork PRs do not publish a release.
+
+Opening or updating the PR validates these requirements. Merging it validates
+again and creates the `X.Y.Z` tag and GitHub Release at the PR's merge commit,
+using the PR description as release notes. Closing an unmerged PR does not
+publish. The shared workflow uses the calling repository's GITHUB_TOKEN and needs
+Contents write permission; no personal token is required. Ensure the shared
+workflow is accessible to this repository and install the caller on the release
+branch before relying on its PR checks. Keep package versions and CHANGELOG.md in
+sync with the PR's version. An existing `0.2.0` tag cannot be published again by
+this workflow.
+
+## Discord release notification
+
+After the shared release job publishes successfully, the `discord-notify` job
+calls `ROBOTIS-GIT/github_workflows/.github/workflows/discord-notify.yml@main`
+with the published version. Configure `DISCORD_WEBHOOK_URL` as a repository
+secret, or an organization secret available to this repository, for the target
+Discord channel. The URL is passed explicitly to the reusable workflow.
+
+The notification includes the release name, notes and GitHub Release link.
+PR validation, unmerged PR closure, skipped releases and failed publication do
+not send a notification. This job is chained through the release workflow's
+outputs because releases created with GITHUB_TOKEN do not trigger a separate
+release-event workflow. An alert failure fails the notification job without
+removing the published release. Re-running a notification can send another
+message, so check the channel before retrying. No live notification is sent
+while editing or validating this caller.
+
 ## GitHub Actions artifacts
 
-Use the Offline plugin checks workflow to produce distribution packages. It runs
-on pushes, pull requests and manual workflow dispatch. Each successful Linux,
-macOS or Windows job builds the source and install ZIPs, verifies the install
-package, generates SHA256SUMS, and uploads the archives and validation evidence
-as a `cyclo-ai-packages-<runner>` artifact with 30-day retention. Linux and macOS
-also run the full offline suite from the extracted source ZIP.
+The Offline plugin checks workflow runs tests and source validation on pushes,
+pull requests and manual dispatch; it does not build or upload distribution ZIPs.
+After the Release workflow successfully creates a GitHub Release, its packages
+job checks out the exact merge commit and builds source and install ZIPs on Linux,
+macOS and Windows. The package version must match the published release version.
+It verifies the install ZIP everywhere, runs the full extracted-source suite on
+Linux/macOS, and records SHA256SUMS and SOURCE_COMMIT. The archives and validation
+evidence are uploaded as `cyclo-ai-packages-<version>-<runner>` artifacts with
+30-day retention. PR validation and unmerged closure do not create packages.
 
-Download the artifact from the workflow run's Artifacts section. No separate
+Download the artifact from the successful Release workflow run's Artifacts section. No separate
 server or deployment credentials are needed. Keep local artifacts/ ignored;
 local package commands are for reproducing and debugging CI builds. OpenAI
 submission uses the verified install ZIP downloaded from the successful run.
@@ -32,7 +71,7 @@ Run the offline tests, then build and verify the install archive:
 
 ```sh
 npm run package:runtime
-npm run verify:runtime -- artifacts/cyclo-ai-0.2.0-install.zip
+npm run verify:runtime -- artifacts/cyclo-ai-0.2.1-install.zip
 ```
 
 Packaging downloads only the pinned pyserial and PyYAML source archives from
@@ -78,12 +117,15 @@ path. The branch also contains `.claude-plugin/marketplace.json` for repository
 marketplace clients. Do not edit that branch by hand.
 
 The manual **Publish Claude distribution** workflow creates or updates this
-branch. Run **Offline plugin checks** successfully on the same `main` commit
-first. The publisher builds the install ZIP and verifies both the ZIP and the
-prepared repository directory without npm/pip installs. It removes CI workflows
-from the generated branch, records the exact source commit in distribution.json,
-and updates the full file-integrity inventory. An existing distribution branch
-must have matching provenance; changed source requires a version bump.
+branch using an existing release package. Supply the published version and its
+successful Release workflow run ID. The workflow downloads that run's Ubuntu
+package artifact, checks the ZIP checksums and verifies SOURCE_COMMIT against
+the published tag. It does not rebuild the package. It verifies the downloaded
+install ZIP and prepared repository directory without npm/pip installs inside
+the package, removes CI workflows from the generated branch, records the released
+source commit in distribution.json, and updates the full file-integrity inventory.
+An existing distribution branch must have matching provenance; changed source
+requires a version bump.
 
 Configure these repository variables using the maintainer's Git identity:
 

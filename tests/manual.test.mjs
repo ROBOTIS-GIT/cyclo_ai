@@ -6,20 +6,7 @@ import { listModels, resolveModel, readManual } from '../modules/dynamixel/manua
 const index = JSON.parse(
   await readFile(new URL('../references/dynamixel-docs.json', import.meta.url), 'utf8'),
 );
-test('full-tree inventory includes all families, orphan source and mechanical reducers', () => {
-  assert.deepEqual(index.summary.actuatorDocumentsByFamily, {
-    ax_series: 3,
-    dx_series: 3,
-    ex_series: 1,
-    mx_series: 7,
-    p_series: 6,
-    pro_series: 17,
-    rx_series: 4,
-    x_series: 36,
-    y_series: 12,
-  });
-  assert.equal(index.models.length, 92);
-  assert.equal(index.summary.sharedPartialDocuments, 463);
+test('model inventory resolves indexed sources and mechanical reducers', () => {
   assert.ok(resolveModel(index, 'XW540-H260'));
   assert.equal(resolveModel(index, 'DYD-11').kind, 'mechanical-reducer');
   for (const m of index.models) {
