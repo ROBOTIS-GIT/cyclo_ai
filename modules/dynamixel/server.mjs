@@ -70,7 +70,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
   const docs = JSON.parse(
     await readFile(new URL('../../references/dynamixel-docs.json', import.meta.url), 'utf8'),
   );
-  const server = new McpServer({ name: 'cyclo-mcp', version: '0.2.0' });
+  const server = new McpServer({ name: 'cyclo-mcp', version: '0.2.1' });
   const wrap = (fn) => async (args, ctx) => {
     try {
       const value = await fn(args, ctx);

@@ -1,4 +1,4 @@
-# Coverage and evidence matrix — 0.2.0
+# Coverage and evidence matrix — 0.2.1
 
 Reviewed 2026-10-23 against the official AI Sapiens sidebar. The [machine-readable index](manual-index.json) contains every current leaf-page URL and owner. Category headings are navigation groups, not additional implementations. Recheck the live sidebar before claiming current completeness.
 

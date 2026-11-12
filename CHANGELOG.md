@@ -1,3 +1,12 @@
+0.2.1 (2026-11-12)
+------------------
+* Added self-contained OpenAI and Claude plugin packages with cross-platform
+  installation verification and signed Claude distribution publishing.
+* Added release-only package builds and automated GitHub Release and Discord
+  notifications.
+* Fixed Windows Python tool launching and streamlined CI and tests.
+* Contributors: Taehun Lim
+
 0.2.0 (2026-11-11)
 ------------------
 * Added shared Codex and Claude Code plugins with 28 task-specific skills for

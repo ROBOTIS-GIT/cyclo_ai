@@ -22,7 +22,7 @@ for (const [i, servers] of manifests.entries()) {
       .map((key) => [key, process.env[key]]),
   );
   Object.assign(env, config.env, { CYCLO_OFFLINE: '1', PYTHONDONTWRITEBYTECODE: '1' });
-  const client = new Client({ name: 'install-zip-check', version: '0.2.0' });
+  const client = new Client({ name: 'install-zip-check', version: '0.2.1' });
   const transport = new StdioClientTransport({
     command: process.execPath,
     args,
