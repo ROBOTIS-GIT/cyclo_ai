@@ -19,23 +19,32 @@ export function groupPlan(targets, key) {
   const first = entries[0];
   for (const { target, model, item } of entries) {
     if (
-      model.protocol !== 2 ||
+      model.protocol !== first.model.protocol ||
       target.port !== first.target.port ||
       target.baud !== first.target.baud
     )
-      throw Error('Sync Read requires one selected Protocol 2 bus and baud');
+      throw Error('Group Read requires one selected bus, protocol and baud');
     if (
-      item.address !== first.item.address ||
-      item.width !== first.item.width ||
       item.readStatus !== 'resolved-raw' ||
       target.firmware < (item.minimumFirmware ?? 0) ||
-      (item.protocols && !item.protocols.includes(2))
+      (item.protocols && !item.protocols.includes(model.protocol))
     )
-      throw Error('All targets need the same resolved item address/width for this firmware');
+      throw Error('All targets need a resolved item for this firmware/protocol');
+    if (
+      model.protocol === 1 &&
+      (model.customHash ||
+        !/^(mx_series|x_series)\//.test(model.catalogId) ||
+        model.catalogId.includes('xl-320') ||
+        item.address + item.width > 256 ||
+        item.width > 244)
+    )
+      throw Error('Protocol1 Bulk Read is unsupported for this model/layout');
   }
+  if (first.model.protocol === 1 && entries.length < 2)
+    throw Error('Protocol1 Bulk Read requires multiple targets');
   return entries;
 }
-export async function syncReadItems(connect, targets, key, { signal } = {}) {
+export async function readManyItems(connect, targets, key, { signal } = {}) {
   const entries = groupPlan(targets, key),
     first = entries[0];
   let c,
@@ -43,7 +52,14 @@ export async function syncReadItems(connect, targets, key, { signal } = {}) {
   const result = {
     outcome: 'read',
     items: [],
-    instruction: 'Protocol 2 Sync Read; no write or atomic physical sampling claim',
+    instruction:
+      first.model.protocol === 2 &&
+      entries.every(
+        (e) => e.item.address === first.item.address && e.item.width === first.item.width,
+      )
+        ? 'syncRead'
+        : 'bulkRead',
+    meaning: 'Grouped reads do not guarantee simultaneous physical sampling',
   };
   const check = async () => {
     for (const { target, model } of entries) {
@@ -59,19 +75,32 @@ export async function syncReadItems(connect, targets, key, { signal } = {}) {
   };
   try {
     if (signal?.aborted) throw Error('Sync Read cancelled');
-    c = await connect(first.target.baud, 100, 2);
+    c = await connect(first.target.baud, 100, first.model.protocol);
     await check();
-    if (!c.syncRead) throw Error('Provider does not expose native Sync Read');
+    if (!c[result.instruction])
+      throw Error('Provider does not expose native ' + result.instruction);
     const responses = [];
-    const batches = readBatches(targets, first.item.width);
+    const batches = readBatches(entries, Math.max(...entries.map((e) => e.item.width)));
+    if (result.instruction === 'bulkRead' && batches.length > 1 && batches.at(-1).length === 1) {
+      batches.at(-1).unshift(batches.at(-2).pop());
+    }
     for (const batch of batches) {
-      if (signal?.aborted) throw Error('Sync Read cancelled');
+      if (signal?.aborted) throw Error('Group Read cancelled');
       responses.push(
-        ...(await c.syncRead(
-          batch.map((t) => t.id),
-          first.item.address,
-          first.item.width,
-        )),
+        ...(result.instruction === 'syncRead'
+          ? await c.syncRead(
+              batch.map((e) => e.target.id),
+              first.item.address,
+              first.item.width,
+            )
+          : await c.bulkRead(
+              batch.map((e) => ({
+                id: e.target.id,
+                address: e.item.address,
+                size: e.item.width,
+                catalogId: e.model.catalogId,
+              })),
+            )),
       );
     }
     result.batchCount = batches.length;
@@ -110,3 +139,6 @@ export async function syncReadItems(connect, targets, key, { signal } = {}) {
   result.closureConfirmed = !closureUnconfirmed;
   return result;
 }
+
+// Internal compatibility for existing callers; public API uses read_many.
+export const syncReadItems = readManyItems;

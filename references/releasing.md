@@ -148,3 +148,26 @@ Contents write permission for this manual job, and branch rules must permit the
 signed distribution update. Missing access or signing configuration fails the
 job; there is no unsigned fallback. Creating this workflow does not publish the
 branch or submit the plugin to a directory.
+
+## Public submission metadata
+
+OpenAI listing and review metadata are in `plugin.json` under
+`extensions.com.openai`. The listing uses ROBOTIS as publisher, Developer Tools
+as category, the Cyclo documentation homepage and the ROBOTIS support homepage.
+The five positive review cases require no connected hardware; the three negative
+cases check requests outside the plugin's scope. These are reviewer scenarios,
+not records of completed host-level evaluations.
+
+Both policy URL fields currently reference ROBOTIS's existing combined website
+privacy policy and conditions of use. That page explicitly describes website
+use, accounts and orders. Confirm its applicability to Cyclo AI and its local
+MCP data handling, or replace the URLs with applicable published policies before
+submission. Do not treat these draft links as proof of product-policy coverage.
+Confirm the publisher against the submitting organization's verified identity
+and select the category supported by the submission portal.
+
+Record a reviewer-accessible installation and usage walkthrough, and add its
+real URL as `review.demo_recording_url` or through the submission portal before
+MCP review. No placeholder recording URL is included. Review cases assume
+Node >=22 and Python >=3.9 are available; all positive cases use catalogs or
+source indexes and must not scan ports or perform device I/O.

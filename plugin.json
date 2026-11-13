@@ -23,9 +23,73 @@
           "Help me inspect and configure the DYNAMIXEL actuators connected to my computer",
           "Help me prepare ROS 2 control, teleoperation, or learning software for my DYNAMIXEL-powered robot"
         ],
-        "logo": "./assets/CYCLO_Signature_Horiz.svg"
+        "logo": "./assets/CYCLO_Signature_Horiz.svg",
+        "developerName": "ROBOTIS",
+        "category": "Developer Tools",
+        "websiteURL": "https://docs.robotis.com/docs/software/cyclo/",
+        "supportURL": "https://robotis.com/en/",
+        "privacyPolicyURL": "https://robotis.com/en/policyprivacy.php",
+        "termsOfServiceURL": "https://robotis.com/en/policyprivacy.php"
       },
-      "onboardingSkill": "./skills/cyclo/SKILL.md"
+      "onboardingSkill": "./skills/cyclo/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Inspect capabilities without accessing devices",
+              "prompt": "Use Cyclo AI to show the local DYNAMIXEL registry and its hardware-access status. Do not discover ports or access devices.",
+              "tools_triggered": "dynamixel_registry",
+              "expected_behavior": "Report registry capabilities and the current hardware-enabled status. Explain that enabled status does not prove a device is connected. Do not scan ports or perform device I/O."
+            },
+            {
+              "description": "Find official model documentation",
+              "prompt": "Use Cyclo AI to find indexed DYNAMIXEL XM430 models and their official documentation links. Do not access hardware.",
+              "tools_triggered": "dynamixel_models",
+              "expected_behavior": "Return matching XM430 model identities and official documentation links from the catalog. Distinguish documented models from physically detected devices."
+            },
+            {
+              "description": "Inspect a model-specific Control Table",
+              "prompt": "Use Cyclo AI to find the XM430-W350 catalog identity and inspect its Torque Enable Control Table entry. Explain the documented address, size and access conditions without connecting to a device.",
+              "tools_triggered": "dynamixel_registry, dynamixel_table",
+              "expected_behavior": "Resolve the exact catalog identity and show the bundled Torque Enable entry with source provenance and applicable conditions. Do not read or write a physical device or imply torque was changed."
+            },
+            {
+              "description": "Locate official robot development sources",
+              "prompt": "Use Cyclo AI to find official AI Sapiens documentation and software source links. Do not connect to a robot.",
+              "tools_triggered": "robotis_sources",
+              "expected_behavior": "Return relevant official AI Sapiens documentation and repository links, distinguishing source discovery from retrieved or validated implementation details."
+            },
+            {
+              "description": "Find indexed integration code",
+              "prompt": "Use Cyclo AI to search its bundled source-code index for read operations. Do not access devices or execute the indexed code.",
+              "tools_triggered": "robotis_code",
+              "expected_behavior": "Return relevant indexed source locations and provenance. Explain that a matching source entry does not establish live hardware readiness. Do not execute device operations."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unrelated weather request",
+              "prompt": "What is the weather in Seoul today?",
+              "tools_triggered": "",
+              "expected_behavior": "Do not invoke Cyclo MCP tools; this plugin does not provide weather data."
+            },
+            {
+              "description": "Unsupported payment request",
+              "prompt": "Use Cyclo AI to transfer $100 to another bank account.",
+              "tools_triggered": "",
+              "expected_behavior": "Explain that Cyclo AI cannot transfer money and do not invoke device tools or claim a payment occurred."
+            },
+            {
+              "description": "Unsupported email request",
+              "prompt": "Use Cyclo AI to send an email to my supplier.",
+              "tools_triggered": "",
+              "expected_behavior": "Explain that Cyclo AI does not send email. Do not invoke Cyclo MCP tools or claim a message was sent."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Cyclo AI provides robot development guidance and local device tools; it does not sell products, place orders, or process payments."
+      }
     }
   },
   "author": {

@@ -219,21 +219,21 @@ test('MCP custom scan/select/table/read/write uses the standalone provider', asy
     query: 'Present Position',
   });
   assert.equal(table.structuredContent.items[0].address, 552);
-  const read = await call('dynamixel_read_items', {
+  const read = await call('dynamixel_read', {
     target: 'custom',
-    items: ['Present Position'],
+    item: 'Present Position',
     dryRun: false,
     confirmed: true,
   });
   assert.equal(read.structuredContent.items[0].value, -2634);
-  const preview = await call('dynamixel_write_item', {
+  const preview = await call('dynamixel_write', {
     target: 'custom',
     item: 'Homing Offset',
     value: -433,
   });
   assert.equal(preview.structuredContent.executed, false);
   assert.equal(f.writes.length, 0);
-  const write = await call('dynamixel_write_item', {
+  const write = await call('dynamixel_write', {
     target: 'custom',
     item: 'Homing Offset',
     value: -433,

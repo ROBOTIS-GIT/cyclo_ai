@@ -63,10 +63,10 @@ test('default stdio: official routes/registry work; discovery and execution stay
       'robotis_sources',
       'dynamixel_registry',
       'dynamixel_ping',
-      'dynamixel_read',
+      'dynamixel_read_raw',
       'dynamixel_ports',
       'dynamixel_scan',
-      'dynamixel_configure',
+      'dynamixel_write_many',
       'dynamixel_select',
       'dynamixel_select_many',
       'dynamixel_swap_ids',
@@ -74,9 +74,9 @@ test('default stdio: official routes/registry work; discovery and execution stay
       'dynamixel_models',
       'dynamixel_manual',
       'dynamixel_table',
-      'dynamixel_read_items',
-      'dynamixel_sync_read',
-      'dynamixel_write_item',
+      'dynamixel_read',
+      'dynamixel_read_many',
+      'dynamixel_write',
     ].sort(),
   );
   for (const query of [
@@ -102,11 +102,11 @@ test('default stdio: official routes/registry work; discovery and execution stay
   const registry = await c.callTool({ name: 'dynamixel_registry', arguments: {} });
   assert.equal(registry.structuredContent.hardwareEnabled, false);
   const plan = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { id: 7 } },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'ID', value: 7 },
   });
   assert.equal(plan.structuredContent.executed, false);
-  assert.ok(plan.structuredContent.pending.includes('destination ID collision check'));
+  assert.ok(plan.structuredContent.pending.includes('documented item preconditions'));
   for (const [name, args] of [
     ['dynamixel_ports', { confirmed: true }],
     [
@@ -121,8 +121,8 @@ test('default stdio: official routes/registry work; discovery and execution stay
       },
     ],
     [
-      'dynamixel_configure',
-      { target: 'synthetic', changes: { led: 1 }, dryRun: false, confirmed: true },
+      'dynamixel_write',
+      { target: 'synthetic', item: 'LED', value: 1, dryRun: false, confirmed: true },
     ],
   ]) {
     const r = await c.callTool({ name, arguments: args });
@@ -130,7 +130,7 @@ test('default stdio: official routes/registry work; discovery and execution stay
     assert.match(r.content[0].text, /disabled/);
   }
   const raw = await c.callTool({
-    name: 'dynamixel_configure',
+    name: 'dynamixel_write',
     arguments: { target: 'synthetic', changes: { address: 64, value: 1 } },
   });
   assert.equal(raw.isError, true);
@@ -153,20 +153,20 @@ test('injected mock stdio: bounded scan, LED and new-ID readback', async (t) => 
   assert.equal(scan.structuredContent.devices.length, 1);
   assert.equal(scan.structuredContent.complete, true);
   const led = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { led: 1 }, dryRun: false, confirmed: true },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'LED', value: 1, dryRun: false, confirmed: true },
   });
   assert.equal(led.structuredContent.outcome, 'verified');
   assert.equal(led.structuredContent.busReservationReleased, true);
   const id = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { id: 7 }, dryRun: false, confirmed: true },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'ID', value: 7, dryRun: false, confirmed: true },
   });
   assert.equal(id.structuredContent.outcome, 'verified');
   assert.equal(id.structuredContent.location.id, 7);
   const next = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { led: 0 }, dryRun: false, confirmed: true },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'LED', value: 0, dryRun: false, confirmed: true },
   });
   assert.equal(next.structuredContent.outcome, 'verified');
   assert.equal(next.structuredContent.location.id, 7);
@@ -203,29 +203,32 @@ test('novice stdio: unknown identity -> bounded scan -> confirmed selection -> I
   assert.equal(missing.isError, true);
   const selected = await call('dynamixel_select', choice);
   assert.equal(selected.structuredContent.target.id, 1);
-  await call('dynamixel_configure', { target: 'motor', changes: { id: 7 } });
+  await call('dynamixel_write', { target: 'motor', item: 'ID', value: 7 });
   assert.equal(
     (await call('dynamixel_targets', {})).structuredContent.targets[0].id,
     1,
     'dry run must not move target',
   );
-  const changed = await call('dynamixel_configure', {
+  const changed = await call('dynamixel_write', {
     target: 'motor',
-    changes: { id: 7 },
+    item: 'ID',
+    value: 7,
     dryRun: false,
     confirmed: true,
   });
   assert.equal(changed.structuredContent.sessionTarget.id, 7);
-  const baud = await call('dynamixel_configure', {
+  const baud = await call('dynamixel_write', {
     target: 'motor',
-    changes: { baud: 1000000 },
+    item: 'Baud Rate',
+    value: 3,
     dryRun: false,
     confirmed: true,
   });
   assert.equal(baud.structuredContent.sessionTarget.baud, 1000000);
-  const led = await call('dynamixel_configure', {
+  const led = await call('dynamixel_write', {
     target: 'motor',
-    changes: { led: 1 },
+    item: 'LED',
+    value: 1,
     dryRun: false,
     confirmed: true,
   });
@@ -277,14 +280,14 @@ for (const scenario of ['none', 'multiple', 'unsupported'])
 test('uncertain stdio write locks target and blocks subsequent write', async (t) => {
   const c = await client(t, true, { scenario: 'lost-write' });
   const r = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { id: 7 }, dryRun: false, confirmed: true },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'ID', value: 7, dryRun: false, confirmed: true },
   });
   assert.equal(r.structuredContent.outcome, 'uncertain');
   assert.equal(r.structuredContent.sessionTarget.status, 'reconciliation-required');
   const next = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { led: 1 }, dryRun: false, confirmed: true },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'LED', value: 1, dryRun: false, confirmed: true },
   });
   assert.equal(next.isError, true);
   assert.match(next.content[0].text, /reconciliation/);
@@ -292,8 +295,8 @@ test('uncertain stdio write locks target and blocks subsequent write', async (t)
 test('occupied destination is not retargeted', async (t) => {
   const c = await client(t, true, { scenario: 'occupied' });
   const r = await c.callTool({
-    name: 'dynamixel_configure',
-    arguments: { target: 'synthetic', changes: { id: 7 }, dryRun: false, confirmed: true },
+    name: 'dynamixel_write',
+    arguments: { target: 'synthetic', item: 'ID', value: 7, dryRun: false, confirmed: true },
   });
   assert.equal(r.structuredContent.outcome, 'not_written');
   assert.equal(r.structuredContent.location.id, 1);
@@ -308,18 +311,18 @@ test('generic table stdio: explicit torque item writes use preview/confirmation 
   });
   assert.equal(table.structuredContent.items[0].write.status, 'resolved');
   const preview = await c.callTool({
-    name: 'dynamixel_write_item',
+    name: 'dynamixel_write',
     arguments: { target: 'synthetic', item: 'Torque Enable', value: 1 },
   });
   assert.equal(preview.structuredContent.executed, false);
   const denied = await c.callTool({
-    name: 'dynamixel_write_item',
+    name: 'dynamixel_write',
     arguments: { target: 'synthetic', item: 'Torque Enable', value: 1, dryRun: false },
   });
   assert.equal(denied.isError, true);
   assert.match(denied.content[0].text, /confirmation/);
   const actual = await c.callTool({
-    name: 'dynamixel_write_item',
+    name: 'dynamixel_write',
     arguments: {
       target: 'synthetic',
       item: 'Torque Enable',
@@ -330,8 +333,8 @@ test('generic table stdio: explicit torque item writes use preview/confirmation 
   });
   assert.equal(actual.structuredContent.outcome, 'verified');
   const read = await c.callTool({
-    name: 'dynamixel_read_items',
-    arguments: { target: 'synthetic', items: ['Torque Enable'], dryRun: false, confirmed: true },
+    name: 'dynamixel_read',
+    arguments: { target: 'synthetic', item: 'Torque Enable', dryRun: false, confirmed: true },
   });
   assert.equal(read.isError, undefined);
   assert.equal(read.structuredContent.items[0].value, 1);
