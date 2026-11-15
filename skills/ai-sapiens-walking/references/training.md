@@ -1,5 +1,7 @@
 # Backend preparation and training
 
+For Mimic, first select the [learning method](../../ai-sapiens-video-mimic/references/methods.md). These existing RSL-RL examples describe PPO. Runtime, physics backend and learner are independent; the version table is a dated packaged baseline, not detection of a feature checkout.
+
 Read the selected setup and locomotion pages in [source map](../../../references/sources.md). The following are command examples, not executed jobs. Resolve every placeholder and check the checkout's CLI help before use. Commands run inside the indicated container unless labeled host.
 
 | Backend | Checkout / runtime | Container cwd |
@@ -56,6 +58,6 @@ Viser is available via `--viewer viser`; it may open a listening service. Do not
 
 The 4096 environments are the documented example, not a promise of available memory or a minimal smoke test. Agree resources before starting; a smaller count is an intentional adaptation that needs verification against the checkout. Collect logs, checkpoint, params/agent.yaml, env.yaml and sim2real.yaml. Evaluate a pinned checkpoint, confirm exported/policy.onnx and policy.pt exist, and preserve their run association. Both policy.onnx and sim2real.yaml must come from that run. No training or evaluation has been executed by this package build.
 
-For Mimic, Cyclo Lab uses `Cyclo-Mimic-K1-Rev1-Dance1` and `Cyclo-Mimic-K1-Rev1-Dance1-Play`; MJLab uses the same `Cyclo-Mimic-K1-Rev1-Dance1` ID for train and play. Choose the custom registered IDs when using user motion. Cyclo Lab's example log root is cyclo_mimic_k1_rev1_dance1; MJLab uses k1_mimic for multiple dance tasks, so verify exact task/run provenance. Verify matching motion CSV in addition to policy/config.
+For BeyondMimic PPO, Cyclo Lab uses `Cyclo-Mimic-K1-Rev1-Dance1` and `Cyclo-Mimic-K1-Rev1-Dance1-Play`; MJLab uses the same `Cyclo-Mimic-K1-Rev1-Dance1` ID for train and play. Choose the custom registered IDs when using user motion. Cyclo Lab's example log root is cyclo_mimic_k1_rev1_dance1; MJLab uses k1_mimic for multiple dance tasks, so verify exact task/run provenance. Verify matching motion CSV in addition to policy/config.
 
 On failure: preserve outputs; check task registration, GPU/driver/container versions, checkpoint path and memory errors. Do not retry full training to solve a conversion or export error. Success requires observed setup checks, an explicitly tracked job if launched, evaluation evidence and matched artifacts; prepared commands alone are “ready for execution”.
