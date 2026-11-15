@@ -16,7 +16,7 @@ const profiles = {
       ],
       task: 'Cyclo-SuperMimic-K1-Rev1-Dance1',
       input:
-        'Existing named-joint Cyclo NPZ directly; verify 50 Hz, order and quaternion metadata with the native loader',
+        'Existing 50 Hz Cyclo NPZ directly; common mimic.py selector validates unique joint/body names and explicit quaternion_order/quat_order before native articulation reorder and xyzw bridge conversion. Direct legacy PPO launchers retain historical fallback behavior.',
       checkpoint: 'logs/supermimic/<run>/model_<iteration>.pt; local native playback',
     },
   },
@@ -38,7 +38,7 @@ const profiles = {
       ],
       task: 'Cyclo-SuperMimic-GenCoord-K1-Rev1 or Cyclo-SuperMimic-MaxCoord-K1-Rev1',
       input:
-        'Reuse original 50 Hz csv_to_npz NPZ through the verified internal adapter; validate producer-specific body/joint names, order and quaternion convention. Missing or ambiguous metadata must fail; preserve source.',
+        'Reuse original 50 Hz Cyclo/MuJoCo csv_to_npz NPZ through the verified internal adapter. Validate complete named body/joint state against K1 FK and supported COM velocity profiles; legacy producer labels may be absent only when physical convention is verified. Root-only files require explicit mujoco/wxyz/world/link_origin metadata. Reject conflicting or ambiguous conventions and Isaac/xyzw inputs; preserve source.',
       checkpoint:
         'logs/<task>/<timestamp>/; actor.pt, world_model.pt, runner config; W&B bundle playback requires published matching artifacts',
     },
@@ -66,7 +66,7 @@ export function mimicGuidance({ runtime, method, stage = 'prepare' }) {
         : 'MuJoCo/mjlab; SuperMimic research APIs require a separate environment',
     runtimeCheck:
       runtime === 'lab'
-        ? 'Read checkout docs and pinned Isaac Lab/Sim/Python versions. Do not use an mjlab sidecar as Lab support.'
+        ? 'Verify native feature checkout pins: Isaac Sim 6.2 / Isaac Lab 3.0 / Python 3.12 for the reviewed SuperMimic port; other branches may differ. Do not use an mjlab sidecar as Lab support.'
         : method === 'supermimic'
           ? 'Check isolated integrations/supermimic environment: Python 3.13 / mjlab_research 1.6; do not replace PPO Python 3.11 / mjlab 1.2 environment.'
           : 'Check existing PPO environment: Python 3.11 / mjlab 1.2; preserve it.',
