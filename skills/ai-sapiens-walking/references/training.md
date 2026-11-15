@@ -8,7 +8,7 @@ Read the selected setup and locomotion pages in [source map](../../../references
 |---|---|---|
 | Cyclo Lab PhysX | main; Isaac Sim 5.1.0 / Isaac Lab 2.3.0 | /workspace/cyclo_lab |
 | Cyclo Lab Newton | k1/isaacsim-6-newton; Sim 6.0.1 / Lab 3.0.0-beta2; experimental K1 only | /workspace/cyclo_lab |
-| Cyclo MJLab | Python 3.11, MJLab 1.2.0, MuJoCo/Warp 3.5.0, Warp 1.12.0 | /workspace/cyclo_mjlab |
+| Updated Cyclo MJLab | feature-mjlab-update baseline; Python 3.12, stable MJLab 1.6.1; root requirements.lock | /workspace/cyclo_mjlab |
 
 On the real host, inspect OS, GPU/driver (`nvidia-smi` when installed), Docker/Compose (`docker version`, `docker compose version`), toolkit, storage and mounts. These inspection commands are host checks, not ROBOTIS wrappers. Missing tools are prerequisites, not permission to install system packages. Review current Isaac Sim GPU requirements for Cyclo Lab. Do not assume a GPU is provisioned by this plugin.
 
@@ -42,7 +42,7 @@ python scripts/reinforcement_learning/rsl_rl/train.py --task Cyclo-Velocity-Flat
 python scripts/reinforcement_learning/rsl_rl/play.py --task Cyclo-Velocity-Flat-K1-Rev1-Play-v0 --checkpoint logs/rsl_rl/k1_rev1_velocity/RUN/model_ITERATION.pt --num_envs 16 --headless
 ```
 
-For selected Newton use the same task but `--viz none` instead of `--headless`; the Git branch selects physics. Do not mix branch versions or describe a visualization flag as backend selection.
+The older Newton branch example uses `--viz none`; do not transfer that convention to newer launchers. Current Lab SuperMimic inherits Newton/MJWarp or selects PhysX explicitly with `physics=isaacsim_physx`, independently of `--representation gencoord|maxcoord`. Check branch help; visualization flags do not select physics.
 
 Cyclo MJLab example:
 
