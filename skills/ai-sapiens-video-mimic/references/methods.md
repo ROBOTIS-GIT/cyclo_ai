@@ -6,21 +6,26 @@ BeyondMimic `whole_body_tracking`-based PPO. SuperMimic learns a differentiable
 world model from simulator transitions and trains a policy through imagined
 rollouts. A new task name alone does not establish that learner is running.
 
-Reviewed published feature contracts (not a claim about installed/main versions):
-[Lab d9ab0766](https://github.com/ROBOTIS-GIT/cyclo_lab/blob/d9ab0766cedade0966b01f85ac65737b8fc48af4/docs/supermimic.md) and
-[MJLab bbffabe8](https://github.com/ROBOTIS-GIT/cyclo_mjlab/blob/bbffabe826f149594acfa51789c10e39c249609f/docs/supermimic.md).
-SuperMimic implementation authority is only
-[official HybridRobotics abc124c1](https://github.com/HybridRobotics/supermimic/tree/abc124c1bd5976341034668af3d12c087f2f1f55);
-BeyondMimic is based on [whole_body_tracking](https://github.com/HybridRobotics/whole_body_tracking).
+Reviewed Lab contract: [3cbd6259](https://github.com/ROBOTIS-GIT/cyclo_lab/blob/3cbd62592750ee0095df67f54399a0a320164e29/docs/supermimic.md).
+Reviewed published MJLab contract: [775c45ce](https://github.com/ROBOTIS-GIT/cyclo_mjlab/blob/775c45cecde17ea0551e24de46cd3c62100e6149/docs/supermimic.md),
+using baseline `1dcc5fa6a0827585656d44009d7d21925e14b122`
+(documentation follow-up to tested source `6e09bf7`).
+These are revision-specific contracts, not detection of an installed checkout.
+
+Both consumers use the real [ROBOTIS-GIT/supermimic submodule](https://github.com/ROBOTIS-GIT/supermimic/tree/10dd5dd3f02601caf1991790952a25db63a6fb99)
+at `third_party/supermimic`, gitlink `10dd5dd3f02601caf1991790952a25db63a6fb99`.
+It derives from official HybridRobotics `abc124c1`; consult its
+[portable-core provenance](https://github.com/ROBOTIS-GIT/supermimic/blob/10dd5dd3f02601caf1991790952a25db63a6fb99/PATCHES.md).
+BeyondMimic remains based on official `whole_body_tracking` PPO.
 The read-only `cyclo_mimic` MCP returns guidance and checkout requirements; it
 neither detects a checkout nor launches jobs.
 
 | Runtime / method | Environment and input | Output and limits |
 | --- | --- | --- |
 | Lab / BeyondMimic PPO | Branch-pinned Isaac runtime; existing Cyclo NPZ | RSL-RL `model_*.pt`; existing exporter/controller workflow |
-| Lab / SuperMimic | Isaac Sim 6.2 / Isaac Lab 3.0 / Python 3.12, native PhysX only; validated named 50 Hz NPZ | `logs/supermimic/<run>/model_<iteration>.pt`, strict v2 checkpoint; no robot export |
-| MJLab / BeyondMimic PPO | Existing Python 3.11 / mjlab 1.2; Cyclo body-state NPZ | Existing RSL-RL checkpoint/export contract |
-| MJLab / SuperMimic | Locked Python 3.13 / research mjlab 1.6; native MuJoCo, internal reference adapter | `logs/<task>/<timestamp>/` inference bundle; local offline playback; no validated robot export |
+| Lab / SuperMimic | Isaac Sim 6.2 / Isaac Lab 3.0 / Python 3.12, inherited Newton/MJWarp or explicit PhysX; validated named 50 Hz NPZ | `logs/supermimic/<run>/model_<iteration>.pt`, strict v3 checkpoint; no robot export |
+| MJLab / BeyondMimic PPO | Python 3.12 / stable MJLab 1.6.1; Cyclo body-state NPZ | Existing RSL-RL checkpoint/export contract |
+| MJLab / SuperMimic | Same root Python 3.12 / stable MJLab 1.6.1; native MuJoCo, internal reference adapter | `logs/<task>/<timestamp>/` inference bundle; local offline playback; no validated robot export |
 
 Both use `scripts/reinforcement_learning/train.py` and `play.py`, with optional
 `--algorithm beyondmimic|supermimic` or recognized task-family inference. Lab uses
@@ -30,15 +35,45 @@ Lab's current 6.2 PPO train/play share task IDs; do not append `-Play` for this
 revision. Older branches may differ. Historical direct launchers remain valid,
 including Lab `mimic.py --method` and MJLab `cyclo-supermimic`.
 
-Lab supports GenCoord K1, privileged `rep_state`, history 1, one clip/encoder,
-fixed dynamics and zero context. MaxCoord, proprio/history deployment,
-motion-to-velocity latent BC, official return sampling, multi-task/multi-clip and
-robot export are not integrated. Its native launcher selects PhysX and rejects
-Newton or hidden-dynamics randomization overrides. Do not use an mjlab sidecar.
-MJLab supports GenCoord and MaxCoord; default `rep_state` is privileged and the
-explicit proprio path lacks a full native acceptance matrix. Its current
-MuJoCo-Warp dependencies and collision APIs conflict with legacy PPO; separate
-environments are required for this version, not inherently forever.
+Lab supports GenCoord and MaxCoord K1, privileged `rep_state`, history 1,
+one clip/encoder, fixed dynamics and zero context. Proprio/history deployment,
+motion-to-velocity latent BC, official return sampling and multi-task/multi-clip
+remain outside the integrated scope. Newton/MJWarp is inherited by default;
+select PhysX with `physics=isaacsim_physx` or `--physics isaacsim_physx`.
+Choose `--representation gencoord|maxcoord` independently of the existing
+Dance1/Dance2 task. Conflicting physics spellings fail. Newton solver
+`num_substeps=1` is distinct from policy decimation; there is no silent fallback.
+
+MJLab selects GenCoord/MaxCoord by task ID. Both learners share its root stable
+MJLab environment; the previous mandatory Python 3.13 research setup is obsolete.
+Lab and MJLab retain separate native simulator environments despite aligned Python
+3.12 and core source. The MCP input schema remains `runtime`, `method`, `stage`;
+backend and representation choices are guidance for the consumer CLI, not extra
+MCP inputs or an executing bootstrap job.
+
+Initialize the shared submodule in the chosen consumer only when setup is authorized:
+
+```bash
+git submodule update --init third_party/supermimic
+```
+
+Lab uses its existing Isaac environment and `requirements/supermimic.txt` when
+matching learner dependencies are missing. Do not install the core's optional
+research extra or replace native dependencies with its standalone lock.
+For MJLab, follow `docs/runtime-migration.md` and the root lock in a new authorized
+environment (inspect existing `.venv` before reuse):
+
+```bash
+uv venv --python 3.12 .venv
+uv pip sync --python .venv/bin/python --require-hashes requirements.lock
+uv pip install --python .venv/bin/python --no-deps -e third_party/supermimic -e .
+source .venv/bin/activate
+```
+
+`integrations/supermimic` is optional checkout compatibility targeting the same
+stack. Ordinary train/play needs only the root environment. Preserve baseline
+binary pins and existing data; missing core paths are prerequisites, not permission
+to replace the simulator or silently select PPO.
 
 ## Checkout checks and examples
 
@@ -60,13 +95,14 @@ Only after the paths, tasks and flags are verified in the selected checkout:
 # Lab native integration, from repo root in its pinned Isaac environment:
 python scripts/reinforcement_learning/train.py --algorithm supermimic \
   --task Cyclo-SuperMimic-K1-Rev1-Dance1 --motion-file /data/k1_motion.npz \
-  --num-envs 2 --iterations 1 --eager --headless
-# Local native checkpoint playback (requires compatible saved metadata):
+  --representation gencoord --num-envs 2 --iterations 1 --eager --headless
+# Add physics=isaacsim_physx for explicit PhysX; use --representation maxcoord for MaxCoord.
+# Playback/continuation must repeat compatible nondefault physics overrides:
 python scripts/reinforcement_learning/play.py --algorithm supermimic \
   --checkpoint logs/supermimic/RUN/model_1.pt --num-envs 1 --play-steps 100 --eager --headless
 
 # MJLab: original supported reference, adapted internally.
-WANDB_MODE=offline uv run --project integrations/supermimic python \
+WANDB_MODE=offline python \
   scripts/reinforcement_learning/train.py --algorithm supermimic \
   Cyclo-SuperMimic-GenCoord-K1-Rev1 --motion-file /data/cyclo_motion.npz \
   --num-envs 2 --runner.max-iterations 1 --runner.run-name k1-check
@@ -114,9 +150,10 @@ This does not establish an unknown producer identity.
 Both current K1 integrations require 50 Hz; resample using actual supported converters. Do not relabel a G1 dataset as K1.
 
 PPO checkpoints, Lab checkpoints and MJLab bundles are not interchangeable.
-Lab uses `--checkpoint` with `cyclo-supermimic-isaac-v2`: task, motion digest,
+Lab uses `--checkpoint` with `cyclo-supermimic-isaac-v3`: task, motion digest,
 physical model, exact timestep/decimation, observations/actions and zero context
-must match. v1 files fail. Relocating the same motion is supported; implicit
+and representation must match. Strictly compatible legacy v2 loading is limited
+to explicit PhysX/GenCoord; other legacy/backend/representation combinations fail. Relocating the same motion is supported; implicit
 new-clip warm starts are not. Continuation restores learned/normalizer/optimizer
 state into fresh simulator, replay and RNG state, not exact trajectory resume.
 
@@ -128,21 +165,28 @@ exactly one local directory or explicit `--wandb-path`; authenticated retrieval
 is untested. Example local playback after validating the saved contract:
 
 ```bash
-uv run --project integrations/supermimic python scripts/reinforcement_learning/play.py \
+python scripts/reinforcement_learning/play.py \
   --algorithm supermimic Cyclo-SuperMimic-GenCoord-K1-Rev1 \
   --motion-file /data/cyclo_motion.npz --checkpoint-dir logs/Cyclo-SuperMimic-GenCoord-K1-Rev1/RUN \
   --viewer headless --device cpu --num-steps-rollout 4
 ```
 
-Published bounded evidence: Lab reports 69 tests, five PhysX WM/actor updates,
-exact final learned/optimizer reload, fresh-process update 6, eight inference
-steps and one PPO iteration. MJLab reports 274 tests, five native CPU updates
-each for GenCoord/Dance1 and MaxCoord/Dance2, final tensor equality, local
-reload/play with exact timing and a legacy PPO regression. WM parameters remain
-frozen during actor updates while gradients pass through dynamics. These results
-are implementation-reported evidence, not runs performed by this plugin or
-GitHub CI-green claims for those branches. No convergence, interactive viewer,
-robot export, hardware or full-feature-parity claim follows.
+Lab reports four bounded Newton/PhysX × GenCoord/MaxCoord train/continue/play
+cells and both BeyondMimic backend regressions passed. Lab learner compilation
+and deployable proprio/history remain unvalidated.
+
+MJLab baseline production Docker/CUDA PPO, checkpoint, export and EGL checks
+passed. The integrated Docker suite passed 82 tests; both representations passed
+CUDA eager and compiled/captured WM/actor updates, exact final save/reload and
+local playback. Installed entry point and fresh-process common playback CLI
+checks passed. Proprio/history-2 eager smoke passed, which does not establish
+compiled history-mode acceptance. Historical trained-policy compatibility is
+not established. See the pinned consumer's `docs/validation.md` for evidence.
+
+WM parameters stay frozen during actor updates while gradients pass through
+dynamics. These are bounded implementation-reported checks, not plugin execution,
+convergence, robot export, hardware, interactive viewer or full-feature-parity
+claims. Preserve the inference-bundle versus full training-continuation distinction.
 
 Report each stage separately: interface checks; conversion; real simulator
 transition; world-model and policy optimizer updates; finite metrics; saved

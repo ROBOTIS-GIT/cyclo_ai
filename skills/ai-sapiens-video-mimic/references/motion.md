@@ -4,7 +4,7 @@ First read [method selection](methods.md). The training/registration and deploym
 
 Authoritative pages: [GEM-X](https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x/), [Soma-retargeter](https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_retargeter/), [Lab Mimic](https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic/) and [MJLab Mimic](https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic/). Review current instructions before running.
 
-Use the ROBOTIS forks, git submodules and LFS assets, Python 3.12+ and a compatible CUDA/PyTorch stack for GEM-X. Follow its live setup guide in a separate venv. Scope model/dependency downloads explicitly; checkpoints may download automatically if omitted. Do not install into MJLab's Python 3.11 container as a shortcut.
+Use the ROBOTIS forks, git submodules and LFS assets, Python 3.12+ and a compatible CUDA/PyTorch stack for GEM-X. Follow its live setup guide in a separate venv. Scope model/dependency downloads explicitly; checkpoints may download automatically if omitted. Keep motion-generation dependencies separate from the native simulator environments, even when their Python versions match. Updated MJLab uses Python 3.12/stable MJLab 1.6.1 for both learners; consult the selected consumer lock.
 
 ```bash
 # New authorized checkout only:
