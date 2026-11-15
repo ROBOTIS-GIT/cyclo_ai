@@ -38,7 +38,7 @@ python scripts/tools/motion/replay_npz.py -f source/assets/motions/K1_rev1/my_mo
 
 Keep raw *_soma.csv distinct from the converted deployment CSV and training NPZ. Verify generated files rather than assuming output from exit status alone. Review motion before expensive training.
 
-Lab: clone dance1_env_cfg.py in source/cyclo_lab/cyclo_lab/manager_based/mimic/config/k1_rev1/, set TRAJECTORY_FILE to the new NPZ, register distinct train and -Play IDs in __init__.py using the existing Gym pattern, and verify with `python3 scripts/tools/list_envs.py`.
+Lab: clone dance1_env_cfg.py in source/cyclo_lab/cyclo_lab/manager_based/mimic/config/k1_rev1/, set TRAJECTORY_FILE to the new NPZ, register task IDs in __init__.py using the checked-out Gym pattern (current Lab 6.2 shares train/play IDs; older branches may require separate -Play IDs), and verify with `python3 scripts/tools/list_envs.py`.
 
 MJLab: clone source/tasks/mimic/config/k1_rev1/dance1_env_cfg.py as my_motion_env_cfg.py, rename its factory, set TRAJECTORY_FILE to the generated source/assets/motions NPZ, then import/register using register_mjlab_task in __init__.py and the existing runner. Verify with `python scripts/list_envs.py --keyword MyMotion`. Do not copy Gym registration into MJLab.
 

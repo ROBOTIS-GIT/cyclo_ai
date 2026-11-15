@@ -111,3 +111,5 @@ See [CONTRIBUTING](CONTRIBUTING.md) for development setup, tests and packaging. 
 First-party source is [Apache-2.0](LICENSE). The runtime uses the public official DynamixelSDK and pyserial. See [third-party notices](THIRD_PARTY_NOTICES.md) for dependency licenses and [release preparation](references/releasing.md) for distribution requirements.
 
 For K1 motion imitation, [select BeyondMimic PPO or SuperMimic](skills/ai-sapiens-video-mimic/references/methods.md) independently from Cyclo Lab/MJLab and physics. The read-only `cyclo_mimic` MCP tool returns branch checks and distinct artifact contracts; it does not launch training or validate a robot policy.
+
+The reviewed native integrations share train/play algorithm selection while retaining simulator-specific data and checkpoint validation. Lab uses a strict v2 `--checkpoint`; MJLab supports local `--checkpoint-dir` inference bundles without W&B synchronization. The source and install ZIPs include the same guidance-only MCP contracts; they do not supply simulation runtimes or robot policy exporters.
