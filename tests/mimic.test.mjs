@@ -23,6 +23,25 @@ test('method selection preserves distinct runtime and artifact contracts', () =>
   }
 });
 
+test('local playback contracts remain simulator-specific and need no remote publication', () => {
+  const lab = mimicGuidance({ runtime: 'lab', method: 'supermimic', stage: 'play' });
+  const mj = mimicGuidance({ runtime: 'mjlab', method: 'supermimic', stage: 'play' });
+  assert.match(lab.checkpoint, /--checkpoint /);
+  assert.match(lab.checkpoint, /isaac-v2/);
+  assert.match(lab.checkpoint, /fresh simulator\/replay\/RNG/);
+  assert.match(lab.scope, /history 1/);
+  assert.match(mj.checkpoint, /--checkpoint-dir/);
+  for (const file of ['manifest.json', 'world_model.pt', 'actor.pt'])
+    assert.ok(mj.checkpoint.includes(file));
+  assert.match(mj.checkpoint, /no W&B upload\/sync/);
+  assert.match(mj.checkpoint, /not optimizer\/replay resume/);
+  for (const profile of [lab, mj]) {
+    assert.match(profile.selection, /--algorithm beyondmimic\|supermimic/);
+    assert.match(profile.checkpoint, /timestep.*decimation/);
+    assert.equal(profile.capabilityDetected, false);
+  }
+});
+
 test('unsupported stage or unknown method never falls back to PPO', () => {
   for (const runtime of ['lab', 'mjlab'])
     for (const stage of ['export', 'sim2real'])
