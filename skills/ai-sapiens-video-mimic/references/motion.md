@@ -1,5 +1,7 @@
 # Video to Mimic
 
+First read [method selection](methods.md). The training/registration and deployment examples below describe BeyondMimic PPO. SuperMimic needs the selected native integration, its input adapter and distinct checkpoint/play contract.
+
 Authoritative pages: [GEM-X](https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x/), [Soma-retargeter](https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_retargeter/), [Lab Mimic](https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic/) and [MJLab Mimic](https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic/). Review current instructions before running.
 
 Use the ROBOTIS forks, git submodules and LFS assets, Python 3.12+ and a compatible CUDA/PyTorch stack for GEM-X. Follow its live setup guide in a separate venv. Scope model/dependency downloads explicitly; checkpoints may download automatically if omitted. Do not install into MJLab's Python 3.11 container as a shortcut.

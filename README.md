@@ -109,3 +109,5 @@ Device access requires a compatible local connection and an explicit request for
 See [CONTRIBUTING](CONTRIBUTING.md) for development setup, tests and packaging. For bugs or questions, open a [GitHub issue](https://github.com/ROBOTIS-GIT/cyclo_ai/issues); report security issues through the process in [SECURITY.md](SECURITY.md).
 
 First-party source is [Apache-2.0](LICENSE). The runtime uses the public official DynamixelSDK and pyserial. See [third-party notices](THIRD_PARTY_NOTICES.md) for dependency licenses and [release preparation](references/releasing.md) for distribution requirements.
+
+For K1 motion imitation, [select BeyondMimic PPO or SuperMimic](skills/ai-sapiens-video-mimic/references/methods.md) independently from Cyclo Lab/MJLab and physics. The read-only `cyclo_mimic` MCP tool returns branch checks and distinct artifact contracts; it does not launch training or validate a robot policy.

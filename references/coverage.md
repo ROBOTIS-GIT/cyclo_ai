@@ -45,3 +45,5 @@ Reviewed 2026-10-23 against the official AI Sapiens sidebar. The [machine-readab
 | [Support](https://docs.robotis.com/docs/systems/aisapiens/resources/support/) | guidance | documented | [ai-sapiens-docs](../references/sources.md) | untested |
 
 Partial pages need section-level checks: hardware BoM/STEP/covers/tutorials and electrical PCB/MCU/wiring/pinout resources are Coming Soon. Operation Guide mode-switch/LED sections are Coming Soon, while the separate RC page documents its own mode flow. Open Source says USD is not yet public. A linked repository or article is not proof that its K1 workflow is ready. The technical story includes AI Worker manipulation; do not transfer those claims to K1.
+
+Mimic method integration guidance has a separate [runtime/method matrix](../skills/ai-sapiens-video-mimic/references/methods.md). Feature interfaces require checkout verification; offline MCP tests establish routing and failure behavior only. They do not establish simulator, export or hardware support.

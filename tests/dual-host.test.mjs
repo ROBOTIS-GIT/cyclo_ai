@@ -68,7 +68,7 @@ for (const host of ['codex', 'claude'])
         const tools = (await c.listTools()).tools;
         assert.equal(new Set(tools.map((t) => t.name)).size, tools.length);
         if (name === 'cyclo-mcp') {
-          assert.equal(tools.length, 18);
+          assert.equal(tools.length, 19);
           const registry = await c.callTool({ name: 'dynamixel_registry', arguments: {} });
           assert.equal(registry.structuredContent.hardwareEnabled, true);
           const source = await c.callTool({

@@ -36,7 +36,7 @@ for (const [i, servers] of manifests.entries()) {
     await client.connect(transport);
     assert.equal(client.getServerVersion().name, 'cyclo-mcp');
     assert.equal(client.getServerVersion().version, version);
-    assert.equal((await client.listTools()).tools.length, 18);
+    assert.equal((await client.listTools()).tools.length, 19);
     const registry = await client.callTool({ name: 'dynamixel_registry', arguments: {} });
     assert.equal(registry.isError, undefined);
     assert.equal(registry.structuredContent.hardwareEnabled, false);
@@ -58,5 +58,5 @@ for (const [i, servers] of manifests.entries()) {
   }
 }
 console.log(
-  'Both installed host declarations: initialize, 18 tools, source catalogs and offline guard passed.',
+  'Both installed host declarations: initialize, 19 tools, source catalogs and offline guard passed.',
 );

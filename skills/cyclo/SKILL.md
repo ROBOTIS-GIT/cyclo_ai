@@ -19,6 +19,8 @@ Read [execution boundaries](../../references/execution.md) and [device runtime](
 
 For the broader ROBOTIS portfolio start with [product expert](../robotis-expert/SKILL.md); software integration uses [integration](../robotis-integrate/SKILL.md); actuator explanations and Control Table, motor-control and ID/baud/LED/profile requests use [DYNAMIXEL expert](../dynamixel-expert/SKILL.md). Custom/unindexed actuators and user-supplied XML/register tables also use that skill and its [external-table workflow](../../references/custom-control-tables.md). Use the standalone product MCP for catalog and reviewed custom-table operations; do not bypass explicit policy denials or failed live preconditions.
 
+For BeyondMimic or SuperMimic requests, use [Mimic method selection](../ai-sapiens-video-mimic/references/methods.md) and the read-only `cyclo_mimic` tool. Preserve runtime and learning method separately; legacy Mimic is PPO.
+
 Classify the goal before selecting tools. For K1 manual facts use [docs](../ai-sapiens-docs/SKILL.md); walking uses [walking](../ai-sapiens-walking/SKILL.md); video/Mimic uses [video](../ai-sapiens-video-mimic/SKILL.md); deployment preparation uses [Sim2Real](../ai-sapiens-sim2real/SKILL.md). Preserve selected backend and ask Cyclo Lab or Cyclo MJLab when a walking request leaves it unknown.
 
 Actuator inspection, Return Delay Time, baud, LED, torque, mode, goals and other resolved Control Table items use the product MCP. Reset/reboot/flashing are separate protocol workflows and are not inferred from register requests. GMR/K1 LeRobot/Cyclo Intelligence support remains bounded by the current official pages.
