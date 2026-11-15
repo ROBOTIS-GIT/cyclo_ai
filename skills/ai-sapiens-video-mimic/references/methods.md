@@ -19,9 +19,9 @@ neither detects a checkout nor launches jobs.
 | Runtime / method | Environment and input | Train / play interface to verify | Output and limits |
 | --- | --- | --- | --- |
 | Lab / BeyondMimic PPO | Branch-pinned Isaac Lab and physics; existing Cyclo NPZ | Existing `scripts/reinforcement_learning/rsl_rl/{train,play}.py` | `logs/rsl_rl/<experiment>/<run>/model_*.pt`; existing exporter/controller workflow |
-| Lab / SuperMimic | Native Isaac Lab; current port defaults to PhysX, reuses original 50 Hz Cyclo NPZ | `scripts/reinforcement_learning/mimic.py --method supermimic {train,play}` | `logs/supermimic/<run>/model_<iteration>.pt`; native local playback; no validated K1 export/Sim2Real contract |
+| Lab / SuperMimic | Native Isaac Sim 6.2 / Isaac Lab 3.0 / Python 3.12; current port defaults to PhysX, reuses original 50 Hz Cyclo NPZ | `scripts/reinforcement_learning/mimic.py --method supermimic {train,play}` | `logs/supermimic/<run>/model_<iteration>.pt`; native local playback; no validated K1 export/Sim2Real contract |
 | MJLab / BeyondMimic PPO | Existing Python 3.11 / mjlab 1.2 environment; Cyclo body-state NPZ | Existing `scripts/reinforcement_learning/{train,play}.py` | Existing RSL-RL checkpoint/export contract |
-| MJLab / SuperMimic | Isolated `integrations/supermimic`, Python 3.13 / pinned mjlab_research 1.6; reuse the original 50 Hz Cyclo NPZ through a verified internal adapter | Same native train/play scripts with `--algorithm supermimic`; `cyclo-supermimic` compatibility command | `logs/<task>/<timestamp>/`; `actor.pt`, `world_model.pt`, runner config; W&B bundle playback, offline runs require explicit sync; no validated K1 export/Sim2Real contract |
+| MJLab / SuperMimic | Isolated `integrations/supermimic`, Python 3.13 / pinned mjlab_research 1.6; reuse the original 50 Hz Cyclo NPZ through a verified internal adapter | Same native train/play scripts with explicit `--algorithm supermimic` or task-family dispatch; `cyclo-supermimic` compatibility command | `logs/<task>/<timestamp>/`; `actor.pt`, `world_model.pt`, runner config; W&B bundle playback, offline runs require explicit sync; no validated K1 export/Sim2Real contract |
 
 Do not add mjlab to the Isaac Lab environment or describe an mjlab sidecar as
 Lab support. Lab's new native port has a narrower scope: GenCoord, rep-state
@@ -29,6 +29,10 @@ actor and one motion encoder; privileged input is not a deployable sensor policy
 MJLab exposes GenCoord and MaxCoord with different representations. Neither
 method selection nor a viewer flag selects PhysX versus Newton. Never infer
 SuperMimic Newton support from an existing PPO Newton branch.
+
+The Lab contract was checked against native commit `3eaef846`. The MJLab
+adapter was reviewed as ongoing feature work, not as a published main capability.
+Its final commit, tests and `--motion-file` contract must be checked before use.
 
 ## Checkout checks and examples
 
@@ -42,7 +46,10 @@ silently train PPO. Compare explicit method and task family before launching.
 
 Legacy `Cyclo-Mimic-K1-Rev1-Dance1` / `Dance2` IDs remain PPO. Where registered,
 `Cyclo-BeyondMimic-*` aliases retain those configurations. Lab keeps separate
-`-Play` PPO IDs; MJLab uses the same PPO task for train and play. Custom motion
+`-Play` PPO IDs; the common `mimic.py --method beyondmimic` selector accepts
+`--motion-file` for strict validation and forwards the motion config override to
+the existing PPO launcher. Direct legacy PPO commands retain their historical
+unnamed-K1 fallback for compatibility. MJLab uses the same PPO task for train and play. Custom motion
 registrations must preserve each runtime's existing registration pattern.
 
 Only after the paths, tasks and flags are verified in the selected checkout:
@@ -72,20 +79,34 @@ logging, W&B sync and a listening viewer need their own authorized scope.
 
 Preserve source video, retarget CSV, runtime-specific NPZ and deployment CSV.
 Lab's native loader reorders named joints to Isaac articulation order and handles
-quaternion conventions at its bridge. MJLab should adapt the same original 50 Hz `csv_to_npz` reference internally;
+quaternion conventions at its bridge. The Lab selector requires explicit
+`quaternion_order` or `quat_order`; the native loader converts to Isaac xyzw,
+and the SuperMimic bridge converts root orientation to algorithm wxyz once.
+Lab rejects missing/conflicting conventions rather than guessing.
+
+MJLab should adapt the same original 50 Hz `csv_to_npz` reference internally;
 a separate user conversion CLI is not a required workflow step. Confirm this
 capability in the actual branch before using the direct-input example above.
 If the adapter is absent or still changing, report the missing capability and
 leave execution pending. Do not claim direct input works from a converter alone.
 The adapter must validate producer/backend-specific body and joint names and
 orders, pelvis/root identity, finite shapes, units, frames, control rate and
-quaternion convention (wxyz versus xyzw). It must reorder by validated identity
-and convert quaternion convention once, rejecting duplicate, missing or ambiguous
-metadata rather than guessing from a 23-column shape or unit quaternion norm.
+quaternion convention. The reviewed MJLab adapter accepts Cyclo/MuJoCo wxyz
+world-frame input; it rejects Isaac/xyzw inputs rather than converting backends.
+It reorders by validated names. Complete named body-state input is checked
+against K1 FK and supported link-origin/current-COM/historical-COM velocity
+profiles, including COM-to-origin correction. Legacy producer labels may be
+absent only when redundant body states establish the physical convention;
+unknown or ambiguous profiles yielding different root velocity fail. Root-only
+files require explicit `backend=mujoco`, `quaternion_order=wxyz`,
+`velocity_frame=world`, `velocity_point=link_origin`. Never guess from a
+23-column shape or unit quaternion norm.
 Preserve the original bytes and 50 Hz reference; do not rewrite it in place.
 Reference compatibility does not establish ONNX or Sim2Real policy compatibility.
-Both current K1 integrations require 50 Hz;
-resample using actual supported converters. Do not relabel a G1 dataset as K1.
+The MJLab adapter uses a derived `.supermimic-data/adapter/` cache and
+source-hash/model-signature manifest, revalidating original inputs every call.
+This does not establish an unknown producer identity.
+Both current K1 integrations require 50 Hz; resample using actual supported converters. Do not relabel a G1 dataset as K1.
 
 PPO checkpoints, Lab SuperMimic checkpoints and MJLab SuperMimic bundles are not
 interchangeable. Retain learner config, robot revision, representation, motion

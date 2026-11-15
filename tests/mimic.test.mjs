@@ -10,7 +10,9 @@ test('method selection preserves distinct runtime and artifact contracts', () =>
   assert.notEqual(lab.checkpoint, mj.checkpoint);
   assert.match(lab.input, /directly/);
   assert.match(mj.input, /internal adapter/);
-  assert.match(mj.input, /ambiguous metadata must fail/);
+  assert.match(mj.input, /Root-only files require explicit/);
+  assert.match(mj.input, /Reject conflicting or ambiguous conventions and Isaac\/xyzw/);
+  assert.match(lab.runtimeCheck, /Isaac Sim 6.2 \/ Isaac Lab 3.0 \/ Python 3.12/);
   assert.match(mj.artifacts, /does not imply ONNX/);
   for (const runtime of ['lab', 'mjlab']) {
     const ppo = mimicGuidance({ runtime, method: 'beyondmimic', stage: 'export' });
