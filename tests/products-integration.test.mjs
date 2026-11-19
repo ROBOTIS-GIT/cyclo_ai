@@ -59,6 +59,7 @@ test('default stdio: official routes/registry work; discovery and execution stay
   assert.deepEqual(
     tools,
     [
+      'cyclo_mimic',
       'robotis_code',
       'robotis_sources',
       'dynamixel_registry',
