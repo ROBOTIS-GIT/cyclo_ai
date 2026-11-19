@@ -116,6 +116,16 @@ class Bridge:
 
             self.port = BoundedPort(r["port"])
             self.handler = api.PacketHandler(protocol)
+            if protocol == 2:
+                # This pinned SDK's txPacket ignores addStuffing's returned buffer.
+                # Preserve the SDK algorithm while making its result visible in place.
+                sdk_add_stuffing = self.handler.addStuffing
+
+                def add_stuffing_in_place(packet):
+                    packet[:] = sdk_add_stuffing(packet)
+                    return packet
+
+                self.handler.addStuffing = add_stuffing_in_place
             self.protocol = protocol
             try:
                 if not self.port.setBaudRate(r["baud"]):
@@ -161,6 +171,10 @@ class Bridge:
                     raise RuntimeError("Sync Read width mismatch")
                 responses.append({"id": device_id, "bytes": data})
             return responses
+        if op == "writeGroup":
+            return self.write_group(r)
+        if op == "bulkRead":
+            return self.bulk_read(r["entries"])
         if op == "bind":
             catalog = self.catalog()
             m = next(
@@ -247,6 +261,242 @@ class Bridge:
         raise ValueError(
             "Unsupported bridge operation; use a source-bound item, not an arbitrary protocol command"
         )
+
+    def write_group(self, request):
+        """Validate every named target before one SDK group packet; never retry."""
+        result = {"outcome": "not_written", "items": [], "transmission": {"attempted": False}}
+        saved_bound = self.bound
+        try:
+            entries = request["entries"]
+            if not isinstance(entries, list) or not 2 <= len(entries) <= 253:
+                raise ValueError("Choose 2..253 distinct primary targets")
+            ids = [e["id"] for e in entries]
+            if len(set(ids)) != len(ids) or any(
+                type(i) is not int or not 0 <= i <= (253 if self.protocol == 1 else 252)
+                for i in ids
+            ):
+                raise ValueError("Invalid group primary IDs")
+            plans = []
+            for e in entries:
+                if e.get("identityMode") or type(e.get("value")) is not int:
+                    raise ValueError(
+                        "Group writes require readable identities and raw integer values"
+                    )
+                self.command({**e, "op": "bind"})
+                m, b = self.bound
+                inventory = next(
+                    x for x in self.inventory()["models"] if x["catalogId"] == m["catalogId"]
+                )
+                item = next((x for x in inventory["items"] if x["key"] == e["tableItem"]), None)
+                if (
+                    not item
+                    or item["memory"] != "RAM"
+                    or item["write"].get("kind") != "direct"
+                    or item["readStatus"] != "resolved-raw"
+                ):
+                    raise ValueError("Group writes require a direct readable RAM item")
+                import re
+
+                if re.search(
+                    r"^(Profile |.*Limit$|.*Mode.*|Lock$|.*Watchdog$|Secondary)", item["name"]
+                ):
+                    raise ValueError("Configuration side effects are not group writable")
+                data = list(
+                    e["value"].to_bytes(
+                        item["width"],
+                        "little",
+                        signed=item["write"]["encoding"] == "twos-complement",
+                    )
+                )
+                payload = {"id": e["id"], "address": item["address"], "data": data}
+                self.validate_write(payload)
+                before = self.read(e["id"], item["address"], item["width"])
+                plans.append((e, item, payload))
+                result["items"].append(
+                    {
+                        "id": e["id"],
+                        "item": item["key"],
+                        "requested": e["value"],
+                        "before": before,
+                        "verification": "pending",
+                    }
+                )
+            if len({item["name"] for _, item, _ in plans}) != 1:
+                raise ValueError("Group writes require one common named item")
+            same = all(
+                i["address"] == plans[0][1]["address"] and i["width"] == plans[0][1]["width"]
+                for _, i, _ in plans
+            )
+            instruction = "syncWrite" if same else "bulkWrite"
+            if request.get("instruction") != instruction or not same and self.protocol != 2:
+                raise ValueError("Unsupported group instruction/layout")
+            first = plans[0][1]
+            params = (
+                (
+                    [first["address"], first["width"]]
+                    if self.protocol == 1
+                    else [
+                        first["address"] & 255,
+                        first["address"] >> 8,
+                        first["width"] & 255,
+                        first["width"] >> 8,
+                    ]
+                )
+                if same
+                else []
+            )
+            for e, item, payload in plans:
+                if self.protocol == 1 and (
+                    item["address"] + item["width"] > 256 or item["width"] > 255
+                ):
+                    raise ValueError("Protocol1 address bounds exceeded")
+                params.append(e["id"])
+                if not same:
+                    params.extend(
+                        [
+                            item["address"] & 255,
+                            item["address"] >> 8,
+                            item["width"] & 255,
+                            item["width"] >> 8,
+                        ]
+                    )
+                params.extend(payload["data"])
+            body = [0x83 if same else 0x93] + params
+            stuffing = (
+                sum(body[n - 2 : n + 1] == [255, 255, 253] for n in range(2, len(body)))
+                if self.protocol == 2
+                else 0
+            )
+            packet_bytes = (6 if self.protocol == 1 else 10) + len(params) + stuffing
+            if packet_bytes > (250 if self.protocol == 1 else 1024):
+                raise ValueError("Group request exceeds one SDK packet; no splitting")
+            group = (
+                self.api.GroupSyncWrite(self.port, self.handler, first["address"], first["width"])
+                if same
+                else self.api.GroupBulkWrite(self.port, self.handler)
+            )
+            for e, item, payload in plans:
+                added = (
+                    group.addParam(e["id"], payload["data"])
+                    if same
+                    else group.addParam(e["id"], item["address"], item["width"], payload["data"])
+                )
+                if not added:
+                    raise ValueError("SDK rejected group parameters")
+            # Recheck all bindings and prerequisites after assembling the complete group.
+            for e, _, payload in plans:
+                self.command({**e, "op": "bind"})
+                self.validate_write(payload)
+            result["identityVerifiedBefore"] = True
+            result["instruction"] = instruction
+            result["packetBytes"] = packet_bytes
+            result["transmission"] = {
+                "attempted": True,
+                "acknowledgement": "none: broadcast group write",
+            }
+            self.check(group.txPacket(), 0)
+            result["transmission"]["transmitted"] = True
+            for n, (e, item, _) in enumerate(plans):
+                try:
+                    self.command({**e, "op": "bind"})
+                    data = self.read(e["id"], item["address"], item["width"])
+                    value = int.from_bytes(
+                        bytes(data), "little", signed=item["write"]["encoding"] == "twos-complement"
+                    )
+                    rule = item["write"]
+                    equivalent = next(
+                        (
+                            x["effective"]
+                            for x in rule.get("normalizationTable", [])
+                            if x["input"][0] <= e["value"] <= x["input"][1]
+                        ),
+                        None,
+                    )
+                    verified = (
+                        value == e["value"]
+                        or value in rule.get("readbackValues", [])
+                        or value == equivalent
+                    )
+                    result["items"][n].update(
+                        observed=value,
+                        bytes=data,
+                        verification="verified" if verified else "mismatch",
+                    )
+                except Exception as error:
+                    result["items"][n].update(verification="unknown", error=str(error))
+            result["outcome"] = (
+                "verified"
+                if all(x["verification"] == "verified" for x in result["items"])
+                else "uncertain"
+            )
+        except Exception as error:
+            result["outcome"] = (
+                "uncertain" if result["transmission"]["attempted"] else "not_written"
+            )
+            result["error"] = str(error)
+        finally:
+            self.bound = saved_bound
+            self._last_write_item = None
+        return result
+
+    def bulk_read(self, entries):
+        if not isinstance(entries, list) or not 2 <= len(entries) <= 16:
+            raise ValueError("Bulk Read requires 2..16 entries per batch")
+        ids = [e["id"] for e in entries]
+        if len(set(ids)) != len(ids) or any(
+            type(i) is not int or not 0 <= i <= (253 if self.protocol == 1 else 252) for i in ids
+        ):
+            raise ValueError("Invalid Bulk Read IDs")
+        params = []
+        total = 0
+        for e in entries:
+            address, size = e["address"], e["size"]
+            if (
+                type(size) is not int
+                or not 1 <= size <= 1024
+                or type(address) is not int
+                or not 0 <= address <= 65536 - size
+            ):
+                raise ValueError("Invalid bounded Bulk Read")
+            if self.protocol == 1:
+                model = next(
+                    (m for m in self.catalog()["models"] if m["catalogId"] == e.get("catalogId")),
+                    None,
+                )
+                if (
+                    not model
+                    or model.get("customHash")
+                    or not model["catalogId"].startswith(("mx_series/", "x_series/"))
+                    or "xl-320" in model["catalogId"]
+                    or 1 not in model["protocols"]
+                    or size > 244
+                    or address + size > 256
+                ):
+                    raise ValueError("Protocol1 Bulk Read unsupported for this catalog/layout")
+                # Verify actual model rather than trusting a caller-provided catalog ID.
+                actual = int.from_bytes(bytes(self.read(e["id"], 0, 2)), "little")
+                if actual not in model["modelNumbers"]:
+                    raise ValueError("Bulk Read model identity mismatch")
+                params.extend([size, e["id"], address])
+            else:
+                params.extend([e["id"], address & 255, address >> 8, size & 255, size >> 8])
+            total += size
+        if total > 4096:
+            raise ValueError("Bulk Read response budget exceeded")
+        # The pinned GroupBulkRead wrapper has an incompatible P1 signature and
+        # drops status errors. Use its packet handler API and check every response.
+        if self.protocol == 1:
+            self.check(self.handler.bulkReadTx(self.port, params, len(params)), 0)
+        else:
+            self.check(self.handler.bulkReadTx(self.port, params, len(params), False), 0)
+        responses = []
+        for e in entries:
+            data, status, error = self.handler.readRx(self.port, e["id"], e["size"])
+            self.check(status, error)
+            if len(data) != e["size"]:
+                raise RuntimeError("Bulk Read response width mismatch")
+            responses.append({"id": e["id"], "bytes": data})
+        return responses
 
     def read(self, device_id, address, size):
         if (

@@ -71,7 +71,7 @@ Run the offline tests, then build and verify the install archive:
 
 ```sh
 npm run package:runtime
-npm run verify:runtime -- artifacts/cyclo-ai-0.2.1-install.zip
+npm run verify:runtime -- artifacts/cyclo-ai-0.2.2-install.zip
 ```
 
 Packaging downloads only the pinned pyserial and PyYAML source archives from
@@ -127,15 +127,16 @@ source commit in distribution.json, and updates the full file-integrity inventor
 An existing distribution branch must have matching provenance; changed source
 requires a version bump.
 
-Configure these repository variables using the maintainer's Git identity:
+Configure these Actions variables at the repository level or share them with
+this repository from the organization. Use the maintainer's Git identity:
 
-- `RELEASE_GIT_NAME` and `RELEASE_GIT_EMAIL`: the configured commit identity.
-- `RELEASE_GITHUB_LOGIN`: the GitHub account with the registered signing key and
+- `CLAUDE_GIT_NAME` and `CLAUDE_GIT_EMAIL`: the configured commit identity.
+- `CLAUDE_GITHUB_LOGIN`: the GitHub account with the registered signing key and
   verified commit email.
-- `RELEASE_GPG_FINGERPRINT`: the registered key's full fingerprint.
+- `CLAUDE_GPG_FINGERPRINT`: the registered key's full fingerprint.
 
-Configure `RELEASE_GPG_PRIVATE_KEY` and, if needed,
-`RELEASE_GPG_PASSPHRASE` as Actions secrets through the repository's authorized
+Configure `CLAUDE_GPG_PRIVATE_KEY` and, if needed,
+`CLAUDE_GPG_PASSPHRASE` as Actions secrets through the repository's authorized
 secret-management process. Local development does not upload or export a key.
 The workflow imports signing material only into its temporary runner GPG home
 and removes it at completion. It cannot publish without a usable registered key.
@@ -148,3 +149,26 @@ Contents write permission for this manual job, and branch rules must permit the
 signed distribution update. Missing access or signing configuration fails the
 job; there is no unsigned fallback. Creating this workflow does not publish the
 branch or submit the plugin to a directory.
+
+## Public submission metadata
+
+OpenAI listing and review metadata are in `plugin.json` under
+`extensions.com.openai`. The listing uses ROBOTIS as publisher, Developer Tools
+as category, the Cyclo documentation homepage and the ROBOTIS support homepage.
+The five positive review cases require no connected hardware; the three negative
+cases check requests outside the plugin's scope. These are reviewer scenarios,
+not records of completed host-level evaluations.
+
+Both policy URL fields currently reference ROBOTIS's existing combined website
+privacy policy and conditions of use. That page explicitly describes website
+use, accounts and orders. Confirm its applicability to Cyclo AI and its local
+MCP data handling, or replace the URLs with applicable published policies before
+submission. Do not treat these draft links as proof of product-policy coverage.
+Confirm the publisher against the submitting organization's verified identity
+and select the category supported by the submission portal.
+
+Record a reviewer-accessible installation and usage walkthrough, and add its
+real URL as `review.demo_recording_url` or through the submission portal before
+MCP review. No placeholder recording URL is included. Review cases assume
+Node >=22 and Python >=3.9 are available; all positive cases use catalogs or
+source indexes and must not scan ports or perform device I/O.

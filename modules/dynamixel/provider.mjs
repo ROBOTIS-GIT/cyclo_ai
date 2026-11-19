@@ -48,20 +48,35 @@ function bridge(python, env) {
       fail(e);
     }
   });
-  const call = (payload) =>
+  const call = (payload, timeout = 2500, signal) =>
     new Promise((resolve, reject) => {
       if (stopped) return reject(Error('SDK bridge unavailable; no blind restart'));
+      if (signal?.aborted) return reject(Error('SDK operation cancelled before dispatch'));
+      const abort = () => {
+        child.kill('SIGTERM');
+        const error = Error('SDK operation cancelled; transport closure unconfirmed');
+        error.name = 'TransportClosureError';
+        fail(error);
+      };
+      const cleanup = () => signal?.removeEventListener('abort', abort);
       const item = {
-        resolve,
-        reject,
+        resolve: (value) => {
+          cleanup();
+          resolve(value);
+        },
+        reject: (error) => {
+          cleanup();
+          reject(error);
+        },
         timer: setTimeout(() => {
           child.kill('SIGTERM');
           const e = Error('SDK bridge deadline exceeded; transport closure unconfirmed');
           e.name = 'TransportClosureError';
           fail(e);
-        }, 2500),
+        }, timeout),
       };
       pending.push(item);
+      signal?.addEventListener('abort', abort, { once: true });
       child.stdin.write(JSON.stringify(payload) + '\n');
     });
   const teardown = async () => {
@@ -130,6 +145,13 @@ export async function sdkProvider(env = process.env) {
         throw e;
       }
       return {
+        writeGroup: (request, { signal } = {}) =>
+          b.call(
+            { op: 'writeGroup', ...request },
+            Math.min(120000, 2500 + request.entries.length * 1500),
+            signal,
+          ),
+        bulkRead: (entries) => b.call({ op: 'bulkRead', entries }, 2500 + entries.length * 200),
         syncRead: (ids, address, size) => b.call({ op: 'syncRead', ids, address, size }),
         ping: (id) => b.call({ op: 'ping', id }),
         probe: (id) => b.call({ op: 'probe', id }),
