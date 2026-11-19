@@ -71,7 +71,7 @@ Run the offline tests, then build and verify the install archive:
 
 ```sh
 npm run package:runtime
-npm run verify:runtime -- artifacts/cyclo-ai-0.2.1-install.zip
+npm run verify:runtime -- artifacts/cyclo-ai-0.2.2-install.zip
 ```
 
 Packaging downloads only the pinned pyserial and PyYAML source archives from

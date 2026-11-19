@@ -1,6 +1,6 @@
 {
   "name": "cyclo-ai",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Software development for DYNAMIXEL actuators and DYNAMIXEL-powered robots, with official-source guidance, model-aware device tools, and robot development workflows.",
   "author": {
     "name": "Woojin-Crive, Taehun Lim"
