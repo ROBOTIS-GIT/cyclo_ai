@@ -23,7 +23,8 @@
           "Help me inspect and configure the DYNAMIXEL actuators connected to my computer",
           "Help me prepare ROS 2 control, teleoperation, or learning software for my DYNAMIXEL-powered robot"
         ],
-        "logo": "./assets/CYCLO_Signature_Horiz.svg",
+        "logo": "./assets/cyclo-icon.svg",
+        "composerIcon": "./assets/cyclo-icon.svg",
         "developerName": "ROBOTIS",
         "category": "Developer Tools",
         "websiteURL": "https://docs.robotis.com/docs/software/cyclo/",

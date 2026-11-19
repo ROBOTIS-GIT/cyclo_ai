@@ -6,6 +6,7 @@
     "name": "Woojin-Crive, Taehun Lim"
   },
   "repository": "https://github.com/ROBOTIS-GIT/cyclo_ai",
+  "icon": "./assets/cyclo-icon.svg",
   "mcpServers": {
     "cyclo-mcp": {
       "command": "node",
