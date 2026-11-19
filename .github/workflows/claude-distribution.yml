@@ -71,12 +71,12 @@ jobs:
           GNUPGHOME: ${{ runner.temp }}/cyclo-release-gpg
           RELEASE_GPG_PROGRAM: ${{ runner.temp }}/cyclo-gpg-sign
           GH_TOKEN: ${{ github.token }}
-          RELEASE_GIT_NAME: ${{ vars.RELEASE_GIT_NAME }}
-          RELEASE_GIT_EMAIL: ${{ vars.RELEASE_GIT_EMAIL }}
-          RELEASE_GITHUB_LOGIN: ${{ vars.RELEASE_GITHUB_LOGIN }}
-          RELEASE_GPG_FINGERPRINT: ${{ vars.RELEASE_GPG_FINGERPRINT }}
-          RELEASE_GPG_PRIVATE_KEY: ${{ secrets.RELEASE_GPG_PRIVATE_KEY }}
-          RELEASE_GPG_PASSPHRASE: ${{ secrets.RELEASE_GPG_PASSPHRASE }}
+          RELEASE_GIT_NAME: ${{ vars.CLAUDE_GIT_NAME }}
+          RELEASE_GIT_EMAIL: ${{ vars.CLAUDE_GIT_EMAIL }}
+          RELEASE_GITHUB_LOGIN: ${{ vars.CLAUDE_GITHUB_LOGIN }}
+          RELEASE_GPG_FINGERPRINT: ${{ vars.CLAUDE_GPG_FINGERPRINT }}
+          RELEASE_GPG_PRIVATE_KEY: ${{ secrets.CLAUDE_GPG_PRIVATE_KEY }}
+          RELEASE_GPG_PASSPHRASE: ${{ secrets.CLAUDE_GPG_PASSPHRASE }}
         run: |
           test -n "$RELEASE_GPG_PRIVATE_KEY" || { echo 'Configure the registered release signing key first; no unsigned publishing.'; exit 1; }
           install -d -m 700 "$GNUPGHOME"

@@ -127,15 +127,16 @@ source commit in distribution.json, and updates the full file-integrity inventor
 An existing distribution branch must have matching provenance; changed source
 requires a version bump.
 
-Configure these repository variables using the maintainer's Git identity:
+Configure these Actions variables at the repository level or share them with
+this repository from the organization. Use the maintainer's Git identity:
 
-- `RELEASE_GIT_NAME` and `RELEASE_GIT_EMAIL`: the configured commit identity.
-- `RELEASE_GITHUB_LOGIN`: the GitHub account with the registered signing key and
+- `CLAUDE_GIT_NAME` and `CLAUDE_GIT_EMAIL`: the configured commit identity.
+- `CLAUDE_GITHUB_LOGIN`: the GitHub account with the registered signing key and
   verified commit email.
-- `RELEASE_GPG_FINGERPRINT`: the registered key's full fingerprint.
+- `CLAUDE_GPG_FINGERPRINT`: the registered key's full fingerprint.
 
-Configure `RELEASE_GPG_PRIVATE_KEY` and, if needed,
-`RELEASE_GPG_PASSPHRASE` as Actions secrets through the repository's authorized
+Configure `CLAUDE_GPG_PRIVATE_KEY` and, if needed,
+`CLAUDE_GPG_PASSPHRASE` as Actions secrets through the repository's authorized
 secret-management process. Local development does not upload or export a key.
 The workflow imports signing material only into its temporary runner GPG home
 and removes it at completion. It cannot publish without a usable registered key.
