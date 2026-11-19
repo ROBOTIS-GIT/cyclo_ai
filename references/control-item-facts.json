@@ -1,0 +1,2108 @@
+{
+  "revision": "c88527af0888baea6f7ef3305bbbbb911b960759",
+  "shared": [
+    {
+      "names": [
+        "Return Delay Time"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_return_delay_time.mdx",
+          "line": 1,
+          "blobSha": "182c6c861862429bd2e3957c2da222bc66ddd1ce"
+        }
+      ],
+      "bounds": [
+        0,
+        254
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 2,
+        "unit": "microsecond/raw"
+      }
+    },
+    {
+      "names": [
+        "CW Compliance Margin",
+        "CCW Compliance Margin"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_compliance_margin.mdx",
+          "line": 1,
+          "blobSha": "ee1e0210c895156169565a30182e19559c7ee5e5"
+        }
+      ],
+      "bounds": [
+        0,
+        255
+      ],
+      "encoding": "unsigned"
+    },
+    {
+      "names": [
+        "CW Compliance Slope",
+        "CCW Compliance Slope"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_compliance_slope.mdx",
+          "line": 1,
+          "blobSha": "eb584bb1ddd86d55e637fcca91fa28472fe53ef9"
+        }
+      ],
+      "bounds": [
+        0,
+        254
+      ],
+      "encoding": "unsigned",
+      "readbackNormalization": [
+        {
+          "input": [
+            0,
+            3
+          ],
+          "representative": 2
+        },
+        {
+          "input": [
+            4,
+            7
+          ],
+          "representative": 4
+        },
+        {
+          "input": [
+            8,
+            15
+          ],
+          "representative": 8
+        },
+        {
+          "input": [
+            16,
+            31
+          ],
+          "representative": 16
+        },
+        {
+          "input": [
+            32,
+            63
+          ],
+          "representative": 32
+        },
+        {
+          "input": [
+            64,
+            127
+          ],
+          "representative": 64
+        },
+        {
+          "input": [
+            128,
+            254
+          ],
+          "representative": 128
+        }
+      ],
+      "normalizationNote": "The source says representative value is used internally; do not assume hardware register readback is always normalized without a fixture/observation. A result should expose requested and effective representative separately."
+    },
+    {
+      "names": [
+        "Max Torque",
+        "Torque Limit"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_max_torque.mdx",
+          "line": 1,
+          "blobSha": "2702fbbc8070e152ac27f35c592c24b0f4180b1f"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_torque_limit.mdx",
+          "line": 1,
+          "blobSha": "b61de7d7742b4de7c21ff6ea4c2dc695989c5e63"
+        }
+      ],
+      "bounds": [
+        0,
+        1023
+      ],
+      "encoding": "unsigned",
+      "effects": [
+        "Torque Limit is initialized from Max Torque at power-on",
+        "Writing nonzero Torque Limit after a shutdown condition is resolved can restore motor output; never do so implicitly"
+      ]
+    },
+    {
+      "names": [
+        "Punch"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_punch.mdx",
+          "line": 1,
+          "blobSha": "8068762e7d2e7a7ded2aed798add962a55ef2c8c"
+        }
+      ],
+      "bounds": [
+        32,
+        1023
+      ],
+      "encoding": "unsigned"
+    },
+    {
+      "names": [
+        "Alarm LED",
+        "Shutdown"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_shutdown.mdx",
+          "line": 1,
+          "blobSha": "a55a170866f5dc14dea24e4023e8566ffba44491"
+        }
+      ],
+      "bounds": [
+        0,
+        127
+      ],
+      "encoding": "unsigned",
+      "allowedMask": 127,
+      "effects": [
+        "Protective response mask; explicit zero disables all selected protections",
+        "Bit7 is unused zero; bits0..6 are independently OR-combined"
+      ]
+    },
+    {
+      "names": [
+        "Status Return Level"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_status_return_lv.mdx",
+          "line": 1,
+          "blobSha": "ceeb0622a678183ab14e40cae9b9bf647041b3af"
+        }
+      ],
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "encoding": "unsigned",
+      "transport": {
+        "writePolicy": "tx-only when write acknowledgement is suppressed; never treat absence of ACK as write failure alone",
+        "readbackAvailableWhenNewValue": [
+          1,
+          2
+        ],
+        "readbackUnavailableWhenNewValue": [
+          0
+        ],
+        "new0Result": "transmitted-unverifiable-by-design; no fabricated readback and no automatic restore/retry",
+        "pingStillAvailable": true,
+        "p1PingIdentity": "presence/ID only; not model or firmware"
+      },
+      "effects": [
+        "New0 disables future READ replies",
+        "New1 disables future WRITE replies"
+      ]
+    },
+    {
+      "names": [
+        "Lock"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_lock.mdx",
+          "line": 1,
+          "blobSha": "0172fb9bcc665eefcc281e9c6f1865032e9caf57"
+        }
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "encoding": "unsigned",
+      "conditions": [
+        {
+          "ifCurrent": 1,
+          "requested": 0,
+          "outcome": "documented-unavailable-until-power-cycle"
+        }
+      ],
+      "effects": [
+        "Writing1 latches EEPROM lock until power cycle; no software unlock, power cycle or recovery is performed automatically"
+      ]
+    },
+    {
+      "names": [
+        "D Gain",
+        "I Gain",
+        "P Gain"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_mx_pid.mdx",
+          "line": 1,
+          "blobSha": "cafd947a30ede6dce6ed859af4eca1410d600f4e"
+        }
+      ],
+      "bounds": [
+        0,
+        254
+      ],
+      "encoding": "unsigned"
+    },
+    {
+      "names": [
+        "Goal Acceleration"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_goal_acceleration.mdx",
+          "line": 1,
+          "blobSha": "e0a27be530e4a64b940f47f6a6cc7be8d09874bd"
+        }
+      ],
+      "bounds": [
+        0,
+        254
+      ],
+      "encoding": "unsigned",
+      "zeroMeaning": "maximum/infinite acceleration, not disabled motion",
+      "scale": {
+        "value": 8.583,
+        "unit": "degree/second^2/raw"
+      }
+    },
+    {
+      "names": [
+        "Resolution Divider"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_resolution_divider.mdx",
+          "line": 1,
+          "blobSha": "b936849902a15769066163868de4694cb67c0c29"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_mx_angle_limit.mdx",
+          "line": 1,
+          "blobSha": "0f0a15e8a5c2b39a25134df2626c52f4ff8bdf22"
+        }
+      ],
+      "bounds": [
+        1,
+        4
+      ],
+      "encoding": "unsigned",
+      "effectConditions": [
+        "Effective only in Multi-turn mode; shared offset/divider note incorrectly says both CW/CCW0 while dedicated angle-limit table says both4095. Do not claim that both0 is multi-turn."
+      ],
+      "effects": [
+        "Changes effective position representation; no automatic position goal"
+      ]
+    },
+    {
+      "names": [
+        "Multi Turn Offset"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_multiturn_offset.mdx",
+          "line": 1,
+          "blobSha": "31d691c75912f8e38865c312474be0cead54d6ff"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_mx_angle_limit.mdx",
+          "line": 1,
+          "blobSha": "0f0a15e8a5c2b39a25134df2626c52f4ff8bdf22"
+        }
+      ],
+      "bounds": [
+        -24576,
+        24576
+      ],
+      "encoding": "twos-complement",
+      "safeNonnegativeRawBounds": [
+        0,
+        24576
+      ],
+      "effectConditions": [
+        "Effective in multi-turn mode; dedicated angle-limit table says CW=CCW4095, but offset partial says both0. Source contradiction retained."
+      ],
+      "additionalSources": [
+        {
+          "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+          "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+          "path": "src/Dynamixel2Arduino.cpp",
+          "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+          "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+          "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+          "line": 997
+        },
+        {
+          "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+          "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+          "path": "src/actuator.cpp",
+          "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/actuator.cpp",
+          "sha256": "d53d0a92ecc332d1ad6f016e09fd1a486ae632b2476d46512b40a6902bb08422",
+          "blobSha": "5f63c83fb2a3ae7488233afd4f77eeb2225f8ce1",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "names": [
+        "Goal Position"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_dx_goal_position.mdx",
+          "line": 1,
+          "blobSha": "6f45a1e27f7bf13787ec57b41215e81357dc150c"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_angle_limit.mdx",
+          "line": 1,
+          "blobSha": "2a50a1c2c94ea0bfec87e6d5d9a61fdf300695a8"
+        }
+      ],
+      "bounds": [
+        0,
+        1023
+      ],
+      "encoding": "unsigned",
+      "dynamicLimits": {
+        "minItem": "CW Angle Limit",
+        "maxItem": "CCW Angle Limit"
+      },
+      "effects": [
+        "Ignored in wheel mode (both angle limits0); do not label a stored write as completed motion",
+        "Writes beyond current angle limits set an angle-limit error"
+      ],
+      "selector": "Actual caller of ax/control_table_dx_goal_position.mdx; EX has inline equivalent but current spec/resolution ambiguity remains separate"
+    },
+    {
+      "names": [
+        "CW Angle Limit",
+        "CCW Angle Limit"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_dx_goal_position.mdx",
+          "line": 1,
+          "blobSha": "6f45a1e27f7bf13787ec57b41215e81357dc150c"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_angle_limit.mdx",
+          "line": 1,
+          "blobSha": "2a50a1c2c94ea0bfec87e6d5d9a61fdf300695a8"
+        }
+      ],
+      "bounds": [
+        0,
+        1023
+      ],
+      "encoding": "unsigned",
+      "effects": [
+        "Both0 selects wheel mode; otherwise joint-mode interpretation per source",
+        "Changing angle limits can change the control mode; never adjust the other limit implicitly"
+      ],
+      "selector": "Actual caller of ax/control_table_angle_limit.mdx plus ax goal-position partial; EX inline stated range has specification conflict"
+    },
+    {
+      "names": [
+        "Goal Position",
+        "CW Angle Limit",
+        "CCW Angle Limit"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_mx_goal_position.mdx",
+          "line": 1,
+          "blobSha": "95611ade7b9ba41272331b9fd92688109ce08f31"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_mx_angle_limit.mdx",
+          "line": 1,
+          "blobSha": "0f0a15e8a5c2b39a25134df2626c52f4ff8bdf22"
+        }
+      ],
+      "encoding": "twos-complement for GoalPosition; unsigned angle limits",
+      "modeRules": [
+        {
+          "mode": "wheel",
+          "angleLimits": [
+            0,
+            0
+          ],
+          "effect": "Goal Position ignored"
+        },
+        {
+          "mode": "multi-turn",
+          "angleLimits": [
+            4095,
+            4095
+          ],
+          "goalBounds": [
+            -28672,
+            28672
+          ]
+        },
+        {
+          "mode": "joint",
+          "goalBounds": [
+            0,
+            4095
+          ],
+          "dynamicLimits": [
+            "CW Angle Limit",
+            "CCW Angle Limit"
+          ]
+        }
+      ],
+      "angleLimitBounds": [
+        0,
+        4095
+      ],
+      "additionalSources": [
+        {
+          "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+          "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+          "path": "src/Dynamixel2Arduino.cpp",
+          "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+          "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+          "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+          "line": 1152
+        },
+        {
+          "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+          "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+          "path": "src/actuator.cpp",
+          "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/actuator.cpp",
+          "sha256": "d53d0a92ecc332d1ad6f016e09fd1a486ae632b2476d46512b40a6902bb08422",
+          "blobSha": "5f63c83fb2a3ae7488233afd4f77eeb2225f8ce1",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "names": [
+        "Moving Speed"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_moving_speed.mdx",
+          "line": 1,
+          "blobSha": "ad475c33ea535ca08c65637528f5bd5216dea4cc"
+        }
+      ],
+      "encoding": "legacy-direction-bit-10 in wheel mode; unsigned joint mode",
+      "modeRules": [
+        {
+          "mode": "joint",
+          "bounds": [
+            0,
+            1023
+          ],
+          "scale": 0.111,
+          "unit": "rpm/raw",
+          "zeroMeaning": "maximum motor rpm without speed control"
+        },
+        {
+          "mode": "wheel",
+          "angleLimits": [
+            0,
+            0
+          ],
+          "bounds": [
+            0,
+            2047
+          ],
+          "directionMask": 1024,
+          "magnitudeMask": 1023,
+          "unit": "0.1% output/raw",
+          "zeroPatterns": [
+            0,
+            1024
+          ]
+        }
+      ],
+      "selector": "Actual shared partial callers AX/RX; EX inline equivalent; DX inline documents joint range only, not wheel behavior"
+    },
+    {
+      "names": [
+        "Moving Speed"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_mx_angle_limit.mdx",
+          "line": 1,
+          "blobSha": "0f0a15e8a5c2b39a25134df2626c52f4ff8bdf22"
+        }
+      ],
+      "encoding": "legacy-direction-bit-10 in wheel mode; unsigned joint/multi-turn mode",
+      "modeRules": [
+        {
+          "mode": "joint-or-multi-turn",
+          "bounds": [
+            0,
+            1023
+          ],
+          "scale": 0.114,
+          "unit": "rpm/raw",
+          "zeroMeaning": "maximum rpm without speed control"
+        },
+        {
+          "mode": "wheel",
+          "angleLimits": [
+            0,
+            0
+          ],
+          "bounds": [
+            0,
+            2047
+          ],
+          "scale": 0.114,
+          "unit": "rpm/raw",
+          "directionMask": 1024,
+          "magnitudeMask": 1023,
+          "zeroPatterns": [
+            0,
+            1024
+          ]
+        }
+      ],
+      "selector": "MX original inline Moving Speed section, per model source; never use AX wheel output-percent units for MX"
+    },
+    {
+      "names": [
+        "Drive Mode"
+      ],
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ex/control_table_drivemode.mdx",
+          "line": 1,
+          "blobSha": "19ea96bb65651859b0c267516a24497230ce24c6"
+        },
+        {
+          "path": "docusaurus/docs/dxl/_partials/mx/control_table_drivemode_mx106.mdx",
+          "line": 1,
+          "blobSha": "72721da4103fdaa1cfbb40af7ba3b5eba8a62aff"
+        }
+      ],
+      "encoding": "unsigned",
+      "allowedMask": 3,
+      "values": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "effects": [
+        "bit0 direction inversion; ignored in wheel mode",
+        "bit1 master/slave dual-joint selection requires documented physical sync cable; slave goals/speed are ignored"
+      ],
+      "selector": "EX106+/MX106 original actual partial caller; no time-based-profile or torque-on-by-goal bits apply"
+    }
+  ],
+  "inline": [
+    {
+      "catalogId": "ax_series/ax-12a",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-12a.mdx",
+        "line": 180,
+        "blobSha": "9826826fb4d40ee1de38be681dd20ce626c565e8"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "70",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "ax_series/ax-12a",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-12a.mdx",
+        "line": 1,
+        "blobSha": "9826826fb4d40ee1de38be681dd20ce626c565e8"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ax_series/ax-12a",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-12a.mdx",
+        "line": 184,
+        "blobSha": "9826826fb4d40ee1de38be681dd20ce626c565e8"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ax_series/ax-12w",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-12w.mdx",
+        "line": 160,
+        "blobSha": "1ecb4b3ac322abbc86f9d98a5e9d55bdeee1ac9b"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "70",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "ax_series/ax-12w",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-12w.mdx",
+        "line": 1,
+        "blobSha": "1ecb4b3ac322abbc86f9d98a5e9d55bdeee1ac9b"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ax_series/ax-12w",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-12w.mdx",
+        "line": 172,
+        "blobSha": "1ecb4b3ac322abbc86f9d98a5e9d55bdeee1ac9b"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ax_series/ax-18a",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-18a.mdx",
+        "line": 173,
+        "blobSha": "5db2f302fa6d1ab7b6d0ee9d7f3924a86da5aab8"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "75",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "ax_series/ax-18a",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-18a.mdx",
+        "line": 1,
+        "blobSha": "5db2f302fa6d1ab7b6d0ee9d7f3924a86da5aab8"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ax_series/ax-18a",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ax_series/ax-18a.mdx",
+        "line": 185,
+        "blobSha": "5db2f302fa6d1ab7b6d0ee9d7f3924a86da5aab8"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-113",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-113.mdx",
+        "line": 169,
+        "blobSha": "89652f6af1bf70908920112c0cca0a1e26eb5e26"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "85",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "dx_series/dx-113",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-113.mdx",
+        "line": 1,
+        "blobSha": "89652f6af1bf70908920112c0cca0a1e26eb5e26"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-113",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-113.mdx",
+        "line": 173,
+        "blobSha": "89652f6af1bf70908920112c0cca0a1e26eb5e26"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-113",
+      "item": "Moving Speed",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-113.mdx",
+        "line": 209,
+        "blobSha": "89652f6af1bf70908920112c0cca0a1e26eb5e26"
+      },
+      "status": "resolved-by-additional-official-library",
+      "bounds": [
+        0,
+        1023
+      ],
+      "encoding": "unsigned raw; bit10 wheel direction",
+      "modeRules": {
+        "joint": [
+          0,
+          1023
+        ],
+        "wheel": [
+          0,
+          2047
+        ]
+      },
+      "directionMask": 1024,
+      "additionalSource": {
+        "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+        "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+        "path": "src/Dynamixel2Arduino.cpp",
+        "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+        "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+        "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+        "line": 1124
+      }
+    },
+    {
+      "catalogId": "dx_series/dx-116",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-116.mdx",
+        "line": 168,
+        "blobSha": "340e5774bb0a0cf0563428835b03b2b3b1f07c65"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "85",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "dx_series/dx-116",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-116.mdx",
+        "line": 1,
+        "blobSha": "340e5774bb0a0cf0563428835b03b2b3b1f07c65"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-116",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-116.mdx",
+        "line": 172,
+        "blobSha": "340e5774bb0a0cf0563428835b03b2b3b1f07c65"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-116",
+      "item": "Moving Speed",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-116.mdx",
+        "line": 208,
+        "blobSha": "340e5774bb0a0cf0563428835b03b2b3b1f07c65"
+      },
+      "status": "resolved-by-additional-official-library",
+      "bounds": [
+        0,
+        1023
+      ],
+      "encoding": "unsigned raw; bit10 wheel direction",
+      "modeRules": {
+        "joint": [
+          0,
+          1023
+        ],
+        "wheel": [
+          0,
+          2047
+        ]
+      },
+      "directionMask": 1024,
+      "additionalSource": {
+        "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+        "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+        "path": "src/Dynamixel2Arduino.cpp",
+        "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+        "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+        "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+        "line": 1124
+      }
+    },
+    {
+      "catalogId": "dx_series/dx-117",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-117.mdx",
+        "line": 169,
+        "blobSha": "874c52b6eb540dd4416dc9eb025840483f3b6721"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "dx_series/dx-117",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-117.mdx",
+        "line": 1,
+        "blobSha": "874c52b6eb540dd4416dc9eb025840483f3b6721"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-117",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-117.mdx",
+        "line": 173,
+        "blobSha": "874c52b6eb540dd4416dc9eb025840483f3b6721"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "dx_series/dx-117",
+      "item": "Moving Speed",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/dx_series/dx-117.mdx",
+        "line": 209,
+        "blobSha": "874c52b6eb540dd4416dc9eb025840483f3b6721"
+      },
+      "status": "resolved-by-additional-official-library",
+      "bounds": [
+        0,
+        1023
+      ],
+      "encoding": "unsigned raw; bit10 wheel direction",
+      "modeRules": {
+        "joint": [
+          0,
+          1023
+        ],
+        "wheel": [
+          0,
+          2047
+        ]
+      },
+      "directionMask": 1024,
+      "additionalSource": {
+        "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+        "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+        "path": "src/Dynamixel2Arduino.cpp",
+        "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+        "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+        "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+        "line": 1124
+      }
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "CW Angle Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 172,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "status": "resolved-by-specific-official-library-with-manual-conflict-recorded",
+      "bounds": [
+        0,
+        4095
+      ],
+      "encoding": "unsigned",
+      "reason": "Specific EX library override and mode initializer support4095; model-specific library evidence resolves raw range while manual typo is retained.",
+      "additionalSource": {
+        "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+        "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+        "path": "src/Dynamixel2Arduino.cpp",
+        "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+        "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+        "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+        "line": 1140
+      }
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "CCW Angle Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 172,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "status": "resolved-by-specific-official-library-with-manual-conflict-recorded",
+      "bounds": [
+        0,
+        4095
+      ],
+      "encoding": "unsigned",
+      "reason": "Specific EX library override and mode initializer support4095; model-specific library evidence resolves raw range while manual typo is retained.",
+      "additionalSource": {
+        "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+        "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+        "path": "src/Dynamixel2Arduino.cpp",
+        "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+        "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+        "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+        "line": 1140
+      }
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 190,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "bounds": null,
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "only-default-explicitly-permitted; no raw range supplied"
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 1,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+          "line": 1,
+          "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 198,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+          "line": 198,
+          "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "Torque Enable",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 229,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "values": [
+        0,
+        1
+      ],
+      "encoding": "unsigned",
+      "status": "source-known-inline-enum"
+    },
+    {
+      "catalogId": "ex_series/ex-106+",
+      "item": "Goal Position",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/ex_series/ex-106+.mdx",
+        "line": 268,
+        "blobSha": "eab2ea8bc7caf02828b990237487464f52782242"
+      },
+      "status": "resolved-by-specific-official-library-with-manual-conflict-recorded",
+      "bounds": [
+        0,
+        4095
+      ],
+      "encoding": "unsigned",
+      "reason": "Specific EX library override and mode initializer support4095; model-specific library evidence resolves raw range while manual typo is retained.",
+      "additionalSource": {
+        "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+        "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+        "path": "src/Dynamixel2Arduino.cpp",
+        "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+        "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+        "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30",
+        "line": 1140
+      }
+    },
+    {
+      "catalogId": "mx_series/mx-106",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx",
+        "line": 184,
+        "blobSha": "372d0861421cfe5e9229b056521b6853de8d8940"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "mx_series/mx-106",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx",
+        "line": 1,
+        "blobSha": "372d0861421cfe5e9229b056521b6853de8d8940"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-106",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx",
+        "line": 187,
+        "blobSha": "372d0861421cfe5e9229b056521b6853de8d8940"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-106",
+      "item": "Torque Ctrl Mode Enable",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx",
+        "line": 297,
+        "blobSha": "372d0861421cfe5e9229b056521b6853de8d8940"
+      },
+      "values": [
+        0,
+        1
+      ],
+      "encoding": "unsigned",
+      "effects": [
+        "1 selects Goal Torque only; Goal Position and Moving Speed are ignored. 0 restores joint/wheel behavior."
+      ],
+      "status": "source-known-inline-enum"
+    },
+    {
+      "catalogId": "mx_series/mx-106",
+      "item": "Goal Torque",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx",
+        "line": 310,
+        "blobSha": "372d0861421cfe5e9229b056521b6853de8d8940"
+      },
+      "bounds": [
+        0,
+        2047
+      ],
+      "encoding": "legacy-direction-bit-10",
+      "directionMask": 1024,
+      "magnitudeMask": 1023,
+      "zeroPatterns": [
+        0,
+        1024
+      ],
+      "dynamicMagnitudeLimit": "Torque Limit",
+      "effectiveWhen": {
+        "Torque Ctrl Mode Enable": 1
+      },
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-12w",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-12w.mdx",
+        "line": 145,
+        "blobSha": "4d567ac2f123fd12f34aa54115ef2d70761155e5"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "70",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "mx_series/mx-12w",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-12w.mdx",
+        "line": 1,
+        "blobSha": "4d567ac2f123fd12f34aa54115ef2d70761155e5"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-12w",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-12w.mdx",
+        "line": 148,
+        "blobSha": "4d567ac2f123fd12f34aa54115ef2d70761155e5"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-28",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-28.mdx",
+        "line": 177,
+        "blobSha": "60e2b6483b081ec03ee313d800df7a82cbc2a9d1"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "mx_series/mx-28",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-28.mdx",
+        "line": 1,
+        "blobSha": "60e2b6483b081ec03ee313d800df7a82cbc2a9d1"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-28",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-28.mdx",
+        "line": 180,
+        "blobSha": "60e2b6483b081ec03ee313d800df7a82cbc2a9d1"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-64",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx",
+        "line": 180,
+        "blobSha": "94d05ab34ee44edd662a2d58a823e5ed195e9ac2"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "mx_series/mx-64",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx",
+        "line": 1,
+        "blobSha": "94d05ab34ee44edd662a2d58a823e5ed195e9ac2"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-64",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx",
+        "line": 183,
+        "blobSha": "94d05ab34ee44edd662a2d58a823e5ed195e9ac2"
+      },
+      "bounds": [
+        50,
+        160
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/ax/control_table_volt_limit.mdx",
+          "line": 1,
+          "blobSha": "075c8bf1367052eda25c047bd6b253cae9986bff"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "mx_series/mx-64",
+      "item": "Torque Ctrl Mode Enable",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx",
+        "line": 293,
+        "blobSha": "94d05ab34ee44edd662a2d58a823e5ed195e9ac2"
+      },
+      "values": [
+        0,
+        1
+      ],
+      "encoding": "unsigned",
+      "effects": [
+        "1 selects Goal Torque only; Goal Position and Moving Speed are ignored. 0 restores joint/wheel behavior."
+      ],
+      "status": "source-known-inline-enum"
+    },
+    {
+      "catalogId": "mx_series/mx-64",
+      "item": "Goal Torque",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx",
+        "line": 306,
+        "blobSha": "94d05ab34ee44edd662a2d58a823e5ed195e9ac2"
+      },
+      "bounds": [
+        0,
+        2047
+      ],
+      "encoding": "legacy-direction-bit-10",
+      "directionMask": 1024,
+      "magnitudeMask": 1023,
+      "zeroPatterns": [
+        0,
+        1024
+      ],
+      "dynamicMagnitudeLimit": "Torque Limit",
+      "effectiveWhen": {
+        "Torque Ctrl Mode Enable": 1
+      },
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-10",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-10.mdx",
+        "line": 165,
+        "blobSha": "cb3ccf1d94404ba7bf91cd1dc372f0b6455f9ba3"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "rx_series/rx-10",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-10.mdx",
+        "line": 1,
+        "blobSha": "cb3ccf1d94404ba7bf91cd1dc372f0b6455f9ba3"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-10",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-10.mdx",
+        "line": 169,
+        "blobSha": "cb3ccf1d94404ba7bf91cd1dc372f0b6455f9ba3"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-24f",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-24f.mdx",
+        "line": 165,
+        "blobSha": "b7f1e3e23dd917e6d1288e04bb8292f2387cfebf"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "rx_series/rx-24f",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-24f.mdx",
+        "line": 1,
+        "blobSha": "b7f1e3e23dd917e6d1288e04bb8292f2387cfebf"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-24f",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-24f.mdx",
+        "line": 169,
+        "blobSha": "b7f1e3e23dd917e6d1288e04bb8292f2387cfebf"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-28",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-28.mdx",
+        "line": 165,
+        "blobSha": "4da1452ae4a48c18c8c572962cd89b974fb41f6b"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "rx_series/rx-28",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-28.mdx",
+        "line": 1,
+        "blobSha": "4da1452ae4a48c18c8c572962cd89b974fb41f6b"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-28",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-28.mdx",
+        "line": 169,
+        "blobSha": "4da1452ae4a48c18c8c572962cd89b974fb41f6b"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-64",
+      "item": "Temperature Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-64.mdx",
+        "line": 165,
+        "blobSha": "567c996df6c7ca73be94e9409bb7746599f8431b"
+      },
+      "bounds": [
+        0,
+        100
+      ],
+      "encoding": "unsigned",
+      "manufacturerDirective": "Do not set above model default; EX text says neither lower nor higher than default.",
+      "defaultRaw": "80",
+      "status": "source-known-range-with-warning"
+    },
+    {
+      "catalogId": "rx_series/rx-64",
+      "item": "Min Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-64.mdx",
+        "line": 1,
+        "blobSha": "567c996df6c7ca73be94e9409bb7746599f8431b"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    },
+    {
+      "catalogId": "rx_series/rx-64",
+      "item": "Max Voltage Limit",
+      "source": {
+        "path": "docusaurus/docs/dxl/model_reference/rx_series/rx-64.mdx",
+        "line": 169,
+        "blobSha": "567c996df6c7ca73be94e9409bb7746599f8431b"
+      },
+      "bounds": [
+        50,
+        250
+      ],
+      "encoding": "unsigned",
+      "scale": {
+        "value": 0.1,
+        "unit": "volt/raw"
+      },
+      "pairInvariant": "Min<=Max represents a coherent operating window; source does not explicitly classify a crossed window as an invalid register write",
+      "sources": [
+        {
+          "path": "docusaurus/docs/dxl/_partials/dx/control_table_volt_limit_rx.mdx",
+          "line": 1,
+          "blobSha": "e52b8c9277155e359f078f2c7c273bd73debf7e3"
+        }
+      ],
+      "status": "source-known-inline-range"
+    }
+  ],
+  "manufacturerInformationGaps": [
+    {
+      "items": [
+        "MX64/MX106 Current68"
+      ],
+      "reason": "RW table but valid write range/effects are not documented; only telemetry offset formula."
+    },
+    {
+      "items": [
+        "EX Goal Position and angle limits"
+      ],
+      "reason": "Manual text conflicts with specific official library override. Raw range now resolvable to0..4095 with pinned library evidence; retain manual conflict, do not label truly unavailable."
+    },
+    {
+      "items": [
+        "EX Temperature Limit"
+      ],
+      "reason": "No numeric range; instruction says do not lower/higher than default80."
+    },
+    {
+      "items": [
+        "MX original offset/divider effective multi-turn selector"
+      ],
+      "reason": "Dedicated angle-limit table says4095/4095; offset/divider note incorrectly says0/0. Preserve contradiction; ignore-condition is not an unspecified storage range."
+    },
+    {
+      "items": [
+        "MX original Punch48 default0"
+      ],
+      "reason": "Model table initial0 conflicts with shared punch description32..1023. 32..1023 is explicit documented write interval; do not infer that default0 is a writable sentinel without additional official evidence."
+    },
+    {
+      "items": [
+        "MX original offset/divider condition only"
+      ],
+      "reason": "Both0 is wheel by dedicated angle-limit table; both4095 multi-turn. Ignore-condition notes contradict that. Do not impose source-contradictory mode prerequisites on storage writes with otherwise known raw ranges."
+    }
+  ],
+  "legacyEEPROMBase": {
+    "source": {
+      "path": "docusaurus/docs/dxl/_partials/ax/control_table.mdx",
+      "line": 1,
+      "blobSha": "15c67e1d1cf42dc1f780620e053673062565b572"
+    },
+    "requiresTorqueOff": false,
+    "requiresLockZero": true,
+    "note": "No blanket EEPROM torque-off condition is stated for legacy; Lock47 is the documented restriction. Existing torque-off rule belongs to MX2/X."
+  },
+  "additionalOfficialEvidence": [
+    {
+      "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+      "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+      "path": "src/Dynamixel2Arduino.cpp",
+      "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+      "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+      "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30"
+    },
+    {
+      "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+      "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+      "path": "src/actuator.cpp",
+      "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/actuator.cpp",
+      "sha256": "d53d0a92ecc332d1ad6f016e09fd1a486ae632b2476d46512b40a6902bb08422",
+      "blobSha": "5f63c83fb2a3ae7488233afd4f77eeb2225f8ce1"
+    },
+    {
+      "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+      "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+      "path": "src/actuator.h",
+      "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/actuator.h",
+      "sha256": "820dc9bea7d7b741ff787661e18876b19fda29f2f27d5e73af9fe2ff09ac0cf7",
+      "blobSha": "cf7b54f795d6e4ffb1f19a468283e6ab9f770871"
+    }
+  ],
+  "additionalOfficialFindings": [
+    {
+      "fact": "Legacy signed two-byte values have official typed implementation evidence",
+      "references": [
+        {
+          "path": "src/Dynamixel2Arduino.cpp",
+          "lines": [
+            942,
+            997,
+            1010,
+            988,
+            990,
+            1147,
+            1152
+          ]
+        },
+        {
+          "path": "src/actuator.cpp",
+          "lines": [
+            84,
+            92
+          ]
+        }
+      ],
+      "implementation": "int32 API data writes actual item width from little-endian int32 memory; 2-byte reads explicitly sign-extend int16. Combined with pinned model widths and signed bounds, this establishes two-complement negative offsets/goals rather than inferring solely from a negative numeric range."
+    },
+    {
+      "fact": "EX GoalPosition is0..4095 with0.06degree units in specific official library override",
+      "references": [
+        {
+          "path": "src/Dynamixel2Arduino.cpp",
+          "lines": [
+            1138,
+            1140,
+            1648,
+            1651,
+            659,
+            663
+          ]
+        }
+      ],
+      "note": "Retain contradictory manual0..1023/0.29degree as source conflict, but do not treat specific source-backed model override as guessed range."
+    },
+    {
+      "fact": "DX wheel MovingSpeed raw0..2047 has official library evidence",
+      "references": [
+        {
+          "path": "src/Dynamixel2Arduino.cpp",
+          "lines": [
+            1124,
+            1126,
+            1132,
+            1640
+          ]
+        }
+      ],
+      "note": "Common table explicitly includes DX; direction-bit output-percent model for common family. Mode-specific joint still0..1023."
+    },
+    {
+      "fact": "MX12W unit differs from other originalMX models in official library",
+      "references": [
+        {
+          "path": "src/Dynamixel2Arduino.cpp",
+          "lines": [
+            1161,
+            1163,
+            1653,
+            1656
+          ]
+        }
+      ],
+      "note": "MX12W speed unit0.916rpm/raw override vs genericMX0.114; do not let missing/mismatched physical conversion disable known valid raw0..2047 writes."
+    }
+  ]
+}

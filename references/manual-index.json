@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-23",
+  "scope": "AI Sapiens sidebar leaf pages; category headings share their first page or are navigation groups",
+  "base_url": "https://docs.robotis.com/docs/systems/aisapiens/",
+  "pages": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/introduction/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "gallery",
+      "title": "Video Gallery",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/video_gallery/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/hardware/",
+      "coverage": "guidance",
+      "manual_status": "partial-coming-soon",
+      "skill": "ai-sapiens-docs",
+      "reference": "skills/ai-sapiens-docs/references/platform.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "electrical",
+      "title": "Electrical System",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/electrical_system/",
+      "coverage": "guidance",
+      "manual_status": "partial-coming-soon",
+      "skill": "ai-sapiens-docs",
+      "reference": "skills/ai-sapiens-docs/references/platform.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "software",
+      "title": "Software Architecture",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/specifications/software/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-docs",
+      "reference": "skills/ai-sapiens-docs/references/platform.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "operation",
+      "title": "Operation Guide",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/quick_start_guide/operation_guide/",
+      "coverage": "procedure",
+      "manual_status": "partial-coming-soon",
+      "skill": "ai-sapiens-operation",
+      "reference": "skills/ai-sapiens-operation/references/operation.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "rc",
+      "title": "Using the Remote Controller",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/quick_start_guide/using_remote_controller/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-operation",
+      "reference": "skills/ai-sapiens-operation/references/rc.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "network",
+      "title": "Networking",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/networking/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-connectivity",
+      "reference": "skills/ai-sapiens-connectivity/references/network.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "ssh",
+      "title": "How to SSH into the Robot",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ssh/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-connectivity",
+      "reference": "skills/ai-sapiens-sim2real/references/deployment.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "cycloctl",
+      "title": "Bringup with cycloctl",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/cycloctl/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-diagnostics",
+      "reference": "skills/ai-sapiens-diagnostics/references/diagnostics.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "impedance",
+      "title": "DYNAMIXEL-Q and Impedance Control",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/dynamixel_q_impedance_control/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-control",
+      "reference": "skills/ai-sapiens-control/references/impedance.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "ros2",
+      "title": "ROS 2 Communication",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_communication/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-control",
+      "reference": "skills/ai-sapiens-control/references/ros2.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "topics",
+      "title": "ROS 2 Package Structure and Topic Description",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/ros2_package_structure/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-control",
+      "reference": "skills/ai-sapiens-control/references/impedance.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "sdk",
+      "title": "Control with Python SDK",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/zenoh_ros2_sdk/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-control",
+      "reference": "skills/ai-sapiens-control/references/sdk.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "sim2real",
+      "title": "Sim2Real",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/sim2real/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-sim2real",
+      "reference": "skills/ai-sapiens-sim2real/references/deployment.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "sim2sim",
+      "title": "MuJoCo Sim2Sim",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/sim2sim/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-sim2real",
+      "reference": "skills/ai-sapiens-sim2real/references/deployment.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "lab",
+      "title": "Cyclo Lab",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-walking",
+      "reference": "skills/ai-sapiens-walking/references/training.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "lab-walking",
+      "title": "Lab Locomotion",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/locomotion/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-walking",
+      "reference": "skills/ai-sapiens-walking/references/training.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "lab-mimic",
+      "title": "Lab Mimic",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_lab/mimic/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-video-mimic",
+      "reference": "skills/ai-sapiens-video-mimic/references/motion.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "mjlab",
+      "title": "Cyclo MJLab",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-walking",
+      "reference": "skills/ai-sapiens-walking/references/training.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "mjlab-walking",
+      "title": "MJLab Locomotion",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/locomotion/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-walking",
+      "reference": "skills/ai-sapiens-walking/references/training.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "mjlab-mimic",
+      "title": "MJLab Mimic",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/reinforcement_learning/cyclo_mjlab/mimic/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-video-mimic",
+      "reference": "skills/ai-sapiens-video-mimic/references/motion.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "gem-x",
+      "title": "GEM-X",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation/gem-x/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-video-mimic",
+      "reference": "skills/ai-sapiens-video-mimic/references/motion.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "kimodo",
+      "title": "Kimodo",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/kimodo/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-motion-sources",
+      "reference": "skills/ai-sapiens-motion-sources/references/kimodo.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "soma-x",
+      "title": "SOMA-X",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_x/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-motion-sources",
+      "reference": "skills/ai-sapiens-motion-sources/references/soma.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "retarget",
+      "title": "Soma-retargeter",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/soma_retargeter/",
+      "coverage": "procedure",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-video-mimic",
+      "reference": "skills/ai-sapiens-video-mimic/references/motion.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "gmr",
+      "title": "GMR",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/motion_generation_retargeting/gmr/",
+      "coverage": "unsupported",
+      "manual_status": "coming-soon",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "imitation",
+      "title": "Imitation Learning Overview",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/overview/",
+      "coverage": "guidance",
+      "manual_status": "overview-only",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "lerobot",
+      "title": "LeRobot",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/lerobot/",
+      "coverage": "unsupported",
+      "manual_status": "coming-soon",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "intelligence",
+      "title": "Cyclo Intelligence",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/imitation_learning/cyclo_intelligence/",
+      "coverage": "unsupported",
+      "manual_status": "coming-soon",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "open-source",
+      "title": "Open Source",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/open_source/",
+      "coverage": "guidance",
+      "manual_status": "partial-coming-soon",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "release-notes",
+      "title": "Release Notes",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/release_notes/",
+      "coverage": "guidance",
+      "manual_status": "external-channel",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "technical-story",
+      "title": "Building Humanoid Skills",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/technical_story/building_humanoid_skills/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    },
+    {
+      "id": "support",
+      "title": "Support",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/resources/support/",
+      "coverage": "guidance",
+      "manual_status": "documented",
+      "skill": "ai-sapiens-docs",
+      "reference": "references/sources.md",
+      "robotics_runtime_tested": false
+    }
+  ]
+}

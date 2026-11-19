@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Motion Sources"
+  short_description: "Prepare Kimodo and SOMA source motions"
+  default_prompt: "Use $ai-sapiens-motion-sources to answer from the official AI Sapiens manual."

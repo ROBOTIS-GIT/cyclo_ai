@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Worker Learning"
+  short_description: "Collect demonstrations and prepare policy learning"
+  default_prompt: "Use $ai-worker-learning to prepare AI Worker data collection, training or inference."

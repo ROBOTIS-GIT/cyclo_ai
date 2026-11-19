@@ -1,0 +1,69 @@
+{
+  "reviewedOn": "2026-10-24",
+  "firmwarePolicy": "Historical retrieval snapshots only. Current executable metadata is references/control-tables.json; observed firmware and capability-specific gates replace firmware-number whitelisting.",
+  "sources": [
+    {
+      "id": "xl330",
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/",
+      "retrievedOn": "2026-10-24",
+      "bytes": 359049,
+      "sha256": "a336b9e3333295355870c48ccd99736596d175e61cf9b52f5b4602b0f67806b7",
+      "kind": "public HTML",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    },
+    {
+      "id": "xm430",
+      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/",
+      "retrievedOn": "2026-10-24",
+      "bytes": 388676,
+      "sha256": "38038f5b32cbbb7e3c26570658855986be33589b06eb6d15e6259db338caafd3",
+      "kind": "public HTML",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    },
+    {
+      "id": "y",
+      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-m001-rh/",
+      "retrievedOn": "2026-10-24",
+      "bytes": 406021,
+      "sha256": "d724bbb21bdec3e7ae2bb352b8414f7a9f1b9fca944dc37d7a0f3073a7ffc71f",
+      "kind": "public HTML",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    },
+    {
+      "id": "catalog",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/introduction/",
+      "retrievedOn": "2026-10-24",
+      "bytes": 59882,
+      "sha256": "2a92b0379359541299784e71354372d80fa2fdb230ebb3a44391deb57ba6c0bc",
+      "kind": "public HTML",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    },
+    {
+      "id": "software",
+      "url": "https://docs.robotis.com/docs/software/overview/",
+      "retrievedOn": "2026-10-24",
+      "bytes": 48871,
+      "sha256": "6bb9d0cc4e8e19c2c80b3872be838f85330e6855c31ab65d01e19005b564bb0e",
+      "kind": "public HTML",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    },
+    {
+      "id": "sdk",
+      "url": "https://docs.robotis.com/docs/systems/aisapiens/development_guide/zenoh_ros2_sdk/",
+      "retrievedOn": "2026-10-24",
+      "bytes": 97273,
+      "sha256": "cc6ee3a9df270dd2c5fe910c6f43a961ca1dd79048fb951f70e38de1b42b006b",
+      "kind": "public HTML",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    },
+    {
+      "id": "interface",
+      "url": "https://raw.githubusercontent.com/ROBOTIS-GIT/dynamixel_hardware_interface/main/README.md",
+      "retrievedOn": "2026-10-24",
+      "bytes": 8815,
+      "sha256": "8b3ec69c7d94c71fd3d8b67fb0d43f20bce29b36f9c9e636226f928bd411ed5c",
+      "kind": "public Markdown",
+      "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
+    }
+  ]
+}

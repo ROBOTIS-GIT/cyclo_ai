@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-26",
+  "execution": "Source evidence only; no ROS, serial or controller execution",
+  "indexKind": "Git-blob inventory and lexical locators, not semantic verification of every file",
+  "packages": {
+    "dynamixel_hardware_interface": {
+      "$cycloJson": "dhi-sources/dynamixel_hardware_interface.json",
+      "sha256": "9bf9580fe02dccdfc6b5d447a53ca9a36907f6a21fc88df5f7bba738c8d30825"
+    },
+    "dynamixel_interfaces": {
+      "$cycloJson": "dhi-sources/dynamixel_interfaces.json",
+      "sha256": "5833837ff9c925e33e7c1c19c8920908e5e89e54246539210255164b2d2fe8e8"
+    },
+    "DynamixelSDK": {
+      "$cycloJson": "dhi-sources/DynamixelSDK.json",
+      "sha256": "21ee1ff6d445e93e850076a9ff15058a7abf8c2c668853c12c818b04e14d460c"
+    },
+    "dynamixel_hardware_interface_demos": {
+      "$cycloJson": "dhi-sources/dynamixel_hardware_interface_demos.json",
+      "sha256": "27c512f4f134809f88d07896460de449d89562165be9a1b2e471d71fd429f605"
+    },
+    "open_manipulator": {
+      "$cycloJson": "dhi-sources/open_manipulator.json",
+      "sha256": "3f97b3ae9c475422b90ea9bf31678514b6eb5f85ec58e7e5aaeaa8aab27d997a"
+    },
+    "robotis_hand": {
+      "$cycloJson": "dhi-sources/robotis_hand.json",
+      "sha256": "e15f26ee907ef60091623c5c29b308b8e6873c96ae4196c36ed74fe88861008d"
+    },
+    "ai_sapiens": {
+      "$cycloJson": "dhi-sources/ai_sapiens.json",
+      "sha256": "743a3b62a7e984178e6275dabeebfaf7c2ea8b16ef24fb93ce68ba22c6a816a3"
+    },
+    "ai_worker": {
+      "$cycloJson": "dhi-sources/ai_worker.json",
+      "sha256": "1e36a65afc866ea6b16f84e74c712d23fbab7fc814785d692e152ea25e5f75f3"
+    },
+    "RH-P12-RN-A": {
+      "$cycloJson": "dhi-sources/RH-P12-RN-A.json",
+      "sha256": "893762ccd0b071f50730cc92b3b82ce64ebc201d40c3ebe344f67d6469c872ad"
+    },
+    "turtlebot3_autorace": {
+      "$cycloJson": "dhi-sources/turtlebot3_autorace.json",
+      "sha256": "af417352ec37e49ea5fb050f7d7a8f7f938329f73f47347df91e1938ff08df98"
+    },
+    "ros2_control": {
+      "$cycloJson": "dhi-sources/ros2_control.json",
+      "sha256": "c2ae949744d4446baf5589dc0907d0a4f06ac68bcf309ef29be0390b71592300"
+    },
+    "ros2_controllers": {
+      "$cycloJson": "dhi-sources/ros2_controllers.json",
+      "sha256": "55fd559de2379756472329425af42950397e3b7122e08e5cfcfbf7150b179b20"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ROBOTIS Product Expert"
+  short_description: "Official-source ROBOTIS product guidance"
+  default_prompt: "Use $robotis-expert to help with this ROBOTIS task."

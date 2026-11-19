@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Pinned supplemental official evidence for source-migration omissions and raw encoding; full source is not bundled",
+  "sources": [
+    {
+      "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+      "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+      "path": "src/Dynamixel2Arduino.cpp",
+      "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/Dynamixel2Arduino.cpp",
+      "sha256": "a0385ff0fc55bcbdf3f9954bc86b72ffb15887bffdf3ab4e0dac64f54599a4b9",
+      "blobSha": "78558b804a7ab7151cd4e3fb2b7c250cfa6cea30"
+    },
+    {
+      "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+      "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+      "path": "src/actuator.cpp",
+      "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/actuator.cpp",
+      "sha256": "d53d0a92ecc332d1ad6f016e09fd1a486ae632b2476d46512b40a6902bb08422",
+      "blobSha": "5f63c83fb2a3ae7488233afd4f77eeb2225f8ce1"
+    },
+    {
+      "repository": "ROBOTIS-GIT/Dynamixel2Arduino",
+      "revision": "89f1387f6973a4acf4911785d741db2b99afa2bb",
+      "path": "src/actuator.h",
+      "url": "https://github.com/ROBOTIS-GIT/Dynamixel2Arduino/blob/89f1387f6973a4acf4911785d741db2b99afa2bb/src/actuator.h",
+      "sha256": "820dc9bea7d7b741ff787661e18876b19fda29f2f27d5e73af9fe2ff09ac0cf7",
+      "blobSha": "cf7b54f795d6e4ffb1f19a468283e6ab9f770871"
+    },
+    {
+      "repository": "ROBOTIS-GIT/emanual",
+      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
+      "path": "docs/en/dxl/x/xl430-w250.md",
+      "blobSha": "6ac60e079ccfb0ff0c17bac7e5eea604c2f98875",
+      "sha256": "1af0ea9002da86c4e5b3cf38a261bdc2c8ee0dd9b9a8aeb49d570292aece9d39",
+      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/x/xl430-w250.md"
+    },
+    {
+      "repository": "ROBOTIS-GIT/emanual",
+      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
+      "path": "_includes/en/dxl/x/startup_configuration.md",
+      "blobSha": "c51f82fa50b04ec917e31c7a01f0f80b0e21b598",
+      "sha256": "8fff48b8d071228d0d5b9e86c2e84534f185d902acd37258ae9a4c3e5839c4a9",
+      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/_includes/en/dxl/x/startup_configuration.md"
+    },
+    {
+      "repository": "ROBOTIS-GIT/emanual",
+      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
+      "path": "docs/en/dxl/x/xm540-w150.md",
+      "blobSha": "dc6a018d037e4192a39535bcc724faad7a510c79",
+      "sha256": "a294b0b2928e7bbab5905533619276d33c7ad0b2f6a484662e14d114f16cc9c4",
+      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/x/xm540-w150.md"
+    },
+    {
+      "repository": "ROBOTIS-GIT/emanual",
+      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
+      "path": "_includes/en/dxl/control_table_drivemode.md",
+      "blobSha": "38a7b091831154ce055674f53ce2e74914dbf36c",
+      "sha256": "f3e9486855f0442e8a79b8969adcea57f81d6429027b9719c1f05a5d89c66209",
+      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/_includes/en/dxl/control_table_drivemode.md"
+    },
+    {
+      "repository": "ROBOTIS-GIT/emanual",
+      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
+      "path": "docs/en/dxl/x/xm540-w270.md",
+      "blobSha": "a8ed36097de5e1336f7a9111cd1e7c0b94549428",
+      "sha256": "f031ab6b34ba83c357dd07458c25e7cb19575bc6ad8190dcf899ed1d51610a78",
+      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/x/xm540-w270.md"
+    }
+  ],
+  "resolutions": [
+    {
+      "catalogId": "x_series/xl_series/xl430-w250",
+      "item": "Startup Configuration",
+      "allowedMask": 3,
+      "minimumFirmware": 45,
+      "basis": "Exact parent include and its default Liquid firmware branch"
+    },
+    {
+      "catalogId": "x_series/xm_series/xm540-w150",
+      "item": "Drive Mode",
+      "allowedMask": 15,
+      "basis": "Exact eManual parent product_group dxl_x540 and its actual included condition"
+    },
+    {
+      "catalogId": "x_series/xm_series/xm540-w270",
+      "item": "Drive Mode",
+      "allowedMask": 15,
+      "basis": "Exact eManual parent product_group dxl_x540 and its actual included condition"
+    }
+  ]
+}

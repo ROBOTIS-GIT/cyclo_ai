@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMY Control"
+  short_description: "Inspect OMY ROS 2 control and prepare movement"
+  default_prompt: "Use $omy-control to inspect OMY controller readiness or prepare a bounded motion."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Worker Teleoperation"
+  short_description: "Prepare Leader and VR teleoperation workflows"
+  default_prompt: "Use $ai-worker-teleop to prepare teleoperation for my Leader or VR device and AI Worker."

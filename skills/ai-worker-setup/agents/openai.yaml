@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Worker Setup"
+  short_description: "Prepare AI Worker installation and connections"
+  default_prompt: "Use $ai-worker-setup to prepare installation and network access for my AI Worker."

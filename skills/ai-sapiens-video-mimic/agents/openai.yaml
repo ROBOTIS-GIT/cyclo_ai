@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ai Sapiens Video Mimic"
+  short_description: "Prepare video retargeting and Mimic training"
+  default_prompt: "Use $ai-sapiens-video-mimic to prepare the documented workflow."

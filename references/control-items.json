@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.1",
+  "revision": "c88527af0888baea6f7ef3305bbbbb911b960759",
+  "models": [
+    {
+      "$cycloJson": "control-items/0.json",
+      "sha256": "1adf08f894ddb1ae5577b7a58b41560fb3f7cad3fb26f7f132a1cca6becb57f8"
+    },
+    {
+      "$cycloJson": "control-items/1.json",
+      "sha256": "1b16bd07eb5b228aaac737225e645dd203b3e99a9c2b0bf4e241eae97176e005"
+    },
+    {
+      "$cycloJson": "control-items/2.json",
+      "sha256": "84ebafca1fcbb922b07e3d7508601d94292b9faca1a047e55fafe09f252b6b8a"
+    },
+    {
+      "$cycloJson": "control-items/3.json",
+      "sha256": "855d25e2f57f633080fb85534ea9f8b020a8dfac2ca6b1afe840723b53c0df38"
+    },
+    {
+      "$cycloJson": "control-items/4.json",
+      "sha256": "377635b7d1b141815ceac1c449b0b1d602585f716dca3e7b2be0737f12c1ca7b"
+    },
+    {
+      "$cycloJson": "control-items/5.json",
+      "sha256": "a52eceae5a3d4ed8155c16d044b38ce5847a8e7a5128b2107fba4774c7d92f18"
+    },
+    {
+      "$cycloJson": "control-items/6.json",
+      "sha256": "a89db0b7762046913da29823d624412b713d18912072be847ea42f69826d25b8"
+    },
+    {
+      "$cycloJson": "control-items/7.json",
+      "sha256": "a57d4d0ad2bc0fea3a26d07d3b4bab025d2b26d2272d0c1c1bcc4fae79c4b5a9"
+    },
+    {
+      "$cycloJson": "control-items/8.json",
+      "sha256": "ff8124c85dfe5e0237dec4a9ed8ab93fc27f74c0f2a03c5acc5268080f563182"
+    },
+    {
+      "$cycloJson": "control-items/9.json",
+      "sha256": "3652017106bdc9254c7cb9ca9122c1d80aef46c28d5c338ea0e72054afc5a6db"
+    },
+    {
+      "$cycloJson": "control-items/10.json",
+      "sha256": "aceebb424716b5e5e25bb388cbf8353de285b4eb44d5acb82e85174f8f60897d"
+    },
+    {
+      "$cycloJson": "control-items/11.json",
+      "sha256": "a7561ea43e2982afb02490940eeeda0fafee47beb7ca096fb33490bad0fb9b4b"
+    },
+    {
+      "$cycloJson": "control-items/12.json",
+      "sha256": "a76a7b110aa2cb8d3c494d61ffacae4aa742b21cea1a824897fe374bd1c89b09"
+    },
+    {
+      "$cycloJson": "control-items/13.json",
+      "sha256": "3bd659f2ddb0b60497b6dfa4652ba6d4ed967c51cc3b83cf896dd5cc00f90c2c"
+    },
+    {
+      "$cycloJson": "control-items/14.json",
+      "sha256": "ebb109f19a978aa9fbf56ecb1f29a89d2a28b0c0fef6ba6554abb45dc5d270e5"
+    },
+    {
+      "$cycloJson": "control-items/15.json",
+      "sha256": "b19b3ae1d47299a879ccf937e99b2273f532eb6cc5a77871c6518bcfb5cc911f"
+    },
+    {
+      "$cycloJson": "control-items/16.json",
+      "sha256": "92b48da913ac9f3ce688e7ac1c001e2fa129c6fcf658bd0e4e4dda5f8f7869f4"
+    },
+    {
+      "$cycloJson": "control-items/17.json",
+      "sha256": "ce5d956304b07e4cdf325cc8b25b1fcf5c595f88ef29aae96e1f69376c26747a"
+    },
+    {
+      "$cycloJson": "control-items/18.json",
+      "sha256": "74a15d05a6b40581ca4174934fe1d5f2a07e6a7b8bb5784a044f520b94303058"
+    },
+    {
+      "$cycloJson": "control-items/19.json",
+      "sha256": "891d04dc386383bb018d6d252b3995bbd55f76f825d05100fbec9a5bd506a089"
+    },
+    {
+      "$cycloJson": "control-items/20.json",
+      "sha256": "1063302953ca60239781c174423a7e79b6a570b67c90d74ebbd6d0b31ac97306"
+    },
+    {
+      "$cycloJson": "control-items/21.json",
+      "sha256": "334081694e5302ed9491b17f2680a4f9881e9f14ef713a444990371362f4cde2"
+    },
+    {
+      "$cycloJson": "control-items/22.json",
+      "sha256": "f3e6a0682ab5b56545693048e710e6e4889ae83ebe3a3aeb3d4b3904742b5d19"
+    },
+    {
+      "$cycloJson": "control-items/23.json",
+      "sha256": "897fff0bde64882e64bbcb8856dc3af709057e360ee97b4e907d83850275c7e9"
+    },
+    {
+      "$cycloJson": "control-items/24.json",
+      "sha256": "13b92584bd2d66fa490cc4c52e5cb318dc22408ae86896fd3eebfacb2849af05"
+    },
+    {
+      "$cycloJson": "control-items/25.json",
+      "sha256": "b2b9ec6f22ec8cce75b9ed2b543b992f53a018c716c95e3e8ed5db5934040a50"
+    },
+    {
+      "$cycloJson": "control-items/26.json",
+      "sha256": "e0cdfa948ac96a43963c82a872b5f96645b2814d407876991cd3936a3bb2b2c1"
+    },
+    {
+      "$cycloJson": "control-items/27.json",
+      "sha256": "178a5e7b5e7a4d0cf175a35a3b1ca71fb098d5b2920082d3320c051440ce0809"
+    },
+    {
+      "$cycloJson": "control-items/28.json",
+      "sha256": "7d13fa3ebb496bcace091545fa5664499b740f4648967499af0f78629f0aee56"
+    },
+    {
+      "$cycloJson": "control-items/29.json",
+      "sha256": "9155b020aa3c29030b6c968dcb62d4b97c027e58a9528a598961f8d4b89777c2"
+    },
+    {
+      "$cycloJson": "control-items/30.json",
+      "sha256": "794ac73516a0a22aa5eee30cdc4e1f1380d313ed58d62915cd41540094fffecb"
+    },
+    {
+      "$cycloJson": "control-items/31.json",
+      "sha256": "46fea087d5b7ccb5a37ed3d254d20c16d4c6cec3c885b4a7da2d7fb43bec0a58"
+    },
+    {
+      "$cycloJson": "control-items/32.json",
+      "sha256": "5209b1f8afc5104153a66d57e00d24194073379e46580c9c6a35dcaefff0fd1b"
+    },
+    {
+      "$cycloJson": "control-items/33.json",
+      "sha256": "2a1f5f9e603fc34c70521ebabe52d168a58a8d810b9a85d74d68ea030718a801"
+    },
+    {
+      "$cycloJson": "control-items/34.json",
+      "sha256": "59f336a5aee76b305ce2d9102b34ef8f42e5f9f4a67654c73a73b146804911b5"
+    },
+    {
+      "$cycloJson": "control-items/35.json",
+      "sha256": "dc02b39365c7604786091c30515fd45980d8255534d2ae39e9f021d75ae7d358"
+    },
+    {
+      "$cycloJson": "control-items/36.json",
+      "sha256": "8b6137467eee0c22e9be2247a70a5dec66bc411f1c7fe456269ede717597fa88"
+    },
+    {
+      "$cycloJson": "control-items/37.json",
+      "sha256": "20b86e0398b611d49b960a2923c40036356c76c3cfb4544dd12d00b39ac0f733"
+    },
+    {
+      "$cycloJson": "control-items/38.json",
+      "sha256": "b4098d0ac5253bf82a516e0be9300265a6c65b56ed019bd938f27f2d36b7c221"
+    },
+    {
+      "$cycloJson": "control-items/39.json",
+      "sha256": "120968529ad4bf56a0d78cb7b765e68a6a108142e66191b42e0d49189b6ff8fa"
+    },
+    {
+      "$cycloJson": "control-items/40.json",
+      "sha256": "9b9b5d131320174fd1720607e21b0650dabd0723e09ffc92cb753b95a9360ee5"
+    },
+    {
+      "$cycloJson": "control-items/41.json",
+      "sha256": "b6cf8c68bf1913444c591129b75e974cc22b53edce4e94815c58fd9ede2d7f9f"
+    },
+    {
+      "$cycloJson": "control-items/42.json",
+      "sha256": "a4f19301b06e8a7645030920c2ce4a8a06766e404b425b3ebe8e665b9b6d1886"
+    },
+    {
+      "$cycloJson": "control-items/43.json",
+      "sha256": "d9cfad81ab1858c6da76917bbc706a9ab29588a94b17b6cb113b86227b7b34f1"
+    },
+    {
+      "$cycloJson": "control-items/44.json",
+      "sha256": "3ec05766f8a2c446ace02d6b26e737102839d14506105aafb3eccf670110580b"
+    },
+    {
+      "$cycloJson": "control-items/45.json",
+      "sha256": "d39c6767b7a79ecc1075187adff962a052091a04dcc3d55b3697c7e16cc27428"
+    },
+    {
+      "$cycloJson": "control-items/46.json",
+      "sha256": "7cd8cc0d475d0e907b1e84676b4f0990f5e00b8801c7eeabafa07fbdc269edac"
+    },
+    {
+      "$cycloJson": "control-items/47.json",
+      "sha256": "00af1d7f7b4598929c321ffb49af90d36e0f9339b1d1a4dd987e383626d71a7b"
+    },
+    {
+      "$cycloJson": "control-items/48.json",
+      "sha256": "b0d05eff89850291497d36c69941ac572c6a9f001eb17f289170d1ef85e009a0"
+    },
+    {
+      "$cycloJson": "control-items/49.json",
+      "sha256": "8dca5a79337272376e421afd850baee8d4fdaa570779568ed97532803a7e0353"
+    },
+    {
+      "$cycloJson": "control-items/50.json",
+      "sha256": "21af6d85ac893b974c492ea36acbeca8141f9ff91bde85dbe8ed6d2484864356"
+    },
+    {
+      "$cycloJson": "control-items/51.json",
+      "sha256": "f355ac98bdd9158036fafaaf9142e8b9ee739008c12f6f6732bdadad7f55ff82"
+    },
+    {
+      "$cycloJson": "control-items/52.json",
+      "sha256": "f13da32b37d3f381c8007a36b8389a057a14e9025b234ed71d57fe2af54377f0"
+    },
+    {
+      "$cycloJson": "control-items/53.json",
+      "sha256": "45ee6acbf7e61dcc940bfab5870a2d79c8a9caba0479a3d2b2ff43680e2bea56"
+    },
+    {
+      "$cycloJson": "control-items/54.json",
+      "sha256": "8017aa1d3dc42a807c148b68b6f426c8da06f7999e0f6d4e176a485e7888ced4"
+    },
+    {
+      "$cycloJson": "control-items/55.json",
+      "sha256": "9c12f4e4a2d892dc1343bad0d5f4f744a8590225967cf7015185873022f37621"
+    },
+    {
+      "$cycloJson": "control-items/56.json",
+      "sha256": "30b5384cc8965c8aa4c302a5583f371551bbd8df2e8663e03e4623b1d292bf4f"
+    },
+    {
+      "$cycloJson": "control-items/57.json",
+      "sha256": "06773d6c0c731976e963fd9044716c39744f757fd462bc2f117484da6415deb8"
+    },
+    {
+      "$cycloJson": "control-items/58.json",
+      "sha256": "6bf31e534faaa7687ad4fecb7ec1c2a4eb9a45876d43e2bcf3b5e189499225ab"
+    },
+    {
+      "$cycloJson": "control-items/59.json",
+      "sha256": "2e1c690a132d2a6493af19eba643b32fd33741d20bf475581ff8250beec40a08"
+    },
+    {
+      "$cycloJson": "control-items/60.json",
+      "sha256": "a3760ff339fa5dd283f72740a32e7b64049579ac1cf9fac612ce7fb789ab0b00"
+    },
+    {
+      "$cycloJson": "control-items/61.json",
+      "sha256": "fcd6f0eeaed870f0a4c5d14a38ffd02bff64b4096c899fd15a6850722f7cd03e"
+    },
+    {
+      "$cycloJson": "control-items/62.json",
+      "sha256": "bc6cc305a263b5da378fedcf87c4b2504415f0cab6d36b87721e05c347b189fe"
+    },
+    {
+      "$cycloJson": "control-items/63.json",
+      "sha256": "8e88ab7ab14cc44b3c08584016c5e7ecc9e3ff71eec5d32569661cb689c8e93b"
+    },
+    {
+      "$cycloJson": "control-items/64.json",
+      "sha256": "8f633007ecd5adbd3dd3e2006402e0344d5b4a7af0d480c4a4ff990a2ada9ef9"
+    },
+    {
+      "$cycloJson": "control-items/65.json",
+      "sha256": "aedc216ba00834062acfa8085a1ed3388666a81bafe71220a37dc5fc4fc1c5c0"
+    },
+    {
+      "$cycloJson": "control-items/66.json",
+      "sha256": "fd76efd566bd9ea4c0f5a6e9bff347d12aac2eeb7e7a2601e4a9fc8f1bf0f052"
+    },
+    {
+      "$cycloJson": "control-items/67.json",
+      "sha256": "8304655bbc74d14466d4796e4812b3ac7e885adf0b4a0d153874ae220e2fa04f"
+    },
+    {
+      "$cycloJson": "control-items/68.json",
+      "sha256": "c9c6c32f5153297e46154a1bb8bb7a5398d805580026dc3cb39e6399316f5bc8"
+    },
+    {
+      "$cycloJson": "control-items/69.json",
+      "sha256": "42644bc4645bf271dff48d2776fef168455ee66180e74cd49ce25e3efe4421e5"
+    },
+    {
+      "$cycloJson": "control-items/70.json",
+      "sha256": "95992b13e961bb0f04d98c1e1b43556459b204033b7fb4c115a458a8e4a61e64"
+    },
+    {
+      "$cycloJson": "control-items/71.json",
+      "sha256": "4ab44c01eacc751b4b847ce78b2b9ea2f6ee2dc2ea481d4b927f601246ffebf8"
+    },
+    {
+      "$cycloJson": "control-items/72.json",
+      "sha256": "803f4bfbb38599a886128d9e0afea960dbf6c526ef869655e23cb575330cf6a3"
+    },
+    {
+      "$cycloJson": "control-items/73.json",
+      "sha256": "0dd4207fdcc6d2a60790fef66caac4f98d8e71c33757930f769a1de0314ec5b5"
+    },
+    {
+      "$cycloJson": "control-items/74.json",
+      "sha256": "43cccaa4122621204e378abe3f74df62025a2c5c198dd7774e9f1125188e0aec"
+    },
+    {
+      "$cycloJson": "control-items/75.json",
+      "sha256": "eb2b76fb9dac8c26ac3c6d68d4d180e925d12b30a0cfb775f89d6bbf0bf9e512"
+    },
+    {
+      "$cycloJson": "control-items/76.json",
+      "sha256": "9481375b3b787853ff08e3a01eef660729e08cbdba725a34574bb62a2463f44b"
+    },
+    {
+      "$cycloJson": "control-items/77.json",
+      "sha256": "0afd88cbcd83e1aeca720b5c3082d0600d2b8b6918309bf3811fe1bc66f6d5f2"
+    },
+    {
+      "$cycloJson": "control-items/78.json",
+      "sha256": "d0261c622ba67ed9436b36f9f4f97e64eafcf61e239bdb2f6522f0c2c77cd9e8"
+    },
+    {
+      "$cycloJson": "control-items/79.json",
+      "sha256": "d56ae4d835b9293157bdca0816921ba3cd411996a03f80edcb0636b35b378978"
+    },
+    {
+      "$cycloJson": "control-items/80.json",
+      "sha256": "19e99b0ec27bc3b2007cda7cf485bffec4c7b47890ddb6be0740bb5e2aeef92b"
+    },
+    {
+      "$cycloJson": "control-items/81.json",
+      "sha256": "94884a04e54f500d524d76597c70871f6a9d150c2c7bbf88bbf6a32d7182daac"
+    },
+    {
+      "$cycloJson": "control-items/82.json",
+      "sha256": "19c15181c363fa1248de4557164dc99233f7585ad383afee39ce8c9c6aca8761"
+    },
+    {
+      "$cycloJson": "control-items/83.json",
+      "sha256": "240c1f58b1703ad066ed5e9515f308f7532b219f21d382ae3b7865dd34b35023"
+    },
+    {
+      "$cycloJson": "control-items/84.json",
+      "sha256": "c6f8880eb35c3b7388e807af6c63eb78ae259039e80ca9a4ff0321c2afe9dc89"
+    },
+    {
+      "$cycloJson": "control-items/85.json",
+      "sha256": "f34e2642063638b246e1904febdc8ed0b04b31c20332fe8ac44b2551c6ff073c"
+    },
+    {
+      "$cycloJson": "control-items/86.json",
+      "sha256": "19fb9f0bcfeff672deacab5e493dfdd0f89c75f0201a61b6e3140fd7ff86696c"
+    },
+    {
+      "$cycloJson": "control-items/87.json",
+      "sha256": "9f0b28c2e309dab553a1630e26806da78e976be924e57985ddfb64877e110d82"
+    },
+    {
+      "$cycloJson": "control-items/88.json",
+      "sha256": "3fc4f295aeda5b1259e0deb8a62cc6d73354b7a8a7e3c7ae94db4037fc505c62"
+    }
+  ],
+  "summary": {
+    "actuatorDocuments": 89,
+    "tableRows": 20433,
+    "readableRawRows": 20433,
+    "resolvedWritableRows": 19055,
+    "unresolvedWritableRows": 2,
+    "rowsOutsideScalarWidths": 0,
+    "sourceTableRows": 5901,
+    "expandedIndirectRows": 14532
+  },
+  "limits": [
+    "Inventory counts are source rows, not physical model variants or hardware certification.",
+    "Unresolved semantics are shown explicitly; numeric address and RW access alone never authorize writing.",
+    "Raw reads do not claim signed/unit interpretation where encoding is unresolved."
+  ]
+}

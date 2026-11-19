@@ -1,0 +1,12 @@
+{
+  "name": "cyclo-ai",
+  "owner": {
+    "name": "ROBOTIS-GIT"
+  },
+  "plugins": [
+    {
+      "name": "cyclo-ai",
+      "source": "./"
+    }
+  ]
+}

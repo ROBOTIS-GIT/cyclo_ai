@@ -1,0 +1,17 @@
+node_modules/
+.mock-tests-*/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.local.json
+artifacts/
+.venv/
+venv/
+validation/current/
+work/
+.DS_Store
+.ruff_cache/
+
+# Local-only Superpowers design and planning documents
+/docs/superpowers/

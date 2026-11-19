@@ -1,0 +1,22 @@
+{
+  "checkedOn": "2026-10-26",
+  "scope": "Source-backed inspection and offline artifact analysis, not deployed hardware support",
+  "sourceInventory": "dhi-sources.json",
+  "consumerInventory": "dhi-products.json",
+  "reviewedDomains": [
+    {"domain": "Lifecycle and torque paths", "status": "reviewed source workflows and caller discovery", "queries": ["on_init", "start", "stop", "InitTorqueStates", "DynamixelEnable", "DynamixelDisable", "WriteItemBuf", "ChangeDxlTorqueState", "CommReset"]},
+    {"domain": "Initialization, model and firmware selection", "status": "reviewed source workflows; user-custom tables require separate evidence", "queries": ["InitItem", "ReadDxlModelFile", "SelectModelFileByFirmwareVersion", "OverrideUnitInfo"]},
+    {"domain": "Interfaces, transformations and controller configuration", "status": "source-indexed and static analyzer tested; launch expansion and runtime claims remain separate", "queries": ["MapInterfaces", "SyncJointCommandWithStates", "export_command_interfaces", "controller_manager", "prepare_command_mode_switch"]},
+    {"domain": "Communication, errors, queues and recovery", "status": "reviewed source paths; no packet/bus execution for DHI", "queries": ["SetMultiDxlRead", "SetMultiDxlWrite", "checkReadType", "checkWriteType", "WriteItemBuf", "CheckError", "CommReset"]},
+    {"domain": "Product variants and TableSync", "status": "curated source/configuration witnesses plus independent forward review; not exhaustive launch-argument execution", "queries": ["Table Sync Enable", "SyncTable", "virtual_dxl", "comm_id", "model_num"]},
+    {"domain": "Inherited framework and selected controllers", "status": "versioned upstream source inventory; individual type-specific claims require exact source trace", "queries": ["GenericSystem", "activate_controller", "set_component_state", "claim_command_interface"]}
+  ],
+  "unverified": [
+    "Actual installed DHI/framework/controller binaries, overlays, ABI and user patches",
+    "Real lifecycle/controller switching, serial communication, physical torque/motion, recovery and timing",
+    "Every historical release, experimental branch, private repository and future consumer",
+    "K1 HAT intended driver/model revision for consumer parameters absent from indexed DHI",
+    "Manufacturer-unstated TableSync minimum firmware and conflicting manual example details"
+  ],
+  "executionBoundary": "Read-only source retrieval and offline XML/YAML inspection add no ROS or device execution authority; prior generic register execution remains separate"
+}

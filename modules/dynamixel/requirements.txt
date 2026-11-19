@@ -1,0 +1,3 @@
+# Install only into an operator-selected isolated Python environment.
+pyserial==3.5
+PyYAML==6.0.3
