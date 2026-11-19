@@ -1,7 +1,8 @@
 import { loadJson } from '../catalog-json.mjs';
 import { realpathSync } from 'node:fs';
 import { inspectBytes } from './raw-read.mjs';
-import { groupPlan, syncReadItems } from './group.mjs';
+import { groupPlan, readManyItems } from './group.mjs';
+import { planGroupWrite, writeManyItems } from './group-write.mjs';
 import { swapIds } from './swap.mjs';
 import { codeIndex, readCode } from '../knowledge/source.mjs';
 import { ITEMS, tableFor, itemFor, writeRequest, readItems, writeItem } from './table.mjs';
@@ -13,7 +14,7 @@ import { pathToFileURL } from 'node:url';
 import { TargetSession } from './selection.mjs';
 import { listModels, readManual } from './manual.mjs';
 import { MODELS, CATALOG } from './registry.mjs';
-import { configure, scan, scanPlan, validateRequest } from './workflow.mjs';
+import { scan, scanPlan, validateRequest } from './workflow.mjs';
 import { withBus } from './bus-session.mjs';
 const targetSchema = z.strictObject({
   port: z.string().min(1),
@@ -39,20 +40,6 @@ const configSchema = z.strictObject({
   buses: z.record(z.string(), busSchema).default({}),
   targets: z.record(z.string(), targetSchema).default({}),
 });
-const profile = z.discriminatedUnion('mode', [
-  z.strictObject({
-    mode: z.literal('time'),
-    totalMs: z.number().int(),
-    accelerationMs: z.number().int(),
-  }),
-  z.strictObject({
-    mode: z.literal('velocity'),
-    rpm: z.number(),
-    accelerationRpm2: z.number(),
-    maxRpm: z.number(),
-    maxAccelerationRpm2: z.number(),
-  }),
-]);
 export async function createProductsServer(env = process.env, dependencies = {}) {
   const enabled = hardwareEnabled(env, 'CYCLO_PRODUCTS_ENABLE_HARDWARE');
   const config = env.CYCLO_PRODUCTS_CONFIG
@@ -70,7 +57,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
   const docs = JSON.parse(
     await readFile(new URL('../../references/dynamixel-docs.json', import.meta.url), 'utf8'),
   );
-  const server = new McpServer({ name: 'cyclo-mcp', version: '0.2.1' });
+  const server = new McpServer({ name: 'cyclo-mcp', version: '0.2.2' });
   const wrap = (fn) => async (args, ctx) => {
     try {
       const value = await fn(args, ctx);
@@ -373,7 +360,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
     async (args, ctx) => inspect(args, args.id === undefined ? undefined : [args.id], {}, ctx),
   );
   add(
-    'dynamixel_read',
+    'dynamixel_read_raw',
     'Explicit bounded raw bytes from selected unicast IDs on a selected port/bus, or one configured target. Optional native Protocol2 Sync Read. No signed/unit guesses or write permission; prefer source-resolved named reads when available.',
     z.strictObject({
       ...inspectSchema,
@@ -476,86 +463,6 @@ export async function createProductsServer(env = process.env, dependencies = {})
           : 'No selectable observation: inspect completeness/errors and do not guess a device.',
       };
     },
-  );
-  add(
-    'dynamixel_configure',
-    'Named model-aware ID OR baud, LED, profile configuration; requires verified unique bus addressing and item-specific live prerequisites. Default is preview. Never sends goal or torque commands.',
-    z.strictObject({
-      target: z.string(),
-      changes: z.strictObject({
-        id: z.number().int().optional(),
-        baud: z.number().int().optional(),
-        led: z
-          .union([
-            z.number().int(),
-            z.strictObject({ mask: z.number().int() }),
-            z.strictObject({
-              red: z.number().int(),
-              green: z.number().int(),
-              blue: z.number().int(),
-            }),
-          ])
-          .optional(),
-        profile: profile.optional(),
-      }),
-      dryRun: z.boolean().default(true),
-      confirmed: z.boolean().default(false),
-    }),
-    async (args, ctx) => {
-      const t = session.target(args.target);
-      validateRequest({ ...t, changes: args.changes });
-      session.assertWriteAddress(t, { ram: 'led' in args.changes || 'profile' in args.changes });
-      if (args.dryRun) {
-        // No fabricated snapshot: mode/limit/torque checks require a real observation.
-        return {
-          executed: false,
-          request: {
-            model: t.model,
-            firmware: t.firmware,
-            id: t.id,
-            baud: t.baud,
-            changes: args.changes,
-          },
-          pending: [
-            'observed identity/protocol',
-            'exclusive bus ownership and verified addressing',
-            'torque already off',
-            'destination ID collision check',
-            'observed mode/limits',
-            'snapshot and readback',
-          ],
-          warning:
-            'This is a request validation, not a device-derived execution plan or compatibility certification',
-        };
-      }
-      requireConfirmation(args.confirmed);
-      try {
-        session.clearObservations(t.port);
-        const result = await onBus(
-          t,
-          'allowConfigure',
-          async (t, connect) => {
-            session.target(args.target);
-            return configure(
-              connect,
-              { ...t, changes: args.changes },
-              { signal: ctx.mcpReq.signal },
-            );
-          },
-          (t) =>
-            session.assertWriteAddress(t, {
-              ram: 'led' in args.changes || 'profile' in args.changes,
-            }),
-        );
-        session.settle(args.target, result);
-        return result;
-      } catch (e) {
-        if (e.requiresReidentification)
-          session.retirePort(t.port, 'port binding or bus ownership changed; select again');
-        throw e;
-      }
-    },
-    true,
   );
   add(
     'dynamixel_swap_ids',
@@ -664,18 +571,18 @@ export async function createProductsServer(env = process.env, dependencies = {})
     },
   );
   add(
-    'dynamixel_read_items',
-    'Read exact catalog/custom model-specific named Control Table items after explicit target confirmation. No writes, mode changes or torque commands. Unresolved encodings return raw bytes without guessed units.',
+    'dynamixel_read',
+    'Read one exact catalog/custom model-specific named Control Table item after explicit target confirmation. No writes, mode changes or torque commands. Unresolved encodings return raw bytes without guessed units.',
     z.strictObject({
       target: z.string(),
-      items: z.array(z.string()).min(1).max(4096),
+      item: z.string(),
       dryRun: z.boolean().default(true),
       confirmed: z.boolean().default(false),
     }),
     async (args, ctx) => {
       const t = session.target(args.target),
         model = modelFor(t.model, t.firmware, t.catalogId, t.protocol);
-      const items = args.items.map((k) => itemFor(model, k));
+      const items = [itemFor(model, args.item)];
       if (args.dryRun)
         return {
           executed: false,
@@ -689,13 +596,13 @@ export async function createProductsServer(env = process.env, dependencies = {})
         };
       requireConfirmation(args.confirmed);
       return onBus(t, 'allowScan', async (t, connect) =>
-        readItems(connect, t, args.items, { signal: ctx.mcpReq.signal }),
+        readItems(connect, t, [args.item], { signal: ctx.mcpReq.signal }),
       );
     },
   );
   add(
-    'dynamixel_sync_read',
-    'Read one common source-resolved item from selected Protocol2 IDs in automatically bounded batches using the SDK Sync Read instruction. Read-only; exact per-device bytes and signed/unit metadata; no physical simultaneity claim.',
+    'dynamixel_read_many',
+    'Read one common named item from selected devices using native Sync Read or supported Bulk Read in bounded batches. Read-only; exact per-device bytes and signed/unit metadata; no physical simultaneity claim.',
     z.strictObject({
       targets: z.array(z.string()).min(1).max(253),
       item: z.string(),
@@ -721,12 +628,12 @@ export async function createProductsServer(env = process.env, dependencies = {})
       requireConfirmation(args.confirmed);
       return onBus(targets[0], 'allowScan', async (t, connect) => {
         for (const target of targets) await target.verifyBinding?.();
-        return syncReadItems(connect, targets, args.item, { signal: ctx.mcpReq.signal });
+        return readManyItems(connect, targets, args.item, { signal: ctx.mcpReq.signal });
       });
     },
   );
   add(
-    'dynamixel_write_item',
+    'dynamixel_write',
     'Write one source-resolved Control Table item, including documented motor-control items where semantics are resolved. No arbitrary address input. Explicit customer command supplies confirmed:true once; preview defaults true. Never changes other items implicitly.',
     z.strictObject({
       target: z.string(),
@@ -765,11 +672,83 @@ export async function createProductsServer(env = process.env, dependencies = {})
             }),
         );
         session.settle(args.target, result);
-        return result;
+        return { ...result, sessionTarget: session.list().find((t) => t.name === args.target) };
       } catch (e) {
         if (e.requiresReidentification)
           session.retirePort(t.port, 'bus binding or ownership changed');
         throw e;
+      }
+    },
+    true,
+  );
+
+  add(
+    'dynamixel_write_many',
+    'Write one common source-resolved direct RAM item to several selected devices with per-target raw integer values. One native Sync/Bulk Write packet; no splitting, implicit setup or retries. Register verification does not prove simultaneous motion.',
+    z.strictObject({
+      targets: z
+        .array(z.strictObject({ target: z.string(), value: z.number().int() }))
+        .min(2)
+        .max(253),
+      item: z.string(),
+      dryRun: z.boolean().default(true),
+      confirmed: z.boolean().default(false),
+    }),
+    async (args, ctx) => {
+      if (new Set(args.targets.map((t) => t.target)).size !== args.targets.length)
+        throw Error('Choose unique target names');
+      const writes = args.targets.map(({ target, value }) => ({
+        target: session.target(target),
+        item: args.item,
+        value,
+      }));
+      if (writes.some((w) => !w.target.allowConfigure))
+        throw Error('Every group target must permit configuration');
+      const plan = planGroupWrite(writes);
+      if (args.dryRun)
+        return {
+          executed: false,
+          instruction: plan.instruction,
+          packetBytes: plan.packetBytes,
+          items: plan.entries.map((e) => ({
+            id: e.target.id,
+            item: e.item.key,
+            value: e.value,
+            bytes: e.bytes,
+            address: e.item.address,
+            width: e.item.width,
+          })),
+          pending: ['live identity', 'documented item preconditions', 'readback'],
+        };
+      requireConfirmation(args.confirmed);
+      const first = writes[0].target;
+      try {
+        session.clearObservations(first.port);
+        const result = await onBus(
+          first,
+          'allowConfigure',
+          async (t, connect) => {
+            for (const [i, w] of writes.entries()) {
+              session.target(args.targets[i].target);
+              await w.target.verifyBinding?.();
+            }
+            return writeManyItems(connect, writes, { signal: ctx.mcpReq.signal });
+          },
+          () => {
+            for (const w of writes) session.assertWriteAddress(w.target, { ram: true });
+          },
+        );
+        if (
+          result.outcome === 'uncertain' ||
+          !result.closureConfirmed ||
+          result.busReservationReleased !== true
+        )
+          session.retirePort(first.port, 'Group write requires read-only reconciliation');
+        return result;
+      } catch (error) {
+        if (error.requiresReidentification)
+          session.retirePort(first.port, 'Group bus binding or ownership changed');
+        throw error;
       }
     },
     true,

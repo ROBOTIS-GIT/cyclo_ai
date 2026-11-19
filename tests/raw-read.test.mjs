@@ -145,7 +145,7 @@ test('raw MCP respects confirmation, offline, bus grants and configured endpoint
     t.after(() => c.close());
     const call = (name, args) => c.callTool({ name, arguments: args });
     const base = { target: 'controller', address: 1000, length: 4, dryRun: false };
-    assert.equal((await call('dynamixel_read', base)).isError, true);
+    assert.equal((await call('dynamixel_read_raw', base)).isError, true);
     assert.equal(f.calls.length, 0);
     for (const args of [
       { ...base, ids: [201] },
@@ -169,9 +169,9 @@ test('raw MCP respects confirmation, offline, bus grants and configured endpoint
         dryRun: false,
       },
     ])
-      assert.equal((await call('dynamixel_read', { ...args, confirmed: true })).isError, true);
+      assert.equal((await call('dynamixel_read_raw', { ...args, confirmed: true })).isError, true);
     assert.equal(f.calls.length, 0);
-    const r = await call('dynamixel_read', { ...base, confirmed: true });
+    const r = await call('dynamixel_read_raw', { ...base, confirmed: true });
     if (offline) {
       assert.equal(r.isError, true);
       assert.equal(f.calls.length, 0);

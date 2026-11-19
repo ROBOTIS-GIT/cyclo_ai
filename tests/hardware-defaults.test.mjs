@@ -237,7 +237,7 @@ test('configured default-enabled products block missing confirmation and offline
     for (const [name, args] of [
       ['dynamixel_ports', {}],
       ['dynamixel_scan', { bus: 'bench', ids: [1], bauds: [57600], protocols: [2], dryRun: false }],
-      ['dynamixel_configure', { target: 'motor', changes: { led: 1 }, dryRun: false }],
+      ['dynamixel_write', { target: 'motor', item: 'LED', value: 1, dryRun: false }],
     ]) {
       const denied = await c.callTool({ name, arguments: args });
       assert.equal(denied.isError, true);
@@ -326,7 +326,7 @@ test('default-enabled products support explicitly selected port without a global
   });
   assert.equal(selected.structuredContent.target.id, 1);
   const write = await c.callTool({
-    name: 'dynamixel_write_item',
+    name: 'dynamixel_write',
     arguments: { target: 'motor', item: 'Torque Enable', value: 1, dryRun: false, confirmed: true },
   });
   assert.equal(write.structuredContent.outcome, 'verified');
@@ -487,15 +487,15 @@ test('MCP read-only journey selects a batch and reads named items without granti
   });
   assert.equal(selected.structuredContent.targets[0].allowConfigure, false);
   assert.equal(selected.structuredContent.targets[0].addressingVerified, false);
-  const read = await call('dynamixel_read_items', {
+  const read = await call('dynamixel_read', {
     target: 'motor',
-    items: ['Present Position'],
+    item: 'Present Position',
     dryRun: false,
     confirmed: true,
   });
   assert.equal(read.structuredContent.outcome, 'read');
   const before = f.calls.length;
-  const write = await call('dynamixel_write_item', {
+  const write = await call('dynamixel_write', {
     target: 'motor',
     item: 'LED',
     value: 1,

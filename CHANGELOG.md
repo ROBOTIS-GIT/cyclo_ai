@@ -1,3 +1,15 @@
+0.2.2 (2026-11-19)
+------------------
+* Unified named DYNAMIXEL I/O under `dynamixel_read`, `dynamixel_read_many`,
+  `dynamixel_write`, and `dynamixel_write_many`. Use `dynamixel_read_raw` for
+  raw byte reads and update callers of the previous tool names.
+* Added protocol-aware group I/O and coordinated writes for supported shared
+  RAM items, with checks before writing and readback verification.
+* Added a shared icon for the OpenAI and Claude directories and OpenAI review
+  scenarios that run without connected hardware.
+* Switched Claude distribution signing to the `CLAUDE_*` Actions settings.
+* Contributors: Taehun Lim
+
 0.2.1 (2026-11-12)
 ------------------
 * Added self-contained OpenAI and Claude plugin packages with cross-platform

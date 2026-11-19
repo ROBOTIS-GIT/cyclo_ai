@@ -42,9 +42,9 @@ git add <changed-source-files>
 npm run package:manifest
 # Inspect release-files.json. It must contain only distributable source.
 npm run package
-node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-ai-0.2.1.zip
+node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-ai-0.2.2.zip
 npm run package:runtime
-npm run verify:runtime -- artifacts/cyclo-ai-0.2.1-install.zip
+npm run verify:runtime -- artifacts/cyclo-ai-0.2.2-install.zip
 ```
 
 Generated test output is ignored. Customer profiles, virtual environments, credentials and local source tables do not belong in the release manifest. Do not edit the vendored SDK; update its pinned revision and source hashes as a separate reviewed dependency change.
