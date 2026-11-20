@@ -8,5 +8,6 @@
       "name": "cyclo-ai",
       "source": "./"
     }
-  ]
+  ],
+  "description": "ROBOTIS development tools for DYNAMIXEL actuators and robots."
 }

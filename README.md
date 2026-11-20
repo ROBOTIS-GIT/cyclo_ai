@@ -14,7 +14,6 @@ Cyclo AI helps your coding agent compare actuators, inspect and configure connec
 
 A natural-language prompt reads connected DYNAMIXEL actuators and presents their status in a table, without changing settings or moving the motors.
 
-![Cyclo AI inspecting connected DYNAMIXEL actuators and displaying their status](assets/cyclo-ai-prompt-test.gif)
 
 ## What you can do
 
