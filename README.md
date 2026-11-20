@@ -26,7 +26,8 @@ Use **Node.js 22 or newer** and **Python 3.9 or newer** on the computer that wil
 
 ### 1. Prepare the package
 
-For a release installation, extract the `cyclo-ai-<version>-install.zip` asset.
+Download `cyclo-ai-<version>-install.zip` from the Assets section of the
+[GitHub release](https://github.com/ROBOTIS-GIT/cyclo_ai/releases) and extract it.
 It includes the MCP JavaScript libraries, pyserial, and PyYAML. With Node.js and
 Python already installed, run `node scripts/doctor.mjs --hardware-deps` from the
 extracted `cyclo-ai` directory, then load it using the host installation guide.

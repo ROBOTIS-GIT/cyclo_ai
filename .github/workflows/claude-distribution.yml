@@ -6,10 +6,6 @@ on:
         description: Published release version (X.Y.Z)
         required: true
         type: string
-      release_run_id:
-        description: Successful Release workflow run containing the packages
-        required: true
-        type: string
 permissions:
   contents: read
 concurrency:
@@ -21,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
-      actions: read
       contents: write
     steps:
       - uses: actions/checkout@v4
@@ -32,14 +27,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
-          RELEASE_RUN_ID: ${{ inputs.release_run_id }}
         run: |
           [[ "$VERSION" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo 'Expected version X.Y.Z'; exit 1; }
-          [[ "$RELEASE_RUN_ID" =~ ^[0-9]+$ ]] || { echo 'Expected a numeric release run ID'; exit 1; }
           gh release view "$VERSION" --json tagName,isDraft,isPrerelease | jq -e --arg version "$VERSION" '.tagName == $version and (.isDraft | not) and (.isPrerelease | not)'
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RELEASE_RUN_ID" | jq -e '.path == ".github/workflows/release.yml" and .event == "pull_request" and .conclusion == "success"'
-          gh run download "$RELEASE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "cyclo-ai-packages-$VERSION-ubuntu-latest" --dir artifacts
-          (cd artifacts && sha256sum --check SHA256SUMS)
+          gh release download "$VERSION" --repo "$GITHUB_REPOSITORY" --dir artifacts \
+            --pattern "cyclo-ai-$VERSION.zip" --pattern "cyclo-ai-$VERSION-install.zip" \
+            --pattern SHA256SUMS --pattern SOURCE_COMMIT
+          (cd artifacts && sha256sum --check --strict SHA256SUMS)
           gh auth setup-git
           git fetch --no-tags origin "refs/tags/$VERSION"
           source_commit=$(git rev-parse 'FETCH_HEAD^{commit}')

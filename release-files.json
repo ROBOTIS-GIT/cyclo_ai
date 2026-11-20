@@ -4,6 +4,7 @@
   ".gitattributes",
   ".github/workflows/claude-distribution.yml",
   ".github/workflows/offline.yml",
+  ".github/workflows/release-package.yml",
   ".github/workflows/release.yml",
   ".gitignore",
   ".prettierrc.json",

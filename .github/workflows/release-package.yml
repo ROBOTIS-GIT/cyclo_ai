@@ -1,0 +1,85 @@
+name: Build release package
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+      source_commit:
+        required: true
+        type: string
+      publish:
+        default: false
+        type: boolean
+
+jobs:
+  package:
+    runs-on: ${{ inputs.os }}
+    timeout-minutes: 15
+    env:
+      RELEASE_VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_commit }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Match package version to the published release
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+          version = json.loads(Path('plugin.json').read_text(encoding='utf-8'))['version']
+          if version != os.environ['RELEASE_VERSION']:
+              raise SystemExit(f"Package version {version} does not match release {os.environ['RELEASE_VERSION']}")
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run setup -- --dev
+      - run: npm run doctor -- --hardware-deps
+      - name: Run Windows integration and runtime tests
+        if: runner.os == 'Windows'
+        run: node --test tests/integration.test.mjs tests/python-runtime.test.mjs
+      - name: Build source archive with a local virtual environment present
+        run: npm run package
+      - name: Test extracted release bytes
+        if: runner.os != 'Windows'
+        run: node scripts/python.mjs validation/verify_archive.py artifacts/cyclo-ai-${{ inputs.version }}.zip
+        env:
+          CYCLO_PRODUCTS_PYTHON: ${{ github.workspace }}/.venv/bin/python
+      - name: Build install archive with pinned runtime libraries
+        run: npm run package:runtime
+      - name: Verify install archive without dependency installation
+        run: npm run verify:runtime -- artifacts/cyclo-ai-${{ inputs.version }}-install.zip
+      - name: Attach verified packages to the release
+        if: inputs.publish
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        working-directory: artifacts
+        run: |
+          source_zip="cyclo-ai-$RELEASE_VERSION.zip"
+          install_zip="cyclo-ai-$RELEASE_VERSION-install.zip"
+          git rev-parse HEAD > SOURCE_COMMIT
+          sha256sum "$source_zip" "$install_zip" SOURCE_COMMIT > SHA256SUMS
+          assets=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$RELEASE_VERSION" --jq '.assets')
+
+          for file in "$source_zip" "$install_zip" SOURCE_COMMIT SHA256SUMS; do
+            digest=$(sha256sum "$file" | cut -d ' ' -f 1)
+            existing=$(jq -r --arg name "$file" '.[] | select(.name == $name) | .digest // "unknown"' <<< "$assets")
+            if [[ -z "$existing" ]]; then
+              gh release upload "$RELEASE_VERSION" "$file" --repo "$GITHUB_REPOSITORY"
+            elif [[ "$existing" != "sha256:$digest" ]]; then
+              echo "Existing release asset differs or has no digest: $file" >&2
+              exit 1
+            fi
+          done

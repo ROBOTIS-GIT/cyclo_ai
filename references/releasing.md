@@ -46,23 +46,20 @@ removing the published release. Re-running a notification can send another
 message, so check the channel before retrying. No live notification is sent
 while editing or validating this caller.
 
-## GitHub Actions artifacts
+## GitHub Release assets
 
 The Offline plugin checks workflow runs tests and source validation on pushes,
-pull requests and manual dispatch; it does not build or upload distribution ZIPs.
-After the Release workflow successfully creates a GitHub Release, its packages
-job checks out the exact merge commit and builds source and install ZIPs on Linux,
-macOS and Windows. The package version must match the published release version.
-It verifies the install ZIP everywhere, runs the full extracted-source suite on
-Linux/macOS, and records SHA256SUMS and SOURCE_COMMIT. The archives and validation
-evidence are uploaded as `cyclo-ai-packages-<version>-<runner>` artifacts with
-30-day retention. PR validation and unmerged closure do not create packages.
+pull requests and manual dispatch. After the Release workflow creates the
+GitHub Release, macOS and Windows build and verify packages from the exact
+merge commit. Once both checks pass, Ubuntu builds and verifies the same
+version and attaches the source ZIP, install ZIP, `SHA256SUMS` and
+`SOURCE_COMMIT` to that release. The Discord notification follows asset upload.
+PR validation and unmerged closure skip packaging.
 
-Download the artifact from the successful Release workflow run's Artifacts section. No separate
-server or deployment credentials are needed. Keep local artifacts/ ignored;
-local package commands are for reproducing and debugging CI builds. OpenAI
-submission uses the verified install ZIP downloaded from the successful run.
-Claude repository submission uses the generated distribution branch described below.
+Download the ZIP from the release's Assets section. Run
+`sha256sum --ignore-missing -c SHA256SUMS` alongside it to check the downloaded
+file. OpenAI submission uses the verified install ZIP. Claude repository
+submission uses the generated distribution branch described below.
 
 ## Install ZIP
 
@@ -117,10 +114,9 @@ path. The branch also contains `.claude-plugin/marketplace.json` for repository
 marketplace clients. Do not edit that branch by hand.
 
 The manual **Publish Claude distribution** workflow creates or updates this
-branch using an existing release package. Supply the published version and its
-successful Release workflow run ID. The workflow downloads that run's Ubuntu
-package artifact, checks the ZIP checksums and verifies SOURCE_COMMIT against
-the published tag. It does not rebuild the package. It verifies the downloaded
+branch using an existing release package. Supply the published version. The
+workflow downloads the release assets, checks their SHA-256 hashes and verifies
+`SOURCE_COMMIT` against the published tag. It verifies the downloaded
 install ZIP and prepared repository directory without npm/pip installs inside
 the package, removes CI workflows from the generated branch, records the released
 source commit in distribution.json, and updates the full file-integrity inventory.
