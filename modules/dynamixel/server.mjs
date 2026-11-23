@@ -108,10 +108,10 @@ export async function createProductsServer(env = process.env, dependencies = {})
     );
   add(
     'cyclo_mimic',
-    'Read-only BeyondMimic PPO / SuperMimic world-model selection guidance. Runtime, physics and method are separate. Returns checkout checks, artifact contracts and unsupported stages; never inspects local files or starts training/devices.',
+    'Read-only BeyondMimic PPO / SuperMimic / MJLab BlinkMimic selection guidance. Runtime, physics and method are separate. Returns checkout checks, artifact contracts and unsupported stages; never inspects local files or starts training/devices.',
     z.strictObject({
       runtime: z.enum(['lab', 'mjlab']),
-      method: z.enum(['beyondmimic', 'supermimic']),
+      method: z.enum(['beyondmimic', 'supermimic', 'blinkmimic']),
       stage: z.enum(['prepare', 'train', 'play', 'export', 'sim2real']).default('prepare'),
     }),
     mimicGuidance,
