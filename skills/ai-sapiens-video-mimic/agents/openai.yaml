@@ -1,4 +1,4 @@
 interface:
   display_name: "Ai Sapiens Video Mimic"
-  short_description: "Prepare video retargeting and Mimic training"
-  default_prompt: "Use $ai-sapiens-video-mimic to prepare the documented workflow."
+  short_description: "Prepare retargeting and choose PPO or world-model tracking"
+  default_prompt: "Use $ai-sapiens-video-mimic to prepare motion data and explicitly choose BeyondMimic PPO, SuperMimic or MJLab BlinkMimic for the selected native runtime and robot revision."

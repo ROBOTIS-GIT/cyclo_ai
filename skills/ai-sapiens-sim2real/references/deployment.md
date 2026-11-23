@@ -4,6 +4,8 @@ Read [Sim2Real](https://docs.robotis.com/docs/systems/aisapiens/development_guid
 
 The SSH manual documents serial on the back label or controller LCD (SE button) and hostname k1-<SERIAL>.local on a shared reachable network. Example syntax after independent identity and host-key verification: `ssh root@k1-SERIAL.local`. Treat SERIAL as a placeholder and validate its literal value before constructing a command; do not interpolate untrusted strings into a shell. Use actual configured authentication. A documented factory account is not evidence of current credentials. DNS/mDNS resolution and a familiar hostname alone do not prove robot identity. Never disable StrictHostKeyChecking or auto-accept a changed key. Stop on mismatch; ask for physical label/authorized inventory and trusted fingerprint. There is no serial lookup service bundled here.
 
+The following helper checks the conventional run layout for any method, including BlinkMimic after Viser export. MJLab SuperMimic nested exports and standalone export directories require separate path review; use [method-specific contracts](../../ai-sapiens-video-mimic/references/methods.md), matching training YAML and controller evidence before staging. Lab SuperMimic remains unsupported for export.
+
 The offline helper is read-only:
 
 ```bash

@@ -20,7 +20,7 @@ for (const mode of ['legacy', 'auto'])
     try {
       await c.connect(transport);
       const tools = (await c.listTools()).tools;
-      assert.equal(tools.length, 18);
+      assert.equal(tools.length, 19);
       assert.ok(tools.some((t) => t.name === 'dynamixel_swap_ids'));
       assert.equal(
         (await c.callTool({ name: 'dynamixel_registry', arguments: {} })).structuredContent

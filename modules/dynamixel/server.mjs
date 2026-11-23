@@ -4,6 +4,7 @@ import { inspectBytes } from './raw-read.mjs';
 import { groupPlan, readManyItems } from './group.mjs';
 import { planGroupWrite, writeManyItems } from './group-write.mjs';
 import { swapIds } from './swap.mjs';
+import { mimicGuidance } from '../knowledge/mimic.mjs';
 import { codeIndex, readCode } from '../knowledge/source.mjs';
 import { ITEMS, tableFor, itemFor, writeRequest, readItems, writeItem } from './table.mjs';
 import { modelFor } from './registry.mjs';
@@ -94,6 +95,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
           destructiveHint: write,
           idempotentHint: !write,
           openWorldHint: ![
+            'cyclo_mimic',
             'robotis_sources',
             'dynamixel_registry',
             'dynamixel_targets',
@@ -104,6 +106,16 @@ export async function createProductsServer(env = process.env, dependencies = {})
       },
       wrap(fn),
     );
+  add(
+    'cyclo_mimic',
+    'Read-only BeyondMimic PPO / SuperMimic / MJLab BlinkMimic selection guidance. Runtime, physics and method are separate. Returns checkout checks, artifact contracts and unsupported stages; never inspects local files or starts training/devices.',
+    z.strictObject({
+      runtime: z.enum(['lab', 'mjlab']),
+      method: z.enum(['beyondmimic', 'supermimic', 'blinkmimic']),
+      stage: z.enum(['prepare', 'train', 'play', 'export', 'sim2real']).default('prepare'),
+    }),
+    mimicGuidance,
+  );
   add(
     'robotis_code',
     'Inspect pinned official implementation sources by package and exact profile/revision. Index finds paths/symbols/caller locators; read returns bounded Git-blob-verified source. No device, ROS, local-file or code execution.',

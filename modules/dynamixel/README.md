@@ -29,3 +29,5 @@ The bundled catalog retains 89 actuator documents and the item inventory, includ
 See [item-level conditions and coverage](../../references/control-table-runtime.md). Reset/reboot/flash are not register writes and are not exposed. Tests establish synthetic workflow and packet/stdio behavior; they do not certify physical devices, firmware revisions, motion, timing or an installed host session.
 
 For dependency setup use `npm run setup`; `npm run doctor -- --hardware-deps` performs device-free diagnostics. `.venv` is discovered automatically. See [architecture](../../references/architecture.md) for connection contracts, batching and session behavior.
+
+`cyclo_mimic` provides read-only K1 BeyondMimic/SuperMimic selection guidance for Lab and MJLab, plus MJLab-only BlinkMimic. It returns checkout checks and method-specific artifact contracts, makes no local capability claim, retains Lab SuperMimic export/Sim2Real rejection, and distinguishes current MJLab exporters from hardware readiness. It does not start a simulator, training job or device provider. See [method matrix](../../skills/ai-sapiens-video-mimic/references/methods.md).
