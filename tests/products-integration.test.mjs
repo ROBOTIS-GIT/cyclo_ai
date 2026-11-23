@@ -96,13 +96,32 @@ test('default stdio: official routes/registry work; discovery and execution stay
   }
   const retired = await c.callTool({ name: 'robotis_sources', arguments: { query: 'emanual' } });
   assert.deepEqual(retired.structuredContent.sources, []);
-  const protocol = await c.callTool({
-    name: 'robotis_sources',
-    arguments: { query: 'DYNAMIXEL Protocol 2.0' },
-  });
+  const search = async (query) => {
+    const result = await c.callTool({ name: 'robotis_sources', arguments: { query } });
+    return result.structuredContent.sources;
+  };
+  const protocol = await search('  dynamixel   PROTOCOL 2.0 ');
+  assert.equal(protocol[0].url, 'https://docs.robotis.com/docs/dxl/protocol/protocol2');
+  assert.equal(protocol.length, 12);
+  assert.equal(new Set(protocol.map((source) => source.url.replace(/\/$/, ''))).size, 12);
+  const gripper = await search('RH-P12-RN-UR');
+  assert.deepEqual(
+    gripper.map((source) => source.url),
+    ['https://docs.robotis.com/docs/systems/rh_p12_rn/rh_p12_rn_ur'],
+  );
+  const motor = await search('XM430-W350');
   assert.ok(
-    protocol.structuredContent.sources.some(
-      (s) => s.url === 'https://docs.robotis.com/docs/dxl/protocol/protocol2',
+    motor.some(
+      (source) =>
+        source.url.startsWith('https://github.com/ROBOTIS-GIT/docs/blob/') &&
+        source.url.endsWith('/xm430-w350.mdx'),
+    ),
+  );
+  assert.ok(
+    motor.some(
+      (source) =>
+        source.url ===
+        'https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm430-w350',
     ),
   );
   for (const [catalogId, query, mask] of [

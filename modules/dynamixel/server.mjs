@@ -213,21 +213,37 @@ export async function createProductsServer(env = process.env, dependencies = {})
             defaultBranch: r.default_branch,
           })),
       ];
-      const words = query.toLowerCase().split(/\s+/).filter(Boolean);
-      const ranked = sources
-        .map((s) => ({
-          s,
-          score: words.reduce(
-            (n, w) =>
-              n +
-              (JSON.stringify([s.id, s.title, s.tags, s.family]).toLowerCase().includes(w) ? 1 : 0),
-            0,
-          ),
-        }))
-        .filter((x) => x.score)
+      const normalizeTitle = (text) => text.trim().toLowerCase().replace(/\s+/g, ' ');
+      const title = normalizeTitle(query);
+      const words = title.split(' ').filter(Boolean);
+      const matches = new Map();
+      for (const source of sources) {
+        const fields = JSON.stringify([
+          source.id,
+          source.title,
+          source.tags,
+          source.family,
+        ]).toLowerCase();
+        const hits = words.filter((word) => fields.includes(word)).length;
+        if (!hits) continue;
+        const score = normalizeTitle(source.title) === title ? words.length + 1 : hits;
+        const url = new URL(source.url);
+        if (url.origin === 'https://docs.robotis.com')
+          url.pathname = url.pathname.replace(/\/$/, '');
+        const previous = matches.get(url.href);
+        const checkedOn = source.lastRetrieval?.checkedOn ?? '';
+        if (
+          !previous ||
+          score > previous.score ||
+          (score === previous.score && checkedOn > previous.checkedOn)
+        ) {
+          matches.set(url.href, { source, score, checkedOn });
+        }
+      }
+      const ranked = [...matches.values()]
         .sort((a, b) => b.score - a.score)
         .slice(0, 12)
-        .map((x) => x.s);
+        .map((match) => match.source);
       return {
         reviewedOn: index.reviewedOn,
         sources: ranked,
