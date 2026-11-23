@@ -4,11 +4,12 @@ Offline: python3 scripts/discover_official_sources.py saved.html --base https://
 Live retrieval is done separately by the host web tool; this parser executes no content.
 """
 
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse
 import argparse, json, hashlib
 
-ALLOWED = {"docs.robotis.com", "emanual.robotis.com"}
+ALLOWED = {"docs.robotis.com"}
 
 
 class Navigation(HTMLParser):
@@ -41,16 +42,11 @@ class Navigation(HTMLParser):
             or p.hostname not in ALLOWED
             or p.username
             or p.fragment
-            or not p.path.startswith(("/docs/", "/docs/en/"))
+            or not p.path.startswith("/docs/")
             or not title
         ):
             return
-        if p.hostname == "emanual.robotis.com" and not p.path.startswith("/docs/en/"):
-            return
-        if p.path.startswith("/docs/en/"):
-            path = p.path[9:]
-        else:
-            path = p.path[6:]
+        path = p.path[6:]
         family = path.split("/")[0]
         if family == "edu" and title.upper().startswith("LEVEL"):
             title = title + " [" + path.strip("/") + "]"
@@ -73,7 +69,7 @@ class Navigation(HTMLParser):
                 "tags": [family, title, path],
                 "coverage": "discovered-only",
                 "reviewedOn": None,
-                "discoveredOn": "2026-10-24",
+                "discoveredOn": datetime.now(timezone.utc).date().isoformat(),
                 "lifecycle": "unknown; catalog inclusion does not prove current availability",
                 "execution": "none",
             },

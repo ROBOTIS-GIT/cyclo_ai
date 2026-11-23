@@ -333,6 +333,7 @@
   "validation/custom_fixture.py",
   "validation/fixtures/control-table-witnesses.json",
   "validation/fixtures/item-condition-cases.json",
+  "validation/official-docs-migration.json",
   "validation/package_files.py",
   "validation/package_release.py",
   "validation/package_runtime.py",

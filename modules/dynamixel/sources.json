@@ -1,31 +1,31 @@
 {
-  "reviewedOn": "2026-10-24",
+  "reviewedOn": "2026-11-23",
   "firmwarePolicy": "Historical retrieval snapshots only. Current executable metadata is references/control-tables.json; observed firmware and capability-specific gates replace firmware-number whitelisting.",
   "sources": [
     {
       "id": "xl330",
-      "url": "https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/",
-      "retrievedOn": "2026-10-24",
-      "bytes": 359049,
-      "sha256": "a336b9e3333295355870c48ccd99736596d175e61cf9b52f5b4602b0f67806b7",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/xl330-m288",
+      "retrievedOn": "2026-11-23",
+      "bytes": 306735,
+      "sha256": "b3c2f3905831c3470bb62e5f0dab6b936644dec7154281759542068e9bfe02b5",
       "kind": "public HTML",
       "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
     },
     {
       "id": "xm430",
-      "url": "https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/",
-      "retrievedOn": "2026-10-24",
-      "bytes": 388676,
-      "sha256": "38038f5b32cbbb7e3c26570658855986be33589b06eb6d15e6259db338caafd3",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm430-w350",
+      "retrievedOn": "2026-11-23",
+      "bytes": 372770,
+      "sha256": "80059c7bc4f2ce7e292f94aa57adf77c4f791d1c254cf7ea66f382390b45eadf",
       "kind": "public HTML",
       "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
     },
     {
       "id": "y",
-      "url": "https://emanual.robotis.com/docs/en/dxl/y/ym070-210-m001-rh/",
-      "retrievedOn": "2026-10-24",
-      "bytes": 406021,
-      "sha256": "d724bbb21bdec3e7ae2bb352b8414f7a9f1b9fca944dc37d7a0f3073a7ffc71f",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-m001-rh",
+      "retrievedOn": "2026-11-23",
+      "bytes": 346664,
+      "sha256": "10003e9ebf6bf59b97a7e110dd33d661a367cae2dde410b1e9ef88dd5f30976e",
       "kind": "public HTML",
       "proofLimit": "Snapshot hash establishes retrieved bytes, not independent semantic certification or runtime compatibility."
     },

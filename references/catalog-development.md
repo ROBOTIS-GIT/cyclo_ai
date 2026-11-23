@@ -4,6 +4,8 @@ Generated JSON records source facts and reviewed execution rules. Keep generator
 
 The index pins the ROBOTIS docs revision and each source blob. Obtain that exact checkout and the supplement revisions in `references/control-source-supplements.json`. The supplemental cache layout is `_official/<owner>/<repository>/<revision>/<path>` beneath the same pinned-docs checkout/cache used by the item compiler. `scripts/control_source.py` verifies source blobs; a missing or mismatched file is a build failure.
 
+A supplemental Docs source can use a newer revision than the base index. Preserve its exact model import, component path and hashes; do not present it as part of the older index. [Route and supplemental-source verification](../validation/official-docs-migration.json) records the current replacement evidence.
+
 For an existing pinned index, use the documented checkout/cache as input:
 
 ```sh
