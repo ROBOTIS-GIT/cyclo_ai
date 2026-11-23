@@ -83,16 +83,16 @@ export async function createProductsServer(env = process.env, dependencies = {})
       };
     }
   };
-  const add = (name, description, inputSchema, fn, write = false) =>
+  const add = (name, description, inputSchema, fn, mutatesState = false) =>
     server.registerTool(
       name,
       {
         description,
         inputSchema,
         annotations: {
-          readOnlyHint: !write,
-          destructiveHint: write,
-          idempotentHint: !write,
+          readOnlyHint: !mutatesState,
+          destructiveHint: mutatesState,
+          idempotentHint: !mutatesState,
           openWorldHint: ![
             'robotis_sources',
             'dynamixel_registry',
@@ -427,7 +427,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
   );
   add(
     'dynamixel_scan',
-    'Bounded read-only Protocol 1/2 scan on an explicitly selected port, configured bus or existing target. Unknown ID/model needs no preconfigured device identity. Always choose one candidate explicitly.',
+    'Bounded Protocol 1/2 discovery on an explicitly selected port, configured bus or existing target. Execution reads devices and invalidates earlier scan candidates on that port. Dry runs only preview the scan. Unknown ID/model needs no preconfigured device identity. Always choose one candidate explicitly.',
     z.strictObject({
       bus: z.string().optional(),
       target: z.string().optional(),
@@ -463,6 +463,7 @@ export async function createProductsServer(env = process.env, dependencies = {})
           : 'No selectable observation: inspect completeness/errors and do not guess a device.',
       };
     },
+    true,
   );
   add(
     'dynamixel_swap_ids',

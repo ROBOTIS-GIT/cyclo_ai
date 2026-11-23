@@ -171,6 +171,41 @@ test('injected mock stdio: bounded scan, LED and new-ID readback', async (t) => 
   assert.equal(next.structuredContent.outcome, 'verified');
   assert.equal(next.structuredContent.location.id, 7);
 });
+test('scan advertises and enforces replacement of session observations', async (t) => {
+  const c = await client(t, true, { unknown: true });
+  const { tools } = await c.listTools();
+  const { annotations } = tools.find((tool) => tool.name === 'dynamixel_scan');
+  assert.equal(annotations.readOnlyHint, false);
+  assert.equal(annotations.idempotentHint, false);
+  assert.equal(annotations.destructiveHint, true);
+
+  const scan = (dryRun) =>
+    c.callTool({
+      name: 'dynamixel_scan',
+      arguments: {
+        bus: 'bench',
+        ids: [1],
+        protocols: [2],
+        bauds: [57600],
+        dryRun,
+        confirmed: true,
+      },
+    });
+  const select = ({ scanId, candidates }) =>
+    c.callTool({
+      name: 'dynamixel_select',
+      arguments: { scanId, candidateId: candidates[0].candidateId, name: 'motor', confirmed: true },
+    });
+
+  const first = (await scan(false)).structuredContent;
+  const second = (await scan(false)).structuredContent;
+  assert.notEqual(second.scanId, first.scanId);
+  const stale = await select(first);
+  assert.equal(stale.isError, true);
+  assert.match(stale.structuredContent.error, /Scan observation expired/);
+  assert.equal((await scan(true)).structuredContent.executed, false);
+  assert.equal((await select(second)).structuredContent.target.id, 1);
+});
 test('novice stdio: unknown identity -> bounded scan -> confirmed selection -> ID/baud changes -> reuse', async (t) => {
   const c = await client(t, true, { unknown: true });
   const call = (name, args) => c.callTool({ name, arguments: args });
