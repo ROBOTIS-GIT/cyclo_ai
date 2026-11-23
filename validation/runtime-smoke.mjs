@@ -47,6 +47,20 @@ for (const [i, servers] of manifests.entries()) {
       arguments: { action: 'index', query: 'read' },
     });
     assert.ok(code.structuredContent.total > 0);
+    const mimic = await client.callTool({
+      name: 'cyclo_mimic',
+      arguments: { runtime: 'mjlab', method: 'blinkmimic', stage: 'export' },
+    });
+    assert.equal(mimic.isError, undefined);
+    assert.equal(mimic.structuredContent.status, 'guidance_only');
+    assert.equal(mimic.structuredContent.capabilityDetected, false);
+    assert.match(mimic.structuredContent.export, /NEW_DIR\/exported\/policy.onnx/);
+    const unsupported = await client.callTool({
+      name: 'cyclo_mimic',
+      arguments: { runtime: 'lab', method: 'blinkmimic' },
+    });
+    assert.equal(unsupported.isError, true);
+    assert.match(unsupported.structuredContent.error, /Unsupported runtime\/method pair/);
     const blocked = await client.callTool({
       name: 'dynamixel_ports',
       arguments: { confirmed: true },
@@ -58,5 +72,5 @@ for (const [i, servers] of manifests.entries()) {
   }
 }
 console.log(
-  'Both installed host declarations: initialize, 19 tools, source catalogs and offline guard passed.',
+  'Both installed host declarations: initialize, 19 tools, source catalogs, Mimic guidance/error paths and offline guard passed.',
 );

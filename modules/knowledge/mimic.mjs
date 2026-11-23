@@ -57,9 +57,11 @@ const profiles = {
       scope:
         'Native MuJoCo GenCoord/MaxCoord, K1 Rev.1/Rev.2. Fresh training defaults to proprio/history_length=10; saved settings govern reload. Do not infer hardware readiness or a complete training acceptance matrix from registration or export tests.',
       checkpoint:
-        'logs/supermimic/<task>/<run>/last.pt is a combined cyclo.supermimic.checkpoint.v1 archive with models, available optimizer state and sampler state. checkpoints/model_<step>.pt omits optimizers. Play accepts --checkpoint FILE or --checkpoint-dir RUN (prefers last.pt); legacy manifest.json/actor.pt/world_model.pt split bundles remain inference-only. Validate representation, robot/actions and exact timestep/decimation. Local playback needs no W&B upload/sync.',
+        'logs/supermimic/<task>/<run>/last.pt is a combined cyclo.supermimic.checkpoint.v1 archive with models, available optimizer state and sampler state. checkpoints/model_<step>.pt omits optimizers. Play accepts --checkpoint FILE or --checkpoint-dir RUN (prefers last.pt); legacy manifest.json/actor.pt/world_model.pt split bundles remain inference-only. Resume/export validate the saved environment and robot/action contract; local playback needs no W&B upload/sync.',
+      playback:
+        'Play checks representation, then builds the selected task defaults without restoring saved environment overrides or validating its full robot/timing contract. Optional automatic export validates the checkpoint source task, not the selected playback environment. Compare task/revision, joint/action order and timestep/decimation before play. At most one --checkpoint, --checkpoint-dir or --wandb-path; no selection searches the latest task run. For evaluation without refreshing ONNX use --export-policy False; the default overwrites active exports.',
       resume:
-        'Train with --agent.resume True --agent.load-run RUN --agent.load-checkpoint last.pt; --runner.max-iterations is the total target, not additional updates. Numbered combined snapshots allow model-only resume with an optimizer-reset warning; split inference bundles cannot resume. Simulator and replay restart. --world-model-checkpoint initializes only dynamics in a fresh run and is mutually exclusive with resume.',
+        'Train with --agent.resume True --agent.load-run RUN --agent.load-checkpoint last.pt; repeat the original --motion-file for custom clips because omission selects current task defaults, not the saved motion list. --runner.max-iterations is the total target, not additional updates. Numbered combined snapshots allow model-only resume with an optimizer-reset warning; split inference bundles cannot resume. Simulator and replay restart. --world-model-checkpoint initializes only dynamics in a fresh run and is mutually exclusive with resume.',
       export:
         'scripts/reinforcement_learning/export.py --algorithm supermimic TASK --checkpoint FILE --output-dir NEW_DIR [--encoder motion|velocity] emits NEW_DIR/policy.onnx, metadata.json and license notices. Play exports active encoders by default under exported/<checkpoint-stem>/ (legacy split bundles: exported/). Training writes params/sim2real.yaml and params/velocity/sim2real.yaml for active encoders. Graph has obs/actions, frozen normalization and term-major history plus external goals; no motion table or world model. rep_state requires history 1 and remains privileged; never convert it into proprio by relabeling.',
     },
@@ -82,7 +84,7 @@ const profiles = {
       scope:
         'K1 Rev.1/Rev.2 registry; native MuJoCo with the pinned released recipe in a separate process. --execution official is default; compiled_no_torch_graphs is an explicit systems alternative, not a reduced learner or automatic fallback. Do not transfer upstream G1 speed/convergence claims to K1.',
       checkpoint:
-        'logs/blinkmimic/<task>/<run>/last.pt retains full training state; numbered model_<iteration>.pt snapshots omit optimizers. Play selects --checkpoint model_N.pt or the highest numbered snapshot in --checkpoint-dir RUN; last.pt is not accepted by the playback selector. Preserve args.json, run-record.json and the recorded motion manifest. Local playback needs no remote synchronization.',
+        'logs/blinkmimic/<task>/<run>/last.pt retains models and optimizer state; simulator/replay state is not saved; numbered model_<iteration>.pt snapshots omit optimizers. Play selects --checkpoint model_N.pt or the highest numbered snapshot in --checkpoint-dir RUN; last.pt is not accepted by the playback selector. Preserve args.json, run-record.json and the recorded motion manifest. Local playback needs no remote synchronization.',
       resume:
         'Train with --agent.resume True --agent.load-run RUN --agent.load-checkpoint last.pt; --iterations is the total target. Restore saved models/available optimizers and compatible sampler state into fresh simulation/replay. Numbered model-only resume warns that optimizers restart. --world-model-checkpoint seeds only dynamics for fresh training; robot/configuration checks still apply.',
       export:
@@ -120,18 +122,24 @@ export function mimicGuidance({ runtime, method, stage = 'prepare' }) {
         ? 'Four bounded backend/representation train/continue/play cells and both BeyondMimic backend regressions reported passed. Lab learner compilation and deployable proprio/history remain unvalidated; no convergence or robot claim.'
         : 'MJLab 1.1.0 main source, registry, CLI, Docker and checkpoint/export tests inspected. This plugin performs device-free guidance tests only; it does not establish simulator acceptance, convergence, historical checkpoint compatibility or hardware readiness for this revision.',
     sharedCore:
-      runtime === 'lab'
-        ? 'ROBOTIS-GIT/supermimic submodule third_party/supermimic at 10dd5dd3f02601caf1991790952a25db63a6fb99, derived from official HybridRobotics abc124c1. Initialize the gitlink and use consumer dependencies.'
-        : 'MJLab gitlinks: third_party/supermimic a03f646d79bd92136b18095388b064e2ebe6dced (official HybridRobotics lineage 698ea39b); third_party/blinkmimic 029f4092be88654807849478b3188cf708a3fdc8 (released BlinkMimic lineage d264658d); third_party/ai_sapiens 0f1ca21e657c27aacd8a84d9ad3f1c7284c1aa03. Initialize recursively and use the consumer lock, not upstream standalone research environments.',
+      method === 'beyondmimic'
+        ? 'Use the consumer PPO environment; SuperMimic/BlinkMimic learner setup is not a PPO prerequisite.'
+        : runtime === 'lab'
+          ? 'ROBOTIS-GIT/supermimic submodule third_party/supermimic at 10dd5dd3f02601caf1991790952a25db63a6fb99, derived from official HybridRobotics abc124c1. Initialize the gitlink and use consumer dependencies.'
+          : 'MJLab gitlinks: third_party/supermimic a03f646d79bd92136b18095388b064e2ebe6dced (official HybridRobotics lineage 698ea39b); third_party/blinkmimic 029f4092be88654807849478b3188cf708a3fdc8 (released BlinkMimic lineage d264658d); third_party/ai_sapiens 0f1ca21e657c27aacd8a84d9ad3f1c7284c1aa03. Initialize recursively and use the consumer lock, not upstream standalone research environments.',
     status: 'guidance_only',
     capabilityDetected: false,
     physics:
-      runtime === 'lab'
-        ? 'Isaac Lab native; inherited Newton/MJWarp by default or explicit physics=isaacsim_physx. Select --representation gencoord|maxcoord independently. Conflicting physics flags fail; Newton solver num_substeps=1 is distinct from policy decimation; no silent PhysX fallback.'
-        : 'Native MuJoCo/stable MJLab; SuperMimic chooses GenCoord/MaxCoord by task ID; BlinkMimic uses its own released recipe. Keep Lab and MJLab native environments and core pins separate.',
+      method === 'beyondmimic'
+        ? runtime === 'lab'
+          ? 'Use native Isaac PPO physics flags for the selected checkout; retain the RSL-RL task/configuration contract.'
+          : 'Native MuJoCo/stable MJLab PPO; use its RSL-RL task/configuration contract.'
+        : runtime === 'lab'
+          ? 'Isaac Lab native; inherited Newton/MJWarp by default or explicit physics=isaacsim_physx. Select --representation gencoord|maxcoord independently. Conflicting physics flags fail; Newton solver num_substeps=1 is distinct from policy decimation; no silent PhysX fallback.'
+          : 'Native MuJoCo/stable MJLab; SuperMimic chooses GenCoord/MaxCoord by task ID; BlinkMimic uses its own released recipe. Keep Lab and MJLab native environments and core pins separate.',
     runtimeCheck:
       runtime === 'lab'
-        ? 'Verify native feature checkout pins: Isaac Sim 6.2 / Isaac Lab 3.0 / Python 3.12 for the reviewed SuperMimic port; other branches may differ. Do not use an mjlab sidecar as Lab support.'
+        ? 'Verify native feature checkout pins: Isaac Sim 6.2 / Isaac Lab 3.0 / Python 3.12 for the reviewed native checkout; other branches may differ. Do not use an mjlab sidecar as Lab support.'
         : 'MJLab 1.1.0: Python 3.12 / MJLab 1.6.1, MuJoCo/MuJoCo-Warp 3.11.0, Warp 1.14.0, Torch 2.14.0. Docker installs requirements.lock then --no-deps -e third_party/supermimic -e .; BlinkMimic is selected in an isolated worker from its submodule. Inspect mounts/resources before authorized build/start; an old image is not upgraded by git pull.',
     next: 'Record git revision and dirty state; inspect required paths, registrations and actual CLI help in the selected environment. Missing or changed interfaces mean stop and inspect branch docs, not invent flags or silently fall back to PPO.',
     compatibility:
@@ -143,7 +151,7 @@ export function mimicGuidance({ runtime, method, stage = 'prepare' }) {
         ? 'For deployment require same-run exported/policy.onnx, params/sim2real.yaml and matching motion CSV; inspect controller semantics separately.'
         : runtime === 'lab'
           ? 'Retain learner/config, robot/joint order, motion digest, timestep, action/observation transforms and representation. Reference motion reuse does not imply ONNX/sim2real policy compatibility. Check local docs for resume/play support.'
-          : 'Keep the method-specific ONNX, metadata/notices, matching training params/sim2real.yaml and external motion/goal data together with checkpoint/revision hashes. Reference reuse does not imply ONNX or controller compatibility. Sim2Real guidance is asset review only: verify target controller support for the exact observation/history/action schema, robot revision and rate before any separately authorized deployment; no hardware validation is claimed.',
+          : 'Keep the method-specific ONNX, metadata/notices, matching training params/sim2real.yaml and external goal data together with checkpoint/revision hashes. Motion encoders need matching deployment motion CSV/provenance; the SuperMimic velocity encoder uses velocity commands, not a motion CSV. Reference reuse does not imply ONNX or controller compatibility. Sim2Real guidance is asset review only: verify target controller support for the exact observation/history/action schema, robot revision and rate before any separately authorized deployment; no hardware validation is claimed.',
     evidence:
       'File presence or CLI help establishes interface availability only. Record conversion, optimizer update, checkpoint reload, playback, export and hardware evidence independently. Research smoke does not establish convergence or robot readiness.',
     execution:

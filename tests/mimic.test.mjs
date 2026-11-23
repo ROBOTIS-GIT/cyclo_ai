@@ -28,6 +28,9 @@ test('Lab and PPO contracts remain separate from the MJLab learner update', () =
     assert.match(ppo.artifacts, /same-run/);
     assert.match(ppo.checkpoint, /logs\/rsl_rl/);
     assert.equal(ppo.capabilityDetected, false);
+    assert.doesNotMatch(ppo.physics, /--representation|GenCoord|MaxCoord/);
+    assert.match(ppo.sharedCore, /not a PPO prerequisite/);
+    assert.equal(ppo.export, undefined);
   }
 });
 
@@ -37,8 +40,10 @@ test('MJLab main profiles name current task families, revision choices and indep
     assert.equal(profile.reviewedRevision, 'e17230e2770aeee4ecfebeb4ea84012475a25397');
     assert.equal(profile.revisionStatus, 'published');
     assert.match(profile.runtimeCheck, /Python 3.12 \/ MJLab 1.6.1/);
-    assert.match(profile.sharedCore, /a03f646d79bd92136b18095388b064e2ebe6dced/);
-    assert.match(profile.sharedCore, /029f4092be88654807849478b3188cf708a3fdc8/);
+    if (method !== 'beyondmimic') {
+      assert.match(profile.sharedCore, /a03f646d79bd92136b18095388b064e2ebe6dced/);
+      assert.match(profile.sharedCore, /029f4092be88654807849478b3188cf708a3fdc8/);
+    }
     assert.match(profile.acceptance, /does not establish simulator acceptance/);
     assert.match(profile.compatibility, /not legacy Cyclo-Mimic aliases/);
   }
@@ -79,6 +84,11 @@ test('resume and playback distinguish latest state, numbered models and legacy s
   assert.match(supermimic.checkpoint, /split bundles remain inference-only/);
   assert.match(supermimic.resume, /split inference bundles cannot resume/);
   assert.match(supermimic.checkpoint, /no W&B upload\/sync/);
+  assert.match(supermimic.playback, /without restoring saved environment overrides or validating/);
+  assert.match(supermimic.playback, /source task, not the selected playback environment/);
+  assert.match(supermimic.playback, /--export-policy False/);
+  assert.match(supermimic.playback, /At most one/);
+  assert.match(supermimic.resume, /omission selects current task defaults/);
   assert.match(blink.checkpoint, /last.pt is not accepted by the playback selector/);
   assert.match(blink.checkpoint, /highest numbered snapshot/);
   for (const profile of [supermimic, blink]) {
@@ -108,6 +118,7 @@ test('MJLab export guidance preserves method-specific layouts and hardware revie
     const profile = mj(method, 'sim2real');
     assert.match(profile.artifacts, /Sim2Real guidance is asset review only/);
     assert.match(profile.artifacts, /no hardware validation/);
+    assert.match(profile.artifacts, /velocity encoder uses velocity commands, not a motion CSV/);
     assert.match(profile.export, /params\/sim2real.yaml/);
     assert.equal(profile.capabilityDetected, false);
   }
@@ -143,6 +154,18 @@ test('packaged examples include the same reviewed tasks and distinct export sele
   }
   assert.match(docs, /does not accept `last.pt`/);
   assert.match(docs, /Lab SuperMimic export\/Sim2Real guidance still stops/);
+  const commands = [...docs.matchAll(/```bash\n([\s\S]*?)```/g)].flatMap((m) =>
+    m[1].replaceAll('\\\n', ' ').split('\n'),
+  );
+  const resume = commands.find(
+    (line) => line.includes('--algorithm supermimic') && line.includes('--agent.resume'),
+  );
+  assert.ok(resume?.includes('--motion-file /data/k1_rev2_motion.npz'));
+  const headless = commands.find(
+    (line) => line.includes('--algorithm supermimic') && line.includes('--viewer headless'),
+  );
+  assert.ok(headless?.includes('--export-policy False'));
+  assert.doesNotMatch(headless, /--no-export-policy/);
 });
 
 test('MCP guidance covers all supported pairs without device access or new job inputs', async (t) => {

@@ -180,24 +180,32 @@ Both train selectors use `--agent.resume True --agent.load-run RUN
 --agent.load-checkpoint last.pt`. A checkpoint can be an absolute path.
 SuperMimic `--runner.max-iterations` and BlinkMimic `--iterations` are **total**
 targets that must exceed saved progress, not additional update counts. Both restart
-simulation and replay. Same-robot clip/task transfer is compatibility-checked and
+simulation and replay. For SuperMimic, repeat the original `--motion-file` on
+resume: omission uses current task defaults, not the checkpoint motion list.
+BlinkMimic same-task resume recovers a recorded explicit library when
+`--motion-dir` is omitted. Same-robot clip/task transfer is compatibility-checked and
 sampler state is remapped; it is not arbitrary cross-revision transfer or exact
 trajectory resume. `--world-model-checkpoint` initializes dynamics in a fresh run,
 not policy/optimizer continuation, and cannot be combined with resume.
 
 ```bash
 python scripts/reinforcement_learning/train.py --algorithm supermimic \
-  Cyclo-SuperMimic-GenCoord-K1-Rev2-001 --agent.resume True \
-  --agent.load-run RUN --agent.load-checkpoint last.pt --runner.max-iterations 200
+  Cyclo-SuperMimic-GenCoord-K1-Rev2-001 --motion-file /data/k1_rev2_motion.npz \
+  --agent.resume True --agent.load-run RUN --agent.load-checkpoint last.pt --runner.max-iterations 200
 python scripts/reinforcement_learning/train.py --algorithm blinkmimic \
   Cyclo-BlinkMimic-K1-Rev2-001 --agent.resume True \
   --agent.load-run RUN --agent.load-checkpoint last.pt --iterations 200
 ```
 
-SuperMimic play takes exactly one `--checkpoint FILE`, `--checkpoint-dir RUN` or
+SuperMimic play takes at most one `--checkpoint FILE`, `--checkpoint-dir RUN` or
 optional `--wandb-path`. A run directory prefers `last.pt`, otherwise reads a split
-bundle; omitted selection searches the latest task run. Strict manifest checks
-cover task/representation, actor mode, robot/action order and timestep/decimation.
+bundle; omitted selection searches the latest task run. [Playback](https://github.com/ROBOTIS-GIT/cyclo_mjlab/blob/e17230e2770aeee4ecfebeb4ea84012475a25397/source/tasks/supermimic/play.py#L194)
+checks representation but builds the selected task's current play defaults; it
+does not restore saved environment overrides or validate the selected environment's
+full robot/action/timing contract. Optional automatic export validates the
+checkpoint's source task, not the chosen playback environment. Compare task/robot
+revision, joint/action order and exact timestep/decimation before playback. The
+strict saved-contract checks belong to resume/export, not this playback path.
 BlinkMimic play accepts a numbered `model_N.pt` (legacy `ckpt_N.pt` also accepted)
 or selects the highest numbered file in `--checkpoint-dir`; **its play selector
 does not accept `last.pt`**. Omitted selection searches the latest saved training
@@ -207,13 +215,19 @@ run. Motion library recovery uses the run record; provide `--motion-dir` when ne
 python scripts/reinforcement_learning/play.py --algorithm supermimic \
   Cyclo-SuperMimic-GenCoord-K1-Rev2-001 \
   --checkpoint-dir logs/supermimic/Cyclo-SuperMimic-GenCoord-K1-Rev2-001/RUN \
-  --motion-file /data/k1_rev2_motion.npz --viewer headless --num-steps-rollout 100
+  --motion-file /data/k1_rev2_motion.npz --viewer headless --num-steps-rollout 100 \
+  --export-policy False
 # Viser opens a listening viewer; use only within authorized network scope.
 python scripts/reinforcement_learning/play.py --algorithm blinkmimic \
   Cyclo-BlinkMimic-K1-Rev2-001 \
   --checkpoint-dir logs/blinkmimic/Cyclo-BlinkMimic-K1-Rev2-001/RUN \
   --viewer viser --num-steps 100
 ```
+
+SuperMimic play defaults to `export_policy=True` and overwrites active ONNX exports,
+even in headless mode. The example disables this with `--export-policy False`.
+MJLab 1.6.1 uses Tyro `FlagConversionOff`: `--no-export-policy` is not accepted.
+This disables export writes, not simulation or all possible cache/log writes.
 
 BlinkMimic headless evaluation uses its isolated upstream evaluator; do not assume
 Viser's `--num-steps` bounds that path. Playback may write exports and evaluation
@@ -233,7 +247,7 @@ python scripts/reinforcement_learning/export.py --algorithm supermimic \
   --encoder motion --output-dir /data/new_super_export
 python scripts/reinforcement_learning/export.py --algorithm blinkmimic \
   Cyclo-BlinkMimic-K1-Rev2-001 \
-  --checkpoint logs/blinkmimic/Cyclo-BlinkMimic-K1-Rev2-001/RUN/model_1000.pt \
+  --checkpoint logs/blinkmimic/Cyclo-BlinkMimic-K1-Rev2-001/RUN/model_100.pt \
   --output-dir /data/new_blink_export
 ```
 
@@ -264,10 +278,13 @@ matching checkpoint, task/revision, robot/joint order, exact timing, history res
 external-goal construction, action transforms, metadata and YAML. Check the actual
 target controller supports `cyclo.supermimic.external_goal.v1` or BlinkMimic's
 `cyclo.blinkmimic.csv.v1` YAML / `cyclo.blinkmimic.external_goal.v1` graph contract.
-Keep matching deployment motion CSV and its provenance; CSV-derived velocities
-and NPZ exact-state training are not automatically equivalent. Do not reuse PPO
-YAML or force method-specific export folders into the legacy audit helper.
-That helper checks layout/hashes only, not these controller semantics.
+For motion encoders, keep the matching deployment motion CSV and provenance;
+CSV-derived velocities and exact-state NPZ training are not automatically equivalent.
+The SuperMimic velocity encoder uses `velocity_goal` and runtime velocity commands,
+not a motion CSV. Do not reuse PPO YAML. The audit helper can inventory any method's
+`exported/policy.onnx` + `params/sim2real.yaml` layout (including a BlinkMimic run
+after Viser export); nested SuperMimic or separate standalone exports need explicit
+path/provenance review. Layout/hash success does not validate controller semantics.
 
 This revision was inspected without training, Docker startup or robot operations.
 Source tests include synthetic ONNX equivalence and checkpoint/resume cases; their
