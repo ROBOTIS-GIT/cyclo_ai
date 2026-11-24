@@ -1,6 +1,8 @@
 """Official-source discovery, replacement provenance and bounded link validation."""
 
 import unittest, importlib.util, json
+from http.client import HTTPResponse
+from io import BytesIO
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
@@ -81,6 +83,7 @@ class Sources(unittest.TestCase):
         response = MagicMock()
         response.__enter__.return_value = response
         response.status = 200
+        response.headers = {}
         response.url = "https://docs.robotis.com/docs/dxl/protocol/protocol2"
         response.read.return_value = b'<h2 id="instruction-packet">Instructions</h2>'
         with patch.object(links.urllib.request, "build_opener") as network:
@@ -90,6 +93,30 @@ class Sources(unittest.TestCase):
             self.assertIn("Missing page anchor", links.check(response.url + "#invented")["error"])
             response.read.return_value = b"x" * (links.MAX_BYTES + 1)
             self.assertIn("bounded", links.check(url)["error"])
+
+    def test_link_check_requires_advertised_length_even_after_valid_anchor(self):
+        url = "https://docs.robotis.com/docs/dxl/protocol/protocol2#instruction-packet"
+        body = b'<h2 id="instruction-packet">Instructions</h2>'
+        for length in [len(body), len(body) + 1]:
+            with (
+                self.subTest(length=length),
+                patch.object(links.urllib.request, "build_opener") as network,
+            ):
+                socket = MagicMock()
+                socket.makefile.return_value = BytesIO(
+                    f"HTTP/1.1 200 OK\r\nContent-Length: {length}\r\n\r\n".encode() + body
+                )
+                response = HTTPResponse(socket)
+                response.begin()
+                response.url = url
+                network.return_value.open.return_value = response
+                result = links.check(url)
+                if length == len(body):
+                    self.assertEqual(result["bytes"], length)
+                    self.assertEqual(result["anchorVerified"], "instruction-packet")
+                else:
+                    self.assertIn("Content-Length", result["error"])
+                    self.assertNotIn("sha256", result)
 
 
 if __name__ == "__main__":

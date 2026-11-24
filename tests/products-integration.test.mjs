@@ -104,6 +104,23 @@ test('default stdio: official routes/registry work; discovery and execution stay
   assert.equal(protocol[0].url, 'https://docs.robotis.com/docs/dxl/protocol/protocol2');
   assert.equal(protocol.length, 12);
   assert.equal(new Set(protocol.map((source) => source.url.replace(/\/$/, ''))).size, 12);
+  for (const [query, id, coverage, path] of [
+    ['GMR', 'k1-gmr', 'unsupported', 'motion_generation_retargeting/gmr'],
+    ['nav-ef6946679235', 'k1-gmr', 'unsupported', 'motion_generation_retargeting/gmr'],
+    [
+      'DYNAMIXEL-Q and Impedance Control',
+      'k1-impedance',
+      'guidance',
+      'development_guide/dynamixel_q_impedance_control',
+    ],
+  ]) {
+    const results = await search(query);
+    const url = 'https://docs.robotis.com/docs/systems/aisapiens/' + path;
+    assert.equal(results[0].url.replace(/\/$/, ''), url, query);
+    assert.equal(results.filter((s) => s.url.replace(/\/$/, '') === url).length, 1, query);
+    assert.equal(results[0].id, id, query);
+    assert.equal(results[0].coverage, coverage, query);
+  }
   const gripper = await search('RH-P12-RN-UR');
   assert.deepEqual(
     gripper.map((source) => source.url),

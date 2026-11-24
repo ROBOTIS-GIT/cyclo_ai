@@ -216,6 +216,18 @@ export async function createProductsServer(env = process.env, dependencies = {})
       const normalizeTitle = (text) => text.trim().toLowerCase().replace(/\s+/g, ' ');
       const title = normalizeTitle(query);
       const words = title.split(' ').filter(Boolean);
+      const routeKey = (source) => {
+        const url = new URL(source.url);
+        if (url.origin === 'https://docs.robotis.com')
+          url.pathname = url.pathname.replace(/\/$/, '');
+        return url.href;
+      };
+      // A navigation alias can win the search while the reviewed record supplies the coverage.
+      const reviewedRoutes = new Map(
+        index.sources
+          .filter((source) => source.reviewedOn)
+          .map((source) => [routeKey(source), source]),
+      );
       const matches = new Map();
       for (const source of sources) {
         const fields = JSON.stringify([
@@ -227,17 +239,15 @@ export async function createProductsServer(env = process.env, dependencies = {})
         const hits = words.filter((word) => fields.includes(word)).length;
         if (!hits) continue;
         const score = normalizeTitle(source.title) === title ? words.length + 1 : hits;
-        const url = new URL(source.url);
-        if (url.origin === 'https://docs.robotis.com')
-          url.pathname = url.pathname.replace(/\/$/, '');
-        const previous = matches.get(url.href);
+        const key = routeKey(source);
+        const previous = matches.get(key);
         const checkedOn = source.lastRetrieval?.checkedOn ?? '';
         if (
           !previous ||
           score > previous.score ||
           (score === previous.score && checkedOn > previous.checkedOn)
         ) {
-          matches.set(url.href, { source, score, checkedOn });
+          matches.set(key, { source: reviewedRoutes.get(key) ?? source, score, checkedOn });
         }
       }
       const ranked = [...matches.values()]

@@ -59,6 +59,9 @@ def check(url):
             data = r.read(MAX_BYTES + 1)
             if len(data) > MAX_BYTES:
                 raise ValueError("Response exceeds bounded complete-page retrieval")
+            length = r.headers.get("Content-Length")
+            if length is not None and len(data) != int(length):
+                raise ValueError(f"Content-Length declares {length} bytes, received {len(data)}")
             fragment = urllib.parse.unquote(urllib.parse.urlparse(url).fragment)
             if fragment:
                 anchors = Anchors()
