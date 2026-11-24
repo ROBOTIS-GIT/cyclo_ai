@@ -286,14 +286,6 @@
     {
       "archived": false,
       "default_branch": "master",
-      "description": "Welcome to the ROBOTIS e-Manual ! The e-Manual page rendered from this repository is available for everyone. Just simply click the provided link below :) ",
-      "html_url": "https://github.com/ROBOTIS-GIT/emanual",
-      "name": "emanual",
-      "pushed_at": "2026-08-10T07:36:07Z"
-    },
-    {
-      "archived": false,
-      "default_branch": "master",
       "description": "Face Detection and Tracking for ROS",
       "html_url": "https://github.com/ROBOTIS-GIT/face_detection",
       "name": "face_detection",

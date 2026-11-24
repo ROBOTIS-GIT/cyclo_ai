@@ -12,14 +12,7 @@ The current ROBOTIS-GIT/docs main commit was verified as `c88527af0888baea6f7ef3
 - [MX-64 description, lines283–311](https://github.com/ROBOTIS-GIT/docs/blob/c88527af0888baea6f7ef3305bbbbb911b960759/docusaurus/docs/dxl/model_reference/mx_series/mx-64.mdx#L283): sensed current is centered at raw2048, with4.5mA per raw difference; the separate Goal Torque item is address71. No Current68 write range, instruction, effect or prerequisite is specified.
 - [MX-106 table row, line147](https://github.com/ROBOTIS-GIT/docs/blob/c88527af0888baea6f7ef3305bbbbb911b960759/docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx#L147) and [description, line287](https://github.com/ROBOTIS-GIT/docs/blob/c88527af0888baea6f7ef3305bbbbb911b960759/docusaurus/docs/dxl/model_reference/mx_series/mx-106.mdx#L287) have the same access/telemetry-only description.
 
-The current legacy ROBOTIS-GIT/emanual master commit was verified as `0807b1b5f7472bbbbb2c9751f1d3406678e86d37`.
-
-- [English MX-64 table79 and description207](https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/mx/mx-64.md#L79).
-- [English MX-106 table98 and description230](https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/mx/mx-106.md#L98).
-- [Korean MX-64 table80 and description208](https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/kr/dxl/mx/mx-64.md#L80).
-- [Korean MX-106 table80 and description211](https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/kr/dxl/mx/mx-106.md#L80).
-
-Both languages retain RW and the same current-consumption description. They do not provide a correction to R or a write contract. The live English e-Manual pages likewise retain this content: [MX-64](https://emanual.robotis.com/docs/en/dxl/mx/mx-64/#current-68), [MX-106](https://emanual.robotis.com/docs/en/dxl/mx/mx-106/#current-68).
+The current Docs pages retain RW and the same current-consumption description: [MX-64](https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-64#current-68) and [MX-106](https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-106#current-68). Their `current-68` anchors were rechecked during the official-source migration; the pinned source findings above remain unchanged. Neither page supplies a write contract.
 
 ## Official implementation evidence and its limits
 

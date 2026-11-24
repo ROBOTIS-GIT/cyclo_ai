@@ -86,13 +86,72 @@ test('default stdio: official routes/registry work; discovery and execution stay
     'TurtleBot3',
     'Zenoh',
     'dynamixel_hardware_interface',
-    'DREAM',
+    'ENGINEER',
     'cyclo_control',
     'physical_ai_tools',
   ]) {
     const r = await c.callTool({ name: 'robotis_sources', arguments: { query } });
     assert.ok(r.structuredContent.sources.length > 0, query);
     assert.equal(r.structuredContent.completePortfolio, false);
+  }
+  const retired = await c.callTool({ name: 'robotis_sources', arguments: { query: 'emanual' } });
+  assert.deepEqual(retired.structuredContent.sources, []);
+  const search = async (query) => {
+    const result = await c.callTool({ name: 'robotis_sources', arguments: { query } });
+    return result.structuredContent.sources;
+  };
+  const protocol = await search('  dynamixel   PROTOCOL 2.0 ');
+  assert.equal(protocol[0].url, 'https://docs.robotis.com/docs/dxl/protocol/protocol2');
+  assert.equal(protocol.length, 12);
+  assert.equal(new Set(protocol.map((source) => source.url.replace(/\/$/, ''))).size, 12);
+  for (const [query, id, coverage, path] of [
+    ['GMR', 'k1-gmr', 'unsupported', 'motion_generation_retargeting/gmr'],
+    ['nav-ef6946679235', 'k1-gmr', 'unsupported', 'motion_generation_retargeting/gmr'],
+    [
+      'DYNAMIXEL-Q and Impedance Control',
+      'k1-impedance',
+      'guidance',
+      'development_guide/dynamixel_q_impedance_control',
+    ],
+  ]) {
+    const results = await search(query);
+    const url = 'https://docs.robotis.com/docs/systems/aisapiens/' + path;
+    assert.equal(results[0].url.replace(/\/$/, ''), url, query);
+    assert.equal(results.filter((s) => s.url.replace(/\/$/, '') === url).length, 1, query);
+    assert.equal(results[0].id, id, query);
+    assert.equal(results[0].coverage, coverage, query);
+  }
+  const gripper = await search('RH-P12-RN-UR');
+  assert.deepEqual(
+    gripper.map((source) => source.url),
+    ['https://docs.robotis.com/docs/systems/rh_p12_rn/rh_p12_rn_ur'],
+  );
+  const motor = await search('XM430-W350');
+  assert.ok(
+    motor.some(
+      (source) =>
+        source.url.startsWith('https://github.com/ROBOTIS-GIT/docs/blob/') &&
+        source.url.endsWith('/xm430-w350.mdx'),
+    ),
+  );
+  assert.ok(
+    motor.some(
+      (source) =>
+        source.url ===
+        'https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm430-w350',
+    ),
+  );
+  for (const [catalogId, query, mask] of [
+    ['x_series/xl_series/xl430-w250', 'Startup Configuration', 3],
+    ['x_series/xm_series/xm540-w150', 'Drive Mode', 15],
+    ['x_series/xm_series/xm540-w270', 'Drive Mode', 15],
+  ]) {
+    const table = await c.callTool({ name: 'dynamixel_table', arguments: { catalogId, query } });
+    const item = table.structuredContent.items[0];
+    assert.equal(item.write.allowedMask, mask);
+    assert.equal(item.access, 'RW');
+    assert.ok(item.write.sources.some((s) => s.repository === 'ROBOTIS-GIT/docs'));
+    assert.ok(item.write.sources.every((s) => !s.url?.includes('/emanual/')));
   }
   const unknown = await c.callTool({
     name: 'robotis_sources',

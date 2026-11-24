@@ -224,15 +224,7 @@ def specialize(entry, m, doc, index, src, facts, supplements):
         if n == "Startup Configuration":
             for fix in supplements["resolutions"]:
                 if fix["catalogId"] == m["catalogId"] and fix["item"] == n:
-                    proofs = [
-                        p
-                        for p in supplements["sources"]
-                        if p["repository"] == "ROBOTIS-GIT/emanual"
-                        and (
-                            p["path"].endswith("xl430-w250.md")
-                            or p["path"].endswith("/x/startup_configuration.md")
-                        )
-                    ]
+                    proofs = [p for p in supplements["sources"] if p["path"] in fix["sourcePaths"]]
                     rule = resolve(
                         item,
                         [0, fix["allowedMask"]],
@@ -246,25 +238,12 @@ def specialize(entry, m, doc, index, src, facts, supplements):
         if n == "Drive Mode":
             for fix in supplements["resolutions"]:
                 if fix["catalogId"] == m["catalogId"] and fix["item"] == n:
-                    modelname = m["catalogId"].split("/")[-1]
-                    proofs = [
-                        p
-                        for p in supplements["sources"]
-                        if p["repository"] == "ROBOTIS-GIT/emanual"
-                        and (
-                            p["path"].endswith("/" + modelname + ".md")
-                            or p["path"].endswith("/control_table_drivemode.md")
-                        )
-                    ]
+                    proofs = [p for p in supplements["sources"] if p["path"] in fix["sourcePaths"]]
                     rule.update(
                         allowedMask=fix["allowedMask"],
                         bounds=[0, fix["allowedMask"]],
                         sources=rule.get("sources", [item["source"]]) + proofs,
-                        sourceConflicts=[
-                            {
-                                "resolution": "Exact eManual parent product_group dxl_x540 and its include resolve the migrated generic-template omission of bit1"
-                            }
-                        ],
+                        sourceConflicts=[{"resolution": fix["basis"]}],
                     )
         if n in ["Profile Acceleration", "Profile Velocity"]:
             is_p = any(

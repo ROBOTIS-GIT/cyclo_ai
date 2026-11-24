@@ -1,0 +1,1329 @@
+{
+  "checkedOn": "2026-11-23",
+  "docsRevision": "203300f92880f41ca7fc3ff88584f3231608d67d",
+  "sitemap": {
+    "url": "https://docs.robotis.com/sitemap.xml",
+    "bytes": 142403,
+    "sha256": "5708485cf2bd3f25411310e545fd88b1ab66d84cf8f270383f3531bcb3f2c5ba"
+  },
+  "scope": "Exact product/section routes verified; retrieval is not semantic certification or hardware validation. No unmatched record is mapped to a similar product. Hashes describe newly retrieved bytes only.",
+  "replaced": [
+    {
+      "id": "dynamixel-y",
+      "title": "DYNAMIXEL Y YM070-210-M001-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-m001-rh",
+      "pageTitle": "ym070-210-m001-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-a55c1700e9dd",
+      "title": "YM070-210-B001-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-b001-rh",
+      "pageTitle": "ym070-210-b001-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-0afea7f21bf8",
+      "title": "YM070-210-R051-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-r051-rh",
+      "pageTitle": "ym070-210-r051-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ab176e85b468",
+      "title": "YM070-210-R099-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-r099-rh",
+      "pageTitle": "ym070-210-r099-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-eae28493211e",
+      "title": "YM070-210-A051-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-a051-rh",
+      "pageTitle": "ym070-210-a051-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f6c7b95e96a6",
+      "title": "YM070-210-A099-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym070-210-a099-rh",
+      "pageTitle": "ym070-210-a099-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-505ba6402636",
+      "title": "YM080-230-M001-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym080-230-m001-rh",
+      "pageTitle": "ym080-230-m001-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-0eb6621eb5ac",
+      "title": "YM080-230-B001-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym080-230-b001-rh",
+      "pageTitle": "ym080-230-b001-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-159c77d36f93",
+      "title": "YM080-230-R051-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym080-230-r051-rh",
+      "pageTitle": "ym080-230-r051-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-6bf5b0451b9d",
+      "title": "YM080-230-R099-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym080-230-r099-rh",
+      "pageTitle": "ym080-230-r099-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-7345625f5911",
+      "title": "YM080-230-A051-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym080-230-a051-rh",
+      "pageTitle": "ym080-230-a051-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-433a3b87fefe",
+      "title": "YM080-230-A099-RH",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series/ym080-230-a099-rh",
+      "pageTitle": "ym080-230-a099-rh | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-8df6975556fb",
+      "title": "PH54-200-S500-R (H54P)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/ph54-200-s500-r",
+      "pageTitle": "ph54-200-s500-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-8553ae150d8d",
+      "title": "PH54-100-S500-R (H54P)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/ph54-100-s500-r",
+      "pageTitle": "ph54-100-s500-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e900caee32b3",
+      "title": "PH42-020-S300-R (H42P)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/ph42-020-s300-r",
+      "pageTitle": "ph42-020-s300-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-0e6c2837dbd6",
+      "title": "PM54-060-S250-R (M54P)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/pm54-060-s250-r",
+      "pageTitle": "pm54-060-s250-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f5e6306dd7d9",
+      "title": "PM54-040-S250-R (M54P)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/pm54-040-s250-r",
+      "pageTitle": "pm54-040-s250-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e490a36dd2d0",
+      "title": "PM42-010-S260-R (M42P)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series/pm42-010-s260-r",
+      "pageTitle": "pm42-010-s260-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-304d1a579eff",
+      "title": "DYD-11",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dyd/dyd_11",
+      "pageTitle": "DYD-11 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c9264439b0b0",
+      "title": "DYD-14",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dyd/dyd_14",
+      "pageTitle": "DYD-14 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-869e26aba7a4",
+      "title": "DYD-17",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dyd/dyd_17",
+      "pageTitle": "DYD-17 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-925431473ebd",
+      "title": "X Series",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series",
+      "pageTitle": "x_series | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-bb9fdf6717ed",
+      "title": "XW540-T140",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xw_series/xw540-t140",
+      "pageTitle": "xw540-t140 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e2a368ee4207",
+      "title": "XW540-T260",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xw_series/xw540-t260",
+      "pageTitle": "xw540-t260 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-d2687299d2ee",
+      "title": "XW430-T200",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xw_series/xw430-t200",
+      "pageTitle": "xw430-t200 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f319607b142e",
+      "title": "XW430-T333",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xw_series/xw430-t333",
+      "pageTitle": "xw430-t333 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-3acbc4cc6a2f",
+      "title": "XD540-T150",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xd_series/xd540-t150",
+      "pageTitle": "xd540-t150 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-75494439c2e3",
+      "title": "XD540-T270",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xd_series/xd540-t270",
+      "pageTitle": "xd540-t270 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-937d874890e1",
+      "title": "XD430-T210",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xd_series/xd430-t210",
+      "pageTitle": "xd430-t210 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-623d9b4ea65b",
+      "title": "XD430-T350",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xd_series/xd430-t350",
+      "pageTitle": "xd430-t350 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-b10fd315c3ca",
+      "title": "XH540-W150",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh540-w150",
+      "pageTitle": "xh540-w150 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-29d59aadd19f",
+      "title": "XH540-W270",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh540-w270",
+      "pageTitle": "xh540-w270 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-06de71aa0bfa",
+      "title": "XH540-V150",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh540-v150",
+      "pageTitle": "xh540-v150 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c22755bb9d5a",
+      "title": "XH540-V270",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh540-v270",
+      "pageTitle": "xh540-v270 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ecb0798fc8a5",
+      "title": "XH430-W210",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh430-w210",
+      "pageTitle": "xh430-w210 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-94eaa660c3f5",
+      "title": "XH430-W350",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh430-w350",
+      "pageTitle": "xh430-w350 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-116cbc8afe65",
+      "title": "XH430-V210",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh430-v210",
+      "pageTitle": "xh430-v210 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-9b706811cdb6",
+      "title": "XH430-V350",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xh_series/xh430-v350",
+      "pageTitle": "xh430-v350 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-2a4e2338c984",
+      "title": "XM540-W150",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm540-w150",
+      "pageTitle": "xm540-w150 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c23a473ec9d4",
+      "title": "XM540-W270",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm540-w270",
+      "pageTitle": "xm540-w270 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-513db3f02394",
+      "title": "XM430-W210",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm430-w210",
+      "pageTitle": "xm430-w210 | ROBOTIS Docs"
+    },
+    {
+      "id": "xm430",
+      "title": "XM430-W350-T/R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm430-w350",
+      "pageTitle": "xm430-w350 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c702f6aba80d",
+      "title": "XM335-T323",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm335-t323",
+      "pageTitle": "xm335-t323 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e192b6115d94",
+      "title": "2XC430-W250",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/2xc430-w250",
+      "pageTitle": "2xc430-w250 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f6630d8279c0",
+      "title": "XC430-W150",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc430-w150",
+      "pageTitle": "xc430-w150 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-09c1f7b95ae6",
+      "title": "XC430-W240",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc430-w240",
+      "pageTitle": "xc430-w240 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-4e1c3bc0eedd",
+      "title": "XC430-T150BB",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc430-t150bb",
+      "pageTitle": "xc430-t150bb | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-63307734e5f8",
+      "title": "XC430-T240BB",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc430-t240bb",
+      "pageTitle": "xc430-t240bb | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-5005e56e19d4",
+      "title": "XC330-T288",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc330-t288",
+      "pageTitle": "xc330-t288 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-71f83ed86047",
+      "title": "XC330-T181",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc330-t181",
+      "pageTitle": "xc330-t181 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-216ac544693b",
+      "title": "XC330-M181",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc330-m181",
+      "pageTitle": "xc330-m181 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e383042f2fdb",
+      "title": "XC330-M288",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xc_series/xc330-m288",
+      "pageTitle": "xc330-m288 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f1c1361c6d65",
+      "title": "2XL430-W250",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/2xl430-w250",
+      "pageTitle": "2xl430-w250 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c80c15fa9284",
+      "title": "XL430-W250",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/xl430-w250",
+      "pageTitle": "xl430-w250 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-4ec345152646",
+      "title": "XL330-M077",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/xl330-m077",
+      "pageTitle": "xl330-m077 | ROBOTIS Docs"
+    },
+    {
+      "id": "xl330",
+      "title": "XL330-M288-T",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/xl330-m288",
+      "pageTitle": "xl330-m288 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e899c6619899",
+      "title": "XL-320",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/xl320",
+      "pageTitle": "xl320 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ceb992008e0b",
+      "title": "MX-106T/R(2.0)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-106-2",
+      "pageTitle": "mx-106-2 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-476c1d6a30d7",
+      "title": "MX-64T/R/AT/AR(2.0)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-64-2",
+      "pageTitle": "mx-64-2 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-2c379e03a22d",
+      "title": "MX-28T/R/AT/AR(2.0)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-28-2",
+      "pageTitle": "mx-28-2 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-d70c70d42f71",
+      "title": "MX-106T/R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-106",
+      "pageTitle": "mx-106 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-edbdfd409a53",
+      "title": "MX-64T/R/AT/AR",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-64",
+      "pageTitle": "mx-64 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-014d118213f0",
+      "title": "MX-28T/R/AT/AR",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-28",
+      "pageTitle": "mx-28 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-47bdbd288990",
+      "title": "MX-12W",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-12w",
+      "pageTitle": "mx-12w | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-aa1ee42a4b97",
+      "title": "AX-18F/18A",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/ax_series/ax-18a",
+      "pageTitle": "ax-18a | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c04115982a42",
+      "title": "AX-12/12+/12A",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/ax_series/ax-12a",
+      "pageTitle": "ax-12a | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-aa7a80d5418b",
+      "title": "AX-12W",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/ax_series/ax-12w",
+      "pageTitle": "ax-12w | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-378439b4cccb",
+      "title": "DYNAMIXEL Protocol 1.0",
+      "url": "https://docs.robotis.com/docs/dxl/protocol/protocol1",
+      "pageTitle": "DYNAMIXEL Protocol 1.0 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-0ecbf1f74b7c",
+      "title": "DYNAMIXEL Protocol 2.0",
+      "url": "https://docs.robotis.com/docs/dxl/protocol/protocol2",
+      "pageTitle": "DYNAMIXEL Protocol 2.0 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-d4f25627d9e4",
+      "title": "EX-106+",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/ex_series/ex-106+",
+      "pageTitle": "ex-106+ | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-5b61eb966ea5",
+      "title": "DX-113",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dx_series/dx-113",
+      "pageTitle": "dx-113 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-3bbec56132a8",
+      "title": "DX-116",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dx_series/dx-116",
+      "pageTitle": "dx-116 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-cc2cc1bd29f1",
+      "title": "DX-117",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dx_series/dx-117",
+      "pageTitle": "dx-117 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-a9462b19cca0",
+      "title": "RX-10",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/rx_series/rx-10",
+      "pageTitle": "rx-10 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-117c87e9497d",
+      "title": "RX-24F",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/rx_series/rx-24f",
+      "pageTitle": "rx-24f | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-52f0a8af398d",
+      "title": "RX-28",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/rx_series/rx-28",
+      "pageTitle": "rx-28 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-bbb0bf8cdb2a",
+      "title": "RX-64",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/rx_series/rx-64",
+      "pageTitle": "rx-64 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-520bbae72b92",
+      "title": "H54-200-S500-R(A)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_h_series/h54-200-s500-ra",
+      "pageTitle": "h54-200-s500-ra | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-d3e521a0ae43",
+      "title": "H54-100-S500-R(A)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_h_series/h54-100-s500-ra",
+      "pageTitle": "h54-100-s500-ra | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-bf4253d9868b",
+      "title": "H42-20-S300-R(A)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_h_series/h42-20-s300-ra",
+      "pageTitle": "h42-20-s300-ra | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-60d033cf88f6",
+      "title": "M54-60-S250-R(A)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_m_series/m54-60-s250-ra",
+      "pageTitle": "m54-60-s250-ra | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-cb0257b33d96",
+      "title": "M54-40-S250-R(A)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_m_series/m54-40-s250-ra",
+      "pageTitle": "m54-40-s250-ra | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-a0a120116fe9",
+      "title": "M42-10-S260-R(A)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_m_series/m42-10-s260-ra",
+      "pageTitle": "m42-10-s260-ra | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ee9f3c794b74",
+      "title": "H54-200-S500-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_h_series/h54-200-s500-r",
+      "pageTitle": "h54-200-s500-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-b8a254109c19",
+      "title": "H54-100-S500-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_h_series/h54-100-s500-r",
+      "pageTitle": "h54-100-s500-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-075a14766a8a",
+      "title": "H42-20-S300-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_h_series/h42-20-s300-r",
+      "pageTitle": "h42-20-s300-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-514f4d155548",
+      "title": "M54-60-S250-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_m_series/m54-60-s250-r",
+      "pageTitle": "m54-60-s250-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ef8510d1dcbc",
+      "title": "M54-40-S250-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_m_series/m54-40-s250-r",
+      "pageTitle": "m54-40-s250-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f6fae224b7f4",
+      "title": "M42-10-S260-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_m_series/m42-10-s260-r",
+      "pageTitle": "m42-10-s260-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-a7dbc7b387ec",
+      "title": "L54-50-S500-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_l_series/l54-50-s500-r",
+      "pageTitle": "l54-50-s500-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-aadf0e994893",
+      "title": "L54-50-S290-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_l_series/l54-50-s290-r",
+      "pageTitle": "l54-50-s290-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ad5259ab8003",
+      "title": "L54-30-S500-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_l_series/l54-30-s500-r",
+      "pageTitle": "l54-30-s500-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-92a5eece91a5",
+      "title": "L54-30-S400-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_l_series/l54-30-s400-r",
+      "pageTitle": "l54-30-s400-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-9ffe6133268b",
+      "title": "L42-10-S300-R",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series/pro_l_series/l42-10-s300-r",
+      "pageTitle": "l42-10-s300-r | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-b199fa70783a",
+      "title": "RH-P12-RN(A)",
+      "url": "https://docs.robotis.com/docs/systems/rh_p12_rn",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-86879ef2a737",
+      "title": "RH-P12-RN-UR",
+      "url": "https://docs.robotis.com/docs/systems/rh_p12_rn/rh_p12_rn_ur",
+      "pageTitle": "RH-P12-RN-UR | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-169c7fc57951",
+      "title": "OpenMANIPULATOR-P",
+      "url": "https://docs.robotis.com/docs/systems/openmanipulator_p/overview",
+      "pageTitle": "Overview | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-b9a4266d96ba",
+      "title": "OpenMANIPULATOR-X",
+      "url": "https://docs.robotis.com/docs/systems/openmanipulator_x/overview",
+      "pageTitle": "Overview | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-46f411bd805a",
+      "title": "TurtleBot3",
+      "url": "https://docs.robotis.com/docs/systems/turtlebot3/overview",
+      "pageTitle": "Overview | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-7170c8b5524a",
+      "title": "ROBOTIS OP3",
+      "url": "https://docs.robotis.com/docs/systems/op3/introduction",
+      "pageTitle": "introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-d755b10a6651",
+      "title": "*THORMANG3",
+      "url": "https://docs.robotis.com/docs/systems/thormang3/introduction",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-a680ef12e740",
+      "title": "ROBOTIS PREMIUM",
+      "url": "https://docs.robotis.com/docs/edu/bioloid/premium",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-f984ec819014",
+      "title": "Kit 1",
+      "url": "https://docs.robotis.com/docs/edu/engineer/kit1",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-524e877f1deb",
+      "title": "Kit 2",
+      "url": "https://docs.robotis.com/docs/edu/engineer/kit2_introduction",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-4faf84603ba8",
+      "title": "DYNAMIXEL Easy SDK",
+      "url": "https://docs.robotis.com/docs/software/dynamixel_easy_sdk/getting_started",
+      "pageTitle": "getting_started | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-abbfebbc017b",
+      "title": "DYNAMIXEL SDK",
+      "url": "https://docs.robotis.com/docs/software/dynamixel_sdk/overview",
+      "pageTitle": "overview | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-7f35927eca5e",
+      "title": "DYNAMIXEL Workbench",
+      "url": "https://docs.robotis.com/docs/software/dynamixel_workbench",
+      "pageTitle": "DYNAMIXEL Workbench | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-c89cdf4cf809",
+      "title": "DYNAMIXEL Wizard 2.0",
+      "url": "https://docs.robotis.com/docs/software/dynamixel_wizard_2_0/introduction",
+      "pageTitle": "DYNAMIXEL Wizard 2.0 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-da66badcab70",
+      "title": "R+ Task",
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_task/getting_started",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-87049ccfd179",
+      "title": "R+ Manager",
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_manager",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-b897531c741d",
+      "title": "R+ Motion",
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/rplus_motion",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-41047c47652b",
+      "title": "Dynamixel Wizard",
+      "url": "https://docs.robotis.com/docs/software/rplus_1_0/dynamixel_wizard",
+      "pageTitle": "Dynamixel Wizard 1.0 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-88622f4821c0",
+      "title": "R+ Manager 2.0",
+      "url": "https://docs.robotis.com/docs/software/rplus_manager_2_0",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-355517f30e39",
+      "title": "R+ Task 3.0",
+      "url": "https://docs.robotis.com/docs/software/rplus_task_3_0",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-349881f48bbb",
+      "title": "Arduino IDE",
+      "url": "https://docs.robotis.com/docs/software/arduino_ide",
+      "pageTitle": "Arduino IDE | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-0168de876c75",
+      "title": "CM-530",
+      "url": "https://docs.robotis.com/docs/parts/controller/cm-530",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e3972a1b8e7c",
+      "title": "CM-550",
+      "url": "https://docs.robotis.com/docs/parts/controller/cm-550",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-cf7f26a0b1a9",
+      "title": "OpenRB-150",
+      "url": "https://docs.robotis.com/docs/parts/controller/openrb-150",
+      "pageTitle": "Overview | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-8476052f0cbc",
+      "title": "OpenCR1.0",
+      "url": "https://docs.robotis.com/docs/parts/controller/opencr10",
+      "pageTitle": "opencr10 | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-8197d01d9bc0",
+      "title": "DYNAMIXEL Communication Bridge",
+      "url": "https://docs.robotis.com/docs/parts/interface/dxl_bridge",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-8ec38b9ad3ce",
+      "title": "U2D2",
+      "url": "https://docs.robotis.com/docs/parts/interface/u2d2",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-7e36bf791e10",
+      "title": "U2D2 Power Hub",
+      "url": "https://docs.robotis.com/docs/parts/interface/u2d2_power_hub",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-b5ce259bae1e",
+      "title": "DYNAMIXEL Shield",
+      "url": "https://docs.robotis.com/docs/parts/interface/dynamixel_shield",
+      "pageTitle": "Introduction | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-927212f24fe4",
+      "title": "DYNAMIXEL Shield MKR",
+      "url": "https://docs.robotis.com/docs/parts/interface/mkr_shield",
+      "pageTitle": "mkr_shield | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-252f93cfbea8",
+      "title": "DYNAMIXEL Selection Guide",
+      "url": "https://docs.robotis.com/docs/faq/dxl-selection-guide",
+      "pageTitle": "Getting Started | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-7e0c95580785",
+      "title": "DYNAMIXEL",
+      "url": "https://docs.robotis.com/docs/faq/faq_dynamixel",
+      "pageTitle": "faq_dynamixel | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-e9bcc9a5f338",
+      "title": "DYNAMIXEL SYSTEM",
+      "url": "https://docs.robotis.com/docs/faq/faq_platform",
+      "pageTitle": "OP Series | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-8bb986d75dc8",
+      "title": "EDUCATION KITS",
+      "url": "https://docs.robotis.com/docs/faq/faq_steam",
+      "pageTitle": "OLLO | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-07490ec5e658",
+      "title": "SOFTWARE",
+      "url": "https://docs.robotis.com/docs/faq/faq_software",
+      "pageTitle": "faq_software | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-4abdffaff0eb",
+      "title": "PARTS",
+      "url": "https://docs.robotis.com/docs/faq/faq_parts",
+      "pageTitle": "How can I check which DYNAMIXEL servos are compatible with my controller? | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-d45bfea42fa0",
+      "title": "GENERAL",
+      "url": "https://docs.robotis.com/docs/faq/faq_general",
+      "pageTitle": "What Software, DYNAMIXEL and Parts are compatible with my own controller? | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-75d30691221b",
+      "title": "Y Series",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/y_series",
+      "pageTitle": "Y Series | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-285650742dc5",
+      "title": "P Series",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/p_series",
+      "pageTitle": "P Series | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-aac01ce2f7f1",
+      "title": "DYNAMIXEL DRIVE (DYD)",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/dyd",
+      "pageTitle": "DYNAMIXEL DRIVE (DYD) | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-ae25b7ba3853",
+      "title": "MX Series",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series",
+      "pageTitle": "MX Series | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-a9d2c085499f",
+      "title": "PRO Series",
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/pro_series",
+      "pageTitle": "PRO Series | ROBOTIS Docs"
+    },
+    {
+      "id": "nav-6ff3b6a08dba",
+      "title": "Controller",
+      "url": "https://docs.robotis.com/docs/parts/controller/controller_compatibility",
+      "pageTitle": "Controller Compatibility | ROBOTIS Docs"
+    }
+  ],
+  "removed": [
+    {
+      "id": "nav-0ba91f06f580",
+      "title": "Manipulator-H",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-550e95f52388",
+      "title": "ROBOTIS OP",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-e5ccefd547ce",
+      "title": "ROBOTIS OP2",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-66315ebcdf3f",
+      "title": "PLAY 300",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-67f44ac01292",
+      "title": "PLAY 600",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-78b798c7b67d",
+      "title": "PLAY 700",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-654606d0cfb0",
+      "title": "LEVEL 1 [en/edu/dream/dream2-1]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-ef1d8ec67855",
+      "title": "LEVEL 2 [en/edu/dream/dream2-2]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-d1ddd7dc98ea",
+      "title": "LEVEL 3 [en/edu/dream/dream2-3]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-52da6a534320",
+      "title": "LEVEL 4 [en/edu/dream/dream2-4]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-4c16c7b3a01f",
+      "title": "LEVEL 5 [en/edu/dream/dream2-5]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-4fdd2cfbbe01",
+      "title": "School Set",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-9a9c18ef0db2",
+      "title": "ROBOTIS STEM",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-87a9b110a457",
+      "title": "ROBOTIS GP",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-8c3aa20b606c",
+      "title": "Beginner Level [en/edu/bioloid/beginner]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-e249f83b97bd",
+      "title": "Comprehensive Level [en/edu/bioloid/comprehensive]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-7f3a927adca0",
+      "title": "BUG KIT",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-d9ef543b43bf",
+      "title": "EXPLORER",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-1fdbb6a741f4",
+      "title": "INVENTOR",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-b91f0f700249",
+      "title": "LEVEL 2 [en/edu/dream/dream1-2]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-59801825a527",
+      "title": "LEVEL 3 [en/edu/dream/dream1-3]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-b738d7897748",
+      "title": "LEVEL 4 [en/edu/dream/dream1-4]",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-2255c4d1acb3",
+      "title": "SET A",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-17fb62007d8b",
+      "title": "SET B",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-554d6c2e2bd5",
+      "title": "*ROBOTIS MINI",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-8da9beb77fcd",
+      "title": "R+ Task 2.0",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-65c3d986bbb6",
+      "title": "R+ Motion 2.0",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-323d3e210957",
+      "title": "R+ Design 2.0",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-3c1445c4ce51",
+      "title": "R+ Scratch",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-9136eb8a48eb",
+      "title": "R+ m.Task 2.0",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-8b94266d6815",
+      "title": "R+ m.Motion 2.0",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-cdac5bec66ce",
+      "title": "R+ m.Design",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-9699bd06cf50",
+      "title": "Embedded C(CM-510/700)",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-ee58e27b926e",
+      "title": "Embedded C(CM-530)",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-7e13318e8ad1",
+      "title": "ZIGBEE SDK",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-f05be7425f73",
+      "title": "ROBOTIS Framework Packages",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-a677edee5913",
+      "title": "ROBOTIS Manipulator library",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-9ca3241f43c0",
+      "title": "*OpenCM IDE",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-bf8fb2ae9172",
+      "title": "ROBOTIS MINI",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-429e5ec976a6",
+      "title": "R+ Block",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-43da1c6fe4e9",
+      "title": "RB-86",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-ff75fa8755cf",
+      "title": "RB-88",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-ac75d9273407",
+      "title": "CM-50",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-bd9c8e30298c",
+      "title": "CM-151",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-19753f3ea423",
+      "title": "CM-200",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-fc0c22cdcab1",
+      "title": "OpenCM9.04",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-34384597538c",
+      "title": "OpenCM 485 EXP",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-3fbde9377eee",
+      "title": "CM-100A",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-b81fc84ac26f",
+      "title": "CM-5",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-fecbdd9e0ff6",
+      "title": "CM-150",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-da6da47021ac",
+      "title": "CM-510",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-cb0ed2179a33",
+      "title": "CM-700",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-e2012954d9a9",
+      "title": "CM-900",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-88092f5fd139",
+      "title": "RC-100A/100B",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-928101a8426f",
+      "title": "RC-200",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-8760421c9f5f",
+      "title": "RC-300",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-7bb01999b1c5",
+      "title": "BT-210",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-810b90f3caf4",
+      "title": "BT-410",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-d38dab72af84",
+      "title": "BT-430 Dongle",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-48a1740d0f6d",
+      "title": "ZIG-100/110A",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-7c2ecccc81ee",
+      "title": "BT-100/110A",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-3a24ae591b42",
+      "title": "ZIG2Serial",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-df8f9d2468cd",
+      "title": "BT-410 Dongle",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-5d7a4861b7b8",
+      "title": "Geared Motor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-834a3919e7b2",
+      "title": "Servo Motor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-ef3f93e54233",
+      "title": "High Speed Geared Motor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-8bd1cffd26fd",
+      "title": "Low Speed Geared Motor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-1d89465dc703",
+      "title": "LN-101",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-218f145219f5",
+      "title": "USB2DYNAMIXEL",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-204182dca009",
+      "title": "IR Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-c70916e9d4d7",
+      "title": "Distance Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-abe1b6d2a8e6",
+      "title": "Touch Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-b1bc3f346e17",
+      "title": "Gyro Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-64093c8203a7",
+      "title": "IR Array Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-4b78ba8ef140",
+      "title": "Color Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-8164dc91651d",
+      "title": "Magnetic Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-88fd928fae93",
+      "title": "Temperature Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-fa238fb907d0",
+      "title": "Motion Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-46a5c7533f6c",
+      "title": "Integrated Sensor",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-754eeafb419d",
+      "title": "LED Module",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-e272b7f8f400",
+      "title": "DYNAMIXEL Quick Start Guide",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-3830f3c991b6",
+      "title": "OpenManipulator",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-ee3a80a17453",
+      "title": "ROBOTIS BIOLOID",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-210ebd4e3c55",
+      "title": "OLLO",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-863038743930",
+      "title": "EMBEDDED SDK",
+      "reason": "No matching English product/section route in the verified Docs sitemap and source tree."
+    },
+    {
+      "id": "nav-337a06e79475",
+      "title": "Korean",
+      "reason": "Language navigation is not a product/source record."
+    }
+  ],
+  "verifiedAnchors": [
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xl_series/xl430-w250#startup-configuration60",
+      "pageSha256": "e0200b1eb6a697c841cd096d6488b8eea9375a7434fc857ac5f52eb1430aedb3"
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm540-w150#drive-mode10",
+      "pageSha256": "07ee0309c633465ac7bb01f371646fe2e50efd6d89b2711d555bc10e3a02a7d3"
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/x_series/xm_series/xm540-w270#drive-mode10",
+      "pageSha256": "651c2a2f11989a730fe5838ba45accabff3df968c30080965d9ac7ae01b26035"
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-64#current-68",
+      "pageSha256": "78a2d5c90037491c2174c40d490e61172f004d1bffdc2f9b99bb75bab8d70ff7"
+    },
+    {
+      "url": "https://docs.robotis.com/docs/dxl/model_reference/mx_series/mx-106#current-68",
+      "pageSha256": "883379e088ed779c3a8450ca6be58eff06cd5f5e633c96a40461862ea0faa066"
+    }
+  ],
+  "controlEvidenceChecks": [
+    {
+      "catalogId": "x_series/xl_series/xl430-w250",
+      "item": "Startup Configuration",
+      "sourcePaths": [
+        "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl430-w250.mdx",
+        "docusaurus/docs/dxl/_partials/x/startup_configuration.mdx"
+      ],
+      "computedAllowedMask": 3,
+      "minimumFirmware": 45,
+      "result": "Current model import and component confirm the existing contract; all non-evidence item fields unchanged."
+    },
+    {
+      "catalogId": "x_series/xm_series/xm540-w150",
+      "item": "Drive Mode",
+      "sourcePaths": [
+        "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w150.mdx",
+        "docusaurus/docs/dxl/_partials/x/control_table_drivemode_x540.mdx"
+      ],
+      "computedAllowedMask": 15,
+      "minimumFirmware": null,
+      "result": "Current model import and component confirm the existing contract; all non-evidence item fields unchanged."
+    },
+    {
+      "catalogId": "x_series/xm_series/xm540-w270",
+      "item": "Drive Mode",
+      "sourcePaths": [
+        "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w270.mdx",
+        "docusaurus/docs/dxl/_partials/x/control_table_drivemode_x540.mdx"
+      ],
+      "computedAllowedMask": 15,
+      "minimumFirmware": null,
+      "result": "Current model import and component confirm the existing contract; all non-evidence item fields unchanged."
+    }
+  ],
+  "sourceTree": {
+    "url": "https://api.github.com/repos/ROBOTIS-GIT/docs/git/trees/203300f92880f41ca7fc3ff88584f3231608d67d?recursive=1",
+    "sha256": "3f63ae000220eb44cfcfda3de77092fafaf5bbf61867aebfe7ee7803bd78870e",
+    "entries": 8519,
+    "truncated": false
+  }
+}

@@ -27,44 +27,44 @@
       "blobSha": "cf7b54f795d6e4ffb1f19a468283e6ab9f770871"
     },
     {
-      "repository": "ROBOTIS-GIT/emanual",
-      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
-      "path": "docs/en/dxl/x/xl430-w250.md",
-      "blobSha": "6ac60e079ccfb0ff0c17bac7e5eea604c2f98875",
-      "sha256": "1af0ea9002da86c4e5b3cf38a261bdc2c8ee0dd9b9a8aeb49d570292aece9d39",
-      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/x/xl430-w250.md"
+      "repository": "ROBOTIS-GIT/docs",
+      "revision": "203300f92880f41ca7fc3ff88584f3231608d67d",
+      "path": "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl430-w250.mdx",
+      "blobSha": "b1ca01d8ff0c793d3db15df078219c6fa9f88fcf",
+      "sha256": "a2dc775d1a472311023002348dd2e67c68c1b5ed586ea87c93a85748c45a8a58",
+      "url": "https://github.com/ROBOTIS-GIT/docs/blob/203300f92880f41ca7fc3ff88584f3231608d67d/docusaurus/docs/dxl/model_reference/x_series/xl_series/xl430-w250.mdx"
     },
     {
-      "repository": "ROBOTIS-GIT/emanual",
-      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
-      "path": "_includes/en/dxl/x/startup_configuration.md",
-      "blobSha": "c51f82fa50b04ec917e31c7a01f0f80b0e21b598",
-      "sha256": "8fff48b8d071228d0d5b9e86c2e84534f185d902acd37258ae9a4c3e5839c4a9",
-      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/_includes/en/dxl/x/startup_configuration.md"
+      "repository": "ROBOTIS-GIT/docs",
+      "revision": "203300f92880f41ca7fc3ff88584f3231608d67d",
+      "path": "docusaurus/docs/dxl/_partials/x/startup_configuration.mdx",
+      "blobSha": "13c12a588a97ac1cb0f5a8700c657644503c3fce",
+      "sha256": "fa283e1c73a5a89a1c46755e29d84be6611bb7e817c68a4eebd102d46cce856e",
+      "url": "https://github.com/ROBOTIS-GIT/docs/blob/203300f92880f41ca7fc3ff88584f3231608d67d/docusaurus/docs/dxl/_partials/x/startup_configuration.mdx"
     },
     {
-      "repository": "ROBOTIS-GIT/emanual",
-      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
-      "path": "docs/en/dxl/x/xm540-w150.md",
-      "blobSha": "dc6a018d037e4192a39535bcc724faad7a510c79",
-      "sha256": "a294b0b2928e7bbab5905533619276d33c7ad0b2f6a484662e14d114f16cc9c4",
-      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/x/xm540-w150.md"
+      "repository": "ROBOTIS-GIT/docs",
+      "revision": "203300f92880f41ca7fc3ff88584f3231608d67d",
+      "path": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w150.mdx",
+      "blobSha": "b6a3f1bdff409c6090d819b19fc39c7346e32b17",
+      "sha256": "36f8061e9f818b1ee0bf1e99ea374a8d8102f210ae4defa0b3c059a07a015f42",
+      "url": "https://github.com/ROBOTIS-GIT/docs/blob/203300f92880f41ca7fc3ff88584f3231608d67d/docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w150.mdx"
     },
     {
-      "repository": "ROBOTIS-GIT/emanual",
-      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
-      "path": "_includes/en/dxl/control_table_drivemode.md",
-      "blobSha": "38a7b091831154ce055674f53ce2e74914dbf36c",
-      "sha256": "f3e9486855f0442e8a79b8969adcea57f81d6429027b9719c1f05a5d89c66209",
-      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/_includes/en/dxl/control_table_drivemode.md"
+      "repository": "ROBOTIS-GIT/docs",
+      "revision": "203300f92880f41ca7fc3ff88584f3231608d67d",
+      "path": "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w270.mdx",
+      "blobSha": "0bdaa7a99eb6c0206b39c719c0d8c27167327d3e",
+      "sha256": "b8a2deb1aa7e1609f1f8f9ddf06f081b2ae5ec51de9b0e82458d15c12da51f7e",
+      "url": "https://github.com/ROBOTIS-GIT/docs/blob/203300f92880f41ca7fc3ff88584f3231608d67d/docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w270.mdx"
     },
     {
-      "repository": "ROBOTIS-GIT/emanual",
-      "revision": "0807b1b5f7472bbbbb2c9751f1d3406678e86d37",
-      "path": "docs/en/dxl/x/xm540-w270.md",
-      "blobSha": "a8ed36097de5e1336f7a9111cd1e7c0b94549428",
-      "sha256": "f031ab6b34ba83c357dd07458c25e7cb19575bc6ad8190dcf899ed1d51610a78",
-      "url": "https://github.com/ROBOTIS-GIT/emanual/blob/0807b1b5f7472bbbbb2c9751f1d3406678e86d37/docs/en/dxl/x/xm540-w270.md"
+      "repository": "ROBOTIS-GIT/docs",
+      "revision": "203300f92880f41ca7fc3ff88584f3231608d67d",
+      "path": "docusaurus/docs/dxl/_partials/x/control_table_drivemode_x540.mdx",
+      "blobSha": "ab491e7e0ab16dc8bf6bf1a01c68f4a8f2fe164c",
+      "sha256": "7b16b5f39d238703c9aae64a1e2327f43c88edcb37567a6aa2017f44609ee6bb",
+      "url": "https://github.com/ROBOTIS-GIT/docs/blob/203300f92880f41ca7fc3ff88584f3231608d67d/docusaurus/docs/dxl/_partials/x/control_table_drivemode_x540.mdx"
     }
   ],
   "resolutions": [
@@ -73,19 +73,31 @@
       "item": "Startup Configuration",
       "allowedMask": 3,
       "minimumFirmware": 45,
-      "basis": "Exact parent include and its default Liquid firmware branch"
+      "basis": "Current Docs exact model import and component confirm bits 0–1 and firmware V45.",
+      "sourcePaths": [
+        "docusaurus/docs/dxl/model_reference/x_series/xl_series/xl430-w250.mdx",
+        "docusaurus/docs/dxl/_partials/x/startup_configuration.mdx"
+      ]
     },
     {
       "catalogId": "x_series/xm_series/xm540-w150",
       "item": "Drive Mode",
       "allowedMask": 15,
-      "basis": "Exact eManual parent product_group dxl_x540 and its actual included condition"
+      "basis": "Current Docs exact model import and component confirm Drive Mode bits 0–3, including X540 Master/Slave bit 1; supplements the older indexed generic component.",
+      "sourcePaths": [
+        "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w150.mdx",
+        "docusaurus/docs/dxl/_partials/x/control_table_drivemode_x540.mdx"
+      ]
     },
     {
       "catalogId": "x_series/xm_series/xm540-w270",
       "item": "Drive Mode",
       "allowedMask": 15,
-      "basis": "Exact eManual parent product_group dxl_x540 and its actual included condition"
+      "basis": "Current Docs exact model import and component confirm Drive Mode bits 0–3, including X540 Master/Slave bit 1; supplements the older indexed generic component.",
+      "sourcePaths": [
+        "docusaurus/docs/dxl/model_reference/x_series/xm_series/xm540-w270.mdx",
+        "docusaurus/docs/dxl/_partials/x/control_table_drivemode_x540.mdx"
+      ]
     }
   ]
 }
